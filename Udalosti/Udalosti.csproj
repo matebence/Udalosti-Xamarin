@@ -10,6 +10,33 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Icons\cas.png" />
+    <None Remove="Assets\Icons\odhlasit_sa.png" />
+    <None Remove="Assets\Icons\podla_pozicie.png" />
+    <None Remove="Assets\Images\udalosti_chyba_obrazka.jpg" />
+    <None Remove="Assets\Images\udalosti_logo.png" />
+    <None Remove="Assets\Images\udalosti_pozadie.jpg" />
+    <None Remove="Assets\Images\udalosti_vstup.png" />
+    <None Remove="Assets\Images\udalosti_ziadne_udalosti.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Icons\cas.png" />
+    <EmbeddedResource Include="Assets\Icons\odhlasit_sa.png" />
+    <EmbeddedResource Include="Assets\Icons\podla_pozicie.png" />
+    <EmbeddedResource Include="Assets\Images\udalosti_chyba_obrazka.jpg" />
+    <EmbeddedResource Include="Assets\Images\udalosti_logo.png" />
+    <EmbeddedResource Include="Assets\Images\udalosti_pozadie.jpg" />
+    <EmbeddedResource Include="Assets\Images\udalosti_vstup.png" />
+    <EmbeddedResource Include="Assets\Images\udalosti_ziadne_udalosti.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Autentifikacia\Data\" />
+    <Folder Include="Autentifikacia\UI\" />
   </ItemGroup>
 </Project>

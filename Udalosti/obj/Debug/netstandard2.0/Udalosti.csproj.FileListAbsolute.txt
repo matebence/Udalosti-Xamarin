@@ -1,0 +1,12 @@
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\bin\Debug\netstandard2.0\Udalosti.deps.json
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\bin\Debug\netstandard2.0\Udalosti.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\bin\Debug\netstandard2.0\Udalosti.pdb
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalosti.csproj.CoreCompileInputs.cache
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalosti.AssemblyInfoInputs.cache
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalosti.AssemblyInfo.cs
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalosti.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalosti.pdb
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalosti.csprojAssemblyReference.cache

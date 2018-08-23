@@ -3836,7 +3836,7 @@ namespace Udalosti.Droid
 			public const int icon_round = 2130903043;
 			
 			// aapt resource value: 0x7F030004
-			public const int launcher_foreground = 2130903044;
+			public const int ic_icon = 2130903044;
 			
 			static Mipmap()
 			{

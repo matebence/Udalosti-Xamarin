@@ -1,14 +1,63 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Udalosti"
-             x:Class="Udalosti.MainPage">
+﻿<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Udalosti.Nastroje.Xamarin"
+    x:Class="Udalosti.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <RelativeLayout>
 
+        <Image 
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            Aspect="AspectFill"
+            Source="{local:XamarinObrazok Udalosti.Assets.Images.udalosti_pozadie.jpg}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+
+        <Grid 
+            VerticalOptions="Center"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="45" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <Grid
+                HorizontalOptions="Center"
+                Grid.Row="0">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+
+                <Image 
+                    Grid.Column="0"
+                    Source="{local:XamarinObrazok Udalosti.Assets.Images.udalosti_logo.png}"
+                    Margin="0,0,15,0"/>
+
+                <Label
+                    Grid.Column="1"
+                    Text="Udalosti"
+                    TextColor="White"
+                    FontSize="60">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
+                            <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
+                            <On Platform="iOS" Value="Raleway Medium" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+            </Grid>
+        </Grid>
+    </RelativeLayout>
 </ContentPage>
