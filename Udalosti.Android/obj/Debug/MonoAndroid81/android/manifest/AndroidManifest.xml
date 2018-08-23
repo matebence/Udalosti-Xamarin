@@ -6,7 +6,7 @@
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <application android:label="Udalosti" android:icon="@mipmap/icon_round" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
-    <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="Udalosti" android:theme="@style/MainTheme" android:name="md521d56e4d5b4c28d87d8ab1f65fdc080f.MainActivity">
+    <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="Udalosti" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:name="md521d56e4d5b4c28d87d8ab1f65fdc080f.Udalosti">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

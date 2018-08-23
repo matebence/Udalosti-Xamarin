@@ -26,7 +26,7 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
-                <RowDefinition Height="45" />
+                <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
 
@@ -66,7 +66,7 @@
                 FontSize="16"
                 HorizontalTextAlignment="Center"
                 HorizontalOptions="Center"
-                Margin="50,10,50,40">
+                Margin="60,10,60,40">
                 <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
                         <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
@@ -81,15 +81,24 @@
                 uhol="18" 
                 vstupElementu="White"      
                 pomer="True"  
+                Placeholder="Email"  
                 HorizontalTextAlignment="Center"  
-                FontSize="17"  
+                FontSize="16"  
                 HeightRequest="40"  
                 WidthRequest="100"
-                Placeholder="Email"  
-                PlaceholderColor="White"
-                TextColor="White"
-                BackgroundColor="Transparent"
-                Margin="60,0,60,15">
+                Margin="50,0,50,15">
+
+                <local:Vstup.BackgroundColor>
+                    <OnPlatform x:TypeArguments="Color" Android="Transparent" WinPhone="White" iOS="Transparent"></OnPlatform>
+                </local:Vstup.BackgroundColor>
+
+                <local:Vstup.PlaceholderColor>
+                    <OnPlatform x:TypeArguments="Color" Android="White" WinPhone="Black" iOS="White"></OnPlatform>
+                </local:Vstup.PlaceholderColor>
+
+                <local:Vstup.TextColor>
+                    <OnPlatform x:TypeArguments="Color" Android="White" WinPhone="Black" iOS="White"></OnPlatform>
+                </local:Vstup.TextColor>
 
                 <local:Vstup.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
@@ -106,16 +115,25 @@
                 uhol="18" 
                 vstupElementu="White"      
                 pomer="True"  
-                HorizontalTextAlignment="Center"  
-                FontSize="17"  
+                Placeholder="Heslo"  
+                HorizontalTextAlignment="Center"
+                FontSize="16"  
                 HeightRequest="40"  
                 WidthRequest="100"
                 IsPassword="True"
-                Placeholder="Heslo"  
-                PlaceholderColor="White"  
-                TextColor="White"
-                BackgroundColor="Transparent"
-                Margin="60,0,60,20">
+                Margin="50,0,50,20">
+
+                <local:Vstup.BackgroundColor>
+                    <OnPlatform x:TypeArguments="Color" Android="Transparent" WinPhone="White" iOS="Transparent"></OnPlatform>
+                </local:Vstup.BackgroundColor>
+
+                <local:Vstup.PlaceholderColor>
+                    <OnPlatform x:TypeArguments="Color" Android="White" WinPhone="Black" iOS="White"></OnPlatform>
+                </local:Vstup.PlaceholderColor>
+
+                <local:Vstup.TextColor>
+                    <OnPlatform x:TypeArguments="Color" Android="White" WinPhone="Black" iOS="White"></OnPlatform>
+                </local:Vstup.TextColor>
 
                 <local:Vstup.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
@@ -126,10 +144,29 @@
                     </OnPlatform>
                 </local:Vstup.FontFamily>
             </local:Vstup>
-            <Button
-                >
-                
-            </Button>
+
+            <local:Tlacidlo 
+            Grid.Row="4"
+            nastavFarbuTlacidla="#0397d6"
+            uhol="20"  
+            sirka="4"
+            HeightRequest="45"
+            BackgroundColor="#0397d6"
+            Text="Prihlásiť sa"
+            TextColor="White"  
+            FontSize="16"
+            VerticalOptions="Center"
+            Margin="50,0,50,0">
+
+                <local:Tlacidlo.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+
+                        <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
+                        <On Platform="Android" Value="raleway_regular.ttf#Raleway Medium" />
+                        <On Platform="iOS" Value="Raleway" />
+                    </OnPlatform>
+                </local:Tlacidlo.FontFamily>
+            </local:Tlacidlo>
         </Grid>
     </RelativeLayout>
 </ContentPage>

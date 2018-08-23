@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T14:05:18.593</Modified>
+      <Modified>2018-08-23T16:10:40.633</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Udalosti.UWP.exe">
       <PackagePath>entrypoint\Udalosti.UWP.exe</PackagePath>
-      <Modified>2018-08-23T14:05:17.564</Modified>
+      <Modified>2018-08-23T16:10:39.702</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.1.5\runtimes\win10-x86\nativeassets\uap10.0.15138\clrcompression.dll">
       <PackagePath>clrcompression.dll</PackagePath>
@@ -713,7 +713,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\bin\Debug\netstandard2.0\Udalosti.dll">
       <PackagePath>Udalosti.dll</PackagePath>
-      <Modified>2018-08-23T14:05:09.697</Modified>
+      <Modified>2018-08-23T16:10:33.157</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\BadgeLogo.scale-100.png">
       <PackagePath>Assets\BadgeLogo.scale-100.png</PackagePath>
@@ -1055,11 +1055,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-08-23T14:05:17.275</Modified>
+      <Modified>2018-08-23T16:10:39.479</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Udalosti.xbf">
       <PackagePath>Udalosti.xbf</PackagePath>
-      <Modified>2018-08-23T14:05:17.276</Modified>
+      <Modified>2018-08-23T16:10:39.479</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -1120,7 +1120,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Core\Udalosti.UWP.exe">
       <PackagePath>Udalosti.UWP.exe</PackagePath>
-      <Modified>2018-08-23T14:05:18.581</Modified>
+      <Modified>2018-08-23T16:10:40.624</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

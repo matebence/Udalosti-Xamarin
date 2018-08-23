@@ -95,6 +95,7 @@
   <ItemGroup>
     <Compile Include="Udalosti.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Xamarin\iOSTlacidlo.cs" />
     <Compile Include="Xamarin\iOSVstup.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist">
