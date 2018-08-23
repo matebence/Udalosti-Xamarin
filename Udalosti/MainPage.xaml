@@ -27,7 +27,6 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
 
             <Grid
@@ -49,8 +48,10 @@
                     Text="Udalosti"
                     TextColor="White"
                     FontSize="60">
+                    
                     <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
+                            
                             <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
                             <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
                             <On Platform="iOS" Value="Raleway Medium" />
@@ -67,8 +68,10 @@
                 HorizontalTextAlignment="Center"
                 HorizontalOptions="Center"
                 Margin="60,10,60,40">
+                
                 <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
+                        
                         <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
                         <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
                         <On Platform="iOS" Value="Raleway Medium" />
@@ -158,15 +161,63 @@
             VerticalOptions="Center"
             Margin="50,0,50,0">
 
-                <local:Tlacidlo.FontFamily>
+            <local:Tlacidlo.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+
+                    <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
+                    <On Platform="Android" Value="raleway_regular.ttf#Raleway Medium" />
+                    <On Platform="iOS" Value="Raleway" />
+                </OnPlatform>
+            </local:Tlacidlo.FontFamily>
+            </local:Tlacidlo>
+        </Grid>
+        
+        <Grid 
+            VerticalOptions="End"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            
+            <Label
+                Grid.Row="0"
+                Text="Nemáte ešte používatelské konto?"
+                TextColor="White"
+                FontSize="14"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Center">
+                
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        
+                        <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
+                        <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
+                        <On Platform="iOS" Value="Raleway Medium" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+
+            <Label
+                Grid.Row="1"
+                Text="Zaregistrovať sa"
+                TextColor="#0397d6"
+                FontSize="14"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Center"
+                Margin="50,0,50,5">
+
+                <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
 
-                        <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
-                        <On Platform="Android" Value="raleway_regular.ttf#Raleway Medium" />
-                        <On Platform="iOS" Value="Raleway" />
+                        <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
+                        <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
+                        <On Platform="iOS" Value="Raleway Medium" />
                     </OnPlatform>
-                </local:Tlacidlo.FontFamily>
-            </local:Tlacidlo>
+                </Label.FontFamily>
+            </Label>
         </Grid>
     </RelativeLayout>
 </ContentPage>

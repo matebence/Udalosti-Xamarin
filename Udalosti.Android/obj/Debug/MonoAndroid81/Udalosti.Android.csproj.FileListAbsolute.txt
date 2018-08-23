@@ -104,9 +104,7 @@ C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroi
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\Udalosti.Android.pdb
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\Xamarin.Forms.Xaml.pdb
-C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\bin\Debug\netstandard2.0\Udalosti.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\linksrc\Udalosti.Android.pdb
-C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\bin\Debug\Udalosti.dll.mdb
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\linksrc\FormsViewGroup.dll.mdb
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\linksrc\Udalosti.dll.mdb
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\linksrc\Xamarin.Forms.Platform.Android.dll.mdb

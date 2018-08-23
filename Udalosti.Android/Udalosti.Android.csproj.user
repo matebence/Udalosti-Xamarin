@@ -3,5 +3,6 @@
   <PropertyGroup>
     <SelectedDevice>Xiaomi MI 5</SelectedDevice>
     <AndroidDesignerPreferredTheme>Theme.DeviceDefault.NoActionBar.Fullscreen</AndroidDesignerPreferredTheme>
+    <DefaultDevice>Android_Accelerated_x86_Oreo</DefaultDevice>
   </PropertyGroup>
 </Project>
