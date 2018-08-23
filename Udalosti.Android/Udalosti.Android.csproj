@@ -60,9 +60,10 @@
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="27.0.2.1" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainActivity.cs" />
+    <Compile Include="Udalosti.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Xamarin\AndroidVstup.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\raleway_thin_italic.ttf" />

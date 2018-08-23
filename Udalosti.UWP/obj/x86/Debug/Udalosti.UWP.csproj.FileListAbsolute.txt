@@ -1,5 +1,4 @@
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\App.xbf
-C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\MainPage.xbf
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Udalosti.UWP.xr.xml
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Udalosti.UWP.exe
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Udalosti.UWP.pdb
@@ -181,13 +180,9 @@ C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Udalosti.p
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Udalosti.UWP.csprojAssemblyReference.cache
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\App.g.i.cs
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\App.g.cs
-C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\MainPage.g.i.cs
-C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\MainPage.g.cs
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\XamlTypeInfo.g.cs
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\App.xaml
-C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\MainPage.xaml
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\App.xbf
-C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\MainPage.xbf
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\XamlSaveStateFile.xml
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Udalosti.UWP.csproj.CoreCompileInputs.cache
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\XamlC.stamp
@@ -298,3 +293,8 @@ C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\qualifiers
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Xamarin.Forms.Platform.UAP.pri.xml
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Udalosti.xbf
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Udalosti.g.i.cs
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Udalosti.g.cs
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Udalosti.xaml
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Udalosti.xbf
