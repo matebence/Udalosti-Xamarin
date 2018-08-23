@@ -10,3 +10,4 @@ C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Xam
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalosti.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalosti.pdb
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalosti.csprojAssemblyReference.cache
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Registracia.xaml.g.cs

@@ -5,7 +5,7 @@
     x:Class="Udalosti.MainPage">
 
     <RelativeLayout>
-        
+
         <Image 
             AbsoluteLayout.LayoutBounds="0,0,1,1"
             AbsoluteLayout.LayoutFlags="All"
@@ -48,10 +48,10 @@
                     Text="Udalosti"
                     TextColor="White"
                     FontSize="60">
-                    
+
                     <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
-                            
+
                             <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
                             <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
                             <On Platform="iOS" Value="Raleway Medium" />
@@ -68,17 +68,17 @@
                 HorizontalTextAlignment="Center"
                 HorizontalOptions="Center"
                 Margin="60,10,60,40">
-                
+
                 <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
-                        
+
                         <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
                         <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
                         <On Platform="iOS" Value="Raleway Medium" />
                     </OnPlatform>
                 </Label.FontFamily>
             </Label>
-            
+
             <local:Vstup  
                 Grid.Row ="2"
                 uhol="18" 
@@ -105,7 +105,7 @@
 
                 <local:Vstup.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
-                    
+
                         <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
                         <On Platform="Android" Value="raleway_regular.ttf#Raleway Medium" />
                         <On Platform="iOS" Value="Raleway" />
@@ -161,17 +161,17 @@
             VerticalOptions="Center"
             Margin="50,0,50,0">
 
-            <local:Tlacidlo.FontFamily>
-                <OnPlatform x:TypeArguments="x:String">
+                <local:Tlacidlo.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
 
-                    <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
-                    <On Platform="Android" Value="raleway_regular.ttf#Raleway Medium" />
-                    <On Platform="iOS" Value="Raleway" />
-                </OnPlatform>
-            </local:Tlacidlo.FontFamily>
+                        <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
+                        <On Platform="Android" Value="raleway_regular.ttf#Raleway Medium" />
+                        <On Platform="iOS" Value="Raleway" />
+                    </OnPlatform>
+                </local:Tlacidlo.FontFamily>
             </local:Tlacidlo>
         </Grid>
-        
+
         <Grid 
             VerticalOptions="End"
             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
@@ -181,7 +181,7 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            
+
             <Label
                 Grid.Row="0"
                 Text="Nemáte ešte používatelské konto?"
@@ -189,10 +189,10 @@
                 FontSize="14"
                 HorizontalTextAlignment="Center"
                 HorizontalOptions="Center">
-                
+
                 <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
-                        
+
                         <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
                         <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
                         <On Platform="iOS" Value="Raleway Medium" />
