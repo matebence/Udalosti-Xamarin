@@ -1,4 +1,6 @@
-﻿namespace Udalosti.Udaje.Nastavenia
+﻿using System;
+
+namespace Udalosti.Udaje.Nastavenia
 {
     class Nastavenia
     {

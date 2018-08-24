@@ -1,32 +1,184 @@
-﻿using System.Threading.Tasks;
-
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Udalosti.Udaje.Data;
+using Udalosti.Udaje.Data.Tabulka;
+using Udalosti.Udaje.Nastavenia;
+using Udalosti.Udaje.Siet;
+using Udalosti.Udaje.Siet.Model;
+using Udalosti.Udaje.Siet.Model.Autentifikator;
+using Udalosti.Udaje.Siet.Model.Pozicia;
 namespace Udalosti.Autentifikacia.Data
 {
     class AutentifikaciaUdaje : AutentifikaciaImplementacia
     {
-        public Task miestoPrihlaseniaAsync(string email, string heslo)
+        private KommunikaciaOdpoved odpovedeOdServera;
+        private SQLiteDatabaza sqliteDataza;
+
+        public AutentifikaciaUdaje(KommunikaciaOdpoved odpovedeOdServera)
         {
-            throw new System.NotImplementedException();
+            this.sqliteDataza = new SQLiteDatabaza();
+            this.odpovedeOdServera = odpovedeOdServera;
         }
 
-        public Task prihlasenieAsync(string email, string heslo, string stat, string okres, string mesto)
+        public async Task miestoPrihlaseniaAsync(string email, string heslo)
         {
-            throw new System.NotImplementedException();
+            Debug.WriteLine("Metoda miestoPrihlaseniaAsync bola vykonana");
+
+            HttpResponseMessage odpoved = await new Request().novyGetRequestAsync("json");
+            String stat, okres, mesto;
+            stat = okres = mesto = "";
+
+            if (odpoved.IsSuccessStatusCode)
+            {
+                Pozicia pozicia = JsonConvert.DeserializeObject<Pozicia>(await odpoved.Content.ReadAsStringAsync());
+
+                if (pozicia.country != null)
+                {
+                    stat = pozicia.country;
+                }
+                if (pozicia.regionName != null)
+                {
+                    okres = pozicia.regionName;
+                }
+                if (pozicia.city != null)
+                {
+                    mesto = pozicia.city;
+                }
+
+                if (sqliteDataza.miestoPrihlasenia())
+                {
+                    sqliteDataza.aktualizujMiestoPrihlasenia(new Miesto(stat, okres, mesto), 1);
+                }
+                else
+                {
+                    sqliteDataza.noveMiestoPrihlasenia(new Miesto(stat, okres, mesto));
+                }
+            }
+            await prihlasenieAsync(email, heslo, stat, okres, mesto);
         }
 
-        public Task registraciaAsync(string meno, string email, string heslo, string potvrd)
+        public async Task prihlasenieAsync(string email, string heslo, string stat, string okres, string mesto)
         {
-            throw new System.NotImplementedException();
+            Debug.WriteLine("Metoda prihlasenieAsync bola vykonana");
+
+            var obsah = new Dictionary<string, string>
+            {
+               { "email", email },
+               { "heslo", heslo },
+               { "pokus_o_prihlasenie", Guid.NewGuid().ToString() }
+            };
+
+            HttpResponseMessage odpoved = await new Request().novyPostRequestAsync(obsah, "index.php/prihlasenie");
+            if (odpoved.IsSuccessStatusCode)
+            {
+                Autentifikator autentifikator = JsonConvert.DeserializeObject<Autentifikator>(await odpoved.Content.ReadAsStringAsync());
+                Dictionary<string, string> udaje = new Dictionary<string, string>();
+
+                if (autentifikator.chyba)
+                {
+                    udaje.Add("email", email);
+                    if (autentifikator.validacia.email != null)
+                    {
+                        await odpovedeOdServera.odpovedServera(autentifikator.validacia.email, Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, udaje);
+                    }
+                    else if (autentifikator.validacia.heslo != null)
+                    {
+                        await odpovedeOdServera.odpovedServera(autentifikator.validacia.heslo, Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, udaje);
+                    }
+                    else if (autentifikator.validacia.oznam != null)
+                    {
+                        await odpovedeOdServera.odpovedServera(autentifikator.validacia.oznam, Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, udaje);
+                    }
+                }
+                else
+                {
+                    udaje.Add("email", email);
+                    udaje.Add("heslo", heslo);
+                    udaje.Add("token", autentifikator.pouzivatel.token);
+
+                    await odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, udaje);
+                }
+            }
+            else
+            {
+                await odpovedeOdServera.odpovedServera("Server je momentalne nedostupný!", Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, null);
+            }
+        }
+
+        public async Task registraciaAsync(string meno, string email, string heslo, string potvrd)
+        {
+            Debug.WriteLine("Metoda registraciaAsync bola vykonana");
+
+            var obsah = new Dictionary<string, string>
+            {
+               { "meno", meno },
+               { "email", email },
+               { "heslo", heslo },
+               { "potvrd", potvrd },
+               { "nova_registracia", Guid.NewGuid().ToString() }
+            };
+
+            HttpResponseMessage odpoved = await new Request().novyPostRequestAsync(obsah, "index.php/registracia");
+            if (odpoved.IsSuccessStatusCode)
+            {
+                Autentifikator autentifikator = JsonConvert.DeserializeObject<Autentifikator>(await odpoved.Content.ReadAsStringAsync());
+                if (autentifikator.chyba)
+                {
+                    if (autentifikator.validacia.oznam != null)
+                    {
+                        await odpovedeOdServera.odpovedServera(autentifikator.validacia.oznam, Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
+                    }
+                    else if (autentifikator.validacia.meno != null)
+                    {
+                        await odpovedeOdServera.odpovedServera(autentifikator.validacia.meno, Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
+                    }
+                    else if (autentifikator.validacia.email != null)
+                    {
+                        await odpovedeOdServera.odpovedServera(autentifikator.validacia.email, Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
+                    }
+                    else if (autentifikator.validacia.heslo != null)
+                    {
+                        await odpovedeOdServera.odpovedServera(autentifikator.validacia.heslo, Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
+                    }
+                    else if (autentifikator.validacia.potvrd != null)
+                    {
+                        await odpovedeOdServera.odpovedServera(autentifikator.validacia.potvrd, Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
+                    }
+                }
+                else
+                {
+                    await odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
+                }
+            }
+            else
+            {
+                await odpovedeOdServera.odpovedServera("Server je momentalne nedostupný!", Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
+            }
         }
 
         public void ucetJeNePristupny(string email)
         {
-            throw new System.NotImplementedException();
+            Debug.WriteLine("Metoda ucetJeNePristupny bola vykonana");
+
+            sqliteDataza.odstranPouzivatelskeUdaje(email);
         }
 
         public void ulozPrihlasovacieUdajeDoDatabazy(string email, string heslo, string token)
         {
-            throw new System.NotImplementedException();
+            Debug.WriteLine("Metoda ulozPrihlasovacieUdajeDoDatabazy bola vykonana");
+
+            if (sqliteDataza.pouzivatelskeUdaje())
+            {
+                sqliteDataza.aktualizujPouzivatelskeUdaje(new Pouzivatelia(email, heslo, token), email);
+            }
+            else
+            {
+                sqliteDataza.novePouzivatelskeUdaje(new Pouzivatelia(email, heslo, token));
+            }
         }
     }
 }
