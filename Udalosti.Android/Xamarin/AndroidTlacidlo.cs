@@ -8,6 +8,8 @@ using Udalosti.Nastroje.Xamarin;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 [assembly: ExportRenderer(typeof(Tlacidlo), typeof(AndroidTlacidlo))]
 namespace Udalosti.Droid.Xamarin
 {

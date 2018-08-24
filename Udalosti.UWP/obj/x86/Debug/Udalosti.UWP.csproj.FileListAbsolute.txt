@@ -298,3 +298,11 @@ C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Udalosti.g
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Udalosti.g.cs
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Udalosti.xaml
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Udalosti.xbf
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\SQLite-net.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\SQLite-net.pdb
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\SQLitePCLRaw.core.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\e_sqlite3.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\SQLitePCLRaw.provider.e_sqlite3.dll

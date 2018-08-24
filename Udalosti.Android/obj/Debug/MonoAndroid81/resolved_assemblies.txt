@@ -3,6 +3,13 @@ C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroi
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\Java.Interop.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\Mono.Android.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\mscorlib.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\Newtonsoft.Json.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\SQLite-net.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\SQLitePCLRaw.batteries_green.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\SQLitePCLRaw.batteries_v2.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\SQLitePCLRaw.core.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\SQLitePCLRaw.lib.e_sqlite3.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\SQLitePCLRaw.provider.e_sqlite3.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\System.Core.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\System.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\System.Xml.dll
@@ -49,7 +56,6 @@ C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroi
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\System.Net.Http.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\System.Runtime.Serialization.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\System.ServiceModel.Internals.dll
-C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\Mono.Security.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\netstandard.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\System.Data.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\System.Numerics.dll
@@ -64,3 +70,6 @@ C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroi
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\System.Security.SecureString.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\System.Web.Services.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\System.Xml.XPath.XDocument.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\System.Threading.Tasks.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\System.Globalization.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\Mono.Security.dll

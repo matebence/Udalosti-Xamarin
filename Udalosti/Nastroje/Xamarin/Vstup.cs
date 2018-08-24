@@ -1,5 +1,7 @@
 ﻿using Xamarin.Forms;
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 namespace Udalosti.Nastroje.Xamarin
 {
     public class Vstup : Entry
