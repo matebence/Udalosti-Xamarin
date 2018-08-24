@@ -85,7 +85,6 @@
     <AndroidAsset Include="Assets\raleway_semi_bold.ttf" />
     <AndroidAsset Include="Assets\raleway_semi_bold_italic.ttf" />
     <AndroidAsset Include="Assets\raleway_thin.ttf" />
-    <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>

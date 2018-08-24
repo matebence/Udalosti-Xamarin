@@ -36,12 +36,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Autentifikacia\Data\" />
-    <Folder Include="Autentifikacia\UI\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Registracia.xaml">
+    <EmbeddedResource Update="Autentifikacia\UI\Prihlasenie.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Autentifikacia\UI\Registracia.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

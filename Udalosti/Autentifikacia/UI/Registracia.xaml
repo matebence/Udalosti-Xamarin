@@ -1,0 +1,238 @@
+﻿<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Udalosti.Nastroje.Xamarin"
+    x:Class="Udalosti.Autentifikacia.UI.Registracia"
+    NavigationPage.HasNavigationBar="False">
+
+    <RelativeLayout>
+
+        <Image 
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            Aspect="AspectFill"
+            Source="{local:XamarinObrazok Udalosti.Assets.Images.udalosti_pozadie.jpg}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+
+        <Grid 
+            VerticalOptions="Center"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <Label
+                Grid.Row="0"
+                Text="Registrácia"
+                TextColor="White"
+                HorizontalOptions="Center"
+                FontSize="65">
+
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+
+                        <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
+                        <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
+                        <On Platform="iOS" Value="Raleway Medium" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+
+            <Label
+                Grid.Row="1"
+                Text="Staňte sa naším členom ešte dnes, udalosť spája všetkých!"
+                TextColor="White"
+                FontSize="16"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Center"
+                Margin="60,10,60,40">
+
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+
+                        <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
+                        <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
+                        <On Platform="iOS" Value="Raleway Medium" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+
+            <local:Vstup
+                x:Name="meno"
+                Grid.Row ="2"
+                uhol="18" 
+                vstupElementu="White"      
+                pomer="True"  
+                Placeholder="Meno"  
+                HorizontalTextAlignment="Center"  
+                FontSize="16"  
+                HeightRequest="40"  
+                WidthRequest="100"
+                Margin="50,0,50,15">
+
+                <local:Vstup.BackgroundColor>
+                    <OnPlatform x:TypeArguments="Color" Android="Transparent" WinPhone="White" iOS="Transparent"></OnPlatform>
+                </local:Vstup.BackgroundColor>
+
+                <local:Vstup.PlaceholderColor>
+                    <OnPlatform x:TypeArguments="Color" Android="White" WinPhone="Black" iOS="White"></OnPlatform>
+                </local:Vstup.PlaceholderColor>
+
+                <local:Vstup.TextColor>
+                    <OnPlatform x:TypeArguments="Color" Android="White" WinPhone="Black" iOS="White"></OnPlatform>
+                </local:Vstup.TextColor>
+
+                <local:Vstup.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+
+                        <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
+                        <On Platform="Android" Value="raleway_regular.ttf#Raleway Medium" />
+                        <On Platform="iOS" Value="Raleway" />
+                    </OnPlatform>
+                </local:Vstup.FontFamily>
+            </local:Vstup>
+
+            <local:Vstup
+                x:Name="email"
+                Grid.Row ="3"
+                uhol="18" 
+                vstupElementu="White"      
+                pomer="True"  
+                Placeholder="Email"  
+                HorizontalTextAlignment="Center"  
+                FontSize="16"  
+                HeightRequest="40"  
+                WidthRequest="100"
+                Margin="50,0,50,15">
+
+                <local:Vstup.BackgroundColor>
+                    <OnPlatform x:TypeArguments="Color" Android="Transparent" WinPhone="White" iOS="Transparent"></OnPlatform>
+                </local:Vstup.BackgroundColor>
+
+                <local:Vstup.PlaceholderColor>
+                    <OnPlatform x:TypeArguments="Color" Android="White" WinPhone="Black" iOS="White"></OnPlatform>
+                </local:Vstup.PlaceholderColor>
+
+                <local:Vstup.TextColor>
+                    <OnPlatform x:TypeArguments="Color" Android="White" WinPhone="Black" iOS="White"></OnPlatform>
+                </local:Vstup.TextColor>
+
+                <local:Vstup.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+
+                        <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
+                        <On Platform="Android" Value="raleway_regular.ttf#Raleway Medium" />
+                        <On Platform="iOS" Value="Raleway" />
+                    </OnPlatform>
+                </local:Vstup.FontFamily>
+            </local:Vstup>
+
+            <local:Vstup
+                x:Name="heslo"
+                Grid.Row ="4"
+                uhol="18" 
+                vstupElementu="White"      
+                pomer="True"  
+                Placeholder="Heslo"  
+                HorizontalTextAlignment="Center"
+                FontSize="16"  
+                HeightRequest="40"  
+                WidthRequest="100"
+                IsPassword="True"
+                Margin="50,0,50,20">
+
+                <local:Vstup.BackgroundColor>
+                    <OnPlatform x:TypeArguments="Color" Android="Transparent" WinPhone="White" iOS="Transparent"></OnPlatform>
+                </local:Vstup.BackgroundColor>
+
+                <local:Vstup.PlaceholderColor>
+                    <OnPlatform x:TypeArguments="Color" Android="White" WinPhone="Black" iOS="White"></OnPlatform>
+                </local:Vstup.PlaceholderColor>
+
+                <local:Vstup.TextColor>
+                    <OnPlatform x:TypeArguments="Color" Android="White" WinPhone="Black" iOS="White"></OnPlatform>
+                </local:Vstup.TextColor>
+
+                <local:Vstup.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+
+                        <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
+                        <On Platform="Android" Value="raleway_regular.ttf#Raleway Medium" />
+                        <On Platform="iOS" Value="Raleway" />
+                    </OnPlatform>
+                </local:Vstup.FontFamily>
+            </local:Vstup>
+
+            <local:Vstup  
+                x:Name="potvrd"
+                Grid.Row ="5"
+                uhol="18" 
+                vstupElementu="White"      
+                pomer="True"  
+                Placeholder="Potvrdte heslo"  
+                HorizontalTextAlignment="Center"
+                FontSize="16"  
+                HeightRequest="40"  
+                WidthRequest="100"
+                IsPassword="True"
+                Margin="50,0,50,20">
+
+                <local:Vstup.BackgroundColor>
+                    <OnPlatform x:TypeArguments="Color" Android="Transparent" WinPhone="White" iOS="Transparent"></OnPlatform>
+                </local:Vstup.BackgroundColor>
+
+                <local:Vstup.PlaceholderColor>
+                    <OnPlatform x:TypeArguments="Color" Android="White" WinPhone="Black" iOS="White"></OnPlatform>
+                </local:Vstup.PlaceholderColor>
+
+                <local:Vstup.TextColor>
+                    <OnPlatform x:TypeArguments="Color" Android="White" WinPhone="Black" iOS="White"></OnPlatform>
+                </local:Vstup.TextColor>
+
+                <local:Vstup.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+
+                        <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
+                        <On Platform="Android" Value="raleway_regular.ttf#Raleway Medium" />
+                        <On Platform="iOS" Value="Raleway" />
+                    </OnPlatform>
+                </local:Vstup.FontFamily>
+            </local:Vstup>
+
+            <local:Tlacidlo 
+            Clicked="registrovatSa"
+            Grid.Row="6"
+            nastavFarbuTlacidla="#0397d6"
+            uhol="20"  
+            sirka="4"
+            HeightRequest="45"
+            BackgroundColor="#0397d6"
+            Text="Registrovať"
+            TextColor="White"  
+            FontSize="16"
+            VerticalOptions="Center"
+            Margin="50,0,50,0">
+
+                <local:Tlacidlo.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+
+                        <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
+                        <On Platform="Android" Value="raleway_regular.ttf#Raleway Medium" />
+                        <On Platform="iOS" Value="Raleway" />
+                    </OnPlatform>
+                </local:Tlacidlo.FontFamily>
+            </local:Tlacidlo>
+        </Grid>
+    </RelativeLayout>
+</ContentPage>
