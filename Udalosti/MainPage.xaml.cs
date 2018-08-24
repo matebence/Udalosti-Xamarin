@@ -2,7 +2,7 @@
 
 namespace Udalosti
 {
-    public partial class MainPage : CarouselPage
+    public partial class MainPage : ContentPage
     {
         public MainPage()
         {

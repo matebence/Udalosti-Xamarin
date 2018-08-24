@@ -9,6 +9,8 @@ C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Uda
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalosti.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalosti.pdb
-C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalosti.csprojAssemblyReference.cache
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Autentifikacia\UI\Prihlasenie.xaml.g.cs
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Autentifikacia\UI\Registracia.xaml.g.cs
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\RychlaUkazkaAplikacie\UI\RychlaUkazkaAplikacie.xaml.g.cs
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\UvodnaObrazovka\UI\UvodnaObrazovka.xaml.g.cs
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalosti.csprojAssemblyReference.cache

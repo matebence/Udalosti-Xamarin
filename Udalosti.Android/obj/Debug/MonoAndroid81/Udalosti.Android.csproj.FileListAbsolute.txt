@@ -1,12 +1,12 @@
-C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\Udalosti.Android.csprojAssemblyReference.cache
-C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\res.flag
-C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\Udalosti.Android.csproj.CoreCompileInputs.cache
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\bin\Debug\Udalosti.Android.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\bin\Debug\Udalosti.Android.pdb
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\bin\Debug\com.bence.mate.Udalosti.apk
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\bin\Debug\com.bence.mate.Udalosti-Signed.apk
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\bin\Debug\Udalosti.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\bin\Debug\Udalosti.pdb
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\Udalosti.Android.csprojAssemblyReference.cache
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\res.flag
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\Udalosti.Android.csproj.CoreCompileInputs.cache
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\XamlC.stamp
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\Udalosti.Android.csproj.CopyComplete
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\Udalosti.Android.dll

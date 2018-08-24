@@ -1,0 +1,210 @@
+﻿<CarouselPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"  
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Udalosti.Nastroje.Xamarin"
+    x:Class="Udalosti.RychlaUkazkaAplikacie.UI.RychlaUkazkaAplikacie"
+    NavigationPage.HasNavigationBar="False">
+
+    <ContentPage
+        BackgroundColor="#084e7b">
+
+        <StackLayout>
+            <StackLayout
+                VerticalOptions="CenterAndExpand">
+
+                <Image 
+                    Source="{local:XamarinObrazok Udalosti.Assets.Images.udalosti_registracia_prihlasovanie.png}"/>
+
+                <Label
+                    Text="Registrácia a Prihlásenie"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="25"
+                    HorizontalTextAlignment="Center">
+
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+
+                            <On Platform="UWP" Value="Assets/Fonts/raleway_bold.ttf#Raleway" />
+                            <On Platform="Android" Value="raleway_bold.ttf#Raleway Bold" />
+                            <On Platform="iOS" Value="Raleway Bold" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+
+                <Label
+                    Text="Registrujte sa, a majte prehľad nad všetkými udalosťami"
+                    TextColor="White"
+                    FontSize="17"
+                    HorizontalTextAlignment="Center"
+                    Margin="50,20,50,0">
+
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+
+                            <On Platform="UWP" Value="Assets/Fonts/raleway_thin.ttf#Raleway" />
+                            <On Platform="Android" Value="raleway_thin.ttf#Raleway Thin" />
+                            <On Platform="iOS" Value="Raleway Thin" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+            </StackLayout>
+
+            <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="End"
+                    Margin="0,0,0,10">
+
+                <Image 
+                    Source="{local:XamarinObrazok Udalosti.Assets.Images.stav_aktivny.png}"
+                    Margin="0,0,5,0"/>
+
+                <Image 
+                    Source="{local:XamarinObrazok Udalosti.Assets.Images.stav_passivny.png}"
+                    Margin="0,0,5,0"/>
+
+                <Image 
+                    Source="{local:XamarinObrazok Udalosti.Assets.Images.stav_passivny.png}"
+                    Margin="0,0,5,0"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage
+        BackgroundColor="#015d97">
+
+        <StackLayout>
+            <StackLayout
+                VerticalOptions="CenterAndExpand">
+
+                <Image 
+                    Source="{local:XamarinObrazok Udalosti.Assets.Images.udalosti_objavuj.png}"/>
+
+                <Label
+                    Text="Objavujte"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="25"
+                    HorizontalTextAlignment="Center">
+
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+
+                            <On Platform="UWP" Value="Assets/Fonts/raleway_bold.ttf#Raleway" />
+                            <On Platform="Android" Value="raleway_bold.ttf#Raleway Bold" />
+                            <On Platform="iOS" Value="Raleway Bold" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+
+                <Label
+                    Text="Vyhldávajte z udalostí a nájdite tie ktoré Vás zaujímajú"
+                    TextColor="White"
+                    FontSize="17"
+                    HorizontalTextAlignment="Center"
+                    Margin="50,20,50,0">
+
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+
+                            <On Platform="UWP" Value="Assets/Fonts/raleway_thin.ttf#Raleway" />
+                            <On Platform="Android" Value="raleway_thin.ttf#Raleway Thin" />
+                            <On Platform="iOS" Value="Raleway Thin" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+            </StackLayout>
+
+            <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="End"
+                    Margin="0,0,0,10">
+
+                <Image 
+                    Source="{local:XamarinObrazok Udalosti.Assets.Images.stav_passivny.png}"
+                    Margin="0,0,5,0"/>
+
+                <Image 
+                    Source="{local:XamarinObrazok Udalosti.Assets.Images.stav_aktivny.png}"
+                    Margin="0,0,5,0"/>
+
+                <Image 
+                    Source="{local:XamarinObrazok Udalosti.Assets.Images.stav_passivny.png}"
+                    Margin="0,0,5,0"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage
+        BackgroundColor="#1175b4">
+
+        <StackLayout>
+            <StackLayout
+                VerticalOptions="CenterAndExpand">
+
+                <Image 
+                    Source="{local:XamarinObrazok Udalosti.Assets.Images.udalosti_podla_pozicie.png}"/>
+
+                <Label
+                    Text="Podľa pozície"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="25"
+                    HorizontalTextAlignment="Center">
+
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+
+                            <On Platform="UWP" Value="Assets/Fonts/raleway_bold.ttf#Raleway" />
+                            <On Platform="Android" Value="raleway_bold.ttf#Raleway Bold" />
+                            <On Platform="iOS" Value="Raleway Bold" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+
+                <Label
+                    Text="Hladajte udalosti ktoré sú najbližšie k Vám podla Vašej pozície"
+                    TextColor="White"
+                    FontSize="17"
+                    HorizontalTextAlignment="Center"
+                    Margin="50,20,50,0">
+
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+
+                            <On Platform="UWP" Value="Assets/Fonts/raleway_thin.ttf#Raleway" />
+                            <On Platform="Android" Value="raleway_thin.ttf#Raleway Thin" />
+                            <On Platform="iOS" Value="Raleway Thin" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+            </StackLayout>
+
+            <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="End">
+
+                <Button
+                Clicked="rychlaUkazkaAplikaciePrecitana"
+                HorizontalOptions="End"
+                Text="Dokončiť"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                FontSize="18">
+
+                    <Button.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+
+                            <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
+                            <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
+                            <On Platform="iOS" Value="Raleway Medium" />
+                        </OnPlatform>
+                    </Button.FontFamily>
+                </Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage>
+</CarouselPage>
