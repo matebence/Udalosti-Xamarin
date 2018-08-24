@@ -6,6 +6,9 @@ namespace Udalosti
 {
     public partial class App : Application
     {
+        public static string udalostiAdresa = "https://bmate18.student.ki.fpv.ukf.sk/udalosti/";
+        public static string geoAdresa = "http://ip-api.com/";
+
         public App()
         {
             InitializeComponent();
