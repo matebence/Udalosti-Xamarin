@@ -6,7 +6,7 @@ using Xamarin.Forms.Xaml;
 namespace Udalosti.Nastroje.Xamarin
 {
     [ContentProperty(nameof(Zdroj))]
-    public class XamarinObrazok : IMarkupExtension
+    public class Obrazok : IMarkupExtension
     {
         public string Zdroj { get; set; }
 
@@ -16,7 +16,7 @@ namespace Udalosti.Nastroje.Xamarin
             {
                 return null;
             }
-            var obrazok = ImageSource.FromResource(Zdroj, typeof(XamarinObrazok).GetTypeInfo().Assembly);
+            var obrazok = ImageSource.FromResource(Zdroj, typeof(Obrazok).GetTypeInfo().Assembly);
             return obrazok;
         }
     }

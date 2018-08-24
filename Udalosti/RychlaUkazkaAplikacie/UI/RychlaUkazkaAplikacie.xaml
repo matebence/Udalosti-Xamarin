@@ -13,7 +13,7 @@
                 VerticalOptions="CenterAndExpand">
 
                 <Image 
-                    Source="{local:XamarinObrazok Udalosti.Assets.Images.udalosti_registracia_prihlasovanie.png}"/>
+                    Source="{local:Obrazok Udalosti.Assets.Images.udalosti_registracia_prihlasovanie.png}"/>
 
                 <Label
                     Text="Registrácia a Prihlásenie"
@@ -57,15 +57,15 @@
                     Margin="0,0,0,10">
 
                 <Image 
-                    Source="{local:XamarinObrazok Udalosti.Assets.Images.stav_aktivny.png}"
+                    Source="{local:Obrazok Udalosti.Assets.Images.stav_aktivny.png}"
                     Margin="0,0,5,0"/>
 
                 <Image 
-                    Source="{local:XamarinObrazok Udalosti.Assets.Images.stav_passivny.png}"
+                    Source="{local:Obrazok Udalosti.Assets.Images.stav_passivny.png}"
                     Margin="0,0,5,0"/>
 
                 <Image 
-                    Source="{local:XamarinObrazok Udalosti.Assets.Images.stav_passivny.png}"
+                    Source="{local:Obrazok Udalosti.Assets.Images.stav_passivny.png}"
                     Margin="0,0,5,0"/>
             </StackLayout>
         </StackLayout>
@@ -79,7 +79,7 @@
                 VerticalOptions="CenterAndExpand">
 
                 <Image 
-                    Source="{local:XamarinObrazok Udalosti.Assets.Images.udalosti_objavuj.png}"/>
+                    Source="{local:Obrazok Udalosti.Assets.Images.udalosti_objavuj.png}"/>
 
                 <Label
                     Text="Objavujte"
@@ -123,15 +123,15 @@
                     Margin="0,0,0,10">
 
                 <Image 
-                    Source="{local:XamarinObrazok Udalosti.Assets.Images.stav_passivny.png}"
+                    Source="{local:Obrazok Udalosti.Assets.Images.stav_passivny.png}"
                     Margin="0,0,5,0"/>
 
                 <Image 
-                    Source="{local:XamarinObrazok Udalosti.Assets.Images.stav_aktivny.png}"
+                    Source="{local:Obrazok Udalosti.Assets.Images.stav_aktivny.png}"
                     Margin="0,0,5,0"/>
 
                 <Image 
-                    Source="{local:XamarinObrazok Udalosti.Assets.Images.stav_passivny.png}"
+                    Source="{local:Obrazok Udalosti.Assets.Images.stav_passivny.png}"
                     Margin="0,0,5,0"/>
             </StackLayout>
         </StackLayout>
@@ -145,7 +145,7 @@
                 VerticalOptions="CenterAndExpand">
 
                 <Image 
-                    Source="{local:XamarinObrazok Udalosti.Assets.Images.udalosti_podla_pozicie.png}"/>
+                    Source="{local:Obrazok Udalosti.Assets.Images.udalosti_podla_pozicie.png}"/>
 
                 <Label
                     Text="Podľa pozície"
