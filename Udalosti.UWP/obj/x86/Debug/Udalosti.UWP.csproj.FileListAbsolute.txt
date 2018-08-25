@@ -293,11 +293,6 @@ C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\qualifiers
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Xamarin.Forms.Platform.UAP.pri.xml
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\ProjectArchitectures.txt
-C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Udalosti.xbf
-C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Udalosti.g.i.cs
-C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Udalosti.g.cs
-C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Udalosti.xaml
-C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Udalosti.xbf
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Newtonsoft.Json.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\SQLite-net.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\SQLite-net.pdb
@@ -306,3 +301,8 @@ C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\SQLitePCLR
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\SQLitePCLRaw.core.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\e_sqlite3.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\UdalostiUWP.g.i.cs
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\UdalostiUWP.g.cs
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\UdalostiUWP.xaml
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\UdalostiUWP.xbf
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\UdalostiUWP.xbf

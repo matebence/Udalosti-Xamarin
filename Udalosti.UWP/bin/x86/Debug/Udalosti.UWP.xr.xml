@@ -12,6 +12,6 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Background" />
     </RootType>
-    <RootType FullName="Udalosti.UWP.MainPage" />
+    <RootType FullName="Udalosti.UWP.UdalostiUWP" />
   </Roots.RootTypes>
 </Roots>

@@ -28,6 +28,7 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
 
             <Grid
@@ -174,6 +175,13 @@
                     </OnPlatform>
                 </local:Tlacidlo.FontFamily>
             </local:Tlacidlo>
+
+            <ActivityIndicator
+            x:Name="nacitavanie"
+            Grid.Row="5"
+            Color="White"
+            IsVisible="false"
+            IsRunning="true" />
         </Grid>
 
         <Grid 

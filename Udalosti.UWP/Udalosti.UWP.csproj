@@ -92,8 +92,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Udalosti.xaml.cs">
-      <DependentUpon>Udalosti.xaml</DependentUpon>
+    <Compile Include="UdalostiUWP.xaml.cs">
+      <DependentUpon>UdalostiUWP.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -162,7 +162,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Udalosti.xaml">
+    <Page Include="UdalostiUWP.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -93,7 +93,7 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Udalosti.cs" />
+    <Compile Include="UdalostiOS.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Xamarin\iOSTlacidlo.cs" />
     <Compile Include="Xamarin\iOSVstup.cs" />

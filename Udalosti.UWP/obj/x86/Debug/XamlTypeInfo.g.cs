@@ -218,14 +218,14 @@ namespace Udalosti.UWP.Udalosti_UWP_XamlTypeInfo
             _typeNameTable[1] = "Xamarin.Forms.Platform.UWP.WindowsBasePage";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[3] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[4] = "Udalosti.UWP.MainPage";
+            _typeNameTable[4] = "Udalosti.UWP.UdalostiUWP";
 
             _typeTable = new global::System.Type[5];
             _typeTable[0] = typeof(global::Xamarin.Forms.Platform.UWP.WindowsPage);
             _typeTable[1] = typeof(global::Xamarin.Forms.Platform.UWP.WindowsBasePage);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[3] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[4] = typeof(global::Udalosti.UWP.MainPage);
+            _typeTable[4] = typeof(global::Udalosti.UWP.UdalostiUWP);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -261,7 +261,7 @@ namespace Udalosti.UWP.Udalosti_UWP_XamlTypeInfo
         }
 
         private object Activate_0_WindowsPage() { return new global::Xamarin.Forms.Platform.UWP.WindowsPage(); }
-        private object Activate_4_MainPage() { return new global::Udalosti.UWP.MainPage(); }
+        private object Activate_4_UdalostiUWP() { return new global::Udalosti.UWP.UdalostiUWP(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -292,9 +292,9 @@ namespace Udalosti.UWP.Udalosti_UWP_XamlTypeInfo
                 xamlType = new global::Udalosti.UWP.Udalosti_UWP_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 4:   //  Udalosti.UWP.MainPage
+            case 4:   //  Udalosti.UWP.UdalostiUWP
                 userType = new global::Udalosti.UWP.Udalosti_UWP_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Xamarin.Forms.Platform.UWP.WindowsPage"));
-                userType.Activator = Activate_4_MainPage;
+                userType.Activator = Activate_4_UdalostiUWP;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

@@ -239,7 +239,7 @@
             x:Name="nacitavanie"
             Grid.Row="7"
             Color="White"
-            IsVisible="True"
+            IsVisible="false"
             IsRunning="true" />
         </Grid>
     </RelativeLayout>

@@ -23,10 +23,14 @@ namespace Udalosti.Autentifikacia.UI {
         private global::Udalosti.Nastroje.Xamarin.Vstup heslo;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.ActivityIndicator nacitavanie;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Prihlasenie));
             email = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Udalosti.Nastroje.Xamarin.Vstup>(this, "email");
             heslo = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Udalosti.Nastroje.Xamarin.Vstup>(this, "heslo");
+            nacitavanie = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ActivityIndicator>(this, "nacitavanie");
         }
     }
 }
