@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Diagnostics;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,16 +11,19 @@ namespace Udalosti.Autentifikacia.UI
 		public Prihlasenie ()
 		{
 			InitializeComponent();
-		}
+        }
 
         private async void prihlasitSa(object sender, EventArgs e)
         {
-            await Navigation.PopAsync();
+            Debug.WriteLine("Metoda prihlasitSa bola vykonana");
+
         }
 
         private async void tlacidloRegistrovat(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Registracia());
+            Debug.WriteLine("Metoda tlacidloRegistrovat bola vykonana");
+
+            await Navigation.PushAsync(new Registracia(), true);
         }
     }
 }

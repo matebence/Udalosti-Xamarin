@@ -49,16 +49,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="RychlaUkazkaAplikacie\UI\UkazkaAplikacie.xaml.cs">
+      <DependentUpon>UkazkaAplikacie.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Autentifikacia\UI\Prihlasenie.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Autentifikacia\UI\Registracia.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="RychlaUkazkaAplikacie\UI\RychlaUkazkaAplikacie.xaml">
+    <EmbeddedResource Update="RychlaUkazkaAplikacie\UI\UkazkaAplikacie.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="UvodnaObrazovka\UI\UvodnaObrazovka.xaml">
+    <EmbeddedResource Update="Uvod\UI\UvodnaObrazovka.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

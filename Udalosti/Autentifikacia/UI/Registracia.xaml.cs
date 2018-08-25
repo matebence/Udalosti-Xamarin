@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Diagnostics;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,7 +15,8 @@ namespace Udalosti.Autentifikacia.UI
 
         private async void registrovatSa(object sender, EventArgs e)
         {
-            await Navigation.PopAsync();
+            Debug.WriteLine("Metoda registrovatSa bola vykonana");
+
         }
     }
 }
