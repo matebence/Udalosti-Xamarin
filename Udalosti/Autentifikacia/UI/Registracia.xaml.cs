@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using Udalosti.Autentifikacia.Data;
+using Udalosti.Nastroje;
 using Udalosti.Udaje.Nastavenia;
 using Udalosti.Udaje.Siet.Model;
 using Xamarin.Forms;
@@ -50,7 +50,7 @@ namespace Udalosti.Autentifikacia.UI
         {
             Debug.WriteLine("Metoda registrovatSa bola vykonana");
 
-            if (NetworkInterface.GetIsNetworkAvailable())
+            if (Spojenie.existuje())
             {
                 nacitavanie.IsVisible = true;
 

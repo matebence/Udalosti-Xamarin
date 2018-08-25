@@ -20,7 +20,7 @@ namespace Udalosti.RychlaUkazkaAplikacie.UI
 
         private void init()
         {
-            preferencie = new Preferencie();
+            this.preferencie = new Preferencie();
         }
 
         private void rychlaUkazkaAplikaciePrecitana(object sender, EventArgs e)

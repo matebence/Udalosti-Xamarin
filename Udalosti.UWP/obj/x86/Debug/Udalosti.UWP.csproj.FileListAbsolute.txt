@@ -306,3 +306,8 @@ C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\UdalostiUW
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\UdalostiUWP.xaml
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\UdalostiUWP.xbf
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\UdalostiUWP.xbf
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Plugin.Connectivity.Abstractions.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Plugin.Connectivity.Abstractions.pdb
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Plugin.Connectivity.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Plugin.Connectivity.pdb
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Plugin.Connectivity.pri.xml

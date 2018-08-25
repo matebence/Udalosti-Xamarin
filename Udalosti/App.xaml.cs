@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using Udalosti.Autentifikacia.UI;
+using Udalosti.Nastroje.Xamarin;
 using Udalosti.RychlaUkazkaAplikacie.UI;
 using Udalosti.Uvod.Data;
 using Udalosti.Uvod.UI;
@@ -27,8 +28,8 @@ namespace Udalosti
 
         private void init()
         {
-            uvodnaObrazovkaUdaje = new UvodnaObrazovkaUdaje();
-            startAplikacie();
+            this.uvodnaObrazovkaUdaje = new UvodnaObrazovkaUdaje();
+            this.startAplikacie();
         }
 
         private void startAplikacie()
@@ -37,11 +38,18 @@ namespace Udalosti
 
             if (uvodnaObrazovkaUdaje.prvyStart())
             {
-                MainPage = new UvodnaObrazovka();
+                if (uvodnaObrazovkaUdaje.zistiCiPouzivatelskoKontoExistuje())
+                {
+                    MainPage = new UvodnaObrazovka();
+                }
+                else
+                {
+                    MainPage = new NavigationPage(new Prihlasenie());
+                }
             }
             else
             {
-                if (AndroidiOS())
+                if (Platforma.nastavPlatformu(true, true, false))
                 {
                     MainPage = new NavigationPage(new UkazkaAplikacie());
                 }
@@ -49,23 +57,6 @@ namespace Udalosti
                 {
                     MainPage = new NavigationPage(new Prihlasenie());
                 }
-            }
-        }
-
-        private bool AndroidiOS()
-        {
-            Debug.WriteLine("Metoda AndroidiOS bola vykonana");
-
-            switch (Device.RuntimePlatform)
-            {
-                case Device.iOS:
-                    return true;
-                case Device.Android:
-                    return true;
-                case Device.UWP:
-                    return false;
-                default:
-                    return false;
             }
         }
 

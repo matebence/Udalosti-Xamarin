@@ -25,10 +25,19 @@ namespace Udalosti.Udaje.Data
             databaza.CreateTableAsync<Miesto>().Wait();
         }
 
+        private void init()
+        {
+            if (databaza == null)
+            {
+                databaza = new SQLiteAsyncConnection(App.databaza);
+            }
+        }
+
         public Task<int> novePouzivatelskeUdaje(Pouzivatelia pouzivatelia)
         {
             Debug.WriteLine("Metoda novePouzivatelskeUdaje bola vykonana");
 
+            init();
             if (pouzivatelia.idPouzivatel != 0)
             {
                 return databaza.UpdateAsync(pouzivatelia);
@@ -43,6 +52,7 @@ namespace Udalosti.Udaje.Data
         {
             Debug.WriteLine("Metoda odstranPouzivatelskeUdaje bola vykonana");
 
+            init();
             return databaza.DeleteAsync(pouzivatelia);
         }
 
@@ -50,7 +60,8 @@ namespace Udalosti.Udaje.Data
         {
             Debug.WriteLine("Metoda pouzivatelskeUdaje bola vykonana");
 
-            if (databaza.Table<Pouzivatelia>().FirstOrDefaultAsync() != null)
+            init();
+            if (databaza.Table<Pouzivatelia>().FirstOrDefaultAsync().Result != null)
             {
                 return true;
             }
@@ -64,6 +75,7 @@ namespace Udalosti.Udaje.Data
         {
             Debug.WriteLine("Metoda vratAktualnehoPouzivatela bola vykonana");
 
+            init();
             return databaza.Table<Pouzivatelia>().FirstOrDefaultAsync();
         }
 
@@ -71,6 +83,7 @@ namespace Udalosti.Udaje.Data
         {
             Debug.WriteLine("Metoda noveMiestoPrihlasenia bola vykonana");
 
+            init();
             if (miesto.idMiesto != 0)
             {
                 return databaza.UpdateAsync(miesto);
@@ -85,6 +98,7 @@ namespace Udalosti.Udaje.Data
         {
             Debug.WriteLine("Metoda odstranMiestoPrihlasenia bola vykonana");
 
+            init();
             return databaza.DeleteAsync(miesto);
         }
 
@@ -92,7 +106,8 @@ namespace Udalosti.Udaje.Data
         {
             Debug.WriteLine("Metoda miestoPrihlasenia bola vykonana");
 
-            if (databaza.Table<Miesto>().FirstOrDefaultAsync() != null)
+            init();
+            if (databaza.Table<Miesto>().FirstOrDefaultAsync().Result != null)
             {
                 return true;
             }
@@ -106,6 +121,7 @@ namespace Udalosti.Udaje.Data
         {
             Debug.WriteLine("Metoda vratMiestoPrihlasenia bola vykonana");
 
+            init();
             return databaza.Table<Miesto>().FirstOrDefaultAsync();
         }
     }

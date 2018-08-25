@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using Udalosti.Nastroje;
+using Udalosti.Udaje.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,6 +11,7 @@ namespace Udalosti.Autentifikacia.UI
 	public partial class Prihlasenie : ContentPage
 	{
         private Preferencie preferencie;
+        private SQLiteDatabaza sqliteDatabaza;
 
 		public Prihlasenie ()
 		{
@@ -19,12 +21,14 @@ namespace Udalosti.Autentifikacia.UI
 
         private void init()
         {
-            preferencie = new Preferencie();
+            this.preferencie = new Preferencie();
+            this.sqliteDatabaza = new SQLiteDatabaza();
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+            sqliteDatabaza.VyvorDatabazu();
             await preferencie.novaPreferencia<bool>("prvyStart", true);
         }
 

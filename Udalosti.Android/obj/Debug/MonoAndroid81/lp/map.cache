@@ -1,5 +1,7 @@
 FormsViewGroup
 Newtonsoft.Json
+Plugin.Connectivity.Abstractions
+Plugin.Connectivity
 SQLite-net
 SQLitePCLRaw.batteries_green
 SQLitePCLRaw.batteries_v2
@@ -33,5 +35,3 @@ Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
 netstandard
 System.Reflection.Extensions
-Plugin.Connectivity.Abstractions
-Plugin.Connectivity
