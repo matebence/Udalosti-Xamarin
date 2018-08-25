@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Threading.Tasks;
+using Udalosti.Udaje.Data.Tabulka;
 
 namespace Udalosti.Uvod.Data
 {
@@ -8,6 +9,6 @@ namespace Udalosti.Uvod.Data
 
         bool zistiCiPouzivatelskoKontoExistuje();
 
-        Dictionary<string, string> prihlasPouzivatela();
+        Task<Pouzivatelia> prihlasPouzivatela();
     }
 }

@@ -23,11 +23,10 @@ namespace Udalosti.RychlaUkazkaAplikacie.UI
             preferencie = new Preferencie();
         }
 
-        private async void rychlaUkazkaAplikaciePrecitana(object sender, EventArgs e)
+        private void rychlaUkazkaAplikaciePrecitana(object sender, EventArgs e)
         {
             Debug.WriteLine("Metoda rychlaUkazkaAplikaciePrecitana bola vykonana");
 
-            await preferencie.novaPreferencia<bool>("prvyStart", true);
             Application.Current.MainPage = new NavigationPage(new Prihlasenie());
         }
     }

@@ -30,6 +30,7 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
 
             <Label
@@ -233,6 +234,13 @@
                     </OnPlatform>
                 </local:Tlacidlo.FontFamily>
             </local:Tlacidlo>
+
+            <ActivityIndicator
+            x:Name="nacitavanie"
+            Grid.Row="7"
+            Color="White"
+            IsVisible="True"
+            IsRunning="true" />
         </Grid>
     </RelativeLayout>
 </ContentPage>

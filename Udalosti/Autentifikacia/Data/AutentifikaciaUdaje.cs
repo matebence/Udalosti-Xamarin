@@ -51,11 +51,11 @@ namespace Udalosti.Autentifikacia.Data
 
                 if (sqliteDataza.miestoPrihlasenia())
                 {
-                    sqliteDataza.aktualizujMiestoPrihlasenia(new Miesto(stat, okres, mesto), 1);
+                    await sqliteDataza.noveMiestoPrihlasenia(new Miesto(1, stat, okres, mesto));
                 }
                 else
                 {
-                    sqliteDataza.noveMiestoPrihlasenia(new Miesto(stat, okres, mesto));
+                    await sqliteDataza.noveMiestoPrihlasenia(new Miesto(0, stat, okres, mesto));
                 }
             }
             await prihlasenieAsync(email, heslo, stat, okres, mesto);
@@ -160,11 +160,11 @@ namespace Udalosti.Autentifikacia.Data
             }
         }
 
-        public void ucetJeNePristupny(string email)
+        public void ucetJeNePristupny(Pouzivatelia pouzivatelia)
         {
             Debug.WriteLine("Metoda ucetJeNePristupny bola vykonana");
 
-            sqliteDataza.odstranPouzivatelskeUdaje(email);
+            sqliteDataza.odstranPouzivatelskeUdaje(pouzivatelia);
         }
 
         public void ulozPrihlasovacieUdajeDoDatabazy(string email, string heslo, string token)
@@ -173,11 +173,11 @@ namespace Udalosti.Autentifikacia.Data
 
             if (sqliteDataza.pouzivatelskeUdaje())
             {
-                sqliteDataza.aktualizujPouzivatelskeUdaje(new Pouzivatelia(email, heslo, token), email);
+                sqliteDataza.novePouzivatelskeUdaje(new Pouzivatelia(1, email, heslo, token));
             }
             else
             {
-                sqliteDataza.novePouzivatelskeUdaje(new Pouzivatelia(email, heslo, token));
+                sqliteDataza.novePouzivatelskeUdaje(new Pouzivatelia(0, email, heslo, token));
             }
         }
     }

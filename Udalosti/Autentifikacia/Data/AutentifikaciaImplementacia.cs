@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Udalosti.Udaje.Data.Tabulka;
 
 namespace Udalosti.Autentifikacia.Data
 {
     interface AutentifikaciaImplementacia
     {
-        void ucetJeNePristupny(String email);
+        void ucetJeNePristupny(Pouzivatelia pouzivatelia);
 
         void ulozPrihlasovacieUdajeDoDatabazy(String email, String heslo, String token);
 

@@ -14,8 +14,9 @@ namespace Udalosti.Udaje.Data.Tabulka
         {
         }
 
-        public Pouzivatelia(string email, string heslo, string token)
+        public Pouzivatelia(int idPouzivatel, string email, string heslo, string token)
         {
+            this.idPouzivatel = idPouzivatel;
             this.email = email;
             this.heslo = heslo;
             this.token = token;

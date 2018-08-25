@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Udalosti.Udaje.Data;
 using Udalosti.Nastroje;
 using System.Threading.Tasks;
+using Udalosti.Udaje.Data.Tabulka;
+
 namespace Udalosti.Uvod.Data
 {
     class UvodnaObrazovkaUdaje : UvodnaObrazovkaImplementacia
@@ -14,7 +15,7 @@ namespace Udalosti.Uvod.Data
             this.sqliteDatabaza = new SQLiteDatabaza();
         }
 
-        public Dictionary<string, string> prihlasPouzivatela()
+        public Task<Pouzivatelia> prihlasPouzivatela()
         {
             Debug.WriteLine("Metoda prihlasPouzivatela bola vykonana");
 

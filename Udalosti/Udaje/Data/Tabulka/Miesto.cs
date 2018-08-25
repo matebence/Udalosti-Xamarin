@@ -14,8 +14,9 @@ namespace Udalosti.Udaje.Data.Tabulka
         {
         }
 
-        public Miesto(string stat, string okres, string mesto)
+        public Miesto(int idMiesto, string stat, string okres, string mesto)
         {
+            this.idMiesto = idMiesto;
             this.stat = stat;
             this.okres = okres;
             this.mesto = mesto;

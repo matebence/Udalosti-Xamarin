@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Udalosti.Udaje.Data.Tabulka;
 
 namespace Udalosti.Udaje.Data
@@ -9,26 +7,22 @@ namespace Udalosti.Udaje.Data
     {
         void VyvorDatabazu();
 
-        Task<bool> tabulkaExistuje(string fileName);
+        void tabulkaExistuje();
 
-        void novePouzivatelskeUdaje(Pouzivatelia pouzivatelia);
+        Task<int> novePouzivatelskeUdaje(Pouzivatelia pouzivatelia);
 
-        void aktualizujPouzivatelskeUdaje(Pouzivatelia pouzivatelia, String email);
-
-        void odstranPouzivatelskeUdaje(String email);
+        Task<int> odstranPouzivatelskeUdaje(Pouzivatelia pouzivatelia);
 
         bool pouzivatelskeUdaje();
 
-        Dictionary<string, string> vratAktualnehoPouzivatela();
+        Task<Pouzivatelia> vratAktualnehoPouzivatela();
 
-        void noveMiestoPrihlasenia(Miesto miesto);
+        Task<int> noveMiestoPrihlasenia(Miesto miesto);
 
-        void aktualizujMiestoPrihlasenia(Miesto miesto, int idMiesto);
-
-        void odstranMiestoPrihlasenia(int idMiesto);
+        Task<int> odstranMiestoPrihlasenia(Miesto miesto);
 
         bool miestoPrihlasenia();
 
-        Dictionary<string, string> vratMiestoPrihlasenia();
+        Task<Miesto> vratMiestoPrihlasenia();
     }
 }

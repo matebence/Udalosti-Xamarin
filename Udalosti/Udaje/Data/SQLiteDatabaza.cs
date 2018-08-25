@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using SQLite;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Udalosti.Udaje.Data.Tabulka;
 
@@ -6,64 +7,106 @@ namespace Udalosti.Udaje.Data
 {
     class SQLiteDatabaza : SQLDataImplementacia
     {
-        public void aktualizujMiestoPrihlasenia(Miesto miesto, int idMiesto)
+        private SQLiteAsyncConnection databaza;
+
+        public void VyvorDatabazu()
         {
-            throw new System.NotImplementedException();
+            Debug.WriteLine("Metoda VyvorDatabazu bola vykonana");
+
+            databaza = new SQLiteAsyncConnection(App.databaza);
+            this.tabulkaExistuje();
         }
 
-        public void aktualizujPouzivatelskeUdaje(Pouzivatelia pouzivatelia, string email)
+        public void tabulkaExistuje()
         {
-            throw new System.NotImplementedException();
+            Debug.WriteLine("Metoda tabulkaExistuje bola vykonana");
+
+            databaza.CreateTableAsync<Pouzivatelia>().Wait();
+            databaza.CreateTableAsync<Miesto>().Wait();
         }
 
-        public bool miestoPrihlasenia()
+        public Task<int> novePouzivatelskeUdaje(Pouzivatelia pouzivatelia)
         {
-            throw new System.NotImplementedException();
+            Debug.WriteLine("Metoda novePouzivatelskeUdaje bola vykonana");
+
+            if (pouzivatelia.idPouzivatel != 0)
+            {
+                return databaza.UpdateAsync(pouzivatelia);
+            }
+            else
+            {
+                return databaza.InsertAsync(pouzivatelia);
+            }
         }
 
-        public void noveMiestoPrihlasenia(Miesto miesto)
+        public Task<int> odstranPouzivatelskeUdaje(Pouzivatelia pouzivatelia)
         {
-            throw new System.NotImplementedException();
-        }
+            Debug.WriteLine("Metoda odstranPouzivatelskeUdaje bola vykonana");
 
-        public void novePouzivatelskeUdaje(Pouzivatelia pouzivatelia)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void odstranMiestoPrihlasenia(int idMiesto)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void odstranPouzivatelskeUdaje(string email)
-        {
-            throw new System.NotImplementedException();
+            return databaza.DeleteAsync(pouzivatelia);
         }
 
         public bool pouzivatelskeUdaje()
         {
-            throw new System.NotImplementedException();
+            Debug.WriteLine("Metoda pouzivatelskeUdaje bola vykonana");
+
+            if (databaza.Table<Pouzivatelia>().FirstOrDefaultAsync() != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        public Task<bool> tabulkaExistuje(string fileName)
+        public Task<Pouzivatelia> vratAktualnehoPouzivatela()
         {
-            throw new System.NotImplementedException();
+            Debug.WriteLine("Metoda vratAktualnehoPouzivatela bola vykonana");
+
+            return databaza.Table<Pouzivatelia>().FirstOrDefaultAsync();
         }
 
-        public Dictionary<string, string> vratAktualnehoPouzivatela()
+        public Task<int> noveMiestoPrihlasenia(Miesto miesto)
         {
-            throw new System.NotImplementedException();
+            Debug.WriteLine("Metoda noveMiestoPrihlasenia bola vykonana");
+
+            if (miesto.idMiesto != 0)
+            {
+                return databaza.UpdateAsync(miesto);
+            }
+            else
+            {
+                return databaza.InsertAsync(miesto);
+            }
         }
 
-        public Dictionary<string, string> vratMiestoPrihlasenia()
+        public Task<int> odstranMiestoPrihlasenia(Miesto miesto)
         {
-            throw new System.NotImplementedException();
+            Debug.WriteLine("Metoda odstranMiestoPrihlasenia bola vykonana");
+
+            return databaza.DeleteAsync(miesto);
         }
 
-        public void VyvorDatabazu()
+        public bool miestoPrihlasenia()
         {
-            throw new System.NotImplementedException();
+            Debug.WriteLine("Metoda miestoPrihlasenia bola vykonana");
+
+            if (databaza.Table<Miesto>().FirstOrDefaultAsync() != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public Task<Miesto> vratMiestoPrihlasenia()
+        {
+            Debug.WriteLine("Metoda vratMiestoPrihlasenia bola vykonana");
+
+            return databaza.Table<Miesto>().FirstOrDefaultAsync();
         }
     }
 }
