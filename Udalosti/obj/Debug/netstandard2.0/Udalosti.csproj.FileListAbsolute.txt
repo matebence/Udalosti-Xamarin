@@ -12,5 +12,7 @@ C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Aut
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Uvod\UI\UvodnaObrazovka.xaml.g.cs
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\RychlaUkazkaAplikacie\UI\UkazkaAplikacie.xaml.g.cs
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\XamlC.stamp
-C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalost\UI\ZoznamUdalosti.xaml.g.cs
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalosti.csprojAssemblyReference.cache
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalost\UI\Objavuj.xaml.g.cs
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalost\UI\PodlaPozicie.xaml.g.cs
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalost\Nav\NavigaciaUdalosti.xaml.g.cs

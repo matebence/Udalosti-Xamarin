@@ -5,6 +5,7 @@ using Udalosti.Autentifikacia.Data;
 using Udalosti.Udaje.Data.Tabulka;
 using Udalosti.Udaje.Nastavenia;
 using Udalosti.Udaje.Siet.Model;
+using Udalosti.Udaje.Zdroje;
 using Udalosti.Udalost.Data;
 using Udalosti.Uvod.Data;
 
@@ -75,7 +76,7 @@ namespace Udalosti.Token
             return null;
         }
 
-        public Task dataZoServeraAsync(string odpoved, string od, List<Udaje.Siet.Model.Udalost.Udalost> udaje)
+        public Task dataZoServeraAsync(string odpoved, string od, List<ObsahUdalosti> udaje)
         {
             throw new System.NotImplementedException();
         }
