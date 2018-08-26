@@ -4,6 +4,7 @@ using System.IO;
 using Udalosti.Autentifikacia.UI;
 using Udalosti.Nastroje.Xamarin;
 using Udalosti.RychlaUkazkaAplikacie.UI;
+using Udalosti.Udaje.Nastavenia;
 using Udalosti.Uvod.Data;
 using Udalosti.Uvod.UI;
 using Xamarin.Forms;
@@ -44,7 +45,7 @@ namespace Udalosti
                 }
                 else
                 {
-                    MainPage = new NavigationPage(new Prihlasenie());
+                    MainPage = new NavigationPage(new Prihlasenie(Nastavenia.USPECH));
                 }
             }
             else
@@ -55,7 +56,7 @@ namespace Udalosti
                 }
                 else
                 {
-                    MainPage = new NavigationPage(new Prihlasenie());
+                    MainPage = new NavigationPage(new Prihlasenie(Nastavenia.USPECH));
                 }
             }
         }

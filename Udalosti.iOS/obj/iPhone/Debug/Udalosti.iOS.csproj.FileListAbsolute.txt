@@ -62,3 +62,7 @@ C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.iOS\bin\iPhone\Debug\SQLiteP
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.iOS\bin\iPhone\Debug\SQLitePCLRaw.batteries_v2.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.iOS\bin\iPhone\Debug\SQLitePCLRaw.core.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.iOS\bin\iPhone\Debug\SQLitePCLRaw.provider.sqlite3.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.iOS\bin\iPhone\Debug\Plugin.Connectivity.Abstractions.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.iOS\bin\iPhone\Debug\Plugin.Connectivity.Abstractions.pdb
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.iOS\bin\iPhone\Debug\Plugin.Connectivity.dll
+C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.iOS\bin\iPhone\Debug\Plugin.Connectivity.pdb

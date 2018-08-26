@@ -4,7 +4,6 @@ C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\bin\Debug\com.bence.
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\bin\Debug\com.bence.mate.Udalosti-Signed.apk
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\bin\Debug\Udalosti.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\bin\Debug\Udalosti.pdb
-C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\bin\Debug\Udalosti.dll.mdb
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\Udalosti.Android.csprojAssemblyReference.cache
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\res.flag
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\Udalosti.Android.csproj.CoreCompileInputs.cache
@@ -37,7 +36,6 @@ C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroi
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\R.cs.flag
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\R.txt
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\uploadflags.txt
-C:\Users\ecneb\.nuget\packages\xam.plugin.connectivity\3.2.0\lib\MonoAndroid10\Plugin.Connectivity.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\bin\Debug\netstandard2.0\Udalosti.dll
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\bin\Debug\Mono.Android.pdb
 C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.Android\bin\Debug\mscorlib.pdb

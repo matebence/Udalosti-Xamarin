@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using Udalosti.Autentifikacia.UI;
 using Udalosti.Nastroje;
+using Udalosti.Udaje.Nastavenia;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -27,7 +28,7 @@ namespace Udalosti.RychlaUkazkaAplikacie.UI
         {
             Debug.WriteLine("Metoda rychlaUkazkaAplikaciePrecitana bola vykonana");
 
-            Application.Current.MainPage = new NavigationPage(new Prihlasenie());
+            Application.Current.MainPage = new NavigationPage(new Prihlasenie(Nastavenia.USPECH));
         }
     }
 }

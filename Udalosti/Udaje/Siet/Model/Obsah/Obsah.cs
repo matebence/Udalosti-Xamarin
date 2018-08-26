@@ -5,12 +5,12 @@ namespace Udalosti.Udaje.Siet.Model.Obsah
 {
     public class Obsah
     {
-        public Obsah(List<ZoznamUdalosti> udalosti)
+        public Obsah(List<Udalost.Udalost> udalosti)
         {
             this.udalosti = udalosti;
         }
 
-        public List<ZoznamUdalosti> udalosti { get; set; }
+        public List<Udalost.Udalost> udalosti { get; set; }
 
         public override string ToString()
         {

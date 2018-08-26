@@ -5,7 +5,9 @@ namespace Udalosti.Udaje.Nastavenia
     class Nastavenia
     {
         public const String VSETKO_V_PORIADKU = "OK";
+
         public const String CHYBA = "chyba";
+        public const String USPECH = "uspech";
 
         public const String AUTENTIFIKACIA_PRIHLASENIE = "prihlasenie";
         public const String AUTENTIFIKACIA_ODHLASENIE = "odhlasenie";

@@ -65,6 +65,9 @@
     <EmbeddedResource Update="RychlaUkazkaAplikacie\UI\UkazkaAplikacie.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Udalost\UI\ZoznamUdalosti.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Uvod\UI\UvodnaObrazovka.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
