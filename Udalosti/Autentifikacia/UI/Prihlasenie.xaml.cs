@@ -49,7 +49,7 @@ namespace Udalosti.Autentifikacia.UI
                     if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
                     {
                         this.autentifkaciaUdaje.ulozPrihlasovacieUdajeDoDatabazy(email.Text, heslo.Text, udaje["token"]);
-                        await Navigation.PushModalAsync(new ZoznamUdalosti(), true);
+                        Application.Current.MainPage = new NavigationPage(new ZoznamUdalosti());
                     }
                     else
                     {

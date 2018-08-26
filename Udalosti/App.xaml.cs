@@ -4,6 +4,7 @@ using System.IO;
 using Udalosti.Autentifikacia.UI;
 using Udalosti.Nastroje.Xamarin;
 using Udalosti.RychlaUkazkaAplikacie.UI;
+using Udalosti.Token;
 using Udalosti.Udaje.Nastavenia;
 using Udalosti.Uvod.Data;
 using Udalosti.Uvod.UI;
@@ -20,6 +21,7 @@ namespace Udalosti
         public static string geoAdresa = "http://ip-api.com/";
 
         private UvodnaObrazovkaUdaje uvodnaObrazovkaUdaje;
+        private TokenUdaje tokenUdaje;
 
         public App()
         {
@@ -30,6 +32,7 @@ namespace Udalosti
         private void init()
         {
             this.uvodnaObrazovkaUdaje = new UvodnaObrazovkaUdaje();
+            this.tokenUdaje = new TokenUdaje();
             this.startAplikacie();
         }
 
@@ -65,12 +68,14 @@ namespace Udalosti
         {
         }
 
-        protected override void OnSleep()
+        protected override async void OnSleep()
         {
+            await tokenUdaje.zrusTokenAsync();
         }
 
-        protected override void OnResume()
+        protected override async void OnResume()
         {
+            await tokenUdaje.novyTokenAsync();
         }
     }
 }

@@ -40,7 +40,7 @@ namespace Udalosti.Uvod.UI
                     if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
                     {
                         this.autentifkaciaUdaje.ulozPrihlasovacieUdajeDoDatabazy(udaje["email"], udaje["heslo"], udaje["token"]);
-                        await Navigation.PushModalAsync(new ZoznamUdalosti(), true);
+                        Application.Current.MainPage = new NavigationPage(new ZoznamUdalosti());
                     }
                     else
                     {

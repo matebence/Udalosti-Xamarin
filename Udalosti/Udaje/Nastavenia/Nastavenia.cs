@@ -6,6 +6,8 @@ namespace Udalosti.Udaje.Nastavenia
     {
         public const String VSETKO_V_PORIADKU = "OK";
 
+        public static bool TOKEN = false;
+
         public const String CHYBA = "chyba";
         public const String USPECH = "uspech";
 
