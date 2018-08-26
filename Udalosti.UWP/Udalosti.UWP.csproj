@@ -180,9 +180,7 @@
       <Name>Udalosti</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Xamarin\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Assets\Fonts\raleway_black.ttf" />
   </ItemGroup>

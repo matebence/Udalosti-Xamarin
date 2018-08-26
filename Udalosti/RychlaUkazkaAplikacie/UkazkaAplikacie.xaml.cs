@@ -6,7 +6,7 @@ using Udalosti.Udaje.Nastavenia;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Udalosti.RychlaUkazkaAplikacie.UI
+namespace Udalosti.RychlaUkazkaAplikacie
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class UkazkaAplikacie : CarouselPage

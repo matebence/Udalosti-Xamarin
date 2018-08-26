@@ -13,7 +13,7 @@
             HorizontalOptions="FillAndExpand"
             VerticalOptions="FillAndExpand"
             Aspect="AspectFill"
-            Source="{local:Obrazok Udalosti.Assets.Images.udalosti_pozadie.jpg}"
+            Source="{local:Obrazok Udalosti.Assets.aplikacie_pozadie.jpg}"
             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
 

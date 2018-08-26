@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using Udalosti.Autentifikacia.UI;
 using Udalosti.Nastroje.Xamarin;
-using Udalosti.RychlaUkazkaAplikacie.UI;
+using Udalosti.RychlaUkazkaAplikacie;
 using Udalosti.Token;
 using Udalosti.Udaje.Nastavenia;
 using Udalosti.Uvod.Data;

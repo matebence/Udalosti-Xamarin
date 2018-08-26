@@ -7,7 +7,6 @@ using Udalosti.Nastroje;
 using Udalosti.Udaje.Data;
 using Udalosti.Udaje.Nastavenia;
 using Udalosti.Udaje.Siet.Model;
-using Udalosti.Udalost.Nav;
 using Udalosti.Uvod.Data;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -49,7 +48,6 @@ namespace Udalosti.Autentifikacia.UI
                     if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
                     {
                         this.autentifkaciaUdaje.ulozPrihlasovacieUdajeDoDatabazy(email.Text, heslo.Text, udaje["token"]);
-                        Application.Current.MainPage = new NavigaciaUdalosti();
                     }
                     else
                     {
