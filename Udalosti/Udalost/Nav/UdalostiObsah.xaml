@@ -1,0 +1,30 @@
+﻿<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Udalosti.Udalost.Nav.UdalostiObsah"
+	Title="Udalosti">
+    
+    <StackLayout>
+        <ListView x:Name="zoznam" x:FieldModifier="public">
+        
+            <ListView.ItemTemplate>
+                <DataTemplate>
+            
+                    <ViewCell>
+                        <Grid Padding="5,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <Image Source="{Binding IconSource}" />
+                            <Label Grid.Column="1" Text="{Binding Title}" />
+                        </Grid>
+                    </ViewCell>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+    </StackLayout>
+</ContentPage>

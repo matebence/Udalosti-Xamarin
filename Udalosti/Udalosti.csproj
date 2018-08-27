@@ -33,6 +33,9 @@
     <Compile Update="RychlaUkazkaAplikacie\UkazkaAplikacie.xaml.cs">
       <DependentUpon>UkazkaAplikacie.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Udalost\UI\PodlaPozicie.xaml.cs">
+      <DependentUpon>PodlaPozicie.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -45,8 +48,16 @@
     <EmbeddedResource Update="RychlaUkazkaAplikacie\UkazkaAplikacie.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Udalost\UI\PodlaPozicie.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Uvod\UI\UvodnaObrazovka.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Udalost\Nav\" />
+    <Folder Include="Udalost\UI\" />
   </ItemGroup>
 </Project>

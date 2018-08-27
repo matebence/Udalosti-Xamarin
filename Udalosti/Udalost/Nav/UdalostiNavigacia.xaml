@@ -1,0 +1,21 @@
+﻿<MasterDetailPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ui="clr-namespace:Udalosti.Udalost.UI"
+    xmlns:nav="clr-namespace:Udalosti.Udalost.Nav"
+    x:Class="Udalosti.Udalost.Nav.UdalostiNavigacia">
+    
+    <MasterDetailPage.Master>
+        <nav:UdalostiObsah x:Name="navigacia" />
+    </MasterDetailPage.Master>
+    
+    <MasterDetailPage.Detail>
+        
+        <NavigationPage>
+            <x:Arguments>
+                <ui:Objavuj />
+            </x:Arguments>
+        </NavigationPage>
+        
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

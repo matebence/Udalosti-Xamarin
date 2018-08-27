@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-26T12:43:45.554</Modified>
+      <Modified>2018-08-27T14:09:00.169</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Udalosti.UWP.exe">
       <PackagePath>entrypoint\Udalosti.UWP.exe</PackagePath>
-      <Modified>2018-08-26T12:43:41.282</Modified>
+      <Modified>2018-08-27T14:08:59.113</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\newtonsoft.json\11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -749,7 +749,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\bin\Debug\netstandard2.0\Udalosti.dll">
       <PackagePath>Udalosti.dll</PackagePath>
-      <Modified>2018-08-26T12:43:30.412</Modified>
+      <Modified>2018-08-27T14:08:52.029</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\BadgeLogo.scale-100.png">
       <PackagePath>Assets\BadgeLogo.scale-100.png</PackagePath>
@@ -775,6 +775,18 @@
       <PackagePath>Assets\BadgeLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-08-23T11:13:30.042</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Images\nav_objavuj.png">
+      <PackagePath>Assets\Images\nav_objavuj.png</PackagePath>
+      <Modified>2018-08-27T10:52:18.481</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Images\nav_odhlasit_sa.png">
+      <PackagePath>Assets\Images\nav_odhlasit_sa.png</PackagePath>
+      <Modified>2018-08-27T10:52:18.496</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Images\nav_podla_pozicie.png">
+      <PackagePath>Assets\Images\nav_podla_pozicie.png</PackagePath>
+      <Modified>2018-08-27T10:52:18.512</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
@@ -1091,11 +1103,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-08-26T12:43:40.975</Modified>
+      <Modified>2018-08-27T14:08:58.839</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\UdalostiUWP.xbf">
       <PackagePath>UdalostiUWP.xbf</PackagePath>
-      <Modified>2018-08-26T12:43:40.976</Modified>
+      <Modified>2018-08-27T14:08:58.841</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -1152,11 +1164,11 @@
     <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-26T12:43:44.596</Modified>
+      <Modified>2018-08-27T12:42:22.538</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Core\Udalosti.UWP.exe">
       <PackagePath>Udalosti.UWP.exe</PackagePath>
-      <Modified>2018-08-26T12:43:45.546</Modified>
+      <Modified>2018-08-27T14:09:00.158</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

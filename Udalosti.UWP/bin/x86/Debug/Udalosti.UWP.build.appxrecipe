@@ -582,6 +582,15 @@
       <PackagePath>Assets\BadgeLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Images\nav_objavuj.png">
+      <PackagePath>Assets\Images\nav_objavuj.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Images\nav_odhlasit_sa.png">
+      <PackagePath>Assets\Images\nav_odhlasit_sa.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Images\nav_podla_pozicie.png">
+      <PackagePath>Assets\Images\nav_podla_pozicie.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
