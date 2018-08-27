@@ -17,12 +17,16 @@ namespace Udalosti.Udalost.Nav {
     public partial class UdalostiNavigacia : global::Xamarin.Forms.MasterDetailPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Udalosti.Udalost.Nav.UdalostiObsah navigacia;
+        private global::Xamarin.Forms.Label email;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.ListView zoznam;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(UdalostiNavigacia));
-            navigacia = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Udalosti.Udalost.Nav.UdalostiObsah>(this, "navigacia");
+            email = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "email");
+            zoznam = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "zoznam");
         }
     }
 }

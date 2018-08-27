@@ -19,9 +19,38 @@ namespace Udalosti.Token
 
         public TokenUdaje()
         {
+            init();
+        }
+
+        private void init()
+        {
             this.autentifikaciaUdaje = new AutentifikaciaUdaje(this);
             this.uvodnaObrazovkaUdaje = new UvodnaObrazovkaUdaje();
             this.udalostiUdaje = new UdalostiUdaje(this, this);
+        }
+
+        public async Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
+        {
+            switch (od)
+            {
+                case Nastavenia.AUTENTIFIKACIA_PRIHLASENIE:
+                    if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
+                    {
+                        Debug.WriteLine("Novy token generovany");
+                    }
+                    break;
+                case Nastavenia.AUTENTIFIKACIA_ODHLASENIE:
+                    if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
+                    {
+                        Debug.WriteLine("Token odstranene");
+                    }
+                    break;
+            }
+        }
+
+        public Task dataZoServeraAsync(string odpoved, string od, List<ObsahUdalosti> udaje)
+        {
+            throw new System.NotImplementedException();
         }
 
         public async Task novyTokenAsync()
@@ -54,30 +83,6 @@ namespace Udalosti.Token
 
                 Nastavenia.TOKEN = true;
             }
-        }
-
-        public async Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
-        {
-            switch (od)
-            {
-                case Nastavenia.AUTENTIFIKACIA_PRIHLASENIE:
-                    if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
-                    {
-                        Debug.WriteLine("Novy token generovany");
-                    }
-                    break;
-                case Nastavenia.AUTENTIFIKACIA_ODHLASENIE:
-                    if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
-                    {
-                        Debug.WriteLine("Token odstranene");
-                    }
-                    break;
-            }
-        }
-
-        public Task dataZoServeraAsync(string odpoved, string od, List<ObsahUdalosti> udaje)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

@@ -2954,20 +2954,17 @@ namespace Udalosti.Droid
 			// aapt resource value: 0x7F090118
 			public const int mr_vol_type_audiotrack_light = 2131296536;
 			
-			// aapt resource value: 0x7F010002
-			public const int nav = 2130771970;
-			
 			// aapt resource value: 0x7F09005C
 			public const int navigation_empty_icon = 2131296348;
 			
+			// aapt resource value: 0x7F010002
+			public const int nav_objavuj = 2130771970;
+			
 			// aapt resource value: 0x7F010003
-			public const int nav_objavuj = 2130771971;
+			public const int nav_odhlasit_sa = 2130771971;
 			
 			// aapt resource value: 0x7F010004
-			public const int nav_odhlasit_sa = 2130771972;
-			
-			// aapt resource value: 0x7F010005
-			public const int nav_podla_pozicie = 2130771973;
+			public const int nav_podla_pozicie = 2130771972;
 			
 			// aapt resource value: 0x7F090001
 			public const int notification_action_background = 2131296257;

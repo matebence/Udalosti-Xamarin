@@ -160,9 +160,6 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\icon_round.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\nav.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\nav_objavuj.png" />
   </ItemGroup>
   <ItemGroup>
