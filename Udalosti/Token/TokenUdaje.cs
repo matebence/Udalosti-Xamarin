@@ -56,7 +56,7 @@ namespace Udalosti.Token
             }
         }
 
-        public Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
+        public async Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
         {
             switch (od)
             {
@@ -73,7 +73,6 @@ namespace Udalosti.Token
                     }
                     break;
             }
-            return null;
         }
 
         public Task dataZoServeraAsync(string odpoved, string od, List<ObsahUdalosti> udaje)

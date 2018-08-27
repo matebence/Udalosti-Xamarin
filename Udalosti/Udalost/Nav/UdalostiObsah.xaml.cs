@@ -31,6 +31,8 @@ namespace Udalosti.Udalost.Nav
 
         private void nacitajPolozkyPodlaPlatformy(List<MasterPageItem> prvky, string nazov, string obrazok, Type stranka)
         {
+            Debug.WriteLine("Metoda nacitajPolozkyPodlaPlatformy bola vykonana");
+
             if (Platforma.nastavPlatformu(true, false, false))
             {
                 prvky.Add(new MasterPageItem
@@ -62,6 +64,8 @@ namespace Udalosti.Udalost.Nav
 
         private void nastavNavigaciu(List<MasterPageItem> prvky)
         {
+            Debug.WriteLine("Metoda nastavNavigaciu bola vykonana");
+
             zoznam = new ListView
             {
                 ItemsSource = prvky,
