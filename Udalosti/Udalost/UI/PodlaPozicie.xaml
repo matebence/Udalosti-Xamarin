@@ -1,15 +1,228 @@
 ﻿<ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Udalosti.Nastroje.Xamarin"
     x:Class="Udalosti.Udalost.UI.PodlaPozicie"
     Title="Najblizšie udalosti">
 
     <ContentPage.Content>
-    
+
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+
+            <ActivityIndicator
+                x:Name="nacitavanie"
+                IsVisible="false"
+                IsRunning="true"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand">
+
+                <ActivityIndicator.Color>
+                    <OnPlatform x:TypeArguments="Color" Android="#005ba6" WinPhone="White" iOS="Transparent"></OnPlatform>
+                </ActivityIndicator.Color>
+            </ActivityIndicator>
+
+            <Image 
+                x:Name="ziadneUdalosti"
+                WidthRequest="130"
+                HeightRequest="130"
+                Source="{local:Obrazok Udalosti.Assets.udalosti_ziadne_udalosti.png}"
+                IsVisible="false"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"/>
+
+            <ListView 
+                x:Name="zoznamUdalosti"
+                IsVisible="false"
+                SeparatorVisibility="None"
+                SelectionMode="None"
+                HasUnevenRows="True">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Grid 
+                                Margin="0,0,0,30">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="250"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.BackgroundColor>
+                                    <OnPlatform x:TypeArguments="Color" Android="#ebebeb" WinPhone="#333333" iOS="#ebebeb"></OnPlatform>
+                                </Grid.BackgroundColor>
+
+                                <Image 
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    HeightRequest="250"
+                                    Source="{Binding obrazok}"
+                                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                    AbsoluteLayout.LayoutFlags="All"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"
+                                    Aspect="AspectFill"/>
+
+                                <StackLayout
+                                    Grid.Row="1"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    Margin="20,0,0,5">
+
+                                    <Label
+                                        Text="{Binding den}"
+                                        TextColor="#c33939"
+                                        FontAttributes="Bold"
+                                        FontSize="25"
+                                        VerticalTextAlignment="Start"
+                                        HorizontalOptions="Center">
+
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String">
+
+                                                <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
+                                                <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
+                                                <On Platform="iOS" Value="Raleway Medium" />
+                                            </OnPlatform>
+                                        </Label.FontFamily>
+                                    </Label>
+
+                                    <Label  
+                                        Text="{Binding mesiac}"
+                                        FontSize="20"
+                                        VerticalTextAlignment="Start"
+                                        HorizontalOptions="Center">
+
+                                        <Label.TextColor>
+                                            <OnPlatform x:TypeArguments="Color" Android="Black" WinPhone="White" iOS="Black"></OnPlatform>
+                                        </Label.TextColor>
+
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String">
+
+                                                <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
+                                                <On Platform="Android" Value="raleway_regular.ttf#Raleway Regular" />
+                                                <On Platform="iOS" Value="Raleway Regular" />
+                                            </OnPlatform>
+                                        </Label.FontFamily>
+                                    </Label>
+                                </StackLayout>
+
+                                <StackLayout
+                                    Grid.Row="1"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Margin="20,0,0,5" >
+
+                                    <Label  
+                                        Text="{Binding nazov}"
+                                        FontSize="20"
+                                        VerticalTextAlignment="Start"
+                                        HorizontalOptions="Center">
+
+                                        <Label.TextColor>
+                                            <OnPlatform x:TypeArguments="Color" Android="Black" WinPhone="White" iOS="Black"></OnPlatform>
+                                        </Label.TextColor>
+
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String">
+
+                                                <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
+                                                <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
+                                                <On Platform="iOS" Value="Raleway Medium" />
+                                            </OnPlatform>
+                                        </Label.FontFamily>
+                                    </Label>
+
+                                    <StackLayout
+                                        Orientation="Horizontal">
+
+                                        <Image
+                                            WidthRequest="20"
+                                            HeightRequest="20"
+                                            Source="{local:Obrazok Udalosti.Assets.udalosti_zoznam_pozicia.png}" />
+
+                                        <Label  
+                                            Text="{Binding mesto}"
+                                            FontAttributes="Bold"
+                                            TextColor="#005ba6"
+                                            FontSize="20"
+                                            Margin="0,0,4,0">
+
+                                            <Label.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+
+                                                    <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
+                                                    <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
+                                                    <On Platform="iOS" Value="Raleway Medium" />
+                                                </OnPlatform>
+                                            </Label.FontFamily>
+                                        </Label>
+
+                                        <Label  
+                                            Text="{Binding miesto}"
+                                            FontSize="20">
+
+                                            <Label.TextColor>
+                                                <OnPlatform x:TypeArguments="Color" Android="Black" WinPhone="White" iOS="Black"></OnPlatform>
+                                            </Label.TextColor>
+
+                                            <Label.FontFamily>
+                                                <OnPlatform x:TypeArguments="x:String">
+
+                                                    <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
+                                                    <On Platform="Android" Value="raleway_regular.ttf#Raleway Regular" />
+                                                    <On Platform="iOS" Value="Raleway Regular" />
+                                                </OnPlatform>
+                                            </Label.FontFamily>
+                                        </Label>
+                                    </StackLayout>
+                                </StackLayout>
+
+                                <StackLayout
+                                    Grid.Row="1"
+                                    HorizontalOptions="End"
+                                    VerticalOptions="Center"
+                                    Margin="0,0,20,5">
+
+                                    <Label  
+                                        Text="{Binding cas}"
+                                        FontSize="20"
+                                        VerticalTextAlignment="Start"
+                                        HorizontalOptions="Center">
+
+                                        <Label.TextColor>
+                                            <OnPlatform x:TypeArguments="Color" Android="Black" WinPhone="White" iOS="Black"></OnPlatform>
+                                        </Label.TextColor>
+
+                                        <Label.FontFamily>
+                                            <OnPlatform x:TypeArguments="x:String">
+
+                                                <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
+                                                <On Platform="Android" Value="raleway_regular.ttf#Raleway Regular" />
+                                                <On Platform="iOS" Value="Raleway Regular" />
+                                            </OnPlatform>
+                                        </Label.FontFamily>
+                                    </Label>
+
+                                    <Image
+                                        WidthRequest="20"
+                                        HeightRequest="20">
+
+                                        <Image.Source>
+                                            <OnPlatform x:TypeArguments="FileImageSource" Android="{local:Obrazok Udalosti.Assets.udalosti_zoznam_cas_cierna.png}" WinPhone="{local:Obrazok Udalosti.Assets.udalosti_zoznam_cas_biela.png}" iOS="{local:Obrazok Udalosti.Assets.udalosti_zoznam_cas_cierna.png}"></OnPlatform>
+                                        </Image.Source>
+                                    </Image>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

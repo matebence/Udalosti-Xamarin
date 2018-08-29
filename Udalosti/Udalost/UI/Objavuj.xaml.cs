@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Net;
 using System.Threading.Tasks;
 using Udalosti.Udaje.Data.Tabulka;
 using Udalosti.Udaje.Nastavenia;
@@ -21,6 +19,7 @@ namespace Udalosti.Udalost.UI
         private UvodnaObrazovkaUdaje uvodnaObrazovkaUdaje;
 
         private ObservableCollection<ObsahUdalosti> udalost;
+        private Operacie operacie;
 
         private Pouzivatelia pouzivatel;
         private Miesto miesto;
@@ -40,6 +39,7 @@ namespace Udalosti.Udalost.UI
             this.miesto = udalostiUdaje.miestoPrihlasenia();
 
             this.udalost = new ObservableCollection<ObsahUdalosti>();
+            this.operacie = new Operacie();
         }
 
         public async Task dataZoServeraAsync(string odpoved, string od, List<ObsahUdalosti> udaje)
@@ -53,7 +53,7 @@ namespace Udalosti.Udalost.UI
                     {
                         if (udaje != null)
                         {
-                            await this.nacitaveniaUdalostiAsync(udaje);
+                            await operacie.nacitaveniaUdalostiAsync(udaje, zoznamUdalosti, udalost);
                         }
                         else
                         {
@@ -72,56 +72,11 @@ namespace Udalosti.Udalost.UI
 
         protected override async void OnAppearing()
         {
-            Debug.WriteLine("Metoda nacitajZoznam bola vykonana");
-
             nacitavanie.IsVisible = true;
             zoznamUdalosti.IsVisible = true;
 
+            Title = miesto.stat;
             await this.udalostiUdaje.zoznamUdalostiAsync(pouzivatel, miesto);
-        }
-
-        private async Task ziskajUdalostiAsync(List<ObsahUdalosti> udaje, ListView zoznam, ObservableCollection<ObsahUdalosti> obsah)
-        {
-            Debug.WriteLine("Metoda ziskajUdalostiAsync bola vykonana");
-
-            foreach (ObsahUdalosti __o in udaje)
-            {
-                string obrazok = (string)__o.obrazok;
-                if (!(await obrazokJeDostupnnyAsync(obrazok)))
-                {
-                    __o.obrazok = "../../Assets/Images/udalosti_chyba_obrazka.jpg";
-                }
-                else
-                {
-                    __o.obrazok = App.udalostiAdresa + __o.obrazok;
-                }
-                obsah.Add(__o);
-            }
-            zoznam.ItemsSource = obsah;
-        }
-
-        public async Task<bool> obrazokJeDostupnnyAsync(string adresa)
-        {
-            Debug.WriteLine("Metoda obrazokJeDostupnnyAsync bola vykonana");
-
-            WebRequest request = WebRequest.Create(App.udalostiAdresa + adresa);
-            WebResponse odpoved;
-            try
-            {
-                odpoved = await request.GetResponseAsync();
-            }
-            catch
-            {
-                return false;
-            }
-            return true;
-        }
-
-        private async Task nacitaveniaUdalostiAsync(List<ObsahUdalosti> udaje)
-        {
-            Debug.WriteLine("Metoda nacitaveniaUdalostiAsync bola vykonana");
-
-            await ziskajUdalostiAsync(udaje, zoznamUdalosti, udalost);
         }
     }
 }

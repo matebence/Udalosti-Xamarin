@@ -200,7 +200,8 @@
       <Name>Udalosti</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\Images\" />
+    <BundleResource Include="Resources\Images\udalosti_chyba_obrazka.jpg" />
   </ItemGroup>
 </Project>

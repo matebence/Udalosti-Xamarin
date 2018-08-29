@@ -111,6 +111,7 @@
     <Content Include="Assets\Images\nav_objavuj.png" />
     <Content Include="Assets\Images\nav_odhlasit_sa.png" />
     <Content Include="Assets\Images\nav_podla_pozicie.png" />
+    <Content Include="Assets\Images\udalosti_chyba_obrazka.jpg" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-125.png" />
     <Content Include="Assets\LargeTile.scale-150.png" />

@@ -21,7 +21,6 @@
     <EmbeddedResource Include="Assets\aplikacia_menu_logo.png" />
     <EmbeddedResource Include="Assets\stav_aktivny.png" />
     <EmbeddedResource Include="Assets\stav_passivny.png" />
-    <EmbeddedResource Include="Assets\udalosti_chyba_obrazka.jpg" />
     <EmbeddedResource Include="Assets\aplikacia_logo.png" />
     <EmbeddedResource Include="Assets\udalosti_zoznam_cas_biela.png" />
     <EmbeddedResource Include="Assets\udalosti_zoznam_cas_cierna.png" />
