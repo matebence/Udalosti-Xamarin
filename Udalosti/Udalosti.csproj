@@ -12,6 +12,9 @@
 
   <ItemGroup>
     <None Remove="Assets\aplikacia_menu_logo.png" />
+    <None Remove="Assets\udalosti_zoznam_cas_biela.png" />
+    <None Remove="Assets\udalosti_zoznam_cas_cierna.png" />
+    <None Remove="Assets\udalosti_zoznam_pozicia.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +23,9 @@
     <EmbeddedResource Include="Assets\stav_passivny.png" />
     <EmbeddedResource Include="Assets\udalosti_chyba_obrazka.jpg" />
     <EmbeddedResource Include="Assets\aplikacia_logo.png" />
+    <EmbeddedResource Include="Assets\udalosti_zoznam_cas_biela.png" />
+    <EmbeddedResource Include="Assets\udalosti_zoznam_cas_cierna.png" />
+    <EmbeddedResource Include="Assets\udalosti_zoznam_pozicia.png" />
     <EmbeddedResource Include="Assets\ukazka_aplikacie_objavuj.png" />
     <EmbeddedResource Include="Assets\ukazka_aplikacie_podla_pozicie.png" />
     <EmbeddedResource Include="Assets\aplikacie_pozadie.jpg" />
