@@ -56,7 +56,7 @@
 
                             <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
                             <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
-                            <On Platform="iOS" Value="Raleway Medium" />
+                            <On Platform="iOS" Value="Raleway-Medium" />
                         </OnPlatform>
                     </Label.FontFamily>
                 </Label>
@@ -76,7 +76,7 @@
 
                         <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
                         <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
-                        <On Platform="iOS" Value="Raleway Medium" />
+                        <On Platform="iOS" Value="Raleway-Medium" />
                     </OnPlatform>
                 </Label.FontFamily>
             </Label>
@@ -111,7 +111,7 @@
 
                         <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
                         <On Platform="Android" Value="raleway_regular.ttf#Raleway Medium" />
-                        <On Platform="iOS" Value="Raleway" />
+                        <On Platform="iOS" Value="Raleway-Regular" />
                     </OnPlatform>
                 </local:Vstup.FontFamily>
             </local:Vstup>
@@ -147,7 +147,7 @@
 
                         <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
                         <On Platform="Android" Value="raleway_regular.ttf#Raleway Medium" />
-                        <On Platform="iOS" Value="Raleway" />
+                        <On Platform="iOS" Value="Raleway-Regular" />
                     </OnPlatform>
                 </local:Vstup.FontFamily>
             </local:Vstup>
@@ -172,7 +172,7 @@
 
                         <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
                         <On Platform="Android" Value="raleway_regular.ttf#Raleway Medium" />
-                        <On Platform="iOS" Value="Raleway" />
+                        <On Platform="iOS" Value="Raleway-Regular" />
                     </OnPlatform>
                 </local:Tlacidlo.FontFamily>
             </local:Tlacidlo>
@@ -209,7 +209,7 @@
 
                         <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
                         <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
-                        <On Platform="iOS" Value="Raleway Medium" />
+                        <On Platform="iOS" Value="Raleway-Medium" />
                     </OnPlatform>
                 </Label.FontFamily>
             </Label>
@@ -232,7 +232,7 @@
 
                         <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
                         <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
-                        <On Platform="iOS" Value="Raleway Medium" />
+                        <On Platform="iOS" Value="Raleway-Medium" />
                     </OnPlatform>
                 </Button.FontFamily>
             </Button>
