@@ -33,6 +33,7 @@ namespace Udalosti.iOS.Xamarin
         private void Paint(Tlacidlo tlacidlo)
         {
             this.Layer.CornerRadius = (float)tlacidlo.uhol;
+            this.ClipsToBounds = true;
             this.Layer.BorderColor = tlacidlo.farbaOkraju.ToCGColor();
             this.Layer.BackgroundColor = tlacidlo.farba.ToCGColor();
             this.Layer.BorderWidth = (int)tlacidlo.sirka;

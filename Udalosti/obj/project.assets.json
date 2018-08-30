@@ -11,7 +11,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "NETStandard.Library/2.0.3": {
+      "NETStandard.Library/2.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
@@ -122,13 +122,14 @@
         "runtime.json"
       ]
     },
-    "NETStandard.Library/2.0.3": {
-      "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+    "NETStandard.Library/2.0.1": {
+      "sha512": "oA6nwv9MhEKYvLpjZ0ggSpb1g4CQViDVQjLUcDWg598jtvJbpfeP2reqwI1GLW2TbxC/Ml7xL6BBR1HmKPXlTg==",
       "type": "package",
-      "path": "netstandard.library/2.0.3",
+      "path": "netstandard.library/2.0.1",
       "files": [
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
+        "build/NETStandard.Library.targets",
         "build/netstandard2.0/NETStandard.Library.targets",
         "build/netstandard2.0/ref/Microsoft.Win32.Primitives.dll",
         "build/netstandard2.0/ref/System.AppContext.dll",
@@ -245,7 +246,7 @@
         "build/netstandard2.0/ref/netstandard.dll",
         "build/netstandard2.0/ref/netstandard.xml",
         "lib/netstandard1.0/_._",
-        "netstandard.library.2.0.3.nupkg.sha512",
+        "netstandard.library.2.0.1.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
     },
@@ -581,7 +582,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.3",
+      "NETStandard.Library >= 2.0.1",
       "Newtonsoft.Json >= 11.0.2",
       "Xam.Plugin.Connectivity >= 3.2.0",
       "Xamarin.Forms >= 3.1.0.697729",
@@ -589,30 +590,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ecneb\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/ecneb/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ecneb\\Documents\\Udalosti\\Udalosti\\Udalosti\\Udalosti.csproj",
+      "projectUniqueName": "/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/Udalosti.csproj",
       "projectName": "Udalosti",
-      "projectPath": "C:\\Users\\ecneb\\Documents\\Udalosti\\Udalosti\\Udalosti\\Udalosti.csproj",
-      "packagesPath": "C:\\Users\\ecneb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ecneb\\Documents\\Udalosti\\Udalosti\\Udalosti\\obj\\",
+      "projectPath": "/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/Udalosti.csproj",
+      "packagesPath": "/Users/ecneb/.nuget/packages/",
+      "outputPath": "/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\ecneb\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/ecneb/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -632,24 +631,24 @@
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.0.3, )",
+            "version": "2.0.1",
             "autoReferenced": true
           },
           "Newtonsoft.Json": {
             "target": "Package",
-            "version": "[11.0.2, )"
-          },
-          "Xam.Plugin.Connectivity": {
-            "target": "Package",
-            "version": "[3.2.0, )"
-          },
-          "Xamarin.Forms": {
-            "target": "Package",
-            "version": "[3.1.0.697729, )"
+            "version": "11.0.2"
           },
           "sqlite-net-pcl": {
             "target": "Package",
-            "version": "[1.4.118, )"
+            "version": "1.4.118"
+          },
+          "Xam.Plugin.Connectivity": {
+            "target": "Package",
+            "version": "3.2.0"
+          },
+          "Xamarin.Forms": {
+            "target": "Package",
+            "version": "3.1.0.697729"
           }
         },
         "imports": [

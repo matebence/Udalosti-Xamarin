@@ -13,8 +13,8 @@
 namespace Udalosti.RychlaUkazkaAplikacie {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("RychlaUkazkaAplikacie\\UkazkaAplikacie.xaml")]
-    public partial class UkazkaAplikacie : global::Xamarin.Forms.CarouselPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("RychlaUkazkaAplikacie/UkazkaAplikacie.xaml")]
+    public partial class UkazkaAplikacie : global::Udalosti.Nastroje.Xamarin.Kolotoc {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {

@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using Udalosti.Autentifikacia.UI;
 using Udalosti.Nastroje;
+using Udalosti.Nastroje.Xamarin;
 using Udalosti.Udaje.Nastavenia;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -9,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace Udalosti.RychlaUkazkaAplikacie
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class UkazkaAplikacie : CarouselPage
+	public partial class UkazkaAplikacie : Kolotoc
 	{
         private Preferencie preferencie;
 

@@ -120,6 +120,7 @@
     <BundleResource Include="Resources\raleway_semi_bold.ttf" />
     <BundleResource Include="Resources\raleway_semi_bold_italic.ttf" />
     <BundleResource Include="Resources\raleway_thin.ttf" />
+    <Compile Include="Xamarin\iOSKolotoc.cs" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-1024.png">
@@ -196,7 +197,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Udalosti\Udalosti.csproj">
-      <Project>{0657C313-E1DF-4E8F-82CB-54293BA9E52C}</Project>
+      <Project>{9ADFAECC-7462-444E-8F1F-641221C54629}</Project>
       <Name>Udalosti</Name>
     </ProjectReference>
   </ItemGroup>
