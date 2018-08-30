@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Udalosti.Nastroje.Xamarin"
     x:Class="Udalosti.Autentifikacia.UI.Registracia"
-    NavigationPage.HasNavigationBar="False">
+    Title="Registrácia">
 
     <RelativeLayout>
 
@@ -33,12 +33,52 @@
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
 
+             <Grid
+                HeightRequest="60"
+                HorizontalOptions="Center"
+                Grid.Row="0">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+
+                 <Grid.IsVisible>
+                    <OnPlatform x:TypeArguments="x:Boolean" iOS="true" Android="false" WinPhone="false"/>
+                </Grid.IsVisible>
+                
+                <Image 
+                    Grid.Column="0"
+                    Source="{local:Obrazok Udalosti.Assets.aplikacia_logo.png}"
+                    Margin="0,0,15,0"/>
+
+                <Label
+                    Grid.Column="1"
+                    Text="Udalosti"
+                    TextColor="White"
+                    FontSize="60">
+
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+
+                            <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
+                            <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
+                            <On Platform="iOS" Value="Raleway-Medium" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+            </Grid>
+            
             <Label
                 Grid.Row="0"
                 Text="Registrácia"
                 TextColor="White"
                 HorizontalOptions="Center"
                 FontSize="65">
+
+                <Label.IsVisible>
+                    <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true" WinPhone="true"/>
+                </Label.IsVisible>
 
                 <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">

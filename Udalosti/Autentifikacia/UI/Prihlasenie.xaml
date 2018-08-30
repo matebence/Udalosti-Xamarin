@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Udalosti.Nastroje.Xamarin"
     x:Class="Udalosti.Autentifikacia.UI.Prihlasenie"
-    NavigationPage.HasNavigationBar="False">
+    Title="Prihlásenie">
 
     <RelativeLayout>
 
@@ -224,7 +224,7 @@
                 HorizontalOptions="Center">
 
                 <Button.Margin>
-                    <OnPlatform x:TypeArguments="Thickness" Android="50,-15,50,-10" WinPhone="50,-5,50,0"></OnPlatform>
+                    <OnPlatform x:TypeArguments="Thickness" Android="50,-15,50,-10" iOS="50,-15,50,-10" WinPhone="50,-5,50,0"></OnPlatform>
                 </Button.Margin>
 
                 <Button.FontFamily>

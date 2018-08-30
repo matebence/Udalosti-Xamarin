@@ -12,24 +12,20 @@
 
   <ItemGroup>
     <None Remove="Assets\aplikacia_menu_logo.png" />
+    <None Remove="Assets\aplikacia_menu_logo_biela.png" />
+    <None Remove="Assets\aplikacia_menu_logo_cierna.png" />
+    <None Remove="Assets\aplikacie_pozadie.jpg" />
+    <None Remove="Assets\stav_aktivny.png" />
+    <None Remove="Assets\stav_passivny.png" />
+    <None Remove="Assets\udalosti_ziadne_udalosti_cierna.png" />
+    <None Remove="Assets\udalosti_ziadne_udalosti_siva.png" />
     <None Remove="Assets\udalosti_zoznam_cas_biela.png" />
     <None Remove="Assets\udalosti_zoznam_cas_cierna.png" />
     <None Remove="Assets\udalosti_zoznam_pozicia.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Assets\aplikacia_menu_logo.png" />
-    <EmbeddedResource Include="Assets\stav_aktivny.png" />
-    <EmbeddedResource Include="Assets\stav_passivny.png" />
-    <EmbeddedResource Include="Assets\aplikacia_logo.png" />
-    <EmbeddedResource Include="Assets\udalosti_zoznam_cas_biela.png" />
-    <EmbeddedResource Include="Assets\udalosti_zoznam_cas_cierna.png" />
-    <EmbeddedResource Include="Assets\udalosti_zoznam_pozicia.png" />
-    <EmbeddedResource Include="Assets\ukazka_aplikacie_objavuj.png" />
-    <EmbeddedResource Include="Assets\ukazka_aplikacie_podla_pozicie.png" />
-    <EmbeddedResource Include="Assets\aplikacie_pozadie.jpg" />
-    <EmbeddedResource Include="Assets\ukazka_aplikacie_registracia_prihlasovanie.png" />
-    <EmbeddedResource Include="Assets\udalosti_ziadne_udalosti.png" />
+    <None Remove="Assets\ukazka_aplikacie_objavuj.png" />
+    <None Remove="Assets\ukazka_aplikacie_podla_pozicie.png" />
+    <None Remove="Assets\ukazka_aplikacie_registracia_prihlasovanie.png" />
+    <None Remove="Assets\aplikacia_logo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,6 +44,22 @@
     </Compile>
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\aplikacia_menu_logo_biela.png" />
+    <EmbeddedResource Include="Assets\aplikacia_menu_logo_cierna.png" />
+    <EmbeddedResource Include="Assets\aplikacie_pozadie.jpg" />
+    <EmbeddedResource Include="Assets\stav_aktivny.png" />
+    <EmbeddedResource Include="Assets\stav_passivny.png" />
+    <EmbeddedResource Include="Assets\udalosti_ziadne_udalosti_cierna.png" />
+    <EmbeddedResource Include="Assets\udalosti_ziadne_udalosti_siva.png" />
+    <EmbeddedResource Include="Assets\udalosti_zoznam_cas_biela.png" />
+    <EmbeddedResource Include="Assets\udalosti_zoznam_cas_cierna.png" />
+    <EmbeddedResource Include="Assets\udalosti_zoznam_pozicia.png" />
+    <EmbeddedResource Include="Assets\ukazka_aplikacie_objavuj.png" />
+    <EmbeddedResource Include="Assets\ukazka_aplikacie_podla_pozicie.png" />
+    <EmbeddedResource Include="Assets\ukazka_aplikacie_registracia_prihlasovanie.png" />
+    <EmbeddedResource Include="Assets\aplikacia_logo.png" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Autentifikacia\UI\Prihlasenie.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -69,5 +81,6 @@
   <ItemGroup>
     <Folder Include="Udalost\Nav\" />
     <Folder Include="Udalost\UI\" />
+    <Folder Include="Assets\" />
   </ItemGroup>
 </Project>

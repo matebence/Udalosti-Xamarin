@@ -48,18 +48,18 @@ namespace Udalosti
                 }
                 else
                 {
-                    MainPage = new NavigationPage(new Prihlasenie(Nastavenia.USPECH));
+                    MainPage = (new NavigationPage(new Prihlasenie(Nastavenia.USPECH)) { BarBackgroundColor = Color.FromHex("#275881"), BarTextColor = Color.White });
                 }
             }
             else
             {
                 if (Platforma.nastavPlatformu(true, true, false))
                 {
-                    MainPage = new NavigationPage(new UkazkaAplikacie());
+                    MainPage = (new NavigationPage(new UkazkaAplikacie()) { BarBackgroundColor = Color.FromHex("#275881"), BarTextColor = Color.White });
                 }
                 else
                 {
-                    MainPage = new NavigationPage(new Prihlasenie(Nastavenia.USPECH));
+                    MainPage = (new NavigationPage(new Prihlasenie(Nastavenia.USPECH)) { BarBackgroundColor = Color.FromHex("#275881"), BarTextColor = Color.White });
                 }
             }
         }

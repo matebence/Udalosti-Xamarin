@@ -12,24 +12,16 @@ namespace Udalosti.RychlaUkazkaAplikacie
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class UkazkaAplikacie : Kolotoc
 	{
-        private Preferencie preferencie;
-
-		public UkazkaAplikacie()
-		{
-			InitializeComponent();
-            init();
-		}
-
-        private void init()
+        public UkazkaAplikacie()
         {
-            this.preferencie = new Preferencie();
+            InitializeComponent();
         }
 
         private void rychlaUkazkaAplikaciePrecitana(object sender, EventArgs e)
         {
             Debug.WriteLine("Metoda rychlaUkazkaAplikaciePrecitana bola vykonana");
 
-            Application.Current.MainPage = new NavigationPage(new Prihlasenie(Nastavenia.USPECH));
+            Application.Current.MainPage = (new NavigationPage(new Prihlasenie(Nastavenia.USPECH)) { BarBackgroundColor = Color.FromHex("#275881"), BarTextColor = Color.White });
         }
     }
 }

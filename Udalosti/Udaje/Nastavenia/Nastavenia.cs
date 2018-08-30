@@ -5,11 +5,13 @@ namespace Udalosti.Udaje.Nastavenia
     class Nastavenia
     {
         public const String VSETKO_V_PORIADKU = "OK";
+        public const String START = "prvyStart";
 
         public static bool TOKEN = false;
 
         public const String CHYBA = "chyba";
         public const String USPECH = "uspech";
+        public const String MOZNA_CHYBA = "neUspesnePrihlasenie";
 
         public const String AUTENTIFIKACIA_PRIHLASENIE = "prihlasenie";
         public const String AUTENTIFIKACIA_ODHLASENIE = "odhlasenie";

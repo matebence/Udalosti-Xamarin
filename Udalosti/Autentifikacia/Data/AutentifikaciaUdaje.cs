@@ -96,11 +96,18 @@ namespace Udalosti.Autentifikacia.Data
                 }
                 else
                 {
-                    udaje.Add("email", email);
-                    udaje.Add("heslo", heslo);
-                    udaje.Add("token", autentifikator.pouzivatel.token);
+                    if(autentifikator.pouzivatel == null)
+                    {
+                        await odpovedeOdServera.odpovedServera("Nastala chyba! Prosím skúste ešte raz.", Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, null);
+                    }
+                    else
+                    {
+                        udaje.Add("email", email);
+                        udaje.Add("heslo", heslo);
+                        udaje.Add("token", autentifikator.pouzivatel.token);
 
-                    await odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, udaje);
+                        await odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, udaje);   
+                    }
                 }
             }
             else

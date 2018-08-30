@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using Udalosti.Autentifikacia.Data;
 using Udalosti.Nastroje;
+using Udalosti.Nastroje.Xamarin;
 using Udalosti.Udaje.Data;
 using Udalosti.Udaje.Nastavenia;
 using Udalosti.Udaje.Siet.Model;
@@ -29,6 +30,7 @@ namespace Udalosti.Autentifikacia.UI
 		{
 			InitializeComponent();
             init(odpoved);
+            ovladanie();
         }
 
         private void init(string odpoved)
@@ -44,7 +46,6 @@ namespace Udalosti.Autentifikacia.UI
         public async Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
         {
             nacitavanie.IsVisible = false;
-
 
             switch (od)
             {
@@ -62,16 +63,32 @@ namespace Udalosti.Autentifikacia.UI
             }
         }
 
+        private void ovladanie()
+        {
+            if (Platforma.nastavPlatformu(true, false, false))
+            {
+                NavigationPage.SetHasNavigationBar(this, true);
+            }
+            else if (Platforma.nastavPlatformu(false, true, false))
+            {
+                NavigationPage.SetHasNavigationBar(this, false);
+            }
+            else if (Platforma.nastavPlatformu(false, false, true))
+            {
+                NavigationPage.SetHasNavigationBar(this, false);
+            }
+        }
+
         private void spracovanieChyby(String odopoved)
         {
             Debug.WriteLine("Metoda spracovanieChyby bola vykonana");
 
-            if (odopoved.Equals("neUspesnePrihlasenie"))
+            if (odopoved.Equals(Nastavenia.MOZNA_CHYBA))
             {
                 this.autentifkaciaUdaje.ucetJeNePristupny(uvodnaObrazovkaUdaje.prihlasPouzivatela());
                 Device.BeginInvokeOnMainThread(async () => { await Application.Current.MainPage.DisplayAlert("Chyba", "Prosím prihláste sa!", "Zatvoriť"); });
             }
-            else if (odopoved.Equals("chyba"))
+            else if (odopoved.Equals(Nastavenia.CHYBA))
             {
                 Device.BeginInvokeOnMainThread(async () => { await Application.Current.MainPage.DisplayAlert("Chyba", "Nastala chyba, prosím prihláste sa!", "Zatvoriť"); });
             }
@@ -84,7 +101,7 @@ namespace Udalosti.Autentifikacia.UI
             sqliteDatabaza.VyvorDatabazu();
             spracovanieChyby(this.odpoved);
 
-            await preferencie.novaPreferencia<bool>("prvyStart", true);
+            await preferencie.novaPreferencia<bool>(Nastavenia.START, true);
         }
 
         private async void prihlasitSa(object sender, EventArgs e)

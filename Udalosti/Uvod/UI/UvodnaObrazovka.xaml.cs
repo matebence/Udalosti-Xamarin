@@ -44,7 +44,7 @@ namespace Udalosti.Uvod.UI
                     }
                     else
                     {
-                        Application.Current.MainPage = new NavigationPage(new Prihlasenie("neUspesnePrihlasenie"));
+                        Application.Current.MainPage = (new NavigationPage(new Prihlasenie(Nastavenia.MOZNA_CHYBA)) { BarBackgroundColor = Color.FromHex("#275881"), BarTextColor = Color.White });
                     }
                     break;
             }
@@ -62,7 +62,7 @@ namespace Udalosti.Uvod.UI
             }
             else
             {
-                Application.Current.MainPage = new NavigationPage(new Prihlasenie("chyba"));
+                Application.Current.MainPage = (new NavigationPage(new Prihlasenie(Nastavenia.CHYBA)) { BarBackgroundColor = Color.FromHex("#275881"), BarTextColor = Color.White });
             }
         }
     }

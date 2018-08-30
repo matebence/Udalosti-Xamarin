@@ -16,7 +16,9 @@ C:/Users/ecneb/Documents/Udalosti/Udalosti/Udalosti/obj/Debug/netstandard2.0/Xam
 C:/Users/ecneb/Documents/Udalosti/Udalosti/Udalosti/obj/Debug/netstandard2.0/Udalosti.dll
 C:/Users/ecneb/Documents/Udalosti/Udalosti/Udalosti/obj/Debug/netstandard2.0/Udalosti.pdb
 C:/Users/ecneb/Documents/Udalosti/Udalosti/Udalosti/obj/Debug/netstandard2.0/Udalosti.csprojAssemblyReference.cache
-/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/obj/Debug/netstandard2.0/Udalosti.csprojResolveAssemblyReference.cache
+/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/bin/Debug/netstandard2.0/Udalosti.deps.json
+/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/bin/Debug/netstandard2.0/Udalosti.dll
+/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/bin/Debug/netstandard2.0/Udalosti.pdb
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/obj/Debug/netstandard2.0/App.xaml.g.cs
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/obj/Debug/netstandard2.0/Autentifikacia/UI/Prihlasenie.xaml.g.cs
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/obj/Debug/netstandard2.0/Autentifikacia/UI/Registracia.xaml.g.cs
@@ -28,9 +30,6 @@ C:/Users/ecneb/Documents/Udalosti/Udalosti/Udalosti/obj/Debug/netstandard2.0/Uda
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/obj/Debug/netstandard2.0/Udalosti.csproj.CoreCompileInputs.cache
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/obj/Debug/netstandard2.0/Udalosti.AssemblyInfoInputs.cache
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/obj/Debug/netstandard2.0/Udalosti.AssemblyInfo.cs
+/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/obj/Debug/netstandard2.0/XamlC.stamp
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/obj/Debug/netstandard2.0/Udalosti.dll
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/obj/Debug/netstandard2.0/Udalosti.pdb
-/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/bin/Debug/netstandard2.0/Udalosti.deps.json
-/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/bin/Debug/netstandard2.0/Udalosti.dll
-/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/bin/Debug/netstandard2.0/Udalosti.pdb
-/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/obj/Debug/netstandard2.0/XamlC.stamp

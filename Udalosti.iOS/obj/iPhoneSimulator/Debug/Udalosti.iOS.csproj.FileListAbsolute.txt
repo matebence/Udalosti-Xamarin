@@ -128,6 +128,10 @@ C:/Users/ecneb/Documents/Udalosti/Udalosti/Udalosti.iOS/obj/iPhoneSimulator/Debu
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.4/actool/_BundleResourceWithLogicalName.items
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.4/coremlc/_PartialAppManifest.items
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.4/coremlc/_BundleResourceWithLogicalName.items
+/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.4/optimized/Images/nav_objavuj.png
+/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.4/optimized/Images/nav_odhlasit_sa.png
+/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.4/optimized/Images/nav_podla_pozicie.png
+/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.4/optimized/Images/nav.png
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.4/optimized/
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.iOS/obj/iPhoneSimulator/Debug/Udalosti.iOS.csprojResolveAssemblyReference.cache
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.iOS/obj/iPhoneSimulator/Debug/Udalosti.iOS.csproj.CoreCompileInputs.cache

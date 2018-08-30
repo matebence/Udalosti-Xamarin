@@ -121,6 +121,10 @@
     <BundleResource Include="Resources\raleway_semi_bold_italic.ttf" />
     <BundleResource Include="Resources\raleway_thin.ttf" />
     <Compile Include="Xamarin\iOSKolotoc.cs" />
+    <BundleResource Include="Resources\Images\nav_objavuj.png" />
+    <BundleResource Include="Resources\Images\nav_odhlasit_sa.png" />
+    <BundleResource Include="Resources\Images\nav_podla_pozicie.png" />
+    <BundleResource Include="Resources\Images\nav.png" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-1024.png">

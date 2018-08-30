@@ -51,7 +51,7 @@ namespace Udalosti.Udalost.Nav
                     if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
                     {
                         udalostiUdaje.automatickePrihlasenieVypnute(uvodnaObrazovkaUdaje.prihlasPouzivatela());
-                        Application.Current.MainPage = new NavigationPage(new Prihlasenie(Nastavenia.USPECH));
+                        Application.Current.MainPage = (new NavigationPage(new Prihlasenie(Nastavenia.USPECH)) { BarBackgroundColor = Color.FromHex("#275881"), BarTextColor = Color.White });
                     }
                     break;
             }

@@ -1,14 +1,16 @@
-﻿<MasterDetailPage 
+<MasterDetailPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:ui="clr-namespace:Udalosti.Udalost.UI"
     xmlns:local="clr-namespace:Udalosti.Nastroje.Xamarin"
-    x:Class="Udalosti.Udalost.Nav.UdalostiNavigacia">
+    x:Class="Udalosti.Udalost.Nav.UdalostiNavigacia"
+    NavigationPage.HasBackButton="False">
 
     <MasterDetailPage.Master>
         
         <ContentPage
-            Title="Udalosti"
+            Title="Možnosti"
+            Icon="Images/nav.png"
             BackgroundColor="#005ba6">
             
             <ContentPage.BackgroundColor>
@@ -30,20 +32,26 @@
                         
                         <Image
                             WidthRequest="85"
-                            HeightRequest="85"
-                            Source="{local:Obrazok Udalosti.Assets.aplikacia_menu_logo.png}" />
+                            HeightRequest="85">
+                             <Image.Source>
+                                <OnPlatform x:TypeArguments="FileImageSource" Android="{local:Obrazok Udalosti.Assets.aplikacia_menu_logo_biela.png}" WinPhone="{local:Obrazok Udalosti.Assets.aplikacia_menu_logo_biela.png}" iOS="{local:Obrazok Udalosti.Assets.aplikacia_menu_logo_cierna.png}"></OnPlatform>
+                             </Image.Source>
+                        </Image>
 
                         <Label 
                             x:Name="email"
-                            TextColor="White"
                             FontSize="18" >
+
+                            <Label.TextColor>
+                                <OnPlatform x:TypeArguments="Color" Android="White" WinPhone="White" iOS="Black"></OnPlatform>
+                            </Label.TextColor>
                             
                             <Label.FontFamily>
                                 <OnPlatform x:TypeArguments="x:String">
 
                                     <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
                                     <On Platform="Android" Value="raleway_regular.ttf#Raleway Regular" />
-                                    <On Platform="iOS" Value="Raleway Regular" />
+                                    <On Platform="iOS" Value="Raleway-Regular" />
                                 </OnPlatform>
                             </Label.FontFamily>
                         </Label>
@@ -60,6 +68,10 @@
                         ItemSelected="zvolenyPrvok"
                         SeparatorVisibility="None"
                         RowHeight="60">
+
+                        <ListView.BackgroundColor>
+                            <OnPlatform x:TypeArguments="Color" Android="Default" WinPhone="Default" iOS="White"></OnPlatform>
+                        </ListView.BackgroundColor>
                         
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -80,15 +92,18 @@
                                         <Label 
                                             Text="{Binding Title}"
                                             FontSize="16"
-                                            TextColor="White"
                                             VerticalOptions="Center" >
 
+                                            <Label.TextColor>
+                                                <OnPlatform x:TypeArguments="Color" Android="White" WinPhone="White" iOS="Black"></OnPlatform>
+                                            </Label.TextColor>
+                                            
                                             <Label.FontFamily>
                                                 <OnPlatform x:TypeArguments="x:String">
 
                                                     <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
                                                     <On Platform="Android" Value="raleway_regular.ttf#Raleway Regular" />
-                                                    <On Platform="iOS" Value="Raleway Regular" />
+                                                    <On Platform="iOS" Value="Raleway-Regular" />
                                                 </OnPlatform>
                                             </Label.FontFamily>
                                         </Label>

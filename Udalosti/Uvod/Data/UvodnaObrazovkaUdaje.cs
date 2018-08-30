@@ -3,6 +3,7 @@ using Udalosti.Udaje.Data;
 using Udalosti.Nastroje;
 using System.Threading.Tasks;
 using Udalosti.Udaje.Data.Tabulka;
+using Udalosti.Udaje.Nastavenia;
 
 namespace Udalosti.Uvod.Data
 {
@@ -29,7 +30,7 @@ namespace Udalosti.Uvod.Data
             Preferencie preferencie = new Preferencie();
             if (preferencie.preferenciaExistuje("prvyStart"))
             {
-                if (preferencie.nacitajPreferenciu<bool>("prvyStart"))
+                if (preferencie.nacitajPreferenciu<bool>(Nastavenia.START))
                 {
                     return true;
                 }

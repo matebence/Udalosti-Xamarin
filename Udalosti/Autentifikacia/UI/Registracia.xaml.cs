@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using Udalosti.Autentifikacia.Data;
 using Udalosti.Nastroje;
+using Udalosti.Nastroje.Xamarin;
 using Udalosti.Udaje.Nastavenia;
 using Udalosti.Udaje.Siet.Model;
 using Xamarin.Forms;
@@ -19,12 +20,13 @@ namespace Udalosti.Autentifikacia.UI
         public Registracia ()
 		{
 			InitializeComponent();
-            this.init();
+            init();
+            ovladanie();
         }
 
         private void init()
         {
-            this.autentifkaciaUdaje = new AutentifikaciaUdaje(this);
+            autentifkaciaUdaje = new AutentifikaciaUdaje(this);
         }
 
         public async Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
@@ -43,6 +45,22 @@ namespace Udalosti.Autentifikacia.UI
                         Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Chyba", odpoved, "Zatvoriť"); });
                     }
                     break;
+            }
+        }
+
+        private void ovladanie()
+        {
+            if (Platforma.nastavPlatformu(true, false, false))
+            {
+                NavigationPage.SetHasNavigationBar(this, true);
+            }
+            else if (Platforma.nastavPlatformu(false, true, false))
+            {
+                NavigationPage.SetHasNavigationBar(this, false);
+            }
+            else if (Platforma.nastavPlatformu(false, false, true))
+            {
+                NavigationPage.SetHasNavigationBar(this, false);
             }
         }
 
