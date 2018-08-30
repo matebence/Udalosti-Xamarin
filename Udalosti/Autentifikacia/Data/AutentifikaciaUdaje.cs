@@ -51,11 +51,11 @@ namespace Udalosti.Autentifikacia.Data
 
                 if (sqliteDataza.miestoPrihlasenia())
                 {
-                    await sqliteDataza.noveMiestoPrihlasenia(new Miesto(1, stat, okres, mesto));
+                    sqliteDataza.aktualizujMiestoPrihlasenia(new Miesto(stat, okres, mesto));
                 }
                 else
                 {
-                    await sqliteDataza.noveMiestoPrihlasenia(new Miesto(0, stat, okres, mesto));
+                    sqliteDataza.noveMiestoPrihlasenia(new Miesto(stat, okres, mesto));
                 }
             }
             await prihlasenieAsync(email, heslo, stat, okres, mesto);
@@ -173,11 +173,11 @@ namespace Udalosti.Autentifikacia.Data
 
             if (sqliteDataza.pouzivatelskeUdaje())
             {
-                sqliteDataza.novePouzivatelskeUdaje(new Pouzivatelia(1, email, heslo, token));
+                sqliteDataza.aktualizujPouzivatelskeUdaje(new Pouzivatelia(email, heslo, token));
             }
             else
             {
-                sqliteDataza.novePouzivatelskeUdaje(new Pouzivatelia(0, email, heslo, token));
+                sqliteDataza.novePouzivatelskeUdaje(new Pouzivatelia(email, heslo, token));
             }
         }
     }

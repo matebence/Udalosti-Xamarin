@@ -27,7 +27,8 @@ namespace Udalosti.Droid.Xamarin
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);
-            if (e.PropertyName == Tlacidlo.nastavUhol.PropertyName ||
+            if (e.PropertyName == Tlacidlo.nastavFarbuOkraju.PropertyName ||
+                 e.PropertyName == Tlacidlo.nastavUhol.PropertyName ||
                  e.PropertyName == Tlacidlo.nastavSirku.PropertyName)
             {
                 if (Element != null)
@@ -36,13 +37,14 @@ namespace Udalosti.Droid.Xamarin
                 }
             }
         }
-        private void Paint(Tlacidlo view)
+
+        private void Paint(Tlacidlo tlacidlo)
         {
             farba = new GradientDrawable();
             farba.SetShape(ShapeType.Rectangle);
-            farba.SetColor(view.nastavFarbuTlacidla.ToAndroid());
-            farba.SetCornerRadius(
-                DPnaPX(this.Context, Convert.ToSingle(view.uhol)));
+            farba.SetColor(tlacidlo.farba.ToAndroid());
+            farba.SetStroke((int)tlacidlo.sirka, tlacidlo.farbaOkraju.ToAndroid());
+            farba.SetCornerRadius(DPnaPX(this.Context, Convert.ToSingle(tlacidlo.uhol)));
             Control.SetBackground(farba);
         }
 

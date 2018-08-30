@@ -37,7 +37,7 @@ namespace Udalosti.Udalost.Nav
             this.uvodnaObrazovkaUdaje = new UvodnaObrazovkaUdaje();
 
             Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(Objavuj)));
-            pouzivatel = uvodnaObrazovkaUdaje.prihlasPouzivatela().Result;
+            pouzivatel = uvodnaObrazovkaUdaje.prihlasPouzivatela();
 
             nacitajPolozkyNavigacie();
             nastavPredvolenuPoziciu();
@@ -50,7 +50,7 @@ namespace Udalosti.Udalost.Nav
                 case Nastavenia.AUTENTIFIKACIA_ODHLASENIE:
                     if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
                     {
-                        udalostiUdaje.automatickePrihlasenieVypnute(uvodnaObrazovkaUdaje.prihlasPouzivatela().Result);
+                        udalostiUdaje.automatickePrihlasenieVypnute(uvodnaObrazovkaUdaje.prihlasPouzivatela());
                         Application.Current.MainPage = new NavigationPage(new Prihlasenie(Nastavenia.USPECH));
                     }
                     break;

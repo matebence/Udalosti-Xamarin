@@ -57,7 +57,7 @@ namespace Udalosti.Uvod.UI
             base.OnAppearing();
             if (Spojenie.existuje())
             {
-                Pouzivatelia pouzivatelskeUdaje = uvodnaObrazovkaUdaje.prihlasPouzivatela().Result;
+                Pouzivatelia pouzivatelskeUdaje = uvodnaObrazovkaUdaje.prihlasPouzivatela();
                 await autentifkaciaUdaje.miestoPrihlaseniaAsync(pouzivatelskeUdaje.email, pouzivatelskeUdaje.heslo);
             }
             else

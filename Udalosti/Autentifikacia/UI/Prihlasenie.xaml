@@ -155,8 +155,9 @@
             <local:Tlacidlo 
             Clicked="prihlasitSa"
             Grid.Row="4"
-            nastavFarbuTlacidla="#0397d6"
-            uhol="20"  
+            farba="#0397d6"
+            farbaOkraju="Transparent"
+            uhol="20" 
             sirka="4"
             HeightRequest="45"
             BackgroundColor="#0397d6"

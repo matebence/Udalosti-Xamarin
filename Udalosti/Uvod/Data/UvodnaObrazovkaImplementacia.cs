@@ -9,6 +9,6 @@ namespace Udalosti.Uvod.Data
 
         bool zistiCiPouzivatelskoKontoExistuje();
 
-        Task<Pouzivatelia> prihlasPouzivatela();
+        Pouzivatelia prihlasPouzivatela();
     }
 }

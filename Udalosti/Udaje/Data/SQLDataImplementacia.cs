@@ -9,20 +9,24 @@ namespace Udalosti.Udaje.Data
 
         void tabulkaExistuje();
 
-        Task<int> novePouzivatelskeUdaje(Pouzivatelia pouzivatelia);
+        int novePouzivatelskeUdaje(Pouzivatelia pouzivatelia);
 
-        Task<int> odstranPouzivatelskeUdaje(Pouzivatelia pouzivatelia);
+        int aktualizujPouzivatelskeUdaje(Pouzivatelia pouzivatelia);
+
+        int odstranPouzivatelskeUdaje(Pouzivatelia pouzivatelia);
 
         bool pouzivatelskeUdaje();
 
-        Task<Pouzivatelia> vratAktualnehoPouzivatela();
+        Pouzivatelia vratAktualnehoPouzivatela();
 
-        Task<int> noveMiestoPrihlasenia(Miesto miesto);
+        int noveMiestoPrihlasenia(Miesto miesto);
 
-        Task<int> odstranMiestoPrihlasenia(Miesto miesto);
+        int aktualizujMiestoPrihlasenia(Miesto miesto);
+
+        int odstranMiestoPrihlasenia(Miesto miesto);
 
         bool miestoPrihlasenia();
 
-        Task<Miesto> vratMiestoPrihlasenia();
+        Miesto vratMiestoPrihlasenia();
     }
 }

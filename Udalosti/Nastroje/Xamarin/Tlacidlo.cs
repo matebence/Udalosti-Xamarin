@@ -5,11 +5,11 @@ namespace Udalosti.Nastroje.Xamarin
     public class Tlacidlo : Button
     {
         public static readonly BindableProperty nastavFarbuOkraju =
-          BindableProperty.Create(
-              nameof(farbaOkraju),
-              typeof(Color),
-              typeof(Tlacidlo),
-              Color.Default);
+                BindableProperty.Create(
+                    nameof(farbaOkraju),
+                    typeof(Color),
+                    typeof(Tlacidlo),
+                    Color.Default);
 
         public Color farbaOkraju
         {
@@ -17,7 +17,7 @@ namespace Udalosti.Nastroje.Xamarin
             set { SetValue(nastavFarbuOkraju, value); }
         }
 
-        public static readonly BindableProperty nastavUhol =
+        public static readonly BindableProperty nastavUhol = 
              BindableProperty.Create(
                  nameof(uhol),
                  typeof(int),
@@ -51,7 +51,7 @@ namespace Udalosti.Nastroje.Xamarin
                Color.Default
               );
 
-        public Color nastavFarbuTlacidla
+        public Color farba
         {
             get { return (Color)GetValue(nastavFarbu); }
             set { SetValue(nastavFarbu, value); }

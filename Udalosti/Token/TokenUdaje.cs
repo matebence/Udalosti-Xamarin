@@ -59,7 +59,7 @@ namespace Udalosti.Token
 
             if ((Nastavenia.TOKEN) && (uvodnaObrazovkaUdaje.zistiCiPouzivatelskoKontoExistuje()))
             {
-                Pouzivatelia pouzivatel = uvodnaObrazovkaUdaje.prihlasPouzivatela().Result;
+                Pouzivatelia pouzivatel = uvodnaObrazovkaUdaje.prihlasPouzivatela();
                 Miesto miesto = udalostiUdaje.miestoPrihlasenia();
 
                 await autentifikaciaUdaje.prihlasenieAsync(
@@ -78,7 +78,7 @@ namespace Udalosti.Token
 
             if (uvodnaObrazovkaUdaje.zistiCiPouzivatelskoKontoExistuje())
             {
-                Pouzivatelia pouzivatel = uvodnaObrazovkaUdaje.prihlasPouzivatela().Result;
+                Pouzivatelia pouzivatel = uvodnaObrazovkaUdaje.prihlasPouzivatela();
                 await udalostiUdaje.odhlasenieAsync(pouzivatel.email);
 
                 Nastavenia.TOKEN = true;

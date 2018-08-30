@@ -21,6 +21,7 @@ namespace Udalosti.iOS.Xamarin
         {
             base.OnElementPropertyChanged(sender, e);
             if (e.PropertyName == Tlacidlo.nastavUhol.PropertyName ||
+               e.PropertyName == Tlacidlo.nastavFarbuOkraju.PropertyName ||
                e.PropertyName == Tlacidlo.nastavSirku.PropertyName)
             {
                 if (Element != null)
@@ -29,11 +30,12 @@ namespace Udalosti.iOS.Xamarin
                 }
             }
         }
-        private void Paint(Tlacidlo view)
+        private void Paint(Tlacidlo tlacidlo)
         {
-            this.Layer.CornerRadius = (float)view.uhol;
-            this.Layer.BackgroundColor = view.nastavFarbuTlacidla.ToCGColor();
-            this.Layer.BorderWidth = (int)view.sirka;
+            this.Layer.CornerRadius = (float)tlacidlo.uhol;
+            this.Layer.BorderColor = tlacidlo.farbaOkraju.ToCGColor();
+            this.Layer.BackgroundColor = tlacidlo.farba.ToCGColor();
+            this.Layer.BorderWidth = (int)tlacidlo.sirka;
         }
     }
 }

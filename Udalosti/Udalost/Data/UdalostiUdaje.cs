@@ -37,7 +37,7 @@ namespace Udalosti.Udalost.Data
         {
             Debug.WriteLine("Metoda miestoPrihlasenia bola vykonana");
 
-            Miesto miestoPrihlasenia = sqliteDatabaza.vratMiestoPrihlasenia().Result;
+            Miesto miestoPrihlasenia = sqliteDatabaza.vratMiestoPrihlasenia();
             if (miestoPrihlasenia != null)
             {
                 return miestoPrihlasenia;

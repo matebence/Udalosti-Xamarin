@@ -15,7 +15,7 @@ namespace Udalosti.Uvod.Data
             this.sqliteDatabaza = new SQLiteDatabaza();
         }
 
-        public Task<Pouzivatelia> prihlasPouzivatela()
+        public Pouzivatelia prihlasPouzivatela()
         {
             Debug.WriteLine("Metoda prihlasPouzivatela bola vykonana");
 

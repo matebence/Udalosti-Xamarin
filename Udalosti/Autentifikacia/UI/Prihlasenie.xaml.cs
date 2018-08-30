@@ -20,18 +20,21 @@ namespace Udalosti.Autentifikacia.UI
         private Preferencie preferencie;
         private SQLiteDatabaza sqliteDatabaza;
 
+        private string odpoved;
+
         private AutentifikaciaUdaje autentifkaciaUdaje;
         private UvodnaObrazovkaUdaje uvodnaObrazovkaUdaje;
 
         public Prihlasenie (String odpoved)
 		{
 			InitializeComponent();
-            init();
-            spracovanieChyby(odpoved);
+            init(odpoved);
         }
 
-        private void init()
+        private void init(string odpoved)
         {
+            this.odpoved = odpoved;
+
             this.preferencie = new Preferencie();
             this.sqliteDatabaza = new SQLiteDatabaza();
             this.autentifkaciaUdaje = new AutentifikaciaUdaje(this);
@@ -65,19 +68,22 @@ namespace Udalosti.Autentifikacia.UI
 
             if (odopoved.Equals("neUspesnePrihlasenie"))
             {
-                Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Chyba", "Prosím prihláste sa!", "Zatvoriť"); });
-                this.autentifkaciaUdaje.ucetJeNePristupny(uvodnaObrazovkaUdaje.prihlasPouzivatela().Result);
+                this.autentifkaciaUdaje.ucetJeNePristupny(uvodnaObrazovkaUdaje.prihlasPouzivatela());
+                Device.BeginInvokeOnMainThread(async () => { await Application.Current.MainPage.DisplayAlert("Chyba", "Prosím prihláste sa!", "Zatvoriť"); });
             }
             else if (odopoved.Equals("chyba"))
             {
-                Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Chyba", "Nastala chyba, prosím prihláste sa!", "Zatvoriť"); });
+                Device.BeginInvokeOnMainThread(async () => { await Application.Current.MainPage.DisplayAlert("Chyba", "Nastala chyba, prosím prihláste sa!", "Zatvoriť"); });
             }
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+
             sqliteDatabaza.VyvorDatabazu();
+            spracovanieChyby(this.odpoved);
+
             await preferencie.novaPreferencia<bool>("prvyStart", true);
         }
 

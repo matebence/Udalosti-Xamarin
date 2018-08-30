@@ -214,7 +214,8 @@
             <local:Tlacidlo 
             Clicked="registrovatSa"
             Grid.Row="6"
-            nastavFarbuTlacidla="#0397d6"
+            farba="#0397d6"
+            farbaOkraju="Transparent"
             uhol="20"  
             sirka="4"
             HeightRequest="45"

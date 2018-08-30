@@ -35,7 +35,7 @@ namespace Udalosti.Udalost.UI
             this.udalostiUdaje = new UdalostiUdaje(this, this);
             this.uvodnaObrazovkaUdaje = new UvodnaObrazovkaUdaje();
 
-            this.pouzivatel = uvodnaObrazovkaUdaje.prihlasPouzivatela().Result;
+            this.pouzivatel = uvodnaObrazovkaUdaje.prihlasPouzivatela();
             this.miesto = udalostiUdaje.miestoPrihlasenia();
 
             this.udalost = new ObservableCollection<ObsahUdalosti>();

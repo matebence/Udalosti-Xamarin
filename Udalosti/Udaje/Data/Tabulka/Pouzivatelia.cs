@@ -6,17 +6,16 @@ namespace Udalosti.Udaje.Data.Tabulka
     {
         [SQLite.PrimaryKey, SQLite.AutoIncrement]
         public int idPouzivatel { get; set; }
-        public String email { get; set; }
-        public String heslo { get; set; }
-        public String token { get; set; }
+        public string email { get; set; }
+        public string heslo { get; set; }
+        public string token { get; set; }
 
         public Pouzivatelia()
         {
         }
 
-        public Pouzivatelia(int idPouzivatel, string email, string heslo, string token)
+        public Pouzivatelia(string email, string heslo, string token)
         {
-            this.idPouzivatel = idPouzivatel;
             this.email = email;
             this.heslo = heslo;
             this.token = token;
