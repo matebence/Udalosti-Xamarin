@@ -8346,11 +8346,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ecneb\\Documents\\Udalosti\\Udalosti\\Udalosti.UWP\\Udalosti.UWP.csproj",
+      "projectUniqueName": "C:\\Users\\ecneb\\Downloads\\Xamarin\\Udalosti\\Udalosti\\Udalosti.UWP\\Udalosti.UWP.csproj",
       "projectName": "Udalosti.UWP",
-      "projectPath": "C:\\Users\\ecneb\\Documents\\Udalosti\\Udalosti\\Udalosti.UWP\\Udalosti.UWP.csproj",
+      "projectPath": "C:\\Users\\ecneb\\Downloads\\Xamarin\\Udalosti\\Udalosti\\Udalosti.UWP\\Udalosti.UWP.csproj",
       "packagesPath": "C:\\Users\\ecneb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ecneb\\Documents\\Udalosti\\Udalosti\\Udalosti.UWP\\obj\\",
+      "outputPath": "C:\\Users\\ecneb\\Downloads\\Xamarin\\Udalosti\\Udalosti\\Udalosti.UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -8370,8 +8370,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "C:\\Users\\ecneb\\Documents\\Udalosti\\Udalosti\\Udalosti\\Udalosti.csproj": {
-              "projectPath": "C:\\Users\\ecneb\\Documents\\Udalosti\\Udalosti\\Udalosti\\Udalosti.csproj"
+            "C:\\Users\\ecneb\\Downloads\\Xamarin\\Udalosti\\Udalosti\\Udalosti\\Udalosti.csproj": {
+              "projectPath": "C:\\Users\\ecneb\\Downloads\\Xamarin\\Udalosti\\Udalosti\\Udalosti\\Udalosti.csproj"
             }
           }
         }

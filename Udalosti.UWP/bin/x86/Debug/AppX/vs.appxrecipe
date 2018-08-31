@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>ec0cc741-fd3e-485c-81be-68815c480690</PackageIdentityName>
     <PackageIdentityPublisher>CN=0926baf4-dd14-4269-8306-c060f8171962</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,7 +18,7 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\AppX</LayoutDir>
+    <LayoutDir>C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\AppX</LayoutDir>
     <RegisteredManifestChecksum>33C4649A47C2A95F79045F7E08AE43643F032C3E2A8CF248AE302D5C1F320B33</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>644ef7bd-fc46-430e-9200-c98af09b91de_1.0.0.0_x86__n1wc4f023svrp</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>644ef7bd-fc46-430e-9200-c98af09b91de_n1wc4f023svrp!App</RegisteredUserModeAppID>
@@ -28,16 +28,16 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-30T13:03:07.809</Modified>
+      <Modified>2018-08-31T13:23:03.291</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Udalosti.UWP.exe">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Udalosti.UWP.exe">
       <PackagePath>entrypoint\Udalosti.UWP.exe</PackagePath>
-      <Modified>2018-08-30T13:03:06.128</Modified>
+      <Modified>2018-08-31T13:23:01.150</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\newtonsoft.json\11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -747,371 +747,371 @@
       <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
       <Modified>2018-07-27T03:16:10.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti\bin\Debug\netstandard2.0\Udalosti.dll">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\bin\Debug\netstandard2.0\Udalosti.dll">
       <PackagePath>Udalosti.dll</PackagePath>
-      <Modified>2018-08-30T13:02:58.066</Modified>
+      <Modified>2018-08-31T20:37:56.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\BadgeLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\BadgeLogo.scale-100.png">
       <PackagePath>Assets\BadgeLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.028</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\BadgeLogo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\BadgeLogo.scale-125.png">
       <PackagePath>Assets\BadgeLogo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.031</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\BadgeLogo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\BadgeLogo.scale-150.png">
       <PackagePath>Assets\BadgeLogo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.035</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\BadgeLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\BadgeLogo.scale-200.png">
       <PackagePath>Assets\BadgeLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.038</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\BadgeLogo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\BadgeLogo.scale-400.png">
       <PackagePath>Assets\BadgeLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.042</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Images\nav_objavuj.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Images\nav_objavuj.png">
       <PackagePath>Assets\Images\nav_objavuj.png</PackagePath>
-      <Modified>2018-08-27T17:50:47.354</Modified>
+      <Modified>2018-08-28T03:50:46.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Images\nav_odhlasit_sa.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Images\nav_odhlasit_sa.png">
       <PackagePath>Assets\Images\nav_odhlasit_sa.png</PackagePath>
-      <Modified>2018-08-27T17:50:47.360</Modified>
+      <Modified>2018-08-28T03:50:46.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Images\nav_podla_pozicie.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Images\nav_podla_pozicie.png">
       <PackagePath>Assets\Images\nav_podla_pozicie.png</PackagePath>
-      <Modified>2018-08-27T17:50:47.365</Modified>
+      <Modified>2018-08-28T03:50:46.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\LargeTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.046</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\LargeTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\LargeTile.scale-125.png">
       <PackagePath>Assets\LargeTile.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.050</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\LargeTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\LargeTile.scale-150.png">
       <PackagePath>Assets\LargeTile.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.054</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\LargeTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\LargeTile.scale-200.png">
       <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.058</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\LargeTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\LargeTile.scale-400.png">
       <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.062</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2018-08-23T11:13:30.065</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\SmallTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\SmallTile.scale-100.png">
       <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.069</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\SmallTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\SmallTile.scale-125.png">
       <PackagePath>Assets\SmallTile.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.072</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\SmallTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\SmallTile.scale-150.png">
       <PackagePath>Assets\SmallTile.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.076</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\SmallTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\SmallTile.scale-200.png">
       <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.079</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\SmallTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\SmallTile.scale-400.png">
       <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.083</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.087</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\SplashScreen.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\SplashScreen.scale-125.png">
       <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.091</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\SplashScreen.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\SplashScreen.scale-150.png">
       <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.094</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.098</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\SplashScreen.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\SplashScreen.scale-400.png">
       <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.102</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Square150x150Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.163</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Square150x150Logo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Square150x150Logo.scale-125.png">
       <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.167</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Square150x150Logo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Square150x150Logo.scale-150.png">
       <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.171</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.174</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Square150x150Logo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Square150x150Logo.scale-400.png">
       <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.178</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.106</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.117</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.109</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.114</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.121</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.scale-125.png">
       <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.124</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.scale-150.png">
       <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.128</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.131</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.scale-400.png">
       <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.135</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.140</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.targetsize-24.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.targetsize-24.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.144</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.147</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.160</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.151</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Square44x44Logo.targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:30.156</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\StoreLogo.backup.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\StoreLogo.backup.png">
       <PackagePath>Assets\StoreLogo.backup.png</PackagePath>
-      <Modified>2018-08-23T11:13:37.953</Modified>
+      <Modified>2018-08-23T21:13:36.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:38.059</Modified>
+      <Modified>2018-08-23T21:13:38.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\StoreLogo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\StoreLogo.scale-125.png">
       <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:38.072</Modified>
+      <Modified>2018-08-23T21:13:38.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\StoreLogo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\StoreLogo.scale-150.png">
       <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:38.082</Modified>
+      <Modified>2018-08-23T21:13:38.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\StoreLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\StoreLogo.scale-200.png">
       <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:38.087</Modified>
+      <Modified>2018-08-23T21:13:38.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\StoreLogo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\StoreLogo.scale-400.png">
       <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:38.094</Modified>
+      <Modified>2018-08-23T21:13:38.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Wide310x150Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:38.103</Modified>
+      <Modified>2018-08-23T21:13:38.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Wide310x150Logo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Wide310x150Logo.scale-125.png">
       <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:38.109</Modified>
+      <Modified>2018-08-23T21:13:38.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Wide310x150Logo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Wide310x150Logo.scale-150.png">
       <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:38.118</Modified>
+      <Modified>2018-08-23T21:13:38.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:38.123</Modified>
+      <Modified>2018-08-23T21:13:38.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Wide310x150Logo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-23T11:13:29.729</Modified>
+      <Modified>2018-08-23T21:13:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Images\udalosti_chyba_obrazka.jpg">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Images\udalosti_chyba_obrazka.jpg">
       <PackagePath>Assets\Images\udalosti_chyba_obrazka.jpg</PackagePath>
-      <Modified>2018-08-29T17:05:38.166</Modified>
+      <Modified>2018-08-30T03:05:38.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2018-08-23T11:05:36.771</Modified>
+      <Modified>2018-08-23T21:05:36.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_black.ttf">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_black.ttf">
       <PackagePath>Assets\Fonts\raleway_black.ttf</PackagePath>
-      <Modified>2018-08-23T11:13:29.734</Modified>
+      <Modified>2018-08-23T21:13:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_black_italic.ttf">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_black_italic.ttf">
       <PackagePath>Assets\Fonts\raleway_black_italic.ttf</PackagePath>
-      <Modified>2018-08-23T11:13:29.851</Modified>
+      <Modified>2018-08-23T21:13:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_bold.ttf">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_bold.ttf">
       <PackagePath>Assets\Fonts\raleway_bold.ttf</PackagePath>
-      <Modified>2018-08-23T11:13:29.860</Modified>
+      <Modified>2018-08-23T21:13:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_bold_italic.ttf">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_bold_italic.ttf">
       <PackagePath>Assets\Fonts\raleway_bold_italic.ttf</PackagePath>
-      <Modified>2018-08-23T11:13:29.866</Modified>
+      <Modified>2018-08-23T21:13:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_extra_bold.ttf">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_extra_bold.ttf">
       <PackagePath>Assets\Fonts\raleway_extra_bold.ttf</PackagePath>
-      <Modified>2018-08-23T11:13:29.879</Modified>
+      <Modified>2018-08-23T21:13:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_extra_bold_italic.ttf">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_extra_bold_italic.ttf">
       <PackagePath>Assets\Fonts\raleway_extra_bold_italic.ttf</PackagePath>
-      <Modified>2018-08-23T11:13:29.885</Modified>
+      <Modified>2018-08-23T21:13:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_extra_light.ttf">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_extra_light.ttf">
       <PackagePath>Assets\Fonts\raleway_extra_light.ttf</PackagePath>
-      <Modified>2018-08-23T11:13:29.892</Modified>
+      <Modified>2018-08-23T21:13:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_extra_light_italic.ttf">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_extra_light_italic.ttf">
       <PackagePath>Assets\Fonts\raleway_extra_light_italic.ttf</PackagePath>
-      <Modified>2018-08-23T11:13:29.903</Modified>
+      <Modified>2018-08-23T21:13:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_italic.ttf">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_italic.ttf">
       <PackagePath>Assets\Fonts\raleway_italic.ttf</PackagePath>
-      <Modified>2018-08-23T11:13:29.913</Modified>
+      <Modified>2018-08-23T21:13:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_light.ttf">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_light.ttf">
       <PackagePath>Assets\Fonts\raleway_light.ttf</PackagePath>
-      <Modified>2018-08-23T11:13:29.920</Modified>
+      <Modified>2018-08-23T21:13:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_light_italic.ttf">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_light_italic.ttf">
       <PackagePath>Assets\Fonts\raleway_light_italic.ttf</PackagePath>
-      <Modified>2018-08-23T11:13:29.932</Modified>
+      <Modified>2018-08-23T21:13:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_medium.ttf">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_medium.ttf">
       <PackagePath>Assets\Fonts\raleway_medium.ttf</PackagePath>
-      <Modified>2018-08-23T11:13:29.949</Modified>
+      <Modified>2018-08-23T21:13:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_medium_italic.ttf">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_medium_italic.ttf">
       <PackagePath>Assets\Fonts\raleway_medium_italic.ttf</PackagePath>
-      <Modified>2018-08-23T11:13:29.956</Modified>
+      <Modified>2018-08-23T21:13:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_regular.ttf">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_regular.ttf">
       <PackagePath>Assets\Fonts\raleway_regular.ttf</PackagePath>
-      <Modified>2018-08-23T11:13:29.974</Modified>
+      <Modified>2018-08-23T21:13:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_semi_bold.ttf">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_semi_bold.ttf">
       <PackagePath>Assets\Fonts\raleway_semi_bold.ttf</PackagePath>
-      <Modified>2018-08-23T11:13:29.981</Modified>
+      <Modified>2018-08-23T21:13:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_semi_bold_italic.ttf">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_semi_bold_italic.ttf">
       <PackagePath>Assets\Fonts\raleway_semi_bold_italic.ttf</PackagePath>
-      <Modified>2018-08-23T11:13:29.987</Modified>
+      <Modified>2018-08-23T21:13:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_thin.ttf">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_thin.ttf">
       <PackagePath>Assets\Fonts\raleway_thin.ttf</PackagePath>
-      <Modified>2018-08-23T11:13:30.017</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_thin_italic.ttf">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Fonts\raleway_thin_italic.ttf">
       <PackagePath>Assets\Fonts\raleway_thin_italic.ttf</PackagePath>
-      <Modified>2018-08-23T11:13:30.023</Modified>
+      <Modified>2018-08-23T21:13:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Udalosti.UWP.xr.xml">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Udalosti.UWP.xr.xml">
       <PackagePath>Udalosti.UWP.xr.xml</PackagePath>
-      <Modified>2018-08-27T17:11:49.784</Modified>
+      <Modified>2018-08-28T03:11:48.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-08-30T13:03:05.842</Modified>
+      <Modified>2018-08-31T13:23:00.932</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\UdalostiUWP.xbf">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\UdalostiUWP.xbf">
       <PackagePath>UdalostiUWP.xbf</PackagePath>
-      <Modified>2018-08-30T13:03:05.844</Modified>
+      <Modified>2018-08-31T13:23:00.932</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -1165,14 +1165,14 @@
       <PackagePath>Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml</PackagePath>
       <Modified>2018-07-27T03:16:08.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-08-30T09:10:40.851</Modified>
+      <Modified>2018-08-31T13:23:02.557</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Documents\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Core\Udalosti.UWP.exe">
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Core\Udalosti.UWP.exe">
       <PackagePath>Udalosti.UWP.exe</PackagePath>
-      <Modified>2018-08-30T13:03:07.799</Modified>
+      <Modified>2018-08-31T13:23:03.291</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
