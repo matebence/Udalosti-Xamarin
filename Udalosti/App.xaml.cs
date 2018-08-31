@@ -64,10 +64,6 @@ namespace Udalosti
             }
         }
 
-        protected override void OnStart()
-        {
-        }
-
         protected override async void OnSleep()
         {
             await tokenUdaje.zrusTokenAsync();
@@ -76,6 +72,10 @@ namespace Udalosti
         protected override async void OnResume()
         {
             await tokenUdaje.novyTokenAsync();
+        }
+
+        protected override void OnStart()
+        {
         }
     }
 }

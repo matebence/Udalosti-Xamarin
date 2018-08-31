@@ -13,7 +13,7 @@
 namespace Udalosti.Udalost.UI {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Udalost/UI/PodlaPozicie.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Udalost\\UI\\PodlaPozicie.xaml")]
     public partial class PodlaPozicie : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

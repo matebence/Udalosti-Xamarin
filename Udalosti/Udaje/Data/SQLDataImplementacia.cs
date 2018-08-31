@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using Udalosti.Udaje.Data.Tabulka;
+﻿using Udalosti.Udaje.Data.Tabulka;
 
 namespace Udalosti.Udaje.Data
 {

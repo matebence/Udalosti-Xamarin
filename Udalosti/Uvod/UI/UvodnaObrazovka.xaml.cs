@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using Udalosti.Autentifikacia.Data;
 using Udalosti.Autentifikacia.UI;
@@ -32,6 +31,20 @@ namespace Udalosti.Uvod.UI
             this.autentifkaciaUdaje = new AutentifikaciaUdaje(this);
         }
 
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            if (Spojenie.existuje())
+            {
+                Pouzivatelia pouzivatelskeUdaje = uvodnaObrazovkaUdaje.prihlasPouzivatela();
+                await autentifkaciaUdaje.miestoPrihlaseniaAsync(pouzivatelskeUdaje.email, pouzivatelskeUdaje.heslo);
+            }
+            else
+            {
+                Application.Current.MainPage = (new NavigationPage(new Prihlasenie(Nastavenia.CHYBA)) { BarBackgroundColor = Color.FromHex("#275881"), BarTextColor = Color.White });
+            }
+        }
+
         public async Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
         {
             switch (od)
@@ -47,22 +60,6 @@ namespace Udalosti.Uvod.UI
                         Application.Current.MainPage = (new NavigationPage(new Prihlasenie(Nastavenia.MOZNA_CHYBA)) { BarBackgroundColor = Color.FromHex("#275881"), BarTextColor = Color.White });
                     }
                     break;
-            }
-        }
-
-        protected override async void OnAppearing()
-        {
-            Debug.WriteLine("Metoda automatickePrihlasenie bola vykonana");
-
-            base.OnAppearing();
-            if (Spojenie.existuje())
-            {
-                Pouzivatelia pouzivatelskeUdaje = uvodnaObrazovkaUdaje.prihlasPouzivatela();
-                await autentifkaciaUdaje.miestoPrihlaseniaAsync(pouzivatelskeUdaje.email, pouzivatelskeUdaje.heslo);
-            }
-            else
-            {
-                Application.Current.MainPage = (new NavigationPage(new Prihlasenie(Nastavenia.CHYBA)) { BarBackgroundColor = Color.FromHex("#275881"), BarTextColor = Color.White });
             }
         }
     }

@@ -43,6 +43,16 @@ namespace Udalosti.Autentifikacia.UI
             this.uvodnaObrazovkaUdaje = new UvodnaObrazovkaUdaje();
         }
 
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            sqliteDatabaza.VyvorDatabazu();
+            spracovanieChyby(this.odpoved);
+
+            await preferencie.novaPreferencia<bool>(Nastavenia.START, true);
+        }
+
         public async Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
         {
             nacitavanie.IsVisible = false;
@@ -65,6 +75,8 @@ namespace Udalosti.Autentifikacia.UI
 
         private void ovladanie()
         {
+            Debug.WriteLine("Metoda ovladanie-Prihlasenie bola vykonana");
+
             if (Platforma.nastavPlatformu(true, false, false))
             {
                 NavigationPage.SetHasNavigationBar(this, true);
@@ -92,16 +104,6 @@ namespace Udalosti.Autentifikacia.UI
             {
                 Device.BeginInvokeOnMainThread(async () => { await Application.Current.MainPage.DisplayAlert("Chyba", "Nastala chyba, prosím prihláste sa!", "Zatvoriť"); });
             }
-        }
-
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-
-            sqliteDatabaza.VyvorDatabazu();
-            spracovanieChyby(this.odpoved);
-
-            await preferencie.novaPreferencia<bool>(Nastavenia.START, true);
         }
 
         private async void prihlasitSa(object sender, EventArgs e)

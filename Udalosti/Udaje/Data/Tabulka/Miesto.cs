@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Udalosti.Udaje.Data.Tabulka
+﻿namespace Udalosti.Udaje.Data.Tabulka
 {
     class Miesto
     {

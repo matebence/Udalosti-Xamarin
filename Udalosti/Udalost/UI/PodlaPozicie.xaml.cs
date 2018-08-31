@@ -42,6 +42,15 @@ namespace Udalosti.Udalost.UI
             this.operacie = new Operacie();
         }
 
+        protected override async void OnAppearing()
+        {
+            nacitavanie.IsVisible = true;
+            zoznamUdalosti.IsVisible = true;
+
+            Title = miesto.mesto;
+            await this.udalostiUdaje.zoznamUdalostiPodlaPozicieAsync(pouzivatel, miesto);
+        }
+
         public async Task dataZoServeraAsync(string odpoved, string od, List<ObsahUdalosti> udaje)
         {
             nacitavanie.IsVisible = false;
@@ -68,15 +77,6 @@ namespace Udalosti.Udalost.UI
         public Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
         {
             throw new System.NotImplementedException();
-        }
-
-        protected override async void OnAppearing()
-        {
-            nacitavanie.IsVisible = true;
-            zoznamUdalosti.IsVisible = true;
-
-            Title = miesto.mesto;
-            await this.udalostiUdaje.zoznamUdalostiPodlaPozicieAsync(pouzivatel, miesto);
         }
     }
 }

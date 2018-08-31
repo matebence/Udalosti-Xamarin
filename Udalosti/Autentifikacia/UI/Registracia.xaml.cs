@@ -50,6 +50,8 @@ namespace Udalosti.Autentifikacia.UI
 
         private void ovladanie()
         {
+            Debug.WriteLine("Metoda ovladanie-Registracia bola vykonana");
+
             if (Platforma.nastavPlatformu(true, false, false))
             {
                 NavigationPage.SetHasNavigationBar(this, true);

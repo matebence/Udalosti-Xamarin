@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using Udalosti.Autentifikacia.UI;
-using Udalosti.Nastroje;
 using Udalosti.Nastroje.Xamarin;
 using Udalosti.Udaje.Nastavenia;
 using Xamarin.Forms;
