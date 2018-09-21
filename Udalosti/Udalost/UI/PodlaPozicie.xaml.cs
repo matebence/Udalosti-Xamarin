@@ -62,7 +62,14 @@ namespace Udalosti.Udalost.UI
                     {
                         if (udaje != null)
                         {
-                            await operacie.nacitaveniaUdalostiAsync(udaje, zoznamUdalosti, udalost);
+                            if (UdalostiUdaje.udalostiPozicia.Count < 1)
+                            {
+                                await operacie.nacitaveniaUdalostiAsync(udaje, zoznamUdalosti,  UdalostiUdaje.udalostiPozicia);
+                            }
+                            else
+                            {
+                                zoznamUdalosti.ItemsSource = UdalostiUdaje.udalostiPozicia;
+                            }
                         }
                         else
                         {

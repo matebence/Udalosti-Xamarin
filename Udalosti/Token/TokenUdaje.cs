@@ -13,8 +13,6 @@ namespace Udalosti.Token
 {
     class TokenUdaje : TokenImplementacia, KommunikaciaOdpoved, KommunikaciaData
     {
-        private Pouzivatelia pouzivatel;
-
         private AutentifikaciaUdaje autentifikaciaUdaje;
         private UvodnaObrazovkaUdaje uvodnaObrazovkaUdaje;
         private UdalostiUdaje udalostiUdaje;
@@ -29,8 +27,6 @@ namespace Udalosti.Token
             this.autentifikaciaUdaje = new AutentifikaciaUdaje(this);
             this.uvodnaObrazovkaUdaje = new UvodnaObrazovkaUdaje();
             this.udalostiUdaje = new UdalostiUdaje(this, this);
-
-            this.pouzivatel = uvodnaObrazovkaUdaje.prihlasPouzivatela();
         }
 
         public async Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
@@ -41,6 +37,8 @@ namespace Udalosti.Token
                     if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
                     {
                         Debug.WriteLine("Novy token generovany");
+
+                        Pouzivatelia pouzivatel = uvodnaObrazovkaUdaje.prihlasPouzivatela();
                         autentifikaciaUdaje.ulozPrihlasovacieUdajeDoDatabazy(pouzivatel.email, pouzivatel.heslo, udaje["token"]);
                     }
                     break;
@@ -83,6 +81,7 @@ namespace Udalosti.Token
 
             if (uvodnaObrazovkaUdaje.zistiCiPouzivatelskoKontoExistuje())
             {
+                Pouzivatelia pouzivatel = uvodnaObrazovkaUdaje.prihlasPouzivatela();
                 await udalostiUdaje.odhlasenieAsync(pouzivatel.email);
 
                 Nastavenia.TOKEN = true;

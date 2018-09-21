@@ -29,8 +29,11 @@ namespace Udalosti.Autentifikacia.Data
             Debug.WriteLine("Metoda miestoPrihlaseniaAsync bola vykonana");
 
             HttpResponseMessage odpoved = await new Request().novyGetRequestAsync("json");
+
             String stat, okres, mesto;
             stat = okres = mesto = "";
+
+            sqliteDataza.VyvorDatabazu();
 
             if (odpoved.IsSuccessStatusCode)
             {
@@ -72,7 +75,7 @@ namespace Udalosti.Autentifikacia.Data
                { "pokus_o_prihlasenie", Guid.NewGuid().ToString() }
             };
 
-            HttpResponseMessage odpoved = await new Request().novyPostRequestAsync(obsah, "index.php/prihlasenie");
+            HttpResponseMessage odpoved = await new Request().novyPostRequestAsync(obsah, "index.php/prihlasenie/prihlasit_sa");
             if (odpoved.IsSuccessStatusCode)
             {
                 Autentifikator autentifikator = JsonConvert.DeserializeObject<Autentifikator>(await odpoved.Content.ReadAsStringAsync());

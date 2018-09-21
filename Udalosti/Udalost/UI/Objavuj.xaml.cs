@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Udalosti.Udaje.Data.Tabulka;
 using Udalosti.Udaje.Nastavenia;
@@ -18,7 +19,6 @@ namespace Udalosti.Udalost.UI
         private UdalostiUdaje udalostiUdaje;
         private UvodnaObrazovkaUdaje uvodnaObrazovkaUdaje;
 
-        private ObservableCollection<ObsahUdalosti> udalost;
         private Operacie operacie;
 
         private Pouzivatelia pouzivatel;
@@ -38,7 +38,6 @@ namespace Udalosti.Udalost.UI
             this.pouzivatel = uvodnaObrazovkaUdaje.prihlasPouzivatela();
             this.miesto = udalostiUdaje.miestoPrihlasenia();
 
-            this.udalost = new ObservableCollection<ObsahUdalosti>();
             this.operacie = new Operacie();
         }
 
@@ -62,7 +61,13 @@ namespace Udalosti.Udalost.UI
                     {
                         if (udaje != null)
                         {
-                            await operacie.nacitaveniaUdalostiAsync(udaje, zoznamUdalosti, udalost);
+                            if(UdalostiUdaje.udalosti.Count < 1)
+                            {
+                                await operacie.nacitaveniaUdalostiAsync(udaje, zoznamUdalosti, UdalostiUdaje.udalosti);
+                            }else
+                            {
+                                zoznamUdalosti.ItemsSource = UdalostiUdaje.udalosti;
+                            }
                         }
                         else
                         {

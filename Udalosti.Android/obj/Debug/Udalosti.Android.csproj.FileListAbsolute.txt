@@ -5,9 +5,11 @@
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.Android/bin/Debug/Udalosti.dll
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.Android/bin/Debug/Udalosti.pdb
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.Android/bin/Debug/Udalosti.dll.mdb
-/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.Android/obj/Debug/Udalosti.Android.csprojResolveAssemblyReference.cache
+/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.Android/obj/Debug/Udalosti.Android.csprojAssemblyReference.cache
+/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.Android/obj/Debug/res.flag
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.Android/obj/Debug/Udalosti.Android.csproj.CoreCompileInputs.cache
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.Android/obj/Debug/XamlC.stamp
+/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.Android/obj/Debug/Udalosti.Android.csproj.CopyComplete
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.Android/obj/Debug/Udalosti.Android.dll
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.Android/obj/Debug/Udalosti.Android.pdb
 /Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.Android/obj/Debug/android/bin/com.bence.mate.Udalosti.apk

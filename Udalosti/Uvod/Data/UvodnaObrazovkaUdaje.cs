@@ -19,6 +19,7 @@ namespace Udalosti.Uvod.Data
         {
             Debug.WriteLine("Metoda prihlasPouzivatela bola vykonana");
 
+            sqliteDatabaza.VyvorDatabazu();
             return sqliteDatabaza.vratAktualnehoPouzivatela();
         }
 

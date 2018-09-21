@@ -19,7 +19,6 @@ namespace Udalosti.Autentifikacia.UI
 	public partial class Prihlasenie : ContentPage, KommunikaciaOdpoved
     {
         private Preferencie preferencie;
-        private SQLiteDatabaza sqliteDatabaza;
 
         private string odpoved;
 
@@ -38,7 +37,6 @@ namespace Udalosti.Autentifikacia.UI
             this.odpoved = odpoved;
 
             this.preferencie = new Preferencie();
-            this.sqliteDatabaza = new SQLiteDatabaza();
             this.autentifkaciaUdaje = new AutentifikaciaUdaje(this);
             this.uvodnaObrazovkaUdaje = new UvodnaObrazovkaUdaje();
         }
@@ -47,9 +45,7 @@ namespace Udalosti.Autentifikacia.UI
         {
             base.OnAppearing();
 
-            sqliteDatabaza.VyvorDatabazu();
             spracovanieChyby(this.odpoved);
-
             await preferencie.novaPreferencia<bool>(Nastavenia.START, true);
         }
 

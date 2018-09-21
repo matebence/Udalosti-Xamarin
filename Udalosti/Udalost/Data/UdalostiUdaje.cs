@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -10,11 +11,15 @@ using Udalosti.Udaje.Siet;
 using Udalosti.Udaje.Siet.Model;
 using Udalosti.Udaje.Siet.Model.Autentifikator;
 using Udalosti.Udaje.Siet.Model.Obsah;
+using Udalosti.Udaje.Zdroje;
 
 namespace Udalosti.Udalost.Data
 {
     class UdalostiUdaje : UdalostiImplementacia
     {
+        public static ObservableCollection<ObsahUdalosti> udalosti = new ObservableCollection<ObsahUdalosti>();
+        public static ObservableCollection<ObsahUdalosti> udalostiPozicia = new ObservableCollection<ObsahUdalosti>();
+
         private KommunikaciaOdpoved odpovedeOdServera;
         private KommunikaciaData udajeZoServera;
         private SQLiteDatabaza sqliteDatabaza;

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.ObjectModel;
+using Udalosti.Udaje.Zdroje;
 
 namespace Udalosti.Udaje.Nastavenia
 {
