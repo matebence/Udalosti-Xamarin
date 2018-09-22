@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using Udalosti.Udaje.Data.Tabulka;
 using Udalosti.Udaje.Nastavenia;
@@ -47,7 +45,16 @@ namespace Udalosti.Udalost.UI
             zoznamUdalosti.IsVisible = true;
 
             Title = miesto.stat;
-            await this.udalostiUdaje.zoznamUdalostiAsync(pouzivatel, miesto);
+
+            if (UdalostiUdaje.udalosti.Count < 1)
+            {
+                await this.udalostiUdaje.zoznamUdalostiAsync(pouzivatel, miesto);
+            }
+            else
+            {
+                zoznamUdalosti.ItemsSource = UdalostiUdaje.udalosti;
+                nacitavanie.IsVisible = false;
+            }
         }
 
         public async Task dataZoServeraAsync(string odpoved, string od, List<ObsahUdalosti> udaje)
@@ -61,13 +68,7 @@ namespace Udalosti.Udalost.UI
                     {
                         if (udaje != null)
                         {
-                            if(UdalostiUdaje.udalosti.Count < 1)
-                            {
-                                await operacie.nacitaveniaUdalostiAsync(udaje, zoznamUdalosti, UdalostiUdaje.udalosti);
-                            }else
-                            {
-                                zoznamUdalosti.ItemsSource = UdalostiUdaje.udalosti;
-                            }
+                            await operacie.nacitaveniaUdalostiAsync(udaje, zoznamUdalosti, UdalostiUdaje.udalosti);
                         }
                         else
                         {

@@ -48,8 +48,11 @@ namespace Udalosti.Udalost
                     __o.obrazok = App.udalostiAdresa + __o.obrazok;
                 }
 
-                __o.mesiac = dlzkaSlova(__o.mesiac);
-                __o.mesto = dlzkaSlova(__o.mesto);
+                if (Platforma.nastavPlatformu(true, true, false))
+                {
+                    __o.mesiac = dlzkaSlova(__o.mesiac);
+                    __o.mesto = dlzkaSlova(__o.mesto);
+                }
 
                 obsah.Add(__o);
             }

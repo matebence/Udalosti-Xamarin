@@ -48,7 +48,16 @@ namespace Udalosti.Udalost.UI
             zoznamUdalosti.IsVisible = true;
 
             Title = miesto.mesto;
-            await this.udalostiUdaje.zoznamUdalostiPodlaPozicieAsync(pouzivatel, miesto);
+
+            if (UdalostiUdaje.udalostiPozicia.Count < 1)
+            {
+                await this.udalostiUdaje.zoznamUdalostiPodlaPozicieAsync(pouzivatel, miesto);
+            }
+            else
+            {
+                zoznamUdalosti.ItemsSource = UdalostiUdaje.udalostiPozicia;
+                nacitavanie.IsVisible = false;
+            }
         }
 
         public async Task dataZoServeraAsync(string odpoved, string od, List<ObsahUdalosti> udaje)
@@ -62,14 +71,7 @@ namespace Udalosti.Udalost.UI
                     {
                         if (udaje != null)
                         {
-                            if (UdalostiUdaje.udalostiPozicia.Count < 1)
-                            {
-                                await operacie.nacitaveniaUdalostiAsync(udaje, zoznamUdalosti,  UdalostiUdaje.udalostiPozicia);
-                            }
-                            else
-                            {
-                                zoznamUdalosti.ItemsSource = UdalostiUdaje.udalostiPozicia;
-                            }
+                            await operacie.nacitaveniaUdalostiAsync(udaje, zoznamUdalosti,  UdalostiUdaje.udalostiPozicia);
                         }
                         else
                         {

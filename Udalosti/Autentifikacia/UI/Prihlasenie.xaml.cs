@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Udalosti.Autentifikacia.Data;
 using Udalosti.Nastroje;
 using Udalosti.Nastroje.Xamarin;
-using Udalosti.Udaje.Data;
 using Udalosti.Udaje.Nastavenia;
 using Udalosti.Udaje.Siet.Model;
 using Udalosti.Udalost.Nav;
