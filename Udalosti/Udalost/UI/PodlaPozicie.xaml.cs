@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Udalosti.Udaje.Data.Tabulka;
 using Udalosti.Udaje.Nastavenia;
@@ -15,54 +16,53 @@ namespace Udalosti.Udalost.UI
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class PodlaPozicie : ContentPage, KommunikaciaOdpoved, KommunikaciaData
 	{
-        private UdalostiUdaje udalostiUdaje;
         private UvodnaObrazovkaUdaje uvodnaObrazovkaUdaje;
+        private UdalostiUdaje udalostiUdaje;
 
-        private ObservableCollection<ObsahUdalosti> udalost;
-        private Operacie operacie;
+        private ObservableCollection<ObsahUdalosti> udalostiPozicia;
+        private SpravcaDat spravcaData;
 
         private Pouzivatelia pouzivatel;
         private Miesto miesto;
 
         public PodlaPozicie()
         {
+            Debug.WriteLine("Metoda PodlaPozicie bola vykonana");
+
             InitializeComponent();
             init();
         }
 
         private void init()
         {
+            Debug.WriteLine("Metoda PodlaPozicie - init bola vykonana");
+
             this.udalostiUdaje = new UdalostiUdaje(this, this);
             this.uvodnaObrazovkaUdaje = new UvodnaObrazovkaUdaje();
 
-            this.pouzivatel = uvodnaObrazovkaUdaje.prihlasPouzivatela();
-            this.miesto = udalostiUdaje.miestoPrihlasenia();
+            this.pouzivatel = this.uvodnaObrazovkaUdaje.prihlasPouzivatela();
+            this.miesto = this.udalostiUdaje.miestoPrihlasenia();
 
-            this.udalost = new ObservableCollection<ObsahUdalosti>();
-            this.operacie = new Operacie();
+            this.spravcaData = new SpravcaDat();
         }
 
         protected override async void OnAppearing()
         {
+            Debug.WriteLine("Metoda PodlaPozicie - init bola vykonana");
+
             nacitavanie.IsVisible = true;
-            zoznamUdalosti.IsVisible = true;
+            Title = miesto.pozicia;
 
-            Title = miesto.mesto;
-
-            if (UdalostiUdaje.udalostiPozicia.Count < 1)
+            if (this.udalostiPozicia == null)
             {
-                await this.udalostiUdaje.zoznamUdalostiPodlaPozicieAsync(pouzivatel, miesto);
-            }
-            else
-            {
-                zoznamUdalosti.ItemsSource = UdalostiUdaje.udalostiPozicia;
-                nacitavanie.IsVisible = false;
+                this.udalostiPozicia = new ObservableCollection<ObsahUdalosti>();
+                await this.udalostiUdaje.zoznamUdalostiPodlaPozicieAsync(this.pouzivatel, this.miesto);
             }
         }
 
         public async Task dataZoServeraAsync(string odpoved, string od, List<ObsahUdalosti> udaje)
         {
-            nacitavanie.IsVisible = false;
+            Debug.WriteLine("Metoda PodlaPozicie - init bola vykonana");
 
             switch (od)
             {
@@ -71,7 +71,8 @@ namespace Udalosti.Udalost.UI
                     {
                         if (udaje != null)
                         {
-                            await operacie.nacitaveniaUdalostiAsync(udaje, zoznamUdalosti,  UdalostiUdaje.udalostiPozicia);
+                            await this.spravcaData.nacitavanieUdalostiAsync(this.udalostiUdaje, udaje, zoznamUdalosti,  this.udalostiPozicia);
+                            zoznamUdalosti.IsVisible = true;
                         }
                         else
                         {
@@ -81,10 +82,13 @@ namespace Udalosti.Udalost.UI
                     }
                     break;
             }
+            nacitavanie.IsVisible = false;
         }
 
         public Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
         {
+            Debug.WriteLine("Metoda PodlaPozicie - init bola vykonana");
+
             throw new System.NotImplementedException();
         }
     }

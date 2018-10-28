@@ -5,6 +5,8 @@
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
   <application android:label="Udalosti" android:icon="@mipmap/icon_round" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
     <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="Udalosti" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:name="md521d56e4d5b4c28d87d8ab1f65fdc080f.UdalostiAndroid">

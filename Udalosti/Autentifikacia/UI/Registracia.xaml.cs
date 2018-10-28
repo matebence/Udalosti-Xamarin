@@ -19,38 +19,23 @@ namespace Udalosti.Autentifikacia.UI
 
         public Registracia ()
 		{
-			InitializeComponent();
+            Debug.WriteLine("Metoda Registracia bola vykonana");
+
+            InitializeComponent();
             init();
             ovladanie();
         }
 
         private void init()
         {
-            autentifkaciaUdaje = new AutentifikaciaUdaje(this);
-        }
+            Debug.WriteLine("Metoda Registracia - init bola vykonana");
 
-        public async Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
-        {
-            nacitavanie.IsVisible = false;
-            switch (od)
-            {
-                case Nastavenia.AUTENTIFIKACIA_REGISTRACIA:
-                    if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
-                    {
-                        Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Úspech", "Registrácia prebehla úspesne! Možete sa prihlásiť.", "Ďalej"); });
-                        await Navigation.PopAsync(true);
-                    }
-                    else
-                    {
-                        Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Chyba", odpoved, "Zatvoriť"); });
-                    }
-                    break;
-            }
+            this.autentifkaciaUdaje = new AutentifikaciaUdaje(this);
         }
 
         private void ovladanie()
         {
-            Debug.WriteLine("Metoda ovladanie-Registracia bola vykonana");
+            Debug.WriteLine("Metoda Registracia - ovladanie bola vykonana");
 
             if (Platforma.nastavPlatformu(true, false, false))
             {
@@ -74,11 +59,32 @@ namespace Udalosti.Autentifikacia.UI
             {
                 nacitavanie.IsVisible = true;
 
-                await autentifkaciaUdaje.registraciaAsync(meno.Text, email.Text, heslo.Text, potvrd.Text);
+                await this.autentifkaciaUdaje.registraciaAsync(meno.Text, email.Text, heslo.Text, potvrd.Text);
             }
             else
             {
                 Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Chyba", "Žiadné spojenie!", "Zatvoriť"); });
+            }
+        }
+
+        public async Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
+        {
+            Debug.WriteLine("Metoda Registracia - odpovedServera bola vykonana");
+
+            nacitavanie.IsVisible = false;
+            switch (od)
+            {
+                case Nastavenia.AUTENTIFIKACIA_REGISTRACIA:
+                    if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
+                    {
+                        Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Úspech", "Registrácia prebehla úspesne! Možete sa prihlásiť.", "Ďalej"); });
+                        await Navigation.PopAsync(true);
+                    }
+                    else
+                    {
+                        Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Chyba", odpoved, "Zatvoriť"); });
+                    }
+                    break;
             }
         }
     }

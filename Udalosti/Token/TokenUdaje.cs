@@ -19,11 +19,15 @@ namespace Udalosti.Token
 
         public TokenUdaje()
         {
+            Debug.WriteLine("Metoda TokenUdaje bola vykonana");
+
             init();
         }
 
         private void init()
         {
+            Debug.WriteLine("Metoda TokenUdaje - init bola vykonana");
+
             this.autentifikaciaUdaje = new AutentifikaciaUdaje(this);
             this.uvodnaObrazovkaUdaje = new UvodnaObrazovkaUdaje();
             this.udalostiUdaje = new UdalostiUdaje(this, this);
@@ -31,6 +35,8 @@ namespace Udalosti.Token
 
         public async Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
         {
+            Debug.WriteLine("Metoda TokenUdaje - odpovedServera bola vykonana");
+
             switch (od)
             {
                 case Nastavenia.AUTENTIFIKACIA_PRIHLASENIE:
@@ -38,8 +44,8 @@ namespace Udalosti.Token
                     {
                         Debug.WriteLine("Novy token generovany");
 
-                        Pouzivatelia pouzivatel = uvodnaObrazovkaUdaje.prihlasPouzivatela();
-                        autentifikaciaUdaje.ulozPrihlasovacieUdajeDoDatabazy(pouzivatel.email, pouzivatel.heslo, udaje["token"]);
+                        Pouzivatelia pouzivatel = this.uvodnaObrazovkaUdaje.prihlasPouzivatela();
+                        this.autentifikaciaUdaje.ulozPrihlasovacieUdajeDoDatabazy(new Pouzivatelia(pouzivatel.email, pouzivatel.heslo, udaje["token"]));
                     }
                     break;
                 case Nastavenia.AUTENTIFIKACIA_ODHLASENIE:
@@ -53,6 +59,8 @@ namespace Udalosti.Token
 
         public Task dataZoServeraAsync(string odpoved, string od, List<ObsahUdalosti> udaje)
         {
+            Debug.WriteLine("Metoda TokenUdaje - dataZoServeraAsync bola vykonana");
+
             throw new System.NotImplementedException();
         }
 
@@ -60,18 +68,12 @@ namespace Udalosti.Token
         {
             Debug.WriteLine("Metoda novyToken bola vykonana");
 
-            if ((Nastavenia.TOKEN) && (uvodnaObrazovkaUdaje.zistiCiPouzivatelskoKontoExistuje()))
+            if ((Nastavenia.TOKEN) && (this.uvodnaObrazovkaUdaje.zistiCiPouzivatelskoKontoExistuje()))
             {
-                Pouzivatelia pouzivatel = uvodnaObrazovkaUdaje.prihlasPouzivatela();
-                Miesto miesto = udalostiUdaje.miestoPrihlasenia();
+                Pouzivatelia pouzivatel = this.uvodnaObrazovkaUdaje.prihlasPouzivatela();
+                Miesto miesto = this.udalostiUdaje.miestoPrihlasenia();
 
-                await autentifikaciaUdaje.prihlasenieAsync(
-                    pouzivatel.email,
-                    pouzivatel.heslo,
-                    miesto.stat,
-                    miesto.okres,
-                    miesto.mesto
-                    );
+                await this.autentifikaciaUdaje.prihlasenieAsync(new Pouzivatelia(pouzivatel.email, pouzivatel.heslo, null));
             }
         }
 
@@ -79,10 +81,10 @@ namespace Udalosti.Token
         {
             Debug.WriteLine("Metoda zrusToken bola vykonana");
 
-            if (uvodnaObrazovkaUdaje.zistiCiPouzivatelskoKontoExistuje())
+            if (this.uvodnaObrazovkaUdaje.zistiCiPouzivatelskoKontoExistuje())
             {
-                Pouzivatelia pouzivatel = uvodnaObrazovkaUdaje.prihlasPouzivatela();
-                await udalostiUdaje.odhlasenieAsync(pouzivatel.email);
+                Pouzivatelia pouzivatel = this.uvodnaObrazovkaUdaje.prihlasPouzivatela();
+                await this.udalostiUdaje.odhlasenieAsync(pouzivatel);
 
                 Nastavenia.TOKEN = true;
             }

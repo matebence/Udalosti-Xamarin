@@ -14,8 +14,7 @@
                 x:Name="nacitavanie"
                 IsVisible="false"
                 IsRunning="true"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand">
+                VerticalOptions="CenterAndExpand">
 
                 <ActivityIndicator.Color>
                     <OnPlatform x:TypeArguments="Color" Android="#005ba6" WinPhone="White" iOS="Black"></OnPlatform>
@@ -169,7 +168,7 @@
                                         </Label>
 
                                         <Label  
-                                            Text="{Binding miesto}"
+                                            Text="{Binding ulica}"
                                             FontSize="17">
 
                                             <Label.TextColor>

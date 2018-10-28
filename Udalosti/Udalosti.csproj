@@ -73,6 +73,12 @@
     <EmbeddedResource Update="Udalost\UI\PodlaPozicie.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Udalost\UI\Podrobnosti.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Udalost\UI\Zaujmy.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Uvod\UI\UvodnaObrazovka.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -80,7 +86,6 @@
 
   <ItemGroup>
     <Folder Include="Udalost\Nav\" />
-    <Folder Include="Udalost\UI\" />
     <Folder Include="Assets\" />
   </ItemGroup>
 </Project>

@@ -44,6 +44,7 @@
     <Capability Name="internetClient" />
     <uap4:Capability Name="userDataTasks" />
     <uap:Capability Name="removableStorage" />
+    <DeviceCapability Name="location" />
   </Capabilities>
   <build:Metadata>
     <build:Item Name="TargetFrameworkMoniker" Value=".NETCore,Version=v5.0" />

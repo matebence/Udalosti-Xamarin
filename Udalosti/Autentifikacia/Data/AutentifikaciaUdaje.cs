@@ -24,58 +24,116 @@ namespace Udalosti.Autentifikacia.Data
             this.odpovedeOdServera = odpovedeOdServera;
         }
 
-        public async Task miestoPrihlaseniaAsync(string email, string heslo)
+        public async Task miestoPrihlaseniaAsync(Pouzivatelia pouzivatel, double zemepisnaSirka, double zemepisnaDlzka, bool aktualizuj)
         {
-            Debug.WriteLine("Metoda miestoPrihlaseniaAsync bola vykonana");
+            Debug.WriteLine("Metoda miestoPrihlaseniaAsync - GEO bola vykonana");
 
-            HttpResponseMessage odpoved = await new Request().novyGetRequestAsync("json");
+            HttpResponseMessage odpoved = await new Request().getRequestLocationServer(zemepisnaSirka, zemepisnaDlzka);
+            String pozicia, okres, kraj, psc, stat, znakStatu;
+            pozicia = okres = kraj = psc = stat = znakStatu = "";
 
-            String stat, okres, mesto;
-            stat = okres = mesto = "";
+            if (odpoved.IsSuccessStatusCode)
+            {
+                LocationIQ locationIQ = JsonConvert.DeserializeObject<LocationIQ>(await odpoved.Content.ReadAsStringAsync());
 
-            sqliteDataza.VyvorDatabazu();
+                if (locationIQ.address != null)
+                {
+                    if (locationIQ.address.city_district != null)
+                    {
+                        pozicia = locationIQ.address.city_district;
+                    }
+                    if (locationIQ.address.city != null)
+                    {
+                        okres = locationIQ.address.city;
+                    }
+                    if (locationIQ.address.state != null)
+                    {
+                        kraj = locationIQ.address.state;
+                    }
+                    if (locationIQ.address.postcode != null)
+                    {
+                        psc = locationIQ.address.postcode;
+                    }
+                    if (locationIQ.address.country != null)
+                    {
+                        stat = locationIQ.address.country;
+                    }
+                    if (locationIQ.address.country_code != null)
+                    {
+                        znakStatu = locationIQ.address.country_code;
+                    }
+
+                    if (this.sqliteDataza.miestoPrihlasenia())
+                    {
+                        this.sqliteDataza.aktualizujMiestoPrihlasenia(new Miesto(pozicia, okres, kraj, psc, stat, znakStatu));
+                    }
+                    else
+                    {
+                        this.sqliteDataza.noveMiestoPrihlasenia(new Miesto(pozicia, okres, kraj, psc, stat, znakStatu));
+                    }
+                }
+
+                if (aktualizuj)
+                {
+                    await this.odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.UDALOSTI_AKTUALIZUJ, null);
+                }
+                else
+                {
+                    await prihlasenieAsync(pouzivatel);
+                }
+            }
+            else
+            {
+                await this.odpovedeOdServera.odpovedServera("Server je momentalne nedostupný!", Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, null);
+            }
+        }
+
+        public async Task miestoPrihlaseniaAsync(Pouzivatelia pouzivatel)
+        {
+            Debug.WriteLine("Metoda miestoPrihlaseniaAsync - IP bola vykonana");
+
+            HttpResponseMessage odpoved = await new Request().getRequestGeoServer("json");
+            String stat = "";
 
             if (odpoved.IsSuccessStatusCode)
             {
                 Pozicia pozicia = JsonConvert.DeserializeObject<Pozicia>(await odpoved.Content.ReadAsStringAsync());
-
                 if (pozicia.country != null)
                 {
-                    stat = pozicia.country;
-                }
-                if (pozicia.regionName != null)
-                {
-                    okres = pozicia.regionName;
-                }
-                if (pozicia.city != null)
-                {
-                    mesto = pozicia.city;
+                    if (pozicia.country.Equals("Slovakia") || pozicia.country.Equals("Slovak Republic"))
+                    {
+                        stat = "Slovensko";
+                    }
                 }
 
-                if (sqliteDataza.miestoPrihlasenia())
+                if (this.sqliteDataza.miestoPrihlasenia())
                 {
-                    sqliteDataza.aktualizujMiestoPrihlasenia(new Miesto(stat, okres, mesto));
+                    this.sqliteDataza.aktualizujMiestoPrihlasenia(new Miesto(null, null, null, null, stat, null));
                 }
                 else
                 {
-                    sqliteDataza.noveMiestoPrihlasenia(new Miesto(stat, okres, mesto));
+                    this.sqliteDataza.noveMiestoPrihlasenia(new Miesto(null, null, null, null, stat, null));
                 }
+                await prihlasenieAsync(pouzivatel);
             }
-            await prihlasenieAsync(email, heslo, stat, okres, mesto);
+            else
+            {
+                await this.odpovedeOdServera.odpovedServera("Server je momentalne nedostupný!", Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, null);
+            }
         }
 
-        public async Task prihlasenieAsync(string email, string heslo, string stat, string okres, string mesto)
+        public async Task prihlasenieAsync(Pouzivatelia pouzivatel)
         {
             Debug.WriteLine("Metoda prihlasenieAsync bola vykonana");
 
             var obsah = new Dictionary<string, string>
             {
-               { "email", email },
-               { "heslo", heslo },
+               { "email", pouzivatel.email },
+               { "heslo", pouzivatel.heslo },
                { "pokus_o_prihlasenie", Guid.NewGuid().ToString() }
             };
 
-            HttpResponseMessage odpoved = await new Request().novyPostRequestAsync(obsah, "index.php/prihlasenie/prihlasit_sa");
+            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, "index.php/prihlasenie/prihlasit");
             if (odpoved.IsSuccessStatusCode)
             {
                 Autentifikator autentifikator = JsonConvert.DeserializeObject<Autentifikator>(await odpoved.Content.ReadAsStringAsync());
@@ -83,39 +141,32 @@ namespace Udalosti.Autentifikacia.Data
 
                 if (autentifikator.chyba)
                 {
-                    udaje.Add("email", email);
+                    udaje.Add("email", pouzivatel.email);
                     if (autentifikator.validacia.email != null)
                     {
-                        await odpovedeOdServera.odpovedServera(autentifikator.validacia.email, Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, udaje);
+                        await this.odpovedeOdServera.odpovedServera(autentifikator.validacia.email, Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, udaje);
                     }
                     else if (autentifikator.validacia.heslo != null)
                     {
-                        await odpovedeOdServera.odpovedServera(autentifikator.validacia.heslo, Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, udaje);
+                        await this.odpovedeOdServera.odpovedServera(autentifikator.validacia.heslo, Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, udaje);
                     }
                     else if (autentifikator.validacia.oznam != null)
                     {
-                        await odpovedeOdServera.odpovedServera(autentifikator.validacia.oznam, Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, udaje);
+                        await this.odpovedeOdServera.odpovedServera(autentifikator.validacia.oznam, Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, udaje);
                     }
                 }
                 else
                 {
-                    if(autentifikator.pouzivatel == null)
-                    {
-                        await odpovedeOdServera.odpovedServera("Nastala chyba! Prosím skúste ešte raz.", Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, null);
-                    }
-                    else
-                    {
-                        udaje.Add("email", email);
-                        udaje.Add("heslo", heslo);
-                        udaje.Add("token", autentifikator.pouzivatel.token);
+                    udaje.Add("email", pouzivatel.email);
+                    udaje.Add("heslo", pouzivatel.heslo);
+                    udaje.Add("token", autentifikator.pouzivatel.token);
 
-                        await odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, udaje);   
-                    }
+                    await this.odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, udaje);
                 }
             }
             else
             {
-                await odpovedeOdServera.odpovedServera("Server je momentalne nedostupný!", Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, null);
+                await this.odpovedeOdServera.odpovedServera("Server je momentalne nedostupný!", Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, null);
             }
         }
 
@@ -132,7 +183,7 @@ namespace Udalosti.Autentifikacia.Data
                { "nova_registracia", Guid.NewGuid().ToString() }
             };
 
-            HttpResponseMessage odpoved = await new Request().novyPostRequestAsync(obsah, "index.php/registracia");
+            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, "index.php/registracia");
             if (odpoved.IsSuccessStatusCode)
             {
                 Autentifikator autentifikator = JsonConvert.DeserializeObject<Autentifikator>(await odpoved.Content.ReadAsStringAsync());
@@ -140,33 +191,47 @@ namespace Udalosti.Autentifikacia.Data
                 {
                     if (autentifikator.validacia.oznam != null)
                     {
-                        await odpovedeOdServera.odpovedServera(autentifikator.validacia.oznam, Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
+                        await this.odpovedeOdServera.odpovedServera(autentifikator.validacia.oznam, Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
                     }
                     else if (autentifikator.validacia.meno != null)
                     {
-                        await odpovedeOdServera.odpovedServera(autentifikator.validacia.meno, Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
+                        await this.odpovedeOdServera.odpovedServera(autentifikator.validacia.meno, Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
                     }
                     else if (autentifikator.validacia.email != null)
                     {
-                        await odpovedeOdServera.odpovedServera(autentifikator.validacia.email, Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
+                        await this.odpovedeOdServera.odpovedServera(autentifikator.validacia.email, Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
                     }
                     else if (autentifikator.validacia.heslo != null)
                     {
-                        await odpovedeOdServera.odpovedServera(autentifikator.validacia.heslo, Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
+                        await this.odpovedeOdServera.odpovedServera(autentifikator.validacia.heslo, Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
                     }
                     else if (autentifikator.validacia.potvrd != null)
                     {
-                        await odpovedeOdServera.odpovedServera(autentifikator.validacia.potvrd, Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
+                        await this.odpovedeOdServera.odpovedServera(autentifikator.validacia.potvrd, Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
                     }
                 }
                 else
                 {
-                    await odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
+                    await this.odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
                 }
             }
             else
             {
-                await odpovedeOdServera.odpovedServera("Server je momentalne nedostupný!", Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
+                await this.odpovedeOdServera.odpovedServera("Server je momentalne nedostupný!", Nastavenia.AUTENTIFIKACIA_REGISTRACIA, null);
+            }
+        }
+
+        public void ulozPrihlasovacieUdajeDoDatabazy(Pouzivatelia pouzivatel)
+        {
+            Debug.WriteLine("Metoda ulozPrihlasovacieUdajeDoDatabazy bola vykonana");
+
+            if (this.sqliteDataza.pouzivatelskeUdaje())
+            {
+                this.sqliteDataza.aktualizujPouzivatelskeUdaje(pouzivatel);
+            }
+            else
+            {
+                this.sqliteDataza.novePouzivatelskeUdaje(pouzivatel);
             }
         }
 
@@ -174,21 +239,7 @@ namespace Udalosti.Autentifikacia.Data
         {
             Debug.WriteLine("Metoda ucetJeNePristupny bola vykonana");
 
-            sqliteDataza.odstranPouzivatelskeUdaje(pouzivatelia);
-        }
-
-        public void ulozPrihlasovacieUdajeDoDatabazy(string email, string heslo, string token)
-        {
-            Debug.WriteLine("Metoda ulozPrihlasovacieUdajeDoDatabazy bola vykonana");
-
-            if (sqliteDataza.pouzivatelskeUdaje())
-            {
-                sqliteDataza.aktualizujPouzivatelskeUdaje(new Pouzivatelia(email, heslo, token));
-            }
-            else
-            {
-                sqliteDataza.novePouzivatelskeUdaje(new Pouzivatelia(email, heslo, token));
-            }
+            this.sqliteDataza.odstranPouzivatelskeUdaje(pouzivatelia);
         }
     }
 }

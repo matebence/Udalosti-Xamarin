@@ -4,9 +4,7 @@ namespace Udalosti.Udaje.Data
 {
     interface SQLDataImplementacia
     {
-        void VyvorDatabazu();
-
-        void tabulkaExistuje();
+        void Databaza();
 
         int novePouzivatelskeUdaje(Pouzivatelia pouzivatelia);
 

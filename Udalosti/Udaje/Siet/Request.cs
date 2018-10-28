@@ -14,24 +14,32 @@ namespace Udalosti.Udaje.Siet
             this.httpClient = new HttpClient();
         }
 
-        public async Task<HttpResponseMessage> novyPostRequestAsync(Dictionary<string, string> obsah, string adresa)
+        public async Task<HttpResponseMessage> postRequestUdalostiServer(Dictionary<string, string> obsah, string adresa)
         {
-            Debug.WriteLine("Metoda novyPostRequestAsync bola vykonana");
+            Debug.WriteLine("Metoda postRequestUdalostiServer bola vykonana");
 
             adresa = App.udalostiAdresa + adresa;
 
             var request = new FormUrlEncodedContent(obsah);
-            var odpoved = await httpClient.PostAsync(adresa, request);
+            var odpoved = await this.httpClient.PostAsync(adresa, request);
 
             return odpoved;
         }
 
-        public async Task<HttpResponseMessage> novyGetRequestAsync(string adresa)
+        public async Task<HttpResponseMessage> getRequestGeoServer(string adresa)
         {
-            Debug.WriteLine("Metoda novyGetRequestAsync bola vykonana");
+            Debug.WriteLine("Metoda getRequestGeoServer bola vykonana");
 
-            adresa = App.geoAdresa + adresa;
-            return await httpClient.GetAsync(adresa);
+            adresa = App.ipAdresa + adresa;
+            return await this.httpClient.GetAsync(adresa);
+        }
+
+        public async Task<HttpResponseMessage> getRequestLocationServer(double lat, double lon)
+        {
+            Debug.WriteLine("Metoda getRequestLocationServer bola vykonana");
+
+            string adresa = App.geoAdresa + "&lat=" + lat + "&lon=" + lon + "&format=" + Nastavenia.Nastavenia.POZICIA_FORMAT + "&accept-language=" + Nastavenia.Nastavenia.POZICIA_JAZYK;
+            return await this.httpClient.GetAsync(adresa);
         }
     }
 }

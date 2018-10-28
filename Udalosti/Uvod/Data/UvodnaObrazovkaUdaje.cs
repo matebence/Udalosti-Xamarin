@@ -15,14 +15,6 @@ namespace Udalosti.Uvod.Data
             this.sqliteDatabaza = new SQLiteDatabaza();
         }
 
-        public Pouzivatelia prihlasPouzivatela()
-        {
-            Debug.WriteLine("Metoda prihlasPouzivatela bola vykonana");
-
-            sqliteDatabaza.VyvorDatabazu();
-            return sqliteDatabaza.vratAktualnehoPouzivatela();
-        }
-
         public bool prvyStart()
         {
             Debug.WriteLine("Metoda prvyStart bola vykonana");
@@ -45,11 +37,25 @@ namespace Udalosti.Uvod.Data
             }
         }
 
+        public void vytvorDatabazu()
+        {
+            Debug.WriteLine("Metoda vytvorDatabazu bola vykonana");
+
+            this.sqliteDatabaza.Databaza();
+        }
+
         public bool zistiCiPouzivatelskoKontoExistuje()
         {
             Debug.WriteLine("Metoda zistiCiPouzivatelskoKontoExistuje bola vykonana");
 
-            return sqliteDatabaza.pouzivatelskeUdaje();
+            return this.sqliteDatabaza.pouzivatelskeUdaje();
+        }
+
+        public Pouzivatelia prihlasPouzivatela()
+        {
+            Debug.WriteLine("Metoda prihlasPouzivatela bola vykonana");
+
+            return this.sqliteDatabaza.vratAktualnehoPouzivatela();
         }
     }
 }

@@ -14,8 +14,7 @@
                 x:Name="nacitavanie"
                 IsVisible="false"
                 IsRunning="true"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand">
+                VerticalOptions="CenterAndExpand">
 
                 <ActivityIndicator.Color>
                     <OnPlatform x:TypeArguments="Color" Android="#005ba6" WinPhone="White" iOS="Black"></OnPlatform>
@@ -26,7 +25,6 @@
                 x:Name="ziadneUdalosti"
                 WidthRequest="130"
                 HeightRequest="130"
-                Source="{local:Obrazok Udalosti.Assets.udalosti_ziadne_udalosti.png}"
                 IsVisible="false"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand">
@@ -170,7 +168,7 @@
                                         </Label>
 
                                         <Label  
-                                            Text="{Binding miesto}"
+                                            Text="{Binding ulica}"
                                             FontSize="17">
 
                                             <Label.TextColor>

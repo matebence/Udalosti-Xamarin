@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Udalosti.Udaje.Data.Tabulka;
 
 namespace Udalosti.Udalost.Data
@@ -10,10 +9,20 @@ namespace Udalosti.Udalost.Data
 
         Task zoznamUdalostiPodlaPozicieAsync(Pouzivatelia pouzivatel, Miesto miesto);
 
+        Miesto miestoPrihlasenia();
+
         void automatickePrihlasenieVypnute(Pouzivatelia pouzivatel);
 
-        Task odhlasenieAsync(String email);
+        Task odhlasenieAsync(Pouzivatelia pouzivatel);
 
-        Miesto miestoPrihlasenia();
+        Task zoznamZaujmovAsync(Pouzivatelia pouzivatel);
+
+        Task zaujemAsync(Pouzivatelia pouzivatel, int idUdalost);
+
+        Task potvrdZaujemAsync(Pouzivatelia pouzivatel, int idUdalost);
+
+        Task odstranZaujemAsync(Pouzivatelia pouzivatel, int idUdalost);
+
+        Task<bool> obrazokJeDostupnnyAsync(string adresa, bool podrobnosti);
     }
 }

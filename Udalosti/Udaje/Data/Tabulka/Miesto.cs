@@ -4,19 +4,25 @@
     {
         [SQLite.PrimaryKey, SQLite.AutoIncrement]
         public int idMiesto { get; set; }
-        public string stat { get; set; }
+        public string pozicia { get; set; }
         public string okres { get; set; }
-        public string mesto { get; set; }
+        public string kraj { get; set; }
+        public string psc { get; set; }
+        public string stat { get; set; }
+        public string znakStatu { get; set; }
 
         public Miesto()
         {
         }
 
-        public Miesto(string stat, string okres, string mesto)
+        public Miesto(string pozicia, string okres, string kraj, string psc, string stat, string znakStatu)
         {
-            this.stat = stat;
+            this.pozicia = pozicia;
             this.okres = okres;
-            this.mesto = mesto;
+            this.kraj = kraj;
+            this.psc = psc;
+            this.stat = stat;
+            this.znakStatu = znakStatu;
         }
     }
 }

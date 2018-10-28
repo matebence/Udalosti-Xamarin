@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Udalosti.Udaje.Data.Tabulka;
 using Udalosti.Udaje.Nastavenia;
@@ -14,52 +16,53 @@ namespace Udalosti.Udalost.UI
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Objavuj : ContentPage, KommunikaciaData, KommunikaciaOdpoved
 	{
-        private UdalostiUdaje udalostiUdaje;
         private UvodnaObrazovkaUdaje uvodnaObrazovkaUdaje;
+        private UdalostiUdaje udalostiUdaje;
 
-        private Operacie operacie;
+        private ObservableCollection<ObsahUdalosti> udalosti;
+        private SpravcaDat spravcaDat;
 
         private Pouzivatelia pouzivatel;
         private Miesto miesto;
 
         public Objavuj()
 		{
-			InitializeComponent();
+            Debug.WriteLine("Metoda Objavuj bola vykonana");
+
+            InitializeComponent();
             init();
         }
 
         private void init()
         {
+            Debug.WriteLine("Metoda Objavuj - init bola vykonana");
+
             this.udalostiUdaje = new UdalostiUdaje(this, this);
             this.uvodnaObrazovkaUdaje = new UvodnaObrazovkaUdaje();
 
-            this.pouzivatel = uvodnaObrazovkaUdaje.prihlasPouzivatela();
-            this.miesto = udalostiUdaje.miestoPrihlasenia();
+            this.pouzivatel = this.uvodnaObrazovkaUdaje.prihlasPouzivatela();
+            this.miesto = this.udalostiUdaje.miestoPrihlasenia();
 
-            this.operacie = new Operacie();
+            this.spravcaDat = new SpravcaDat();
         }
 
         protected override async void OnAppearing()
         {
-            nacitavanie.IsVisible = true;
-            zoznamUdalosti.IsVisible = true;
+            Debug.WriteLine("Metoda Objavuj - OnAppearing bola vykonana");
 
+            nacitavanie.IsVisible = true;
             Title = miesto.stat;
 
-            if (UdalostiUdaje.udalosti.Count < 1)
+            if (this.udalosti == null)
             {
-                await this.udalostiUdaje.zoznamUdalostiAsync(pouzivatel, miesto);
-            }
-            else
-            {
-                zoznamUdalosti.ItemsSource = UdalostiUdaje.udalosti;
-                nacitavanie.IsVisible = false;
+                this.udalosti = new ObservableCollection<ObsahUdalosti>();
+                await this.udalostiUdaje.zoznamUdalostiAsync(this.pouzivatel, this.miesto);
             }
         }
 
         public async Task dataZoServeraAsync(string odpoved, string od, List<ObsahUdalosti> udaje)
         {
-            nacitavanie.IsVisible = false;
+            Debug.WriteLine("Metoda Objavuj - dataZoServeraAsync bola vykonana");
 
             switch (od)
             {
@@ -68,7 +71,8 @@ namespace Udalosti.Udalost.UI
                     {
                         if (udaje != null)
                         {
-                            await operacie.nacitaveniaUdalostiAsync(udaje, zoznamUdalosti, UdalostiUdaje.udalosti);
+                            await this.spravcaDat.nacitavanieUdalostiAsync(this.udalostiUdaje, udaje, zoznamUdalosti, this.udalosti);
+                            zoznamUdalosti.IsVisible = true;
                         }
                         else
                         {
@@ -78,10 +82,13 @@ namespace Udalosti.Udalost.UI
                     }
                     break;
             }
+            nacitavanie.IsVisible = false;
         }
 
         public Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
         {
+            Debug.WriteLine("Metoda Objavuj - odpovedServera bola vykonana");
+
             throw new System.NotImplementedException();
         }
     }

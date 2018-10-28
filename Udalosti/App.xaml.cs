@@ -17,20 +17,26 @@ namespace Udalosti
     public partial class App : Application
     {
         public static string databaza = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "udalosti.db3");
+
         public static string udalostiAdresa = "https://bmate18.student.ki.fpv.ukf.sk/udalosti/";
-        public static string geoAdresa = "http://ip-api.com/";
+        public static string ipAdresa = "http://ip-api.com/";
+        public static string geoAdresa = "https://eu1.locationiq.com/v1/reverse.php?key=" + Nastavenia.POZICIA_TOKEN;
 
         private UvodnaObrazovkaUdaje uvodnaObrazovkaUdaje;
         private TokenUdaje tokenUdaje;
 
         public App()
         {
+            Debug.WriteLine("Metoda App bola vykonana");
+
             InitializeComponent();
             init();
         }
 
         private void init()
         {
+            Debug.WriteLine("Metoda App - init bola vykonana");
+
             this.uvodnaObrazovkaUdaje = new UvodnaObrazovkaUdaje();
             this.tokenUdaje = new TokenUdaje();
             this.startAplikacie();
@@ -40,9 +46,9 @@ namespace Udalosti
         {
             Debug.WriteLine("Metoda startAplikacie bola vykonana");
 
-            if (uvodnaObrazovkaUdaje.prvyStart())
+            if (this.uvodnaObrazovkaUdaje.prvyStart())
             {
-                if (uvodnaObrazovkaUdaje.zistiCiPouzivatelskoKontoExistuje())
+                if (this.uvodnaObrazovkaUdaje.zistiCiPouzivatelskoKontoExistuje())
                 {
                     MainPage = new UvodnaObrazovka();
                 }
@@ -53,6 +59,8 @@ namespace Udalosti
             }
             else
             {
+                this.uvodnaObrazovkaUdaje.vytvorDatabazu();
+
                 if (Platforma.nastavPlatformu(true, true, false))
                 {
                     MainPage = (new NavigationPage(new UkazkaAplikacie()) { BarBackgroundColor = Color.FromHex("#275881"), BarTextColor = Color.White });
@@ -66,16 +74,22 @@ namespace Udalosti
 
         protected override async void OnSleep()
         {
-            await tokenUdaje.zrusTokenAsync();
+            Debug.WriteLine("Metoda OnSleep bola vykonana");
+
+            await this.tokenUdaje.zrusTokenAsync();
         }
 
         protected override async void OnResume()
         {
-            await tokenUdaje.novyTokenAsync();
+            Debug.WriteLine("Metoda OnResume bola vykonana");
+
+            await this.tokenUdaje.novyTokenAsync();
         }
 
         protected override void OnStart()
         {
+            Debug.WriteLine("Metoda OnStart bola vykonana");
+
         }
     }
 }

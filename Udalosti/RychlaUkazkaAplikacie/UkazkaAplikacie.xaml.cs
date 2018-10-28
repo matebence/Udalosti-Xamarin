@@ -13,6 +13,8 @@ namespace Udalosti.RychlaUkazkaAplikacie
 	{
         public UkazkaAplikacie()
         {
+            Debug.WriteLine("Metoda UkazkaAplikacie bola vykonana");
+
             InitializeComponent();
         }
 

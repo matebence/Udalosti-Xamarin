@@ -6,6 +6,8 @@ namespace Udalosti.Uvod.Data
     {
         bool prvyStart();
 
+        void vytvorDatabazu();
+
         bool zistiCiPouzivatelskoKontoExistuje();
 
         Pouzivatelia prihlasPouzivatela();

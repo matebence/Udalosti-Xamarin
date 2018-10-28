@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Udalosti.Autentifikacia.Data;
 using Udalosti.Autentifikacia.UI;
@@ -21,23 +22,29 @@ namespace Udalosti.Uvod.UI
 
         public UvodnaObrazovka()
 		{
-			InitializeComponent();
+            Debug.WriteLine("Metoda UvodnaObrazovka bola vykonana");
+
+            InitializeComponent();
             init();
         }
 
         private void init()
         {
+            Debug.WriteLine("Metoda UvodnaObrazovka - init bola vykonana");
+
             this.uvodnaObrazovkaUdaje = new UvodnaObrazovkaUdaje();
             this.autentifkaciaUdaje = new AutentifikaciaUdaje(this);
         }
 
         protected override async void OnAppearing()
         {
+            Debug.WriteLine("Metoda UvodnaObrazovka - OnAppearing bola vykonana");
+
             base.OnAppearing();
             if (Spojenie.existuje())
             {
-                Pouzivatelia pouzivatelskeUdaje = uvodnaObrazovkaUdaje.prihlasPouzivatela();
-                await autentifkaciaUdaje.miestoPrihlaseniaAsync(pouzivatelskeUdaje.email, pouzivatelskeUdaje.heslo);
+                Pouzivatelia pouzivatelskeUdaje = this.uvodnaObrazovkaUdaje.prihlasPouzivatela();
+                await this.autentifkaciaUdaje.miestoPrihlaseniaAsync(new Pouzivatelia(pouzivatelskeUdaje.email, pouzivatelskeUdaje.heslo, null));
             }
             else
             {
@@ -47,12 +54,14 @@ namespace Udalosti.Uvod.UI
 
         public async Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
         {
+            Debug.WriteLine("Metoda UvodnaObrazovka - odpovedServera bola vykonana");
+
             switch (od)
             {
                 case Nastavenia.AUTENTIFIKACIA_PRIHLASENIE:
                     if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
                     {
-                        this.autentifkaciaUdaje.ulozPrihlasovacieUdajeDoDatabazy(udaje["email"], udaje["heslo"], udaje["token"]);
+                        this.autentifkaciaUdaje.ulozPrihlasovacieUdajeDoDatabazy(new Pouzivatelia(udaje["email"], udaje["heslo"], udaje["token"]));
                         Application.Current.MainPage = new UdalostiNavigacia();
                     }
                     else

@@ -8,27 +8,22 @@ namespace Udalosti.Udaje.Data
     {
         private SQLiteConnection databaza;
 
-        public void VyvorDatabazu()
+        public void Databaza()
         {
-            Debug.WriteLine("Metoda VyvorDatabazu bola vykonana");
+            Debug.WriteLine("Metoda this.databaza bola vykonana");
 
-            databaza = new SQLiteConnection(App.databaza);
-            this.tabulkaExistuje();
-        }
-
-        public void tabulkaExistuje()
-        {
-            Debug.WriteLine("Metoda tabulkaExistuje bola vykonana");
-
-            databaza.CreateTable<Pouzivatelia>();
-            databaza.CreateTable<Miesto>();
+            this.databaza = new SQLiteConnection(App.databaza);
+            this.databaza.CreateTable<Pouzivatelia>();
+            this.databaza.CreateTable<Miesto>();
         }
 
         private void init()
         {
-            if (databaza == null)
+            Debug.WriteLine("Metoda this.databaza - init bola vykonana");
+
+            if (this.databaza == null)
             {
-                databaza = new SQLiteConnection(App.databaza);
+                this.databaza = new SQLiteConnection(App.databaza);
             }
         }
 
@@ -37,7 +32,7 @@ namespace Udalosti.Udaje.Data
             Debug.WriteLine("Metoda novePouzivatelskeUdaje bola vykonana");
 
             init();
-            return databaza.Insert(pouzivatelia);
+            return this.databaza.Insert(pouzivatelia);
         }
 
         public int aktualizujPouzivatelskeUdaje(Pouzivatelia pouzivatelia)
@@ -45,7 +40,7 @@ namespace Udalosti.Udaje.Data
             Debug.WriteLine("Metoda aktualizujPouzivatelskeUdaje bola vykonana");
 
             init();
-            return databaza.Execute("UPDATE Pouzivatelia SET heslo = ?, token = ? WHERE email= ?", pouzivatelia.heslo, pouzivatelia.token, pouzivatelia.email);
+            return this.databaza.Execute("UPDATE Pouzivatelia SET heslo = ?, token = ? WHERE email= ?", pouzivatelia.heslo, pouzivatelia.token, pouzivatelia.email);
         }
         
         public int odstranPouzivatelskeUdaje(Pouzivatelia pouzivatelia)
@@ -53,7 +48,7 @@ namespace Udalosti.Udaje.Data
             Debug.WriteLine("Metoda odstranPouzivatelskeUdaje bola vykonana");
 
             init();
-            return databaza.Delete<Pouzivatelia>(pouzivatelia.idPouzivatel);
+            return this.databaza.Delete<Pouzivatelia>(pouzivatelia.idPouzivatel);
         }
 
         public bool pouzivatelskeUdaje()
@@ -61,7 +56,7 @@ namespace Udalosti.Udaje.Data
             Debug.WriteLine("Metoda pouzivatelskeUdaje bola vykonana");
 
             init();
-            if (databaza.Table<Pouzivatelia>().FirstOrDefault() != null)
+            if (this.databaza.Table<Pouzivatelia>().FirstOrDefault() != null)
             {
                 return true;
             }
@@ -76,7 +71,7 @@ namespace Udalosti.Udaje.Data
             Debug.WriteLine("Metoda vratAktualnehoPouzivatela bola vykonana");
 
             init();
-            return databaza.Table<Pouzivatelia>().FirstOrDefault();
+            return this.databaza.Table<Pouzivatelia>().FirstOrDefault();
         }
 
         public int noveMiestoPrihlasenia(Miesto miesto)
@@ -86,11 +81,11 @@ namespace Udalosti.Udaje.Data
             init();
             if (miesto.idMiesto != 0)
             {
-                return databaza.Update(miesto);
+                return this.databaza.Update(miesto);
             }
             else
             {
-                return databaza.Insert(miesto);
+                return this.databaza.Insert(miesto);
             }
         }
 
@@ -99,7 +94,7 @@ namespace Udalosti.Udaje.Data
             Debug.WriteLine("Metoda aktualizujMiestoPrihlasenia bola vykonana");
 
             init();
-            return databaza.Execute("UPDATE Miesto SET stat = ?, okres = ?, mesto = ? WHERE idMiesto= ?", miesto.stat, miesto.okres, miesto.mesto, miesto.idMiesto);
+            return this.databaza.Execute("UPDATE Miesto SET pozicia = ?, okres = ?, kraj = ?, psc = ?, stat = ?, znakStatu = ? WHERE idMiesto= ?", miesto.pozicia, miesto.okres, miesto.kraj, miesto.psc, miesto.stat, miesto.znakStatu, miesto.idMiesto);
         }
 
         public int odstranMiestoPrihlasenia(Miesto miesto)
@@ -107,7 +102,7 @@ namespace Udalosti.Udaje.Data
             Debug.WriteLine("Metoda odstranMiestoPrihlasenia bola vykonana");
 
             init();
-            return databaza.Delete<Miesto>(miesto.idMiesto);
+            return this.databaza.Delete<Miesto>(miesto.idMiesto);
         }
 
         public bool miestoPrihlasenia()
@@ -115,7 +110,7 @@ namespace Udalosti.Udaje.Data
             Debug.WriteLine("Metoda miestoPrihlasenia bola vykonana");
 
             init();
-            if (databaza.Table<Miesto>().FirstOrDefault() != null)
+            if (this.databaza.Table<Miesto>().FirstOrDefault() != null)
             {
                 return true;
             }
@@ -130,7 +125,7 @@ namespace Udalosti.Udaje.Data
             Debug.WriteLine("Metoda vratMiestoPrihlasenia bola vykonana");
 
             init();
-            return databaza.Table<Miesto>().FirstOrDefault();
+            return this.databaza.Table<Miesto>().FirstOrDefault();
         }
     }
 }

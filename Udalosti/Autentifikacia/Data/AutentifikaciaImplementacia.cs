@@ -6,14 +6,16 @@ namespace Udalosti.Autentifikacia.Data
 {
     interface AutentifikaciaImplementacia
     {
-        void ucetJeNePristupny(Pouzivatelia pouzivatelia);
+        Task miestoPrihlaseniaAsync(Pouzivatelia pouzivatel, double zemepisnaSirka, double zemepisnaDlzka, bool aktualizuj);
 
-        void ulozPrihlasovacieUdajeDoDatabazy(String email, String heslo, String token);
+        Task miestoPrihlaseniaAsync(Pouzivatelia pouzivatel);
 
-        Task miestoPrihlaseniaAsync(String email, String heslo);
-
-        Task prihlasenieAsync(String email, String heslo, String stat, String okres, String mesto);
+        Task prihlasenieAsync(Pouzivatelia pouzivatel);
 
         Task registraciaAsync(String meno, String email, String heslo, String potvrd);
+
+        void ulozPrihlasovacieUdajeDoDatabazy(Pouzivatelia pouzivatel);
+
+        void ucetJeNePristupny(Pouzivatelia pouzivatel);
     }
 }

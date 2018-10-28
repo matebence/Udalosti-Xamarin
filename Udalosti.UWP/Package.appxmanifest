@@ -35,5 +35,6 @@
     <Capability Name="internetClient" />
     <uap4:Capability Name="userDataTasks" />
     <uap:Capability Name="removableStorage" />
+    <DeviceCapability Name="location" />
   </Capabilities>
 </Package>
