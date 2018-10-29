@@ -42,11 +42,14 @@ C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\obj\Debug\netstandar
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\RychlaUkazkaAplikacie\UkazkaAplikacie.xaml.g.cs
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalost\Nav\UdalostiNavigacia.xaml.g.cs
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalost\UI\Objavuj.xaml.g.cs
-C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalost\UI\PodlaPozicie.xaml.g.cs
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Uvod\UI\UvodnaObrazovka.xaml.g.cs
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalosti.csproj.CoreCompileInputs.cache
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalosti.AssemblyInfoInputs.cache
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalosti.AssemblyInfo.cs
-C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalosti.dll
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalosti.pdb
+C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalosti.csprojAssemblyReference.cache
+C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalost\UI\Podrobnosti.xaml.g.cs
+C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalost\UI\Zaujmy.xaml.g.cs
+C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\Udalost\UI\Lokalizator.xaml.g.cs
+C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\obj\Debug\netstandard2.0\XamlC.stamp

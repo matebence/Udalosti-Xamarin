@@ -6,6 +6,9 @@ C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\Mo
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\Newtonsoft.Json.dll
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\Plugin.Connectivity.Abstractions.dll
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\Plugin.Connectivity.dll
+C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\Plugin.CurrentActivity.dll
+C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\Plugin.Geolocator.dll
+C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\Plugin.Permissions.dll
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\SQLite-net.dll
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\SQLitePCLRaw.batteries_green.dll
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\SQLitePCLRaw.batteries_v2.dll

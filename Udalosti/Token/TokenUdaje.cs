@@ -33,37 +33,6 @@ namespace Udalosti.Token
             this.udalostiUdaje = new UdalostiUdaje(this, this);
         }
 
-        public async Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
-        {
-            Debug.WriteLine("Metoda TokenUdaje - odpovedServera bola vykonana");
-
-            switch (od)
-            {
-                case Nastavenia.AUTENTIFIKACIA_PRIHLASENIE:
-                    if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
-                    {
-                        Debug.WriteLine("Novy token generovany");
-
-                        Pouzivatelia pouzivatel = this.uvodnaObrazovkaUdaje.prihlasPouzivatela();
-                        this.autentifikaciaUdaje.ulozPrihlasovacieUdajeDoDatabazy(new Pouzivatelia(pouzivatel.email, pouzivatel.heslo, udaje["token"]));
-                    }
-                    break;
-                case Nastavenia.AUTENTIFIKACIA_ODHLASENIE:
-                    if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
-                    {
-                        Debug.WriteLine("Token odstranene");
-                    }
-                    break;
-            }
-        }
-
-        public Task dataZoServeraAsync(string odpoved, string od, List<ObsahUdalosti> udaje)
-        {
-            Debug.WriteLine("Metoda TokenUdaje - dataZoServeraAsync bola vykonana");
-
-            throw new System.NotImplementedException();
-        }
-
         public async Task novyTokenAsync()
         {
             Debug.WriteLine("Metoda novyToken bola vykonana");
@@ -88,6 +57,53 @@ namespace Udalosti.Token
 
                 Nastavenia.TOKEN = true;
             }
+        }
+
+        public void odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
+        {
+            Debug.WriteLine("Metoda TokenUdaje - odpovedServera bola vykonana");
+
+            switch (od)
+            {
+                case Nastavenia.AUTENTIFIKACIA_PRIHLASENIE:
+                    if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
+                    {
+                        Debug.WriteLine("Novy token generovany");
+
+                        Nastavenia.TOKEN = false;
+
+                        Pouzivatelia pouzivatel = this.uvodnaObrazovkaUdaje.prihlasPouzivatela();
+                        this.autentifikaciaUdaje.ulozPrihlasovacieUdajeDoDatabazy(new Pouzivatelia(pouzivatel.email, pouzivatel.heslo, udaje["token"]));
+                    }
+                    break;
+                case Nastavenia.AUTENTIFIKACIA_ODHLASENIE:
+                    if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
+                    {
+                        Debug.WriteLine("Token odstranene");
+                    }
+                    break;
+            }
+        }
+
+        public Task odpovedServeraAsync(string odpoved, string od, Dictionary<string, string> udaje)
+        {
+            Debug.WriteLine("Metoda TokenUdaje - odpovedServeraAsync bola vykonana");
+
+            throw new System.NotImplementedException();
+        }
+
+        public Task dataZoServeraAsync(string odpoved, string od, List<ObsahUdalosti> udaje)
+        {
+            Debug.WriteLine("Metoda TokenUdaje - dataZoServeraAsync bola vykonana");
+
+            throw new System.NotImplementedException();
+        }
+
+        public void dataZoServera(string odpoved, string od, List<ObsahUdalosti> udaje)
+        {
+            Debug.WriteLine("Metoda TokenUdaje - dataZoServera bola vykonana");
+
+            throw new System.NotImplementedException();
         }
     }
 }

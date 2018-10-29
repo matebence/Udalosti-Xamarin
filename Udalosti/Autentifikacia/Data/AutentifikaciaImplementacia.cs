@@ -14,6 +14,8 @@ namespace Udalosti.Autentifikacia.Data
 
         Task registraciaAsync(String meno, String email, String heslo, String potvrd);
 
+        Task nastavPrvyStartNaPlatny();
+
         void ulozPrihlasovacieUdajeDoDatabazy(Pouzivatelia pouzivatel);
 
         void ucetJeNePristupny(Pouzivatelia pouzivatel);

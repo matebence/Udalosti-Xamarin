@@ -67,9 +67,9 @@ namespace Udalosti.Autentifikacia.UI
             }
         }
 
-        public async Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
+        public async Task odpovedServeraAsync(string odpoved, string od, Dictionary<string, string> udaje)
         {
-            Debug.WriteLine("Metoda Registracia - odpovedServera bola vykonana");
+            Debug.WriteLine("Metoda Registracia - odpovedServeraAsync bola vykonana");
 
             nacitavanie.IsVisible = false;
             switch (od)
@@ -86,6 +86,13 @@ namespace Udalosti.Autentifikacia.UI
                     }
                     break;
             }
+        }
+
+        public void odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
+        {
+            Debug.WriteLine("Metoda Registracia - odpovedServera bola vykonana");
+
+            throw new NotImplementedException();
         }
     }
 }

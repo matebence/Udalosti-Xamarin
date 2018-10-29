@@ -19,7 +19,7 @@ namespace Udalosti.Udaje.Data
 
         private void init()
         {
-            Debug.WriteLine("Metoda this.databaza - init bola vykonana");
+            Debug.WriteLine("Metoda databaza - init bola vykonana");
 
             if (this.databaza == null)
             {

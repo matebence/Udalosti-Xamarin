@@ -8,5 +8,7 @@ namespace Udalosti.Udaje.Siet.Model
     interface KommunikaciaData
     {
         Task dataZoServeraAsync(String odpoved, String od, List<ObsahUdalosti> udaje);
+
+        void dataZoServera(String odpoved, String od, List<ObsahUdalosti> udaje);
     }
 }

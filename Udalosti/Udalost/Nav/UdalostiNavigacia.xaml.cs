@@ -19,12 +19,12 @@ namespace Udalosti.Udalost.Nav
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UdalostiNavigacia : MasterDetailPage, KommunikaciaOdpoved, KommunikaciaData
     {
+        private UvodnaObrazovkaUdaje uvodnaObrazovkaUdaje;
+        private UdalostiUdaje udalostiUdaje;
+
         private List<MasterPageItem> prvkyNavigacie { get; set; }
 
         private Pouzivatelia pouzivatel;
-
-        private UvodnaObrazovkaUdaje uvodnaObrazovkaUdaje;
-        private UdalostiUdaje udalostiUdaje;
 
         public UdalostiNavigacia()
         {
@@ -54,8 +54,9 @@ namespace Udalosti.Udalost.Nav
 
             prvkyNavigacie = new List<MasterPageItem>();
 
-            nacitajPolozkyPodlaPlatformy(prvkyNavigacie, "Objavujte udalosti", "nav_objavuj.png", typeof(Objavuj));
-            nacitajPolozkyPodlaPlatformy(prvkyNavigacie, "Najblizšie udalosti", "nav_podla_pozicie.png", typeof(PodlaPozicie));
+            nacitajPolozkyPodlaPlatformy(prvkyNavigacie, "Objavuj", "nav_objavuj.png", typeof(Objavuj));
+            nacitajPolozkyPodlaPlatformy(prvkyNavigacie, "Lokalizátor", "nav_podla_pozicie.png", typeof(Lokalizator));
+            nacitajPolozkyPodlaPlatformy(prvkyNavigacie, "Záujmy", "nav_zaujmy.png", typeof(Zaujmy));
             nacitajPolozkyPodlaPlatformy(prvkyNavigacie, "Odlhásiť sa", "nav_odhlasit_sa.png", typeof(NullExtension));
 
             zoznam.ItemsSource = prvkyNavigacie;
@@ -111,25 +112,28 @@ namespace Udalosti.Udalost.Nav
             };
         }
 
-        private async Task zvolenyPrvok(object sender, SelectedItemChangedEventArgs e)
+
+        void zvolenyPrvok(object sender, SelectedItemChangedEventArgs e)
         {
-            Debug.WriteLine("Metoda zvolenyPrvok bola vykonana");
-
-            var prvokNavigacie = (MasterPageItem)e.SelectedItem;
-
-            if (prvokNavigacie.Title.Equals("Odlhásiť sa"))
+            var prvok = e.SelectedItem as MasterPageItem;
+            if (prvok != null)
             {
-                await udalostiUdaje.odhlasenieAsync(pouzivatel);
-            }
-            else
-            {
-                Type stranka = prvokNavigacie.TargetType;
-                Detail = new NavigationPage((Page)Activator.CreateInstance(stranka));
-                IsPresented = false;
+                if (prvok.Title.Equals("Odlhásiť sa"))
+                {
+                    Device.BeginInvokeOnMainThread(async () => {
+                        await udalostiUdaje.odhlasenieAsync(pouzivatel);
+                    });
+                }
+                else
+                {
+                    Detail = new NavigationPage((Page)Activator.CreateInstance(prvok.TargetType));
+                    zoznam.SelectedItem = null;
+                    IsPresented = false;
+                }
             }
         }
 
-        public async Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
+        public void odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
         {
             Debug.WriteLine("Metoda UdalostiNavigacia - odpovedServera bola vykonana");
 
@@ -145,9 +149,23 @@ namespace Udalosti.Udalost.Nav
             }
         }
 
+        public Task odpovedServeraAsync(string odpoved, string od, Dictionary<string, string> udaje)
+        {
+            Debug.WriteLine("Metoda UdalostiNavigacia - odpovedServeraAsync bola vykonana");
+
+            throw new NotImplementedException();
+        }
+
         public Task dataZoServeraAsync(string odpoved, string od, List<ObsahUdalosti> udaje)
         {
             Debug.WriteLine("Metoda UdalostiNavigacia - dataZoServeraAsync bola vykonana");
+
+            throw new NotImplementedException();
+        }
+
+        public void dataZoServera(string odpoved, string od, List<ObsahUdalosti> udaje)
+        {
+            Debug.WriteLine("Metoda UdalostiNavigacia - dataZoServera bola vykonana");
 
             throw new NotImplementedException();
         }

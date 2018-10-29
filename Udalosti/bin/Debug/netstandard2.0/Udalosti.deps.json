@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "165246915aaefde275c1a28d8f5581e2bebe8487"
+    "signature": "cf22f750c947760f7467d1e191853e962bf05e7f"
   },
   "compilationOptions": {},
   "targets": {
@@ -11,8 +11,10 @@
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "11.0.2",
+          "Plugin.Permissions": "3.0.0.12",
           "Xam.Plugin.Connectivity": "3.2.0",
-          "Xamarin.Forms": "3.1.0.697729",
+          "Xam.Plugin.Geolocator": "4.5.0.6",
+          "Xamarin.Forms": "3.3.0.912540",
           "sqlite-net-pcl": "1.4.118"
         },
         "runtime": {
@@ -30,6 +32,14 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "11.0.0.0",
             "fileVersion": "11.0.2.21924"
+          }
+        }
+      },
+      "Plugin.Permissions/3.0.0.12": {
+        "runtime": {
+          "lib/netstandard2.0/Plugin.Permissions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -87,7 +97,15 @@
           }
         }
       },
-      "Xamarin.Forms/3.1.0.697729": {
+      "Xam.Plugin.Geolocator/4.5.0.6": {
+        "runtime": {
+          "lib/netstandard2.0/Plugin.Geolocator.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Xamarin.Forms/3.3.0.912540": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
@@ -132,6 +150,13 @@
       "path": "newtonsoft.json/11.0.2",
       "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
     },
+    "Plugin.Permissions/3.0.0.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-R8Rlzfci1byoPBGOiJfCMzu0HhhN6Q4Vq4YizlF41W946NEmoL/Mb8U5caP5t5KfSbdPQpzdQ9JfM8fxPG8pfw==",
+      "path": "plugin.permissions/3.0.0.12",
+      "hashPath": "plugin.permissions.3.0.0.12.nupkg.sha512"
+    },
     "sqlite-net-pcl/1.4.118": {
       "type": "package",
       "serviceable": true,
@@ -160,12 +185,19 @@
       "path": "xam.plugin.connectivity/3.2.0",
       "hashPath": "xam.plugin.connectivity.3.2.0.nupkg.sha512"
     },
-    "Xamarin.Forms/3.1.0.697729": {
+    "Xam.Plugin.Geolocator/4.5.0.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-YlFOM9u8onIRxJwYJ3l+O0wFKqzzrDjDrgnoBr1rct+eaQKU77vFydxvTP+WxYlYzR14hYvyLNC65L84+6ke6w==",
-      "path": "xamarin.forms/3.1.0.697729",
-      "hashPath": "xamarin.forms.3.1.0.697729.nupkg.sha512"
+      "sha512": "sha512-rbWNjW7o14EtZa+yjPLujQg+PLVF6M490ooNx9QK/Z6El+uRA2EFut+lT/OAetWFzdPcv9LCs0YGOTvs9e7taQ==",
+      "path": "xam.plugin.geolocator/4.5.0.6",
+      "hashPath": "xam.plugin.geolocator.4.5.0.6.nupkg.sha512"
+    },
+    "Xamarin.Forms/3.3.0.912540": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Vm3JZ2Vd6u77eIw7XYQY6Ok89DghibebbdrUX/I1z6aJ9ZMJFBJjqwsIlYbpN4BNCm08UqaieG8BrqArJpIMnQ==",
+      "path": "xamarin.forms/3.3.0.912540",
+      "hashPath": "xamarin.forms.3.3.0.912540.nupkg.sha512"
     }
   }
 }

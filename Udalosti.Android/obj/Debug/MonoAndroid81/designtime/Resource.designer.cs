@@ -2966,6 +2966,9 @@ namespace Udalosti.Droid
 			// aapt resource value: 0x7F010004
 			public const int nav_podla_pozicie = 2130771972;
 			
+			// aapt resource value: 0x7F010005
+			public const int nav_zaujmy = 2130771973;
+			
 			// aapt resource value: 0x7F090001
 			public const int notification_action_background = 2131296257;
 			
@@ -3008,8 +3011,8 @@ namespace Udalosti.Droid
 			// aapt resource value: 0x7F09006A
 			public const int tooltip_frame_light = 2131296362;
 			
-			// aapt resource value: 0x7F010005
-			public const int udalosti_chyba_obrazka = 2130771973;
+			// aapt resource value: 0x7F010006
+			public const int udalosti_chyba_obrazka = 2130771974;
 			
 			static Drawable()
 			{

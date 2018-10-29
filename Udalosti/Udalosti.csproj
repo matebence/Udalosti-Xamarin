@@ -15,10 +15,17 @@
     <None Remove="Assets\aplikacia_menu_logo_biela.png" />
     <None Remove="Assets\aplikacia_menu_logo_cierna.png" />
     <None Remove="Assets\aplikacie_pozadie.jpg" />
+    <None Remove="Assets\podrobnosti_cas.png" />
+    <None Remove="Assets\podrobnosti_vstupenka.png" />
+    <None Remove="Assets\podrobnosti_zaujemcovia.png" />
     <None Remove="Assets\stav_aktivny.png" />
     <None Remove="Assets\stav_passivny.png" />
+    <None Remove="Assets\udalosti_ziadne_spojenie_cierna.png" />
+    <None Remove="Assets\udalosti_ziadne_spojenie_siva.png" />
     <None Remove="Assets\udalosti_ziadne_udalosti_cierna.png" />
     <None Remove="Assets\udalosti_ziadne_udalosti_siva.png" />
+    <None Remove="Assets\udalosti_ziadne_zaujmy_cierna.png" />
+    <None Remove="Assets\udalosti_ziadne_zaujmy_siva.png" />
     <None Remove="Assets\udalosti_zoznam_cas_biela.png" />
     <None Remove="Assets\udalosti_zoznam_cas_cierna.png" />
     <None Remove="Assets\udalosti_zoznam_pozicia.png" />
@@ -30,17 +37,19 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
     <PackageReference Include="sqlite-net-pcl" Version="1.4.118" />
     <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
-    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
+    <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
+    <PackageReference Include="Xamarin.Forms" Version="3.3.0.912540" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Update="RychlaUkazkaAplikacie\UkazkaAplikacie.xaml.cs">
       <DependentUpon>UkazkaAplikacie.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Udalost\UI\PodlaPozicie.xaml.cs">
-      <DependentUpon>PodlaPozicie.xaml</DependentUpon>
+    <Compile Update="Udalost\UI\Lokalizator.xaml.cs">
+      <DependentUpon>Lokalizator.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -48,10 +57,17 @@
     <EmbeddedResource Include="Assets\aplikacia_menu_logo_biela.png" />
     <EmbeddedResource Include="Assets\aplikacia_menu_logo_cierna.png" />
     <EmbeddedResource Include="Assets\aplikacie_pozadie.jpg" />
+    <EmbeddedResource Include="Assets\podrobnosti_cas.png" />
+    <EmbeddedResource Include="Assets\podrobnosti_vstupenka.png" />
+    <EmbeddedResource Include="Assets\podrobnosti_zaujemcovia.png" />
     <EmbeddedResource Include="Assets\stav_aktivny.png" />
     <EmbeddedResource Include="Assets\stav_passivny.png" />
+    <EmbeddedResource Include="Assets\udalosti_ziadne_spojenie_cierna.png" />
+    <EmbeddedResource Include="Assets\udalosti_ziadne_spojenie_siva.png" />
     <EmbeddedResource Include="Assets\udalosti_ziadne_udalosti_cierna.png" />
     <EmbeddedResource Include="Assets\udalosti_ziadne_udalosti_siva.png" />
+    <EmbeddedResource Include="Assets\udalosti_ziadne_zaujmy_cierna.png" />
+    <EmbeddedResource Include="Assets\udalosti_ziadne_zaujmy_siva.png" />
     <EmbeddedResource Include="Assets\udalosti_zoznam_cas_biela.png" />
     <EmbeddedResource Include="Assets\udalosti_zoznam_cas_cierna.png" />
     <EmbeddedResource Include="Assets\udalosti_zoznam_pozicia.png" />
@@ -70,7 +86,7 @@
     <EmbeddedResource Update="RychlaUkazkaAplikacie\UkazkaAplikacie.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Udalost\UI\PodlaPozicie.xaml">
+    <EmbeddedResource Update="Udalost\UI\Lokalizator.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Udalost\UI\Podrobnosti.xaml">
@@ -86,6 +102,5 @@
 
   <ItemGroup>
     <Folder Include="Udalost\Nav\" />
-    <Folder Include="Assets\" />
   </ItemGroup>
 </Project>

@@ -851,3 +851,7 @@ C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Mu
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Plugin.Connectivity.pri.xml
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Xamarin.Forms.Platform.UAP.pri.xml
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Plugin.Geolocator.dll
+C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Plugin.Geolocator.pri.xml
+C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Plugin.Permissions.dll
+C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\obj\x86\Debug\Plugin.Permissions.pri.xml

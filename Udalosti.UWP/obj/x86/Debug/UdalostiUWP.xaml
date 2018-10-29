@@ -1,4 +1,5 @@
-﻿<forms:WindowsPage
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<forms:WindowsPage
     x:Class="Udalosti.UWP.UdalostiUWP"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:forms="using:Xamarin.Forms.Platform.UWP"

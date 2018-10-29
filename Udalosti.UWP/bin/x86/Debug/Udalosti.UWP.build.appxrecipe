@@ -31,6 +31,9 @@
     <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\newtonsoft.json\11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\plugin.permissions\3.0.0.12\lib\uap10.0.10240\Plugin.Permissions.dll">
+      <PackagePath>Plugin.Permissions.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.1.7\runtimes\win10-x86\nativeassets\uap10.0.15138\clrcompression.dll">
       <PackagePath>clrcompression.dll</PackagePath>
     </AppxPackagedFile>
@@ -547,16 +550,19 @@
     <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xam.plugin.connectivity\3.2.0\lib\UAP10\Plugin.Connectivity.dll">
       <PackagePath>Plugin.Connectivity.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.1.0.697729\lib\uap10.0\Xamarin.Forms.Core.dll">
+    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xam.plugin.geolocator\4.5.0.6\lib\uap10.0.10240\Plugin.Geolocator.dll">
+      <PackagePath>Plugin.Geolocator.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.3.0.912540\lib\uap10.0\Xamarin.Forms.Core.dll">
       <PackagePath>Xamarin.Forms.Core.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.1.0.697729\lib\uap10.0\Xamarin.Forms.Platform.UAP.dll">
+    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.3.0.912540\lib\uap10.0\Xamarin.Forms.Platform.UAP.dll">
       <PackagePath>Xamarin.Forms.Platform.UAP.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.1.0.697729\lib\uap10.0\Xamarin.Forms.Platform.dll">
+    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.3.0.912540\lib\uap10.0\Xamarin.Forms.Platform.dll">
       <PackagePath>Xamarin.Forms.Platform.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.1.0.697729\lib\uap10.0\Xamarin.Forms.Xaml.dll">
+    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.3.0.912540\lib\uap10.0\Xamarin.Forms.Xaml.dll">
       <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\bin\Debug\netstandard2.0\Udalosti.dll">
@@ -590,6 +596,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Images\nav_podla_pozicie.png">
       <PackagePath>Assets\Images\nav_podla_pozicie.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Images\nav_zaujmy.png">
+      <PackagePath>Assets\Images\nav_zaujmy.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
@@ -849,40 +858,7 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.1.0.697729\lib\uap10.0\Xamarin.Forms.Platform.UAP\AutoSuggestStyle.xbf">
-      <PackagePath>Xamarin.Forms.Platform.UAP\AutoSuggestStyle.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.1.0.697729\lib\uap10.0\Xamarin.Forms.Platform.UAP\FormsCommandBarStyle.xbf">
-      <PackagePath>Xamarin.Forms.Platform.UAP\FormsCommandBarStyle.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.1.0.697729\lib\uap10.0\Xamarin.Forms.Platform.UAP\FormsEmbeddedPageWrapper.xbf">
-      <PackagePath>Xamarin.Forms.Platform.UAP\FormsEmbeddedPageWrapper.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.1.0.697729\lib\uap10.0\Xamarin.Forms.Platform.UAP\FormsFlyout.xbf">
-      <PackagePath>Xamarin.Forms.Platform.UAP\FormsFlyout.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.1.0.697729\lib\uap10.0\Xamarin.Forms.Platform.UAP\FormsProgressBarStyle.xbf">
-      <PackagePath>Xamarin.Forms.Platform.UAP\FormsProgressBarStyle.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.1.0.697729\lib\uap10.0\Xamarin.Forms.Platform.UAP\FormsTextBoxStyle.xbf">
-      <PackagePath>Xamarin.Forms.Platform.UAP\FormsTextBoxStyle.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.1.0.697729\lib\uap10.0\Xamarin.Forms.Platform.UAP\MasterDetailControlStyle.xbf">
-      <PackagePath>Xamarin.Forms.Platform.UAP\MasterDetailControlStyle.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.1.0.697729\lib\uap10.0\Xamarin.Forms.Platform.UAP\PageControlStyle.xbf">
-      <PackagePath>Xamarin.Forms.Platform.UAP\PageControlStyle.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.1.0.697729\lib\uap10.0\Xamarin.Forms.Platform.UAP\Resources.xbf">
-      <PackagePath>Xamarin.Forms.Platform.UAP\Resources.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.1.0.697729\lib\uap10.0\Xamarin.Forms.Platform.UAP\SliderStyle.xbf">
-      <PackagePath>Xamarin.Forms.Platform.UAP\SliderStyle.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.1.0.697729\lib\uap10.0\Xamarin.Forms.Platform.UAP\TabbedPageStyle.xbf">
-      <PackagePath>Xamarin.Forms.Platform.UAP\TabbedPageStyle.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.1.0.697729\lib\uap10.0\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
+    <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\xamarin.forms\3.3.0.912540\lib\uap10.0\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
       <PackagePath>Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\resources.pri">

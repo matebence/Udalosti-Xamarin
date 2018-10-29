@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Udalosti.Nastroje;
 using Udalosti.Udaje.Data;
 using Udalosti.Udaje.Data.Tabulka;
 using Udalosti.Udaje.Nastavenia;
@@ -19,13 +20,19 @@ namespace Udalosti.Udalost.Data
     {
         private KommunikaciaOdpoved odpovedeOdServera;
         private KommunikaciaData udajeZoServera;
+
         private SQLiteDatabaza sqliteDatabaza;
+        private Preferencie preferencie;
 
         public UdalostiUdaje(KommunikaciaOdpoved odpovedeOdServera, KommunikaciaData udajeZoServera)
         {
+            Debug.WriteLine("Metoda UdalostiUdaje bola vykonana");
+
             this.odpovedeOdServera = odpovedeOdServera;
             this.udajeZoServera = udajeZoServera;
+
             this.sqliteDatabaza = new SQLiteDatabaza();
+            this.preferencie = new Preferencie();
         }
 
         public async Task zoznamUdalostiAsync(Pouzivatelia pouzivatel, Miesto miesto)
@@ -43,11 +50,11 @@ namespace Udalosti.Udalost.Data
             if (odpoved.IsSuccessStatusCode)
             {
                 Obsah data = JsonConvert.DeserializeObject<Obsah>(await odpoved.Content.ReadAsStringAsync());
-                await this.udajeZoServera.dataZoServeraAsync(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.UDALOSTI_OBJAVUJ, data.udalosti);
+                this.udajeZoServera.dataZoServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.UDALOSTI_OBJAVUJ, data.udalosti);
             }
             else
             {
-                await this.udajeZoServera.dataZoServeraAsync("Server je momentalne nedostupný!", Nastavenia.UDALOSTI_OBJAVUJ, null);
+                this.udajeZoServera.dataZoServera("Server je momentalne nedostupný!", Nastavenia.UDALOSTI_OBJAVUJ, null);
             }
         }
 
@@ -68,11 +75,11 @@ namespace Udalosti.Udalost.Data
             if (odpoved.IsSuccessStatusCode)
             {
                 Obsah data = JsonConvert.DeserializeObject<Obsah>(await odpoved.Content.ReadAsStringAsync());
-                await this.udajeZoServera.dataZoServeraAsync(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.UDALOSTI_PODLA_POZICIE, data.udalosti);
+                this.udajeZoServera.dataZoServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.UDALOSTI_PODLA_POZICIE, data.udalosti);
             }
             else
             {
-                await this.udajeZoServera.dataZoServeraAsync("Server je momentalne nedostupný!", Nastavenia.UDALOSTI_PODLA_POZICIE, null);
+                this.udajeZoServera.dataZoServera("Server je momentalne nedostupný!", Nastavenia.UDALOSTI_PODLA_POZICIE, null);
             }
         }
 
@@ -133,18 +140,18 @@ namespace Udalosti.Udalost.Data
                 if (data.uspech != null)
                 {
                     udaje.Add("uspech", data.uspech);
-                    await this.odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.ZAUJEM, udaje);
+                    await this.odpovedeOdServera.odpovedServeraAsync(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.ZAUJEM, udaje);
                 }
 
                 if (data.chyba != null)
                 {
                     udaje.Add("chyba", data.chyba);
-                    await this.odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.ZAUJEM, udaje);
+                    await this.odpovedeOdServera.odpovedServeraAsync(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.ZAUJEM, udaje);
                 }
             }
             else
             {
-                await this.odpovedeOdServera.odpovedServera("Server je momentalne nedostupný!", Nastavenia.ZAUJEM, null);
+                await this.odpovedeOdServera.odpovedServeraAsync("Server je momentalne nedostupný!", Nastavenia.ZAUJEM, null);
             }
         }
 
@@ -191,18 +198,18 @@ namespace Udalosti.Udalost.Data
                 if (data.uspech != null)
                 {
                     udaje.Add("uspech", data.uspech);
-                    await this.odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.ZAUJEM_ODSTRANENIE, udaje);
+                    await this.odpovedeOdServera.odpovedServeraAsync(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.ZAUJEM_ODSTRANENIE, udaje);
                 }
 
                 if (data.chyba != null)
                 {
                     udaje.Add("chyba", data.chyba);
-                    await this.odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.ZAUJEM_ODSTRANENIE, udaje);
+                    await this.odpovedeOdServera.odpovedServeraAsync(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.ZAUJEM_ODSTRANENIE, udaje);
                 }
             }
             else
             {
-                await this.odpovedeOdServera.odpovedServera("Server je momentalne nedostupný!", Nastavenia.ZAUJEM_ODSTRANENIE, null);
+                await this.odpovedeOdServera.odpovedServeraAsync("Server je momentalne nedostupný!", Nastavenia.ZAUJEM_ODSTRANENIE, null);
             }
         }
 
@@ -230,12 +237,12 @@ namespace Udalosti.Udalost.Data
 
                 if (!autentifikator.chyba)
                 {
-                    await this.odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.AUTENTIFIKACIA_ODHLASENIE, null);
+                    this.odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.AUTENTIFIKACIA_ODHLASENIE, null);
                 }
             }
             else
             {
-                await this.odpovedeOdServera.odpovedServera("Server je momentalne nedostupný!", Nastavenia.AUTENTIFIKACIA_ODHLASENIE, null);
+                this.odpovedeOdServera.odpovedServera("Server je momentalne nedostupný!", Nastavenia.AUTENTIFIKACIA_ODHLASENIE, null);
             }
         }
 

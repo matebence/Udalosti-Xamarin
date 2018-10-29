@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Plugin.CurrentActivity;
 
 namespace Udalosti.Droid
 {
@@ -9,11 +10,14 @@ namespace Udalosti.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            CrossCurrentActivity.Current.Activity = this;
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
             LoadApplication(new App());
         }
     }

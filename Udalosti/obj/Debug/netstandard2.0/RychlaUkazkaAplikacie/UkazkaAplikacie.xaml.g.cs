@@ -16,7 +16,7 @@ namespace Udalosti.RychlaUkazkaAplikacie {
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("RychlaUkazkaAplikacie\\UkazkaAplikacie.xaml")]
     public partial class UkazkaAplikacie : global::Udalosti.Nastroje.Xamarin.Kolotoc {
         
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(UkazkaAplikacie));
         }

@@ -222,6 +222,18 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Plugin.Permissions/3.0.0.12": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
+        },
+        "compile": {
+          "lib/uap10.0.10240/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.10240/Plugin.Permissions.dll": {}
+        }
+      },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
         "type": "package",
         "dependencies": {
@@ -378,7 +390,19 @@
           "lib/UAP10/Plugin.Connectivity.dll": {}
         }
       },
-      "Xamarin.Forms/3.1.0.697729": {
+      "Xam.Plugin.Geolocator/4.5.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
+        },
+        "compile": {
+          "lib/uap10.0.10240/Plugin.Geolocator.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.10240/Plugin.Geolocator.dll": {}
+        }
+      },
+      "Xamarin.Forms/3.3.0.912540": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
@@ -397,8 +421,8 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         },
         "build": {
-          "build/netstandard2.0/Xamarin.Forms.props": {},
-          "build/netstandard2.0/Xamarin.Forms.targets": {}
+          "build/Xamarin.Forms.props": {},
+          "build/Xamarin.Forms.targets": {}
         }
       },
       "Udalosti/1.0.0": {
@@ -406,8 +430,10 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "11.0.2",
+          "Plugin.Permissions": "3.0.0.12",
           "Xam.Plugin.Connectivity": "3.2.0",
-          "Xamarin.Forms": "3.1.0.697729",
+          "Xam.Plugin.Geolocator": "4.5.0.6",
+          "Xamarin.Forms": "3.3.0.912540",
           "sqlite-net-pcl": "1.4.118"
         },
         "compile": {
@@ -638,6 +664,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Plugin.Permissions/3.0.0.12": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
+        },
+        "compile": {
+          "lib/uap10.0.10240/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.10240/Plugin.Permissions.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
@@ -959,7 +997,19 @@
           "lib/UAP10/Plugin.Connectivity.dll": {}
         }
       },
-      "Xamarin.Forms/3.1.0.697729": {
+      "Xam.Plugin.Geolocator/4.5.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
+        },
+        "compile": {
+          "lib/uap10.0.10240/Plugin.Geolocator.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.10240/Plugin.Geolocator.dll": {}
+        }
+      },
+      "Xamarin.Forms/3.3.0.912540": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
@@ -978,8 +1028,8 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         },
         "build": {
-          "build/netstandard2.0/Xamarin.Forms.props": {},
-          "build/netstandard2.0/Xamarin.Forms.targets": {}
+          "build/Xamarin.Forms.props": {},
+          "build/Xamarin.Forms.targets": {}
         }
       },
       "Udalosti/1.0.0": {
@@ -987,8 +1037,10 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "11.0.2",
+          "Plugin.Permissions": "3.0.0.12",
           "Xam.Plugin.Connectivity": "3.2.0",
-          "Xamarin.Forms": "3.1.0.697729",
+          "Xam.Plugin.Geolocator": "4.5.0.6",
+          "Xamarin.Forms": "3.3.0.912540",
           "sqlite-net-pcl": "1.4.118"
         },
         "compile": {
@@ -1219,6 +1271,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Plugin.Permissions/3.0.0.12": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
+        },
+        "compile": {
+          "lib/uap10.0.10240/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.10240/Plugin.Permissions.dll": {}
         }
       },
       "runtime.win10-arm-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.1.7": {
@@ -1541,7 +1605,19 @@
           "lib/UAP10/Plugin.Connectivity.dll": {}
         }
       },
-      "Xamarin.Forms/3.1.0.697729": {
+      "Xam.Plugin.Geolocator/4.5.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
+        },
+        "compile": {
+          "lib/uap10.0.10240/Plugin.Geolocator.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.10240/Plugin.Geolocator.dll": {}
+        }
+      },
+      "Xamarin.Forms/3.3.0.912540": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
@@ -1560,8 +1636,8 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         },
         "build": {
-          "build/netstandard2.0/Xamarin.Forms.props": {},
-          "build/netstandard2.0/Xamarin.Forms.targets": {}
+          "build/Xamarin.Forms.props": {},
+          "build/Xamarin.Forms.targets": {}
         }
       },
       "Udalosti/1.0.0": {
@@ -1569,8 +1645,10 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "11.0.2",
+          "Plugin.Permissions": "3.0.0.12",
           "Xam.Plugin.Connectivity": "3.2.0",
-          "Xamarin.Forms": "3.1.0.697729",
+          "Xam.Plugin.Geolocator": "4.5.0.6",
+          "Xamarin.Forms": "3.3.0.912540",
           "sqlite-net-pcl": "1.4.118"
         },
         "compile": {
@@ -1802,6 +1880,18 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Plugin.Permissions/3.0.0.12": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
+        },
+        "compile": {
+          "lib/uap10.0.10240/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.10240/Plugin.Permissions.dll": {}
+        }
+      },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
         "type": "package",
         "dependencies": {
@@ -1944,7 +2034,19 @@
           "lib/UAP10/Plugin.Connectivity.dll": {}
         }
       },
-      "Xamarin.Forms/3.1.0.697729": {
+      "Xam.Plugin.Geolocator/4.5.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
+        },
+        "compile": {
+          "lib/uap10.0.10240/Plugin.Geolocator.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.10240/Plugin.Geolocator.dll": {}
+        }
+      },
+      "Xamarin.Forms/3.3.0.912540": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
@@ -1963,8 +2065,8 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         },
         "build": {
-          "build/netstandard2.0/Xamarin.Forms.props": {},
-          "build/netstandard2.0/Xamarin.Forms.targets": {}
+          "build/Xamarin.Forms.props": {},
+          "build/Xamarin.Forms.targets": {}
         }
       },
       "Udalosti/1.0.0": {
@@ -1972,8 +2074,10 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "11.0.2",
+          "Plugin.Permissions": "3.0.0.12",
           "Xam.Plugin.Connectivity": "3.2.0",
-          "Xamarin.Forms": "3.1.0.697729",
+          "Xam.Plugin.Geolocator": "4.5.0.6",
+          "Xamarin.Forms": "3.3.0.912540",
           "sqlite-net-pcl": "1.4.118"
         },
         "compile": {
@@ -2204,6 +2308,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Plugin.Permissions/3.0.0.12": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
+        },
+        "compile": {
+          "lib/uap10.0.10240/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.10240/Plugin.Permissions.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
@@ -2525,7 +2641,19 @@
           "lib/UAP10/Plugin.Connectivity.dll": {}
         }
       },
-      "Xamarin.Forms/3.1.0.697729": {
+      "Xam.Plugin.Geolocator/4.5.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
+        },
+        "compile": {
+          "lib/uap10.0.10240/Plugin.Geolocator.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.10240/Plugin.Geolocator.dll": {}
+        }
+      },
+      "Xamarin.Forms/3.3.0.912540": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
@@ -2544,8 +2672,8 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         },
         "build": {
-          "build/netstandard2.0/Xamarin.Forms.props": {},
-          "build/netstandard2.0/Xamarin.Forms.targets": {}
+          "build/Xamarin.Forms.props": {},
+          "build/Xamarin.Forms.targets": {}
         }
       },
       "Udalosti/1.0.0": {
@@ -2553,8 +2681,10 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "11.0.2",
+          "Plugin.Permissions": "3.0.0.12",
           "Xam.Plugin.Connectivity": "3.2.0",
-          "Xamarin.Forms": "3.1.0.697729",
+          "Xam.Plugin.Geolocator": "4.5.0.6",
+          "Xamarin.Forms": "3.3.0.912540",
           "sqlite-net-pcl": "1.4.118"
         },
         "compile": {
@@ -2785,6 +2915,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Plugin.Permissions/3.0.0.12": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
+        },
+        "compile": {
+          "lib/uap10.0.10240/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.10240/Plugin.Permissions.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
@@ -3107,7 +3249,19 @@
           "lib/UAP10/Plugin.Connectivity.dll": {}
         }
       },
-      "Xamarin.Forms/3.1.0.697729": {
+      "Xam.Plugin.Geolocator/4.5.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
+        },
+        "compile": {
+          "lib/uap10.0.10240/Plugin.Geolocator.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.10240/Plugin.Geolocator.dll": {}
+        }
+      },
+      "Xamarin.Forms/3.3.0.912540": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
@@ -3126,8 +3280,8 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         },
         "build": {
-          "build/netstandard2.0/Xamarin.Forms.props": {},
-          "build/netstandard2.0/Xamarin.Forms.targets": {}
+          "build/Xamarin.Forms.props": {},
+          "build/Xamarin.Forms.targets": {}
         }
       },
       "Udalosti/1.0.0": {
@@ -3135,8 +3289,10 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "11.0.2",
+          "Plugin.Permissions": "3.0.0.12",
           "Xam.Plugin.Connectivity": "3.2.0",
-          "Xamarin.Forms": "3.1.0.697729",
+          "Xam.Plugin.Geolocator": "4.5.0.6",
+          "Xamarin.Forms": "3.3.0.912540",
           "sqlite-net-pcl": "1.4.118"
         },
         "compile": {
@@ -3367,6 +3523,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Plugin.Permissions/3.0.0.12": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
+        },
+        "compile": {
+          "lib/uap10.0.10240/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.10240/Plugin.Permissions.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
@@ -3688,7 +3856,19 @@
           "lib/UAP10/Plugin.Connectivity.dll": {}
         }
       },
-      "Xamarin.Forms/3.1.0.697729": {
+      "Xam.Plugin.Geolocator/4.5.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
+        },
+        "compile": {
+          "lib/uap10.0.10240/Plugin.Geolocator.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.10240/Plugin.Geolocator.dll": {}
+        }
+      },
+      "Xamarin.Forms/3.3.0.912540": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
@@ -3707,8 +3887,8 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         },
         "build": {
-          "build/netstandard2.0/Xamarin.Forms.props": {},
-          "build/netstandard2.0/Xamarin.Forms.targets": {}
+          "build/Xamarin.Forms.props": {},
+          "build/Xamarin.Forms.targets": {}
         }
       },
       "Udalosti/1.0.0": {
@@ -3716,8 +3896,10 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "11.0.2",
+          "Plugin.Permissions": "3.0.0.12",
           "Xam.Plugin.Connectivity": "3.2.0",
-          "Xamarin.Forms": "3.1.0.697729",
+          "Xam.Plugin.Geolocator": "4.5.0.6",
+          "Xamarin.Forms": "3.3.0.912540",
           "sqlite-net-pcl": "1.4.118"
         },
         "compile": {
@@ -3948,6 +4130,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Plugin.Permissions/3.0.0.12": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
+        },
+        "compile": {
+          "lib/uap10.0.10240/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.10240/Plugin.Permissions.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
@@ -4270,7 +4464,19 @@
           "lib/UAP10/Plugin.Connectivity.dll": {}
         }
       },
-      "Xamarin.Forms/3.1.0.697729": {
+      "Xam.Plugin.Geolocator/4.5.0.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3"
+        },
+        "compile": {
+          "lib/uap10.0.10240/Plugin.Geolocator.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.10240/Plugin.Geolocator.dll": {}
+        }
+      },
+      "Xamarin.Forms/3.3.0.912540": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
@@ -4289,8 +4495,8 @@
           "lib/uap10.0/Xamarin.Forms.Xaml.dll": {}
         },
         "build": {
-          "build/netstandard2.0/Xamarin.Forms.props": {},
-          "build/netstandard2.0/Xamarin.Forms.targets": {}
+          "build/Xamarin.Forms.props": {},
+          "build/Xamarin.Forms.targets": {}
         }
       },
       "Udalosti/1.0.0": {
@@ -4298,8 +4504,10 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Newtonsoft.Json": "11.0.2",
+          "Plugin.Permissions": "3.0.0.12",
           "Xam.Plugin.Connectivity": "3.2.0",
-          "Xamarin.Forms": "3.1.0.697729",
+          "Xam.Plugin.Geolocator": "4.5.0.6",
+          "Xamarin.Forms": "3.3.0.912540",
           "sqlite-net-pcl": "1.4.118"
         },
         "compile": {
@@ -4834,6 +5042,28 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "newtonsoft.json.11.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
+      ]
+    },
+    "Plugin.Permissions/3.0.0.12": {
+      "sha512": "R8Rlzfci1byoPBGOiJfCMzu0HhhN6Q4Vq4YizlF41W946NEmoL/Mb8U5caP5t5KfSbdPQpzdQ9JfM8fxPG8pfw==",
+      "type": "package",
+      "path": "plugin.permissions/3.0.0.12",
+      "files": [
+        ".signature.p7s",
+        "lib/monoandroid71/Plugin.Permissions.dll",
+        "lib/monoandroid71/Plugin.Permissions.xml",
+        "lib/netstandard1.0/Plugin.Permissions.dll",
+        "lib/netstandard1.0/Plugin.Permissions.xml",
+        "lib/netstandard2.0/Plugin.Permissions.dll",
+        "lib/netstandard2.0/Plugin.Permissions.xml",
+        "lib/uap10.0.10240/Plugin.Permissions.dll",
+        "lib/uap10.0.10240/Plugin.Permissions.pri",
+        "lib/uap10.0.10240/Plugin.Permissions.xml",
+        "lib/xamarinios10/Plugin.Permissions.dll",
+        "lib/xamarinios10/Plugin.Permissions.xml",
+        "plugin.permissions.3.0.0.12.nupkg.sha512",
+        "plugin.permissions.nuspec",
+        "readme.txt"
       ]
     },
     "runtime.win10-arm-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.1.7": {
@@ -8174,24 +8404,50 @@
         "xam.plugin.connectivity.nuspec"
       ]
     },
-    "Xamarin.Forms/3.1.0.697729": {
-      "sha512": "YlFOM9u8onIRxJwYJ3l+O0wFKqzzrDjDrgnoBr1rct+eaQKU77vFydxvTP+WxYlYzR14hYvyLNC65L84+6ke6w==",
+    "Xam.Plugin.Geolocator/4.5.0.6": {
+      "sha512": "rbWNjW7o14EtZa+yjPLujQg+PLVF6M490ooNx9QK/Z6El+uRA2EFut+lT/OAetWFzdPcv9LCs0YGOTvs9e7taQ==",
       "type": "package",
-      "path": "xamarin.forms/3.1.0.697729",
+      "path": "xam.plugin.geolocator/4.5.0.6",
       "files": [
         ".signature.p7s",
-        "build/netstandard1.0/Mono.Cecil.Mdb.dll",
-        "build/netstandard1.0/Mono.Cecil.Pdb.dll",
-        "build/netstandard1.0/Mono.Cecil.Rocks.dll",
-        "build/netstandard1.0/Mono.Cecil.dll",
-        "build/netstandard1.0/System.CodeDom.dll",
-        "build/netstandard1.0/Xamarin.Forms.Build.Tasks.dll",
-        "build/netstandard1.0/Xamarin.Forms.Core.dll",
-        "build/netstandard1.0/Xamarin.Forms.DefaultItems.props",
-        "build/netstandard1.0/Xamarin.Forms.DefaultItems.targets",
-        "build/netstandard1.0/Xamarin.Forms.Xaml.dll",
-        "build/netstandard1.0/Xamarin.Forms.props",
-        "build/netstandard1.0/Xamarin.Forms.targets",
+        "lib/monoandroid71/Plugin.Geolocator.dll",
+        "lib/monoandroid71/Plugin.Geolocator.xml",
+        "lib/netstandard1.0/Plugin.Geolocator.dll",
+        "lib/netstandard1.0/Plugin.Geolocator.xml",
+        "lib/netstandard2.0/Plugin.Geolocator.dll",
+        "lib/netstandard2.0/Plugin.Geolocator.xml",
+        "lib/uap10.0.10240/Plugin.Geolocator.dll",
+        "lib/uap10.0.10240/Plugin.Geolocator.pri",
+        "lib/uap10.0.10240/Plugin.Geolocator.xml",
+        "lib/xamarinios10/Plugin.Geolocator.dll",
+        "lib/xamarinios10/Plugin.Geolocator.xml",
+        "lib/xamarinmac20/Plugin.Geolocator.dll",
+        "lib/xamarinmac20/Plugin.Geolocator.xml",
+        "lib/xamarintvos10/Plugin.Geolocator.dll",
+        "lib/xamarintvos10/Plugin.Geolocator.xml",
+        "readme.txt",
+        "xam.plugin.geolocator.4.5.0.6.nupkg.sha512",
+        "xam.plugin.geolocator.nuspec"
+      ]
+    },
+    "Xamarin.Forms/3.3.0.912540": {
+      "sha512": "Vm3JZ2Vd6u77eIw7XYQY6Ok89DghibebbdrUX/I1z6aJ9ZMJFBJjqwsIlYbpN4BNCm08UqaieG8BrqArJpIMnQ==",
+      "type": "package",
+      "path": "xamarin.forms/3.3.0.912540",
+      "files": [
+        ".signature.p7s",
+        "build/Xamarin.Forms.DefaultItems.props",
+        "build/Xamarin.Forms.DefaultItems.targets",
+        "build/Xamarin.Forms.props",
+        "build/Xamarin.Forms.targets",
+        "build/net461/Mono.Cecil.Mdb.dll",
+        "build/net461/Mono.Cecil.Pdb.dll",
+        "build/net461/Mono.Cecil.Rocks.dll",
+        "build/net461/Mono.Cecil.dll",
+        "build/net461/System.CodeDom.dll",
+        "build/net461/Xamarin.Forms.Build.Tasks.dll",
+        "build/net461/Xamarin.Forms.Core.dll",
+        "build/net461/Xamarin.Forms.Xaml.dll",
         "build/netstandard2.0/Mono.Cecil.Mdb.dll",
         "build/netstandard2.0/Mono.Cecil.Pdb.dll",
         "build/netstandard2.0/Mono.Cecil.Rocks.dll",
@@ -8199,21 +8455,15 @@
         "build/netstandard2.0/System.CodeDom.dll",
         "build/netstandard2.0/Xamarin.Forms.Build.Tasks.dll",
         "build/netstandard2.0/Xamarin.Forms.Core.dll",
-        "build/netstandard2.0/Xamarin.Forms.DefaultItems.props",
-        "build/netstandard2.0/Xamarin.Forms.DefaultItems.targets",
         "build/netstandard2.0/Xamarin.Forms.Xaml.dll",
-        "build/netstandard2.0/Xamarin.Forms.props",
-        "build/netstandard2.0/Xamarin.Forms.targets",
         "lib/MonoAndroid10/Design/Xamarin.Forms.Core.Design.dll",
         "lib/MonoAndroid10/Design/Xamarin.Forms.Xaml.Design.dll",
         "lib/MonoAndroid10/FormsViewGroup.dll",
-        "lib/MonoAndroid10/FormsViewGroup.dll.mdb",
         "lib/MonoAndroid10/FormsViewGroup.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Core.dll",
         "lib/MonoAndroid10/Xamarin.Forms.Core.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Core.xml",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll",
-        "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll.mdb",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.dll",
         "lib/MonoAndroid10/Xamarin.Forms.Xaml.dll",
@@ -8321,7 +8571,7 @@
         "lib/uap10.0/Xamarin.Forms.Platform.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.3.1.0.697729.nupkg.sha512",
+        "xamarin.forms.3.3.0.912540.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -8334,9 +8584,11 @@
   "projectFileDependencyGroups": {
     "UAP,Version=v10.0.16299": [
       "Microsoft.NETCore.UniversalWindowsPlatform >= 6.1.7",
+      "Plugin.Permissions >= 3.0.0.12",
       "Udalosti >= 1.0.0",
       "Xam.Plugin.Connectivity >= 3.2.0",
-      "Xamarin.Forms >= 3.1.0.697729"
+      "Xam.Plugin.Geolocator >= 4.5.0.6",
+      "Xamarin.Forms >= 3.3.0.912540"
     ]
   },
   "packageFolders": {
@@ -8384,13 +8636,21 @@
             "target": "Package",
             "version": "[6.1.7, )"
           },
+          "Plugin.Permissions": {
+            "target": "Package",
+            "version": "[3.0.0.12, )"
+          },
           "Xam.Plugin.Connectivity": {
             "target": "Package",
             "version": "[3.2.0, )"
           },
+          "Xam.Plugin.Geolocator": {
+            "target": "Package",
+            "version": "[4.5.0.6, )"
+          },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[3.1.0.697729, )"
+            "version": "[3.3.0.912540, )"
           }
         },
         "imports": [

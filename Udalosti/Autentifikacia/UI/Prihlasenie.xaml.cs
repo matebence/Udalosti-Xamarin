@@ -21,7 +21,6 @@ namespace Udalosti.Autentifikacia.UI
         private AutentifikaciaUdaje autentifkaciaUdaje;
         private UvodnaObrazovkaUdaje uvodnaObrazovkaUdaje;
 
-        private Preferencie preferencie;
         private string odpoved;
 
         public Prihlasenie (String odpoved)
@@ -39,7 +38,6 @@ namespace Udalosti.Autentifikacia.UI
 
             this.odpoved = odpoved;
 
-            this.preferencie = new Preferencie();
             this.autentifkaciaUdaje = new AutentifikaciaUdaje(this);
             this.uvodnaObrazovkaUdaje = new UvodnaObrazovkaUdaje();
         }
@@ -51,7 +49,8 @@ namespace Udalosti.Autentifikacia.UI
             base.OnAppearing();
 
             spracovanieChyby(this.odpoved);
-            await this.preferencie.novaPreferencia<bool>(Nastavenia.START, true);
+
+            await this.autentifkaciaUdaje.nastavPrvyStartNaPlatny();
         }
 
         private async void prihlasitSa(object sender, EventArgs e)
@@ -60,9 +59,17 @@ namespace Udalosti.Autentifikacia.UI
 
             if (Spojenie.existuje())
             {
-                nacitavanie.IsVisible = true;
+                Pouzivatelia pouzivatel = new Pouzivatelia(email.Text, heslo.Text, null);
 
-                await this.autentifkaciaUdaje.miestoPrihlaseniaAsync(new Pouzivatelia(email.Text, heslo.Text, null));
+                Dictionary<string, double> poloha = await GeoCoder.zistiPolohuAsync(nacitavanie, this);
+                if (poloha == null)
+                {
+                    await this.autentifkaciaUdaje.miestoPrihlaseniaAsync(pouzivatel);
+                }
+                else
+                {
+                    await this.autentifkaciaUdaje.miestoPrihlaseniaAsync(pouzivatel, poloha["zemepisnaSirka"], poloha["zemepisnaDlzka"], false);
+                }
             }
             else
             {
@@ -95,7 +102,7 @@ namespace Udalosti.Autentifikacia.UI
             }
         }
 
-        public async Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
+        public void odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
         {
             Debug.WriteLine("Metoda Prihlasenie - odpovedServera bola vykonana");
 
@@ -117,6 +124,13 @@ namespace Udalosti.Autentifikacia.UI
             }
         }
 
+        public Task odpovedServeraAsync(string odpoved, string od, Dictionary<string, string> udaje)
+        {
+            Debug.WriteLine("Metoda Prihlasenie - odpovedServeraAsync bola vykonana");
+
+            throw new NotImplementedException();
+        }
+
         private void spracovanieChyby(String odopoved)
         {
             Debug.WriteLine("Metoda spracovanieChyby bola vykonana");
@@ -131,6 +145,5 @@ namespace Udalosti.Autentifikacia.UI
                 Device.BeginInvokeOnMainThread(async () => { await Application.Current.MainPage.DisplayAlert("Chyba", "Nastala chyba, prosím prihláste sa!", "Zatvoriť"); });
             }
         }
-
     }
 }

@@ -44,7 +44,16 @@ namespace Udalosti.Uvod.UI
             if (Spojenie.existuje())
             {
                 Pouzivatelia pouzivatelskeUdaje = this.uvodnaObrazovkaUdaje.prihlasPouzivatela();
-                await this.autentifkaciaUdaje.miestoPrihlaseniaAsync(new Pouzivatelia(pouzivatelskeUdaje.email, pouzivatelskeUdaje.heslo, null));
+
+                Dictionary<string, double> poloha = await GeoCoder.zistiPolohuAsync(null, this);
+                if (poloha == null)
+                {
+                    await this.autentifkaciaUdaje.miestoPrihlaseniaAsync(pouzivatelskeUdaje);
+                }
+                else
+                {
+                    await this.autentifkaciaUdaje.miestoPrihlaseniaAsync(pouzivatelskeUdaje, poloha["zemepisnaSirka"], poloha["zemepisnaDlzka"], false);
+                }
             }
             else
             {
@@ -52,7 +61,7 @@ namespace Udalosti.Uvod.UI
             }
         }
 
-        public async Task odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
+        public void odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
         {
             Debug.WriteLine("Metoda UvodnaObrazovka - odpovedServera bola vykonana");
 
@@ -70,6 +79,13 @@ namespace Udalosti.Uvod.UI
                     }
                     break;
             }
+        }
+
+        public Task odpovedServeraAsync(string odpoved, string od, Dictionary<string, string> udaje)
+        {
+            Debug.WriteLine("Metoda UvodnaObrazovka - odpovedServeraAsync bola vykonana");
+
+            throw new System.NotImplementedException();
         }
     }
 }

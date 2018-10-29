@@ -27,12 +27,15 @@ namespace Udalosti.UWP
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                 }
+
                 Window.Current.Content = rootFrame;
             }
+
             if (rootFrame.Content == null)
             {
                 rootFrame.Navigate(typeof(UdalostiUWP), e.Arguments);
             }
+
             Window.Current.Activate();
         }
 

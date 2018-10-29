@@ -5,6 +5,7 @@
         public UdalostiUWP()
         {
             this.InitializeComponent();
+
             LoadApplication(new Udalosti.App());
         }
     }

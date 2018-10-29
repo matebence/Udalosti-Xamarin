@@ -24,9 +24,11 @@ namespace Udalosti.iOS.Xamarin
 
                 Control.KeyboardAppearance = UIKeyboardAppearance.Dark;
                 Control.ReturnKeyType = UIReturnKeyType.Done;
+
                 Control.Layer.CornerRadius = Convert.ToSingle(vstup.uhol);
                 Control.Layer.BorderColor = vstup.vstupElementu.ToCGColor();
                 Control.Layer.BorderWidth = vstup.sirka;
+
                 Control.ClipsToBounds = true;
             }
         }
