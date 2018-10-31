@@ -17,10 +17,10 @@ namespace Udalosti.Udalost.Data
 
         Task zoznamZaujmovAsync(Pouzivatelia pouzivatel);
 
-        Task zaujemAsync(Pouzivatelia pouzivatel, int idUdalost);
+        Task zaujem(Pouzivatelia pouzivatel, int idUdalost);
 
-        Task potvrdZaujemAsync(Pouzivatelia pouzivatel, int idUdalost);
+        Task potvrdZaujem(Pouzivatelia pouzivatel, int idUdalost);
 
-        Task odstranZaujemAsync(Pouzivatelia pouzivatel, int idUdalost);
+        Task odstranZaujem(Pouzivatelia pouzivatel, int idUdalost);
     }
 }

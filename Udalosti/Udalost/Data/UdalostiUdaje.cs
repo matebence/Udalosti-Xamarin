@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Udalosti.Nastroje;
@@ -100,7 +99,7 @@ namespace Udalosti.Udalost.Data
 
         public async Task zoznamZaujmovAsync(Pouzivatelia pouzivatel)
         {
-            Debug.WriteLine("Metoda zoznamZaujmov bola vykonana");
+            Debug.WriteLine("Metoda zoznamZaujmovAsync bola vykonana");
 
             var obsah = new Dictionary<string, string>
             {
@@ -120,7 +119,7 @@ namespace Udalosti.Udalost.Data
             }
         }
 
-        public async Task zaujemAsync(Pouzivatelia pouzivatel, int idUdalost)
+        public async Task zaujem(Pouzivatelia pouzivatel, int idUdalost)
         {
             Debug.WriteLine("Metoda zaujem bola vykonana");
 
@@ -140,24 +139,24 @@ namespace Udalosti.Udalost.Data
                 if (data.uspech != null)
                 {
                     udaje.Add("uspech", data.uspech);
-                    await this.odpovedeOdServera.odpovedServeraAsync(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.ZAUJEM, udaje);
+                    this.odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.ZAUJEM, udaje);
                 }
 
                 if (data.chyba != null)
                 {
                     udaje.Add("chyba", data.chyba);
-                    await this.odpovedeOdServera.odpovedServeraAsync(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.ZAUJEM, udaje);
+                    this.odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.ZAUJEM, udaje);
                 }
             }
             else
             {
-                await this.odpovedeOdServera.odpovedServeraAsync("Server je momentalne nedostupný!", Nastavenia.ZAUJEM, null);
+                this.odpovedeOdServera.odpovedServera("Server je momentalne nedostupný!", Nastavenia.ZAUJEM, null);
             }
         }
 
-        public async Task potvrdZaujemAsync(Pouzivatelia pouzivatel, int idUdalost)
+        public async Task potvrdZaujem(Pouzivatelia pouzivatel, int idUdalost)
         {
-            Debug.WriteLine("Metoda potvrdZaujemAsync bola vykonana");
+            Debug.WriteLine("Metoda potvrdZaujem bola vykonana");
 
             var obsah = new Dictionary<string, string>
             {
@@ -170,15 +169,15 @@ namespace Udalosti.Udalost.Data
             if (odpoved.IsSuccessStatusCode)
             {
                 Obsah data = JsonConvert.DeserializeObject<Obsah>(await odpoved.Content.ReadAsStringAsync());
-                await this.udajeZoServera.dataZoServeraAsync(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.ZAUJEM_POTVRD, data.udalosti);
+                this.udajeZoServera.dataZoServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.ZAUJEM_POTVRD, data.udalosti);
             }
             else
             {
-                await this.udajeZoServera.dataZoServeraAsync("Server je momentalne nedostupný!", Nastavenia.ZAUJEM_POTVRD, null);
+                this.udajeZoServera.dataZoServera("Server je momentalne nedostupný!", Nastavenia.ZAUJEM_POTVRD, null);
             }
         }
 
-        public async Task odstranZaujemAsync(Pouzivatelia pouzivatel, int idUdalost)
+        public async Task odstranZaujem(Pouzivatelia pouzivatel, int idUdalost)
         {
             Debug.WriteLine("Metoda odstranZaujem bola vykonana");
 
@@ -198,18 +197,18 @@ namespace Udalosti.Udalost.Data
                 if (data.uspech != null)
                 {
                     udaje.Add("uspech", data.uspech);
-                    await this.odpovedeOdServera.odpovedServeraAsync(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.ZAUJEM_ODSTRANENIE, udaje);
+                    this.odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.ZAUJEM_ODSTRANENIE, udaje);
                 }
 
                 if (data.chyba != null)
                 {
                     udaje.Add("chyba", data.chyba);
-                    await this.odpovedeOdServera.odpovedServeraAsync(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.ZAUJEM_ODSTRANENIE, udaje);
+                    this.odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.ZAUJEM_ODSTRANENIE, udaje);
                 }
             }
             else
             {
-                await this.odpovedeOdServera.odpovedServeraAsync("Server je momentalne nedostupný!", Nastavenia.ZAUJEM_ODSTRANENIE, null);
+                this.odpovedeOdServera.odpovedServera("Server je momentalne nedostupný!", Nastavenia.ZAUJEM_ODSTRANENIE, null);
             }
         }
 

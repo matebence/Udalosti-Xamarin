@@ -7,23 +7,19 @@
     BackgroundColor="#005ba6"
     NavigationPage.HasNavigationBar="False">
 
-    <ContentPage.Content>
-        <ScrollView>
-            <StackLayout
-                VerticalOptions="Center"
-                HorizontalOptions="Center">
+    <StackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
 
-                <Image
-                    WidthRequest="80"
-                    HeightRequest="80"
-                    Source="{local:Obrazok Udalosti.Assets.aplikacia_logo.png}"
-                    Margin="0,0,0,10"/>
+        <Image
+            WidthRequest="80"
+            HeightRequest="80"
+            Source="{local:Obrazok Udalosti.Assets.aplikacia_logo.png}"
+            Margin="0,0,0,10"/>
 
-                <ActivityIndicator
-                    Color="White"
-                    IsVisible="True"
-                    IsRunning="true" />
-            </StackLayout>
-        </ScrollView>
-    </ContentPage.Content>
+        <ActivityIndicator
+            Color="White"
+            IsVisible="True"
+            IsRunning="true" />
+    </StackLayout>
 </ContentPage>

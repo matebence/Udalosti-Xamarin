@@ -22,10 +22,26 @@
                     <ColumnDefinition Width="auto" />
                 </Grid.ColumnDefinitions>
 
+                <ActivityIndicator
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Grid.RowSpan="7"
+                    x:Name="nacitavanie"
+                    IsVisible="true"
+                    IsRunning="true"
+                    VerticalOptions="CenterAndExpand">
+
+                    <ActivityIndicator.Color>
+                        <OnPlatform x:TypeArguments="Color" Android="#005ba6" WinPhone="White" iOS="Black"></OnPlatform>
+                    </ActivityIndicator.Color>
+                </ActivityIndicator>
+
                 <Image 
                     Grid.Row="0"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
+                    x:Name="chybaObrazka"
                     HeightRequest="250"
                     Source="{local:Obrazok Udalosti.Assets.udalosti_chyba_obrazka.jpg}"
                     AbsoluteLayout.LayoutBounds="0,0,1,1"
@@ -60,6 +76,7 @@
                     Aspect="AspectFill"/>
 
                 <StackLayout
+                    x:Name="titulUdalosti"
                     Grid.Row="1"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
@@ -74,7 +91,6 @@
 
                         <Label
                             x:Name="denZvolenejUdalosti"
-                            Text="23."
                             TextColor="#c33939"
                             FontAttributes="Bold"
                             FontSize="23"
@@ -93,7 +109,6 @@
 
                         <Label
                             x:Name="mesiacZvolenejUdalosti"
-                            Text="Sept."
                             FontSize="23"
                             HorizontalTextAlignment="Start"
                             HorizontalOptions="Start">
@@ -114,11 +129,10 @@
                     </StackLayout>
 
                     <StackLayout
-                    Orientation="Vertical">
+                        Orientation="Vertical">
 
                         <Label
                             x:Name="nazovZvolenejUdalosti"
-                            Text="Triatlon"
                             FontSize="25"
                             HorizontalTextAlignment="Start"
                             HorizontalOptions="Start">
@@ -139,7 +153,6 @@
 
                         <Label
                             x:Name="miestoZvolenejUdalosti"
-                            Text="Nitra, Stadion"
                             FontSize="23"
                             HorizontalTextAlignment="Start"
                             HorizontalOptions="Start">
@@ -163,6 +176,7 @@
                 <StackLayout
                     Grid.Row="2"
                     Grid.ColumnSpan="2"
+                    x:Name="odDelovac"
                     HeightRequest="1">
 
                     <StackLayout.BackgroundColor>
@@ -174,6 +188,7 @@
                     Grid.Row="3"
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
+                    x:Name="zaujemcovia"
                     Orientation="Horizontal"
                     HorizontalOptions="StartAndExpand"
                     VerticalOptions="Center"
@@ -216,7 +231,6 @@
 
                         <Label
                             x:Name="pocetZaujemcovZvolenejUdalosti"
-                            Text="1"
                             FontSize="15"
                             HorizontalTextAlignment="Start"
                             HorizontalOptions="Start">
@@ -242,6 +256,7 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     Orientation="Horizontal"
+                    x:Name="vstupenka"
                     HorizontalOptions="StartAndExpand"
                     VerticalOptions="Center"
                     Margin="40,10,0,10">
@@ -283,7 +298,6 @@
 
                         <Label
                             x:Name="vstupenkaZvolenejUdalosti"
-                            Text="1"
                             FontSize="15"
                             HorizontalTextAlignment="Start"
                             HorizontalOptions="Start">
@@ -309,6 +323,7 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     Orientation="Horizontal"
+                    x:Name="cas"
                     HorizontalOptions="StartAndExpand"
                     VerticalOptions="Center"
                     Margin="40,10,0,10">
@@ -350,7 +365,6 @@
 
                         <Label
                             x:Name="casZvolenejUdalosti"
-                            Text="1"
                             FontSize="15"
                             HorizontalTextAlignment="Start"
                             HorizontalOptions="Start">
@@ -376,10 +390,9 @@
                     Grid.Column="0"
                     Grid.ColumnSpan="2"
                     x:Name="tlacidloZvolenejUdalosti"
-                    Text="Mám záujem"
+                    Clicked="zaujem"
                     FontSize="18"
                     TextColor="White"
-                    BackgroundColor="#005ba6"
                     VerticalOptions="End"
                     BorderRadius="0"
                     CornerRadius="0"

@@ -116,7 +116,8 @@ namespace Udalosti.Udalost.UI
                 zoznamUdalosti.SelectedItem = null;
 
                 Device.BeginInvokeOnMainThread(async () => {
-                    await Navigation.PushAsync(new Podrobnosti(), true);
+                    ObsahUdalosti udalost = e.SelectedItem as ObsahUdalosti;
+                    await Navigation.PushAsync(new Podrobnosti(udalost), true);
                 });
             }
         }

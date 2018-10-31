@@ -31,6 +31,7 @@
         public int zaujemcovia { get; set; }
         public int zaujem { get; set; }
 
+
         public override string ToString()
         {
             return base.ToString();
