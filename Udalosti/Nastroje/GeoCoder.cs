@@ -49,14 +49,14 @@ namespace Udalosti.Nastroje
                 else if (pravoPrePoziciu != PermissionStatus.Unknown)
                 {
                     geo = null;
-                    Device.BeginInvokeOnMainThread(async () => { await GeoCoder.page.DisplayAlert("Chyba", "Prístup k pozície bol odmietnutý!", "Zatvoriť "); });
+                    Device.BeginInvokeOnMainThread(async () => { await GeoCoder.page.DisplayAlert("Chyba", "Prístup k pozície bol odmietnutý!", "Zatvoriť"); });
                 }
             }
             catch (Exception e)
             {
                 geo = null;
                 Debug.WriteLine("Lokalizator.cs CHYBA:" + e.Message);
-                Device.BeginInvokeOnMainThread(async () => { await GeoCoder.page.DisplayAlert("Chyba", "GPS je vypnutý alebo prístup k aktuálnej polohe bol odmietnutý", "Zatvoriť "); });
+                Device.BeginInvokeOnMainThread(async () => { await GeoCoder.page.DisplayAlert("Chyba", "GPS je vypnutý alebo prístup k aktuálnej polohe bol odmietnutý", "Zatvoriť"); });
             }
 
 

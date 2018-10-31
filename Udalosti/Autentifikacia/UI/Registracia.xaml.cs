@@ -55,6 +55,11 @@ namespace Udalosti.Autentifikacia.UI
         {
             Debug.WriteLine("Metoda registrovatSa bola vykonana");
 
+            meno.IsEnabled = false;
+            email.IsEnabled = false;
+            heslo.IsEnabled = false;
+            potvrd.IsEnabled = false;
+
             if (Spojenie.existuje())
             {
                 nacitavanie.IsVisible = true;
@@ -75,6 +80,11 @@ namespace Udalosti.Autentifikacia.UI
             switch (od)
             {
                 case Nastavenia.AUTENTIFIKACIA_REGISTRACIA:
+                    meno.IsEnabled = true;
+                    email.IsEnabled = true;
+                    heslo.IsEnabled = true;
+                    potvrd.IsEnabled = true;
+
                     if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
                     {
                         Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Úspech", "Registrácia prebehla úspesne! Možete sa prihlásiť.", "Ďalej"); });

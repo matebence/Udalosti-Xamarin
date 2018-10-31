@@ -57,6 +57,9 @@ namespace Udalosti.Autentifikacia.UI
         {
             Debug.WriteLine("Metoda prihlasitSa bola vykonana");
 
+            email.IsEnabled = false;
+            heslo.IsEnabled = false;
+
             if (Spojenie.existuje())
             {
                 Pouzivatelia pouzivatel = new Pouzivatelia(email.Text, heslo.Text, null);
@@ -111,6 +114,9 @@ namespace Udalosti.Autentifikacia.UI
             switch (od)
             {
                 case Nastavenia.AUTENTIFIKACIA_PRIHLASENIE:
+                    email.IsEnabled = true;
+                    heslo.IsEnabled = true;
+
                     if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
                     {
                         this.autentifkaciaUdaje.ulozPrihlasovacieUdajeDoDatabazy(new Pouzivatelia(email.Text, heslo.Text, udaje["token"]));

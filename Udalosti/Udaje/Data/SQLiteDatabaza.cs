@@ -94,7 +94,8 @@ namespace Udalosti.Udaje.Data
             Debug.WriteLine("Metoda aktualizujMiestoPrihlasenia bola vykonana");
 
             init();
-            return this.databaza.Execute("UPDATE Miesto SET pozicia = ?, okres = ?, kraj = ?, psc = ?, stat = ?, znakStatu = ? WHERE idMiesto= ?", miesto.pozicia, miesto.okres, miesto.kraj, miesto.psc, miesto.stat, miesto.znakStatu, miesto.idMiesto);
+            const int idMiesto = 1;
+            return this.databaza.Execute("UPDATE Miesto SET pozicia = ?, okres = ?, kraj = ?, psc = ?, stat = ?, znakStatu = ? WHERE idMiesto= ?", miesto.pozicia, miesto.okres, miesto.kraj, miesto.psc, miesto.stat, miesto.znakStatu, idMiesto);
         }
 
         public int odstranMiestoPrihlasenia(Miesto miesto)

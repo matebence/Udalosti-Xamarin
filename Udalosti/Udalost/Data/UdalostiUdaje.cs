@@ -245,31 +245,5 @@ namespace Udalosti.Udalost.Data
                 this.odpovedeOdServera.odpovedServera("Server je momentalne nedostupný!", Nastavenia.AUTENTIFIKACIA_ODHLASENIE, null);
             }
         }
-
-        public async Task<bool> obrazokJeDostupnnyAsync(string adresa, bool podrobnosti)
-        {
-            Debug.WriteLine("Metoda obrazokJeDostupnnyAsync bola vykonana");
-
-            WebRequest request;
-            if (podrobnosti)
-            {
-                request = WebRequest.Create(adresa);
-            }
-            else
-            {
-                request = WebRequest.Create(App.udalostiAdresa + adresa);
-            }
-
-            WebResponse odpoved;
-            try
-            {
-                odpoved = await request.GetResponseAsync();
-            }
-            catch
-            {
-                return false;
-            }
-            return true;
-        }
     }
 }

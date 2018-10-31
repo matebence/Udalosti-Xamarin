@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using System.Diagnostics;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Udalosti.Udalost.UI
@@ -8,7 +10,12 @@ namespace Udalosti.Udalost.UI
 	{
 		public Podrobnosti ()
 		{
-			InitializeComponent ();
+			InitializeComponent();
 		}
-	}
+
+        private void zaujem(object sender, EventArgs e)
+        {
+            Debug.WriteLine("Metoda zaujem bola vykonana");
+        }
+    }
 }

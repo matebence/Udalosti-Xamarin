@@ -69,13 +69,35 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Grid.BackgroundColor>
-                                    <OnPlatform x:TypeArguments="Color" Android="#f2f2f2" WinPhone="#333333" iOS="#f2f2f2"></OnPlatform>
+                                    <OnPlatform x:TypeArguments="Color" Android="#005ba6" WinPhone="#333333" iOS="#f2f2f2"></OnPlatform>
                                 </Grid.BackgroundColor>
 
                                 <Image 
                                     Grid.Row="0"
                                     Grid.Column="0"
-                                    HeightRequest="250"
+                                    HeightRequest="240"
+                                    Source="{local:Obrazok Udalosti.Assets.udalosti_chyba_obrazka.jpg}"
+                                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                    AbsoluteLayout.LayoutFlags="All"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"
+                                    Aspect="AspectFill"/>
+
+                                <ActivityIndicator
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    IsEnabled="{Binding nacitavenieObrazokUdalosti}"
+                                    IsRunning="{Binding nacitavenieObrazokUdalosti}"
+                                    IsVisible="{Binding nacitavenieObrazokUdalosti}"
+                                    Color="#0397d6">
+                                </ActivityIndicator>
+
+                                <Image 
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    HeightRequest="240"
                                     Source="{Binding obrazok}"
                                     AbsoluteLayout.LayoutBounds="0,0,1,1"
                                     AbsoluteLayout.LayoutFlags="All"
@@ -91,17 +113,20 @@
 
                                     <Label
                                         Text="{Binding den}"
-                                        TextColor="#c33939"
                                         FontSize="23"
                                         VerticalTextAlignment="Start"
                                         HorizontalOptions="Center">
 
+                                        <Label.TextColor>
+                                            <OnPlatform x:TypeArguments="Color" Android="White" WinPhone="#c33939" iOS="#c33939"></OnPlatform>
+                                        </Label.TextColor>
+
                                         <Label.FontFamily>
                                             <OnPlatform x:TypeArguments="x:String">
 
-                                                <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
-                                                <On Platform="Android" Value="raleway_regular.ttf#Raleway Regular" />
-                                                <On Platform="iOS" Value="Raleway-Regular" />
+                                                <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
+                                                <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
+                                                <On Platform="iOS" Value="Raleway-Medium" />
                                             </OnPlatform>
                                         </Label.FontFamily>
                                     </Label>
@@ -113,7 +138,7 @@
                                         HorizontalOptions="Center">
 
                                         <Label.TextColor>
-                                            <OnPlatform x:TypeArguments="Color" Android="Black" WinPhone="White" iOS="Black"></OnPlatform>
+                                            <OnPlatform x:TypeArguments="Color" Android="White" WinPhone="White" iOS="Black"></OnPlatform>
                                         </Label.TextColor>
 
                                         <Label.FontFamily>
@@ -140,7 +165,7 @@
                                         HorizontalOptions="Center">
 
                                         <Label.TextColor>
-                                            <OnPlatform x:TypeArguments="Color" Android="Black" WinPhone="White" iOS="Black"></OnPlatform>
+                                            <OnPlatform x:TypeArguments="Color" Android="White" WinPhone="White" iOS="Black"></OnPlatform>
                                         </Label.TextColor>
 
                                         <Label.FontFamily>
@@ -155,18 +180,26 @@
 
                                     <StackLayout
                                         Orientation="Horizontal"
-                                        HorizontalOptions="CenterAndExpand">
+                                        HorizontalOptions="CenterAndExpand"
+                                        Margin="0,0,0,10">
 
                                         <Image
                                             WidthRequest="20"
-                                            HeightRequest="20"
-                                            Source="{local:Obrazok Udalosti.Assets.udalosti_zoznam_pozicia.png}" />
+                                            HeightRequest="20">
+
+                                            <Image.Source>
+                                                <OnPlatform x:TypeArguments="FileImageSource" Android="{local:Obrazok Udalosti.Assets.udalosti_zoznam_pozicia_biela.png}" WinPhone="{local:Obrazok Udalosti.Assets.udalosti_zoznam_pozicia_modra.png}" iOS="{local:Obrazok Udalosti.Assets.udalosti_zoznam_pozicia_modra.png}"></OnPlatform>
+                                            </Image.Source>
+                                        </Image>
 
                                         <Label  
                                             Text="{Binding mesto}"
                                             FontAttributes="Bold"
-                                            TextColor="#005ba6"
                                             FontSize="17">
+
+                                            <Label.TextColor>
+                                                <OnPlatform x:TypeArguments="Color" Android="White" WinPhone="#005ba6" iOS="#005ba6"></OnPlatform>
+                                            </Label.TextColor>
 
                                             <Label.FontFamily>
                                                 <OnPlatform x:TypeArguments="x:String">
@@ -183,7 +216,7 @@
                                             FontSize="17">
 
                                             <Label.TextColor>
-                                                <OnPlatform x:TypeArguments="Color" Android="Black" WinPhone="White" iOS="Black"></OnPlatform>
+                                                <OnPlatform x:TypeArguments="Color" Android="White" WinPhone="White" iOS="Black"></OnPlatform>
                                             </Label.TextColor>
 
                                             <Label.FontFamily>
@@ -211,7 +244,7 @@
                                         HorizontalOptions="Center">
 
                                         <Label.TextColor>
-                                            <OnPlatform x:TypeArguments="Color" Android="Black" WinPhone="White" iOS="Black"></OnPlatform>
+                                            <OnPlatform x:TypeArguments="Color" Android="White" WinPhone="White" iOS="Black"></OnPlatform>
                                         </Label.TextColor>
 
                                         <Label.FontFamily>
@@ -229,7 +262,7 @@
                                         HeightRequest="20">
 
                                         <Image.Source>
-                                            <OnPlatform x:TypeArguments="FileImageSource" Android="{local:Obrazok Udalosti.Assets.udalosti_zoznam_cas_cierna.png}" WinPhone="{local:Obrazok Udalosti.Assets.udalosti_zoznam_cas_biela.png}" iOS="{local:Obrazok Udalosti.Assets.udalosti_zoznam_cas_cierna.png}"></OnPlatform>
+                                            <OnPlatform x:TypeArguments="FileImageSource" Android="{local:Obrazok Udalosti.Assets.udalosti_zoznam_cas_biela.png}" WinPhone="{local:Obrazok Udalosti.Assets.udalosti_zoznam_cas_biela.png}" iOS="{local:Obrazok Udalosti.Assets.udalosti_zoznam_cas_cierna.png}"></OnPlatform>
                                         </Image.Source>
                                     </Image>
                                 </StackLayout>

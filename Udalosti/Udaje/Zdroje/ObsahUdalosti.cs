@@ -2,10 +2,11 @@
 {
     public class ObsahUdalosti
     {
-        public ObsahUdalosti(int idUdalost, string obrazok, string nazov, string den, string mesiac, string cas, string mesto, string ulica, float vstupenka, int zaujemcovia, int zaujem)
+        public ObsahUdalosti(int idUdalost, string obrazok, bool nacitavanieObrazka, string nazov, string den, string mesiac, string cas, string mesto, string ulica, float vstupenka, int zaujemcovia, int zaujem)
         {
             this.idUdalost = idUdalost;
             this.obrazok = obrazok;
+            this.nacitavanieObrazka = nacitavanieObrazka;
             this.nazov = nazov;
             this.den = den;
             this.mesiac = mesiac;
@@ -19,6 +20,7 @@
 
         public int idUdalost { get; set; }
         public string obrazok { get; set; }
+        public bool nacitavanieObrazka { get; set; }
         public string nazov { get; set; }
         public string den { get; set; }
         public string mesiac { get; set; }

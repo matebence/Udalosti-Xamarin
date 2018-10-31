@@ -22,7 +22,5 @@ namespace Udalosti.Udalost.Data
         Task potvrdZaujemAsync(Pouzivatelia pouzivatel, int idUdalost);
 
         Task odstranZaujemAsync(Pouzivatelia pouzivatel, int idUdalost);
-
-        Task<bool> obrazokJeDostupnnyAsync(string adresa, bool podrobnosti);
     }
 }

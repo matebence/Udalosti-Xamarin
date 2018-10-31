@@ -2,10 +2,400 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Udalosti.Nastroje.Xamarin"
     x:Class="Udalosti.Udalost.UI.Podrobnosti">
     
     <ContentPage.Content>
-        <StackLayout>
-        </StackLayout>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="250"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+
+                <Image 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HeightRequest="250"
+                    Source="{local:Obrazok Udalosti.Assets.udalosti_chyba_obrazka.jpg}"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Aspect="AspectFill"/>
+
+                <ActivityIndicator
+                    x:Name="nacitavenieObrazokUdalosti"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    IsEnabled="True"
+                    IsRunning="True"
+                    IsVisible="True"
+                    Color="#0397d6">
+                </ActivityIndicator>
+
+                <Image 
+                    x:Name="obrazokZvolenejUdalosti"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    HeightRequest="250"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Aspect="AspectFill"/>
+
+                <StackLayout
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Orientation="Horizontal"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    Margin="40,5,0,5">
+
+                    <StackLayout
+                        Orientation="Vertical"
+                        Margin="0,0,40,0">
+
+                        <Label
+                            x:Name="denZvolenejUdalosti"
+                            Text="23."
+                            TextColor="#c33939"
+                            FontAttributes="Bold"
+                            FontSize="23"
+                            HorizontalTextAlignment="Start"
+                            HorizontalOptions="Center">
+
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+
+                                    <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
+                                    <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
+                                    <On Platform="iOS" Value="Raleway-Medium" />
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+
+                        <Label
+                            x:Name="mesiacZvolenejUdalosti"
+                            Text="Sept."
+                            FontSize="23"
+                            HorizontalTextAlignment="Start"
+                            HorizontalOptions="Start">
+
+                            <Label.TextColor>
+                                <OnPlatform x:TypeArguments="Color" Android="Black" WinPhone="White" iOS="Black"></OnPlatform>
+                            </Label.TextColor>
+
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+
+                                    <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
+                                    <On Platform="Android" Value="raleway_regular.ttf#Raleway Regular" />
+                                    <On Platform="iOS" Value="Raleway-Regular" />
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                    </StackLayout>
+
+                    <StackLayout
+                    Orientation="Vertical">
+
+                        <Label
+                            x:Name="nazovZvolenejUdalosti"
+                            Text="Triatlon"
+                            FontSize="25"
+                            HorizontalTextAlignment="Start"
+                            HorizontalOptions="Start">
+
+                            <Label.TextColor>
+                                <OnPlatform x:TypeArguments="Color" Android="Black" WinPhone="White" iOS="Black"></OnPlatform>
+                            </Label.TextColor>
+
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+
+                                    <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
+                                    <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
+                                    <On Platform="iOS" Value="Raleway-Medium" />
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+
+                        <Label
+                            x:Name="miestoZvolenejUdalosti"
+                            Text="Nitra, Stadion"
+                            FontSize="23"
+                            HorizontalTextAlignment="Start"
+                            HorizontalOptions="Start">
+
+                            <Label.TextColor>
+                                <OnPlatform x:TypeArguments="Color" Android="Black" WinPhone="#FF747474" iOS="Black"></OnPlatform>
+                            </Label.TextColor>
+
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+
+                                    <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
+                                    <On Platform="Android" Value="raleway_regular.ttf#Raleway Regular" />
+                                    <On Platform="iOS" Value="Raleway-Regular" />
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    HeightRequest="1">
+
+                    <StackLayout.BackgroundColor>
+                        <OnPlatform x:TypeArguments="Color" Android="#FF747474" WinPhone="#FF747474" iOS="Black"></OnPlatform>
+                    </StackLayout.BackgroundColor>
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Orientation="Horizontal"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    Margin="40,10,0,10">
+
+                    <StackLayout
+                        Orientation="Vertical"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Margin="0,0,20,0">
+
+                        <Image
+                            WidthRequest="30"
+                            HeightRequest="30"
+                            Source="{local:Obrazok Udalosti.Assets.podrobnosti_zaujemcovia.png}"/>
+                       </StackLayout>
+
+                    <StackLayout
+                        Orientation="Vertical">
+
+                        <Label
+                            Text="Počet záujemcov"
+                            FontSize="15"
+                            HorizontalTextAlignment="Start"
+                            HorizontalOptions="Start">
+
+                            <Label.TextColor>
+                                <OnPlatform x:TypeArguments="Color" Android="#FF747474" WinPhone="#FF747474" iOS="Black"></OnPlatform>
+                            </Label.TextColor>
+
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+
+                                    <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
+                                    <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
+                                    <On Platform="iOS" Value="Raleway-Medium" />
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+
+                        <Label
+                            x:Name="pocetZaujemcovZvolenejUdalosti"
+                            Text="1"
+                            FontSize="15"
+                            HorizontalTextAlignment="Start"
+                            HorizontalOptions="Start">
+
+                            <Label.TextColor>
+                                <OnPlatform x:TypeArguments="Color" Android="Black" WinPhone="White" iOS="Black"></OnPlatform>
+                            </Label.TextColor>
+
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+
+                                    <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
+                                    <On Platform="Android" Value="raleway_regular.ttf#Raleway Regular" />
+                                    <On Platform="iOS" Value="Raleway-Regular" />
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Orientation="Horizontal"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    Margin="40,10,0,10">
+
+                    <StackLayout
+                        Orientation="Vertical"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Margin="0,0,20,0">
+
+                        <Image
+                            WidthRequest="30"
+                            HeightRequest="30"
+                            Source="{local:Obrazok Udalosti.Assets.podrobnosti_vstupenka.png}"/>
+                    </StackLayout>
+
+                    <StackLayout
+                        Orientation="Vertical">
+
+                        <Label
+                            Text="Vstupenka"
+                            FontSize="15"
+                            HorizontalTextAlignment="Start"
+                            HorizontalOptions="Start">
+
+                            <Label.TextColor>
+                                <OnPlatform x:TypeArguments="Color" Android="#FF747474" WinPhone="#FF747474" iOS="Black"></OnPlatform>
+                            </Label.TextColor>
+
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+
+                                    <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
+                                    <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
+                                    <On Platform="iOS" Value="Raleway-Medium" />
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+
+                        <Label
+                            x:Name="vstupenkaZvolenejUdalosti"
+                            Text="1"
+                            FontSize="15"
+                            HorizontalTextAlignment="Start"
+                            HorizontalOptions="Start">
+
+                            <Label.TextColor>
+                                <OnPlatform x:TypeArguments="Color" Android="Black" WinPhone="White" iOS="Black"></OnPlatform>
+                            </Label.TextColor>
+
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+
+                                    <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
+                                    <On Platform="Android" Value="raleway_regular.ttf#Raleway Regular" />
+                                    <On Platform="iOS" Value="Raleway-Regular" />
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Orientation="Horizontal"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    Margin="40,10,0,10">
+
+                    <StackLayout
+                        Orientation="Vertical"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Margin="0,0,20,0">
+
+                        <Image
+                            WidthRequest="30"
+                            HeightRequest="30"
+                            Source="{local:Obrazok Udalosti.Assets.podrobnosti_cas.png}"/>
+                    </StackLayout>
+
+                    <StackLayout
+                        Orientation="Vertical">
+
+                        <Label
+                            Text="Čas"
+                            FontSize="15"
+                            HorizontalTextAlignment="Start"
+                            HorizontalOptions="Start">
+
+                            <Label.TextColor>
+                                <OnPlatform x:TypeArguments="Color" Android="#FF747474" WinPhone="#FF747474" iOS="Black"></OnPlatform>
+                            </Label.TextColor>
+
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+
+                                    <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
+                                    <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
+                                    <On Platform="iOS" Value="Raleway-Medium" />
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+
+                        <Label
+                            x:Name="casZvolenejUdalosti"
+                            Text="1"
+                            FontSize="15"
+                            HorizontalTextAlignment="Start"
+                            HorizontalOptions="Start">
+
+                            <Label.TextColor>
+                                <OnPlatform x:TypeArguments="Color" Android="Black" WinPhone="White" iOS="Black"></OnPlatform>
+                            </Label.TextColor>
+
+                            <Label.FontFamily>
+                                <OnPlatform x:TypeArguments="x:String">
+
+                                    <On Platform="UWP" Value="Assets/Fonts/raleway_regular.ttf#Raleway" />
+                                    <On Platform="Android" Value="raleway_regular.ttf#Raleway Regular" />
+                                    <On Platform="iOS" Value="Raleway-Regular" />
+                                </OnPlatform>
+                            </Label.FontFamily>
+                        </Label>
+                    </StackLayout>
+                </StackLayout>
+
+                <Button 
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    x:Name="tlacidloZvolenejUdalosti"
+                    Text="Mám záujem"
+                    FontSize="18"
+                    TextColor="White"
+                    BackgroundColor="#005ba6"
+                    VerticalOptions="End"
+                    BorderRadius="0"
+                    CornerRadius="0"
+                    Margin="0,20,0,0"
+                    Padding="0,20,0,20">
+
+                    <Button.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+
+                            <On Platform="UWP" Value="Assets/Fonts/raleway_medium.ttf#Raleway" />
+                            <On Platform="Android" Value="raleway_medium.ttf#Raleway Medium" />
+                            <On Platform="iOS" Value="Raleway-Medium" />
+                        </OnPlatform>
+                    </Button.FontFamily>
+                </Button>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

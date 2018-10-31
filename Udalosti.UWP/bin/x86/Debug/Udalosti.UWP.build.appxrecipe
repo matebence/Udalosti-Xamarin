@@ -786,9 +786,6 @@
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\Images\udalosti_chyba_obrazka.jpg">
-      <PackagePath>Assets\Images\udalosti_chyba_obrazka.jpg</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>

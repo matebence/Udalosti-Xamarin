@@ -36,14 +36,14 @@ namespace Udalosti.Udalost.UI
         {
             Debug.WriteLine("Metoda Lokalizator - init bola vykonana");
 
+            nacitavanie.IsVisible = true;
+
             this.uvodnaObrazovkaUdaje = new UvodnaObrazovkaUdaje();
             this.udalostiUdaje = new UdalostiUdaje(this, this);
             this.spravcaDat = new SpravcaDat();
 
             this.pouzivatel = this.uvodnaObrazovkaUdaje.prihlasPouzivatela();
             this.miesto = this.udalostiUdaje.miestoPrihlasenia();
-
-            nacitavanie.IsVisible = true;
         }
 
         protected override void OnAppearing()
@@ -128,11 +128,8 @@ namespace Udalosti.Udalost.UI
 
                         if (udaje != null)
                         {
-                            Device.BeginInvokeOnMainThread(async () =>
-                            {
-                                await this.spravcaDat.nacitavanieUdalostiAsync(this.udalostiUdaje, udaje, zoznamUdalosti, SpravcaDat.getUdalostiPodlaPozicie());
-                                zoznamUdalosti.ItemsSource = SpravcaDat.getUdalostiPodlaPozicie();
-                            });
+                            this.spravcaDat.nacitavanieUdalostiAsync(this.udalostiUdaje, udaje, zoznamUdalosti, SpravcaDat.getUdalostiPodlaPozicie());
+                            zoznamUdalosti.ItemsSource = SpravcaDat.getUdalostiPodlaPozicie();
 
                             zoznamUdalosti.IsVisible = true;
 

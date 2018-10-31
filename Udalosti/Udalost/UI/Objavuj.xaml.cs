@@ -36,14 +36,14 @@ namespace Udalosti.Udalost.UI
         {
             Debug.WriteLine("Metoda Objavuj - init bola vykonana");
 
+            nacitavanie.IsVisible = true;
+
             this.uvodnaObrazovkaUdaje = new UvodnaObrazovkaUdaje();
             this.udalostiUdaje = new UdalostiUdaje(this, this);
             this.spravcaDat = new SpravcaDat();
 
             this.pouzivatel = this.uvodnaObrazovkaUdaje.prihlasPouzivatela();
             this.miesto = this.udalostiUdaje.miestoPrihlasenia();
-
-            nacitavanie.IsVisible = true;
         }
 
         protected override void OnAppearing()
@@ -58,7 +58,7 @@ namespace Udalosti.Udalost.UI
                 {
                     if (SpravcaDat.getUdalosti() == null)
                     {
-                            await this.udalostiUdaje.zoznamUdalostiAsync(this.pouzivatel, this.miesto);
+                        await this.udalostiUdaje.zoznamUdalostiAsync(this.pouzivatel, this.miesto);
                     }
                     else
                     {
@@ -108,6 +108,19 @@ namespace Udalosti.Udalost.UI
             }
         }
 
+        void podrobnostiUdalosti(object sender, SelectedItemChangedEventArgs e)
+        {
+            Debug.WriteLine("Metoda Objavuj - PodrobnostiUdalosti bola vykonana");
+
+            if (zoznamUdalosti.SelectedItem != null) { 
+                zoznamUdalosti.SelectedItem = null;
+
+                Device.BeginInvokeOnMainThread(async () => {
+                    await Navigation.PushAsync(new Podrobnosti(), true);
+                });
+            }
+        }
+
         public void dataZoServera(string odpoved, string od, List<ObsahUdalosti> udaje)
         {
             Debug.WriteLine("Metoda Objavuj - dataZoServera bola vykonana");
@@ -121,11 +134,8 @@ namespace Udalosti.Udalost.UI
 
                         if (udaje != null)
                         {
-                            Device.BeginInvokeOnMainThread(async () =>
-                            {
-                                await this.spravcaDat.nacitavanieUdalostiAsync(this.udalostiUdaje, udaje, zoznamUdalosti, SpravcaDat.getUdalosti());
-                                zoznamUdalosti.ItemsSource = SpravcaDat.getUdalosti();
-                            });
+                            this.spravcaDat.nacitavanieUdalostiAsync(this.udalostiUdaje, udaje, zoznamUdalosti, SpravcaDat.getUdalosti());
+                            zoznamUdalosti.ItemsSource = SpravcaDat.getUdalosti();
 
                             zoznamUdalosti.IsVisible = true;
 

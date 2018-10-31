@@ -214,7 +214,4 @@
   <ItemGroup>
     <BundleResource Include="Resources\Images\nav_zaujmy.png" />
   </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Images\udalosti_chyba_obrazka.jpg" />
-  </ItemGroup>
 </Project>

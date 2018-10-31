@@ -20,6 +20,7 @@
     <None Remove="Assets\podrobnosti_zaujemcovia.png" />
     <None Remove="Assets\stav_aktivny.png" />
     <None Remove="Assets\stav_passivny.png" />
+    <None Remove="Assets\udalosti_chyba_obrazka.jpg" />
     <None Remove="Assets\udalosti_ziadne_spojenie_cierna.png" />
     <None Remove="Assets\udalosti_ziadne_spojenie_siva.png" />
     <None Remove="Assets\udalosti_ziadne_udalosti_cierna.png" />
@@ -28,7 +29,8 @@
     <None Remove="Assets\udalosti_ziadne_zaujmy_siva.png" />
     <None Remove="Assets\udalosti_zoznam_cas_biela.png" />
     <None Remove="Assets\udalosti_zoznam_cas_cierna.png" />
-    <None Remove="Assets\udalosti_zoznam_pozicia.png" />
+    <None Remove="Assets\udalosti_zoznam_pozicia_biela.png" />
+    <None Remove="Assets\udalosti_zoznam_pozicia_modra.png" />
     <None Remove="Assets\ukazka_aplikacie_objavuj.png" />
     <None Remove="Assets\ukazka_aplikacie_podla_pozicie.png" />
     <None Remove="Assets\ukazka_aplikacie_registracia_prihlasovanie.png" />
@@ -62,6 +64,7 @@
     <EmbeddedResource Include="Assets\podrobnosti_zaujemcovia.png" />
     <EmbeddedResource Include="Assets\stav_aktivny.png" />
     <EmbeddedResource Include="Assets\stav_passivny.png" />
+    <EmbeddedResource Include="Assets\udalosti_chyba_obrazka.jpg" />
     <EmbeddedResource Include="Assets\udalosti_ziadne_spojenie_cierna.png" />
     <EmbeddedResource Include="Assets\udalosti_ziadne_spojenie_siva.png" />
     <EmbeddedResource Include="Assets\udalosti_ziadne_udalosti_cierna.png" />
@@ -70,7 +73,8 @@
     <EmbeddedResource Include="Assets\udalosti_ziadne_zaujmy_siva.png" />
     <EmbeddedResource Include="Assets\udalosti_zoznam_cas_biela.png" />
     <EmbeddedResource Include="Assets\udalosti_zoznam_cas_cierna.png" />
-    <EmbeddedResource Include="Assets\udalosti_zoznam_pozicia.png" />
+    <EmbeddedResource Include="Assets\udalosti_zoznam_pozicia_biela.png" />
+    <EmbeddedResource Include="Assets\udalosti_zoznam_pozicia_modra.png" />
     <EmbeddedResource Include="Assets\ukazka_aplikacie_objavuj.png" />
     <EmbeddedResource Include="Assets\ukazka_aplikacie_podla_pozicie.png" />
     <EmbeddedResource Include="Assets\ukazka_aplikacie_registracia_prihlasovanie.png" />

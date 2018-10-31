@@ -45,7 +45,6 @@ namespace Udalosti.Udalost.Nav
             pouzivatel = uvodnaObrazovkaUdaje.prihlasPouzivatela();
 
             nacitajPolozkyNavigacie();
-            nastavPredvolenuPoziciu();
         }
 
         private void nacitajPolozkyNavigacie()
@@ -101,34 +100,24 @@ namespace Udalosti.Udalost.Nav
             }
         }
 
-        private void nastavPredvolenuPoziciu()
-        {
-            Debug.WriteLine("Metoda nastavPredvolenuPoziciu bola vykonana");
-
-            zoznam.ItemTapped += (object sender, ItemTappedEventArgs e) => {
-                if (e.Item == null) return;
-                Task.Delay(1);
-                if (sender is ListView lv) lv.SelectedItem = null;
-            };
-        }
-
-
-        void zvolenyPrvok(object sender, SelectedItemChangedEventArgs e)
+        private void zvolenyPrvok(object sender, SelectedItemChangedEventArgs e)
         {
             var prvok = e.SelectedItem as MasterPageItem;
             if (prvok != null)
             {
                 if (prvok.Title.Equals("Odlhásiť sa"))
                 {
+                    zoznam.SelectedItem = null;
+                    IsPresented = false;
                     Device.BeginInvokeOnMainThread(async () => {
                         await udalostiUdaje.odhlasenieAsync(pouzivatel);
                     });
                 }
                 else
                 {
-                    Detail = new NavigationPage((Page)Activator.CreateInstance(prvok.TargetType));
                     zoznam.SelectedItem = null;
                     IsPresented = false;
+                    Detail = new NavigationPage((Page)Activator.CreateInstance(prvok.TargetType));
                 }
             }
         }

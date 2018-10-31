@@ -36,7 +36,6 @@ C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\Mo
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\res\drawable\nav_objavuj.png
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\res\drawable\nav_odhlasit_sa.png
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\res\drawable\nav_podla_pozicie.png
-C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\res\drawable\udalosti_chyba_obrazka.jpg
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\res\drawable\nav_zaujmy.png
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\R.cs.flag
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\R.txt
@@ -118,7 +117,9 @@ C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\Mo
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\Udalosti.Android.pdb
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\android\assets\Xamarin.Forms.Xaml.pdb
+C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\bin\Debug\netstandard2.0\Udalosti.dll
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\linksrc\Udalosti.Android.pdb
+C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\bin\Debug\Udalosti.dll.mdb
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\linksrc\FormsViewGroup.dll.mdb
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\linksrc\Plugin.Connectivity.dll.mdb
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.Android\obj\Debug\MonoAndroid81\linksrc\Udalosti.dll.mdb
