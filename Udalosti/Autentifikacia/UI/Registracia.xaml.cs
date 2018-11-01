@@ -69,6 +69,11 @@ namespace Udalosti.Autentifikacia.UI
             else
             {
                 Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Chyba", "Žiadné spojenie!", "Zatvoriť"); });
+
+                meno.IsEnabled = true;
+                email.IsEnabled = true;
+                heslo.IsEnabled = true;
+                potvrd.IsEnabled = true;
             }
         }
 
@@ -80,11 +85,6 @@ namespace Udalosti.Autentifikacia.UI
             switch (od)
             {
                 case Nastavenia.AUTENTIFIKACIA_REGISTRACIA:
-                    meno.IsEnabled = true;
-                    email.IsEnabled = true;
-                    heslo.IsEnabled = true;
-                    potvrd.IsEnabled = true;
-
                     if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
                     {
                         Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Úspech", "Registrácia prebehla úspesne! Možete sa prihlásiť.", "Ďalej"); });
@@ -94,6 +94,12 @@ namespace Udalosti.Autentifikacia.UI
                     {
                         Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Chyba", odpoved, "Zatvoriť"); });
                     }
+
+                    meno.IsEnabled = true;
+                    email.IsEnabled = true;
+                    heslo.IsEnabled = true;
+                    potvrd.IsEnabled = true;
+
                     break;
             }
         }

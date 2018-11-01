@@ -179,7 +179,6 @@ namespace Udalosti.Udalost.UI
 
                 tlacidloZvolenejUdalosti.IsVisible = false;
                 chybaObrazka.IsVisible = false;
-                nacitavenieObrazokUdalosti.IsVisible = false;
                 obrazokZvolenejUdalosti.IsVisible = false;
                 titulUdalosti.IsVisible = false;
                 odDelovac.IsVisible = false;
@@ -207,7 +206,6 @@ namespace Udalosti.Udalost.UI
 
             obrazokZvolenejUdalosti.Source = ImageSource.FromUri(new Uri(host+udalost.obrazok));
             chybaObrazka.IsVisible = false;
-            nacitavenieObrazokUdalosti.IsVisible = false;
 
             denZvolenejUdalosti.Text = udalost.den;
             mesiacZvolenejUdalosti.Text = udalost.mesiac.Substring(0, 3) + ".";
@@ -245,7 +243,6 @@ namespace Udalosti.Udalost.UI
 
             tlacidloZvolenejUdalosti.IsVisible = true;
             chybaObrazka.IsVisible = true;
-            nacitavenieObrazokUdalosti.IsVisible = true;
             obrazokZvolenejUdalosti.IsVisible = true;
             titulUdalosti.IsVisible = true;
             odDelovac.IsVisible = true;

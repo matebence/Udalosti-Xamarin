@@ -49,9 +49,10 @@
 
             <ListView 
                 x:Name="zoznamUdalosti"
-                IsVisible="false"
+                ItemSelected="podrobnostiUdalosti"
                 SeparatorVisibility="None"
-                SelectionMode="None"
+                IsPullToRefreshEnabled="True"
+                IsVisible="false"
                 HasUnevenRows="True">
 
                 <ListView.ItemTemplate>
@@ -82,17 +83,6 @@
                                     HorizontalOptions="FillAndExpand"
                                     VerticalOptions="FillAndExpand"
                                     Aspect="AspectFill"/>
-
-                                <ActivityIndicator
-                                    Grid.Row="0"
-                                    Grid.Column="0"
-                                    HorizontalOptions="Center"
-                                    VerticalOptions="Center"
-                                    IsEnabled="{Binding nacitavenieObrazokUdalosti}"
-                                    IsRunning="{Binding nacitavenieObrazokUdalosti}"
-                                    IsVisible="{Binding nacitavenieObrazokUdalosti}"
-                                    Color="#0397d6">
-                                </ActivityIndicator>
 
                                 <Image 
                                     Grid.Row="0"

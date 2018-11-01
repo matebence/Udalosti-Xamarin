@@ -45,7 +45,7 @@ namespace Udalosti.Uvod.UI
             {
                 Pouzivatelia pouzivatelskeUdaje = this.uvodnaObrazovkaUdaje.prihlasPouzivatela();
 
-                Dictionary<string, double> poloha = await GeoCoder.zistiPolohuAsync(null, this);
+                Dictionary<string, double> poloha = await GeoCoder.zistiPolohuAsync(this);
                 if (poloha == null)
                 {
                     await this.autentifkaciaUdaje.miestoPrihlaseniaAsync(pouzivatelskeUdaje);

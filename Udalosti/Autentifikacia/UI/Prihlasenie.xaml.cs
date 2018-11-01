@@ -63,8 +63,8 @@ namespace Udalosti.Autentifikacia.UI
             if (Spojenie.existuje())
             {
                 Pouzivatelia pouzivatel = new Pouzivatelia(email.Text, heslo.Text, null);
-
                 Dictionary<string, double> poloha = await GeoCoder.zistiPolohuAsync(nacitavanie, this);
+
                 if (poloha == null)
                 {
                     await this.autentifkaciaUdaje.miestoPrihlaseniaAsync(pouzivatel);
@@ -77,6 +77,9 @@ namespace Udalosti.Autentifikacia.UI
             else
             {
                 Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Chyba", "Žiadné spojenie!", "Zatvoriť"); });
+
+                email.IsEnabled = true;
+                heslo.IsEnabled = true;
             }
         }
 
@@ -114,9 +117,6 @@ namespace Udalosti.Autentifikacia.UI
             switch (od)
             {
                 case Nastavenia.AUTENTIFIKACIA_PRIHLASENIE:
-                    email.IsEnabled = true;
-                    heslo.IsEnabled = true;
-
                     if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
                     {
                         this.autentifkaciaUdaje.ulozPrihlasovacieUdajeDoDatabazy(new Pouzivatelia(email.Text, heslo.Text, udaje["token"]));
@@ -126,6 +126,10 @@ namespace Udalosti.Autentifikacia.UI
                     {
                         Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Chyba", odpoved, "Zatvoriť"); });
                     }
+
+                    email.IsEnabled = true;
+                    heslo.IsEnabled = true;
+
                     break;
             }
         }

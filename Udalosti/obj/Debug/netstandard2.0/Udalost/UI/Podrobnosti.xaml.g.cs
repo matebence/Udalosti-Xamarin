@@ -23,9 +23,6 @@ namespace Udalosti.Udalost.UI {
         private global::Xamarin.Forms.Image chybaObrazka;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.ActivityIndicator nacitavenieObrazokUdalosti;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Image obrazokZvolenejUdalosti;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -72,7 +69,6 @@ namespace Udalosti.Udalost.UI {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Podrobnosti));
             nacitavanie = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ActivityIndicator>(this, "nacitavanie");
             chybaObrazka = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "chybaObrazka");
-            nacitavenieObrazokUdalosti = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ActivityIndicator>(this, "nacitavenieObrazokUdalosti");
             obrazokZvolenejUdalosti = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "obrazokZvolenejUdalosti");
             titulUdalosti = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "titulUdalosti");
             denZvolenejUdalosti = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "denZvolenejUdalosti");

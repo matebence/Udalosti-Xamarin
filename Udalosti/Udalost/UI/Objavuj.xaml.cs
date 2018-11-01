@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using Udalosti.Nastroje;
 using Udalosti.Udaje.Data.Tabulka;
 using Udalosti.Udaje.Nastavenia;
 using Udalosti.Udaje.Siet.Model;
@@ -44,6 +43,11 @@ namespace Udalosti.Udalost.UI
 
             this.pouzivatel = this.uvodnaObrazovkaUdaje.prihlasPouzivatela();
             this.miesto = this.udalostiUdaje.miestoPrihlasenia();
+
+            zoznamUdalosti.RefreshCommand = new Command(() => {
+                aktualizujUdalosti();
+                zoznamUdalosti.IsRefreshing = false;
+            });
         }
 
         protected override void OnAppearing()
@@ -51,61 +55,7 @@ namespace Udalosti.Udalost.UI
             Debug.WriteLine("Metoda Objavuj - OnAppearing bola vykonana");
 
             Title = miesto.stat;
-
-            try
-            {
-                Device.BeginInvokeOnMainThread(async () =>
-                {
-                    if (SpravcaDat.getUdalosti() == null)
-                    {
-                        await this.udalostiUdaje.zoznamUdalostiAsync(this.pouzivatel, this.miesto);
-                    }
-                    else
-                    {
-                        if (!(Spojenie.existuje()))
-                        {
-                            ziadneSpojenie.IsVisible = true;
-
-                            zoznamUdalosti.IsVisible = false;
-                            ziadneUdalosti.IsVisible = false;
-                            nacitavanie.IsVisible = false;
-                        }
-                        else
-                        {
-                            if (SpravcaDat.getUdalosti().Count < 1)
-                            {
-                                ziadneUdalosti.IsVisible = true;
-
-                                ziadneSpojenie.IsVisible = false;
-                                zoznamUdalosti.IsVisible = false;
-                                nacitavanie.IsVisible = false;
-                            }
-                            else
-                            {
-                                zoznamUdalosti.ItemsSource = SpravcaDat.getUdalosti();
-                                zoznamUdalosti.IsVisible = true;
-
-                                ziadneSpojenie.IsVisible = false;
-                                ziadneUdalosti.IsVisible = false;
-                                nacitavanie.IsVisible = false;
-                            }
-                        }
-                    }
-                });
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine(e.Message);
-
-                if (!(Spojenie.existuje()))
-                {
-                    ziadneSpojenie.IsVisible = true;
-
-                    zoznamUdalosti.IsVisible = false;
-                    ziadneUdalosti.IsVisible = false;
-                    nacitavanie.IsVisible = false;
-                }
-            }
+            spravcaDat.nacitajDataUdalosti("Objavuj", udalostiUdaje, pouzivatel, miesto, SpravcaDat.getUdalosti(), zoznamUdalosti, nacitavanie, ziadneUdalosti, ziadneSpojenie);
         }
 
         void podrobnostiUdalosti(object sender, SelectedItemChangedEventArgs e)
@@ -122,6 +72,19 @@ namespace Udalosti.Udalost.UI
             }
         }
 
+        private void aktualizujUdalosti()
+        {
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                zoznamUdalosti.IsVisible = false;
+                nacitavanie.IsVisible = true;
+
+                SpravcaDat.getUdalosti().Clear();
+                SpravcaDat.setUdalosti(false);
+                await udalostiUdaje.zoznamUdalostiAsync(pouzivatel, miesto);
+            });
+        }
+
         public void dataZoServera(string odpoved, string od, List<ObsahUdalosti> udaje)
         {
             Debug.WriteLine("Metoda Objavuj - dataZoServera bola vykonana");
@@ -131,7 +94,7 @@ namespace Udalosti.Udalost.UI
                 case Nastavenia.UDALOSTI_OBJAVUJ:
                     if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
                     {
-                        SpravcaDat.setUdalosti();
+                        SpravcaDat.setUdalosti(true);
 
                         if (udaje != null)
                         {

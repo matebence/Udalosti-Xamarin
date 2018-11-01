@@ -81,7 +81,7 @@ namespace Udalosti.Autentifikacia.Data
 
                 if (aktualizuj)
                 {
-                    await this.odpovedeOdServera.odpovedServeraAsync(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.UDALOSTI_AKTUALIZUJ, null);
+                    this.odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.UDALOSTI_AKTUALIZUJ, null);
                 }
                 else
                 {

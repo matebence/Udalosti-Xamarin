@@ -75,11 +75,19 @@ namespace Udalosti.Token
                         Pouzivatelia pouzivatel = this.uvodnaObrazovkaUdaje.prihlasPouzivatela();
                         this.autentifikaciaUdaje.ulozPrihlasovacieUdajeDoDatabazy(new Pouzivatelia(pouzivatel.email, pouzivatel.heslo, udaje["token"]));
                     }
+                    else
+                    {
+                        Debug.WriteLine("CHYBA PRI GENEROVNI NOVEHO TOKENA. Odpoved SERVERA: " + odpoved);
+                    }
                     break;
                 case Nastavenia.AUTENTIFIKACIA_ODHLASENIE:
                     if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
                     {
                         Debug.WriteLine("Token odstranene");
+                    }
+                    else
+                    {
+                        Debug.WriteLine("CHYBA PRI ODSTRANENI TOKENA. Odpoved SERVERA: "+ odpoved);
                     }
                     break;
             }

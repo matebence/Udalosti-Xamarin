@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using Udalosti.Autentifikacia.Data;
 using Udalosti.Nastroje;
 using Udalosti.Udaje.Data.Tabulka;
 using Udalosti.Udaje.Nastavenia;
@@ -18,6 +19,7 @@ namespace Udalosti.Udalost.UI
 	public partial class Lokalizator : ContentPage, KommunikaciaOdpoved, KommunikaciaData
 	{
         private UvodnaObrazovkaUdaje uvodnaObrazovkaUdaje;
+        private AutentifikaciaUdaje autentifikaciaUdaje;
         private UdalostiUdaje udalostiUdaje;
         private SpravcaDat spravcaDat;
 
@@ -39,11 +41,17 @@ namespace Udalosti.Udalost.UI
             nacitavanie.IsVisible = true;
 
             this.uvodnaObrazovkaUdaje = new UvodnaObrazovkaUdaje();
+            this.autentifikaciaUdaje = new AutentifikaciaUdaje(this);
             this.udalostiUdaje = new UdalostiUdaje(this, this);
             this.spravcaDat = new SpravcaDat();
 
             this.pouzivatel = this.uvodnaObrazovkaUdaje.prihlasPouzivatela();
             this.miesto = this.udalostiUdaje.miestoPrihlasenia();
+
+            zoznamUdalosti.RefreshCommand = new Command(() => {
+                aktualizujUdalosti();
+                zoznamUdalosti.IsRefreshing = false;
+            });
         }
 
         protected override void OnAppearing()
@@ -59,60 +67,41 @@ namespace Udalosti.Udalost.UI
                 Title = "Okolie "+miesto.pozicia;
             }
 
-            try
+            spravcaDat.nacitajDataUdalosti("Lokalizator", udalostiUdaje, pouzivatel, miesto, SpravcaDat.getUdalostiPodlaPozicie(), zoznamUdalosti, nacitavanie, ziadneUdalosti, ziadneSpojenie);
+        }
+
+        void podrobnostiUdalosti(object sender, SelectedItemChangedEventArgs e)
+        {
+            Debug.WriteLine("Metoda Objavuj - PodrobnostiUdalosti bola vykonana");
+
+            if (zoznamUdalosti.SelectedItem != null)
             {
-                Device.BeginInvokeOnMainThread(async () =>
-                {
-                    if(SpravcaDat.getUdalostiPodlaPozicie() == null)
-                    {
-                        await this.udalostiUdaje.zoznamUdalostiPodlaPozicieAsync(this.pouzivatel, this.miesto);
-                    }
-                    else
-                    {
-                        if (!(Spojenie.existuje()))
-                        {
-                            ziadneSpojenie.IsVisible = true;
+                zoznamUdalosti.SelectedItem = null;
 
-                            zoznamUdalosti.IsVisible = false;
-                            ziadneUdalosti.IsVisible = false;
-                            nacitavanie.IsVisible = false;
-                        }
-                        else
-                        {
-                            if (SpravcaDat.getUdalostiPodlaPozicie().Count < 1)
-                            {
-                                ziadneUdalosti.IsVisible = true;
-
-                                zoznamUdalosti.IsVisible = false;
-                                ziadneSpojenie.IsVisible = false;
-                                nacitavanie.IsVisible = false;
-                            }
-                            else
-                            {
-                                zoznamUdalosti.ItemsSource = SpravcaDat.getUdalostiPodlaPozicie();
-                                zoznamUdalosti.IsVisible = true;
-
-                                ziadneSpojenie.IsVisible = false;
-                                ziadneUdalosti.IsVisible = false;
-                                nacitavanie.IsVisible = false;
-                            }
-                        }
-                    }
+                Device.BeginInvokeOnMainThread(async () => {
+                    ObsahUdalosti udalost = e.SelectedItem as ObsahUdalosti;
+                    await Navigation.PushAsync(new Podrobnosti(udalost), true);
                 });
             }
-            catch (Exception e)
+        }
+
+        private void aktualizujUdalosti()
+        {
+            Device.BeginInvokeOnMainThread(async () =>
             {
-                Debug.WriteLine(e.Message);
+                zoznamUdalosti.IsVisible = false;
 
-                if (!(Spojenie.existuje()))
+                SpravcaDat.getUdalostiPodlaPozicie().Clear();
+                SpravcaDat.setUdalostiPodlaPozicie(false);
+
+                Dictionary<string, double> poloha = await GeoCoder.zistiPolohuAsync(nacitavanie, this);
+                if (poloha != null)
                 {
-                    ziadneSpojenie.IsVisible = true;
-
-                    zoznamUdalosti.IsVisible = false;
-                    ziadneUdalosti.IsVisible = false;
-                    nacitavanie.IsVisible = false;
+                    await this.autentifikaciaUdaje.miestoPrihlaseniaAsync(pouzivatel, poloha["zemepisnaSirka"], poloha["zemepisnaDlzka"], true);
                 }
-            }
+
+                await udalostiUdaje.zoznamUdalostiPodlaPozicieAsync(pouzivatel, miesto);
+            });
         }
 
         public void dataZoServera(string odpoved, string od, List<ObsahUdalosti> udaje)
@@ -124,7 +113,7 @@ namespace Udalosti.Udalost.UI
                 case Nastavenia.UDALOSTI_PODLA_POZICIE:
                     if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
                     {
-                        SpravcaDat.setUdalostiPodlaPozicie();
+                        SpravcaDat.setUdalostiPodlaPozicie(true);
 
                         if (udaje != null)
                         {
@@ -168,7 +157,19 @@ namespace Udalosti.Udalost.UI
         {
             Debug.WriteLine("Metoda Objavuj - odpovedServera bola vykonana");
 
-            throw new NotImplementedException();
+            switch (od)
+            {
+                case Nastavenia.UDALOSTI_AKTUALIZUJ:
+                    if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
+                    {
+                        this.miesto = this.udalostiUdaje.miestoPrihlasenia();
+                    }
+                    else
+                    {
+                        Device.BeginInvokeOnMainThread(async () => { await Application.Current.MainPage.DisplayAlert("Chyba", "Pri určení pozície došlo chybe!", "Zatvoriť"); });
+                    }
+                    break;
+            }
         }
     }
 }

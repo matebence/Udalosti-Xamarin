@@ -111,11 +111,11 @@ namespace Udalosti.Udalost.Data
             if (odpoved.IsSuccessStatusCode)
             {
                 Obsah data = JsonConvert.DeserializeObject<Obsah>(await odpoved.Content.ReadAsStringAsync());
-                await this.udajeZoServera.dataZoServeraAsync(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.ZAUJEM_ZOZNAM, data.udalosti);
+                this.udajeZoServera.dataZoServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.ZAUJEM_ZOZNAM, data.udalosti);
             }
             else
             {
-                await this.udajeZoServera.dataZoServeraAsync("Server je momentalne nedostupný!", Nastavenia.ZAUJEM_ZOZNAM, null);
+                this.udajeZoServera.dataZoServera("Server je momentalne nedostupný!", Nastavenia.ZAUJEM_ZOZNAM, null);
             }
         }
 
