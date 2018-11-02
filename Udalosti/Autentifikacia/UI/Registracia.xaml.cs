@@ -33,6 +33,46 @@ namespace Udalosti.Autentifikacia.UI
             this.autentifkaciaUdaje = new AutentifikaciaUdaje(this);
         }
 
+        private async void registrovatSa(object sender, EventArgs e)
+        {
+            Debug.WriteLine("Metoda registrovatSa bola vykonana");
+
+            meno.IsEnabled = false;
+            email.IsEnabled = false;
+            heslo.IsEnabled = false;
+            potvrd.IsEnabled = false;
+
+            if (Spojenie.existuje())
+            {
+                nacitavanie.IsVisible = true;
+
+                try
+                {
+                    await this.autentifkaciaUdaje.registracia(meno.Text, email.Text, heslo.Text, potvrd.Text);
+                }
+                catch (Exception ex)
+                {
+                    nacitavanie.IsVisible = false;
+                    Device.BeginInvokeOnMainThread(async () => {
+                        await DisplayAlert("Chyba", "Server je momentalne nedostupný!", "Zatvoriť");
+                    });
+
+                    Debug.WriteLine("CHYBA: " + ex.Message);
+                }
+            }
+            else
+            {
+                Device.BeginInvokeOnMainThread(async () => {
+                    await DisplayAlert("Chyba", "Žiadné spojenie!", "Zatvoriť");
+                });
+
+                meno.IsEnabled = true;
+                email.IsEnabled = true;
+                heslo.IsEnabled = true;
+                potvrd.IsEnabled = true;
+            }
+        }
+
         private void ovladanie()
         {
             Debug.WriteLine("Metoda Registracia - ovladanie bola vykonana");
@@ -48,32 +88,6 @@ namespace Udalosti.Autentifikacia.UI
             else if (Platforma.nastavPlatformu(false, false, true))
             {
                 NavigationPage.SetHasNavigationBar(this, false);
-            }
-        }
-
-        private async void registrovatSa(object sender, EventArgs e)
-        {
-            Debug.WriteLine("Metoda registrovatSa bola vykonana");
-
-            meno.IsEnabled = false;
-            email.IsEnabled = false;
-            heslo.IsEnabled = false;
-            potvrd.IsEnabled = false;
-
-            if (Spojenie.existuje())
-            {
-                nacitavanie.IsVisible = true;
-
-                await this.autentifkaciaUdaje.registraciaAsync(meno.Text, email.Text, heslo.Text, potvrd.Text);
-            }
-            else
-            {
-                Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Chyba", "Žiadné spojenie!", "Zatvoriť"); });
-
-                meno.IsEnabled = true;
-                email.IsEnabled = true;
-                heslo.IsEnabled = true;
-                potvrd.IsEnabled = true;
             }
         }
 

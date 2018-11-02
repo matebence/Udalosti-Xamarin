@@ -134,3 +134,5 @@ C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.iOS\obj\iPhone\Debug
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.iOS\obj\iPhone\Debug\Udalosti.iOS.csproj.CopyComplete
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.iOS\obj\iPhone\Debug\Udalosti.iOS.exe
 C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.iOS\obj\iPhone\Debug\Udalosti.iOS.pdb
+C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.iOS\bin\iPhone\Debug\Plugin.Permissions.dll
+C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.iOS\bin\iPhone\Debug\Plugin.Geolocator.dll

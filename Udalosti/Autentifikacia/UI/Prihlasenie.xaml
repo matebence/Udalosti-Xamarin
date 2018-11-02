@@ -9,7 +9,6 @@
     <ContentPage.Content>
         <ScrollView>
             <RelativeLayout>
-
                 <Image 
                     AbsoluteLayout.LayoutBounds="0,0,1,1"
                     AbsoluteLayout.LayoutFlags="All"
@@ -156,19 +155,19 @@
                     </local:Vstup>
 
                     <local:Tlacidlo 
-                    Clicked="prihlasitSa"
-                    Grid.Row="4"
-                    farba="#0397d6"
-                    farbaOkraju="Transparent"
-                    uhol="20" 
-                    sirka="4"
-                    HeightRequest="45"
-                    BackgroundColor="#0397d6"
-                    Text="Prihlásiť sa"
-                    TextColor="White"  
-                    FontSize="16"
-                    VerticalOptions="Center"
-                    Margin="50,0,50,0">
+                        Clicked="prihlasitSa"
+                        Grid.Row="4"
+                        farba="#0397d6"
+                        farbaOkraju="Transparent"
+                        uhol="20" 
+                        sirka="4"
+                        HeightRequest="45"
+                        BackgroundColor="#0397d6"
+                        Text="Prihlásiť sa"
+                        TextColor="White"  
+                        FontSize="16"
+                        VerticalOptions="Center"
+                        Margin="50,0,50,0">
 
                         <local:Tlacidlo.FontFamily>
                             <OnPlatform x:TypeArguments="x:String">

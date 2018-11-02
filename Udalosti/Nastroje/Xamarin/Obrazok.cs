@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Reflection;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,6 +13,8 @@ namespace Udalosti.Nastroje.Xamarin
 
         public object ProvideValue(IServiceProvider serviceProvider)
         {
+            Debug.WriteLine("Metoda ProvideValue - Embedded obrazok bola vykonana");
+
             if (Zdroj == null)
             {
                 return null;

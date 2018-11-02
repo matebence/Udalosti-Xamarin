@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Udalosti.Nastroje;
 using Udalosti.Udaje.Data;
 using Udalosti.Udaje.Data.Tabulka;
 using Udalosti.Udaje.Nastavenia;
@@ -21,7 +20,6 @@ namespace Udalosti.Udalost.Data
         private KommunikaciaData udajeZoServera;
 
         private SQLiteDatabaza sqliteDatabaza;
-        private Preferencie preferencie;
 
         public UdalostiUdaje(KommunikaciaOdpoved odpovedeOdServera, KommunikaciaData udajeZoServera)
         {
@@ -31,10 +29,9 @@ namespace Udalosti.Udalost.Data
             this.udajeZoServera = udajeZoServera;
 
             this.sqliteDatabaza = new SQLiteDatabaza();
-            this.preferencie = new Preferencie();
         }
 
-        public async Task zoznamUdalostiAsync(Pouzivatelia pouzivatel, Miesto miesto)
+        public async Task zoznamUdalosti(Pouzivatelia pouzivatel, Miesto miesto)
         {
             Debug.WriteLine("Metoda zoznamUdalosti bola vykonana");
 
@@ -45,7 +42,7 @@ namespace Udalosti.Udalost.Data
                { "token", pouzivatel.token }
             };
 
-            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, "index.php/udalosti");
+            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, Nastavenia.SERVER_ZOZNAM_UDALOSTI);
             if (odpoved.IsSuccessStatusCode)
             {
                 Obsah data = JsonConvert.DeserializeObject<Obsah>(await odpoved.Content.ReadAsStringAsync());
@@ -57,7 +54,7 @@ namespace Udalosti.Udalost.Data
             }
         }
 
-        public async Task zoznamUdalostiPodlaPozicieAsync(Pouzivatelia pouzivatel, Miesto miesto)
+        public async Task zoznamUdalostiPodlaPozicie(Pouzivatelia pouzivatel, Miesto miesto)
         {
             Debug.WriteLine("Metoda zoznamUdalostiPodlaPozicie bola vykonana");
 
@@ -70,7 +67,7 @@ namespace Udalosti.Udalost.Data
                { "token", pouzivatel.token }
             };
 
-            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, "index.php/udalosti/zoznam_podla_pozicie");
+            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, Nastavenia.SERVER_ZOZNAM_UDALOSTI_PODLA_POZCIE);
             if (odpoved.IsSuccessStatusCode)
             {
                 Obsah data = JsonConvert.DeserializeObject<Obsah>(await odpoved.Content.ReadAsStringAsync());
@@ -86,7 +83,7 @@ namespace Udalosti.Udalost.Data
         {
             Debug.WriteLine("Metoda miestoPrihlasenia bola vykonana");
 
-            Miesto miestoPrihlasenia = this.sqliteDatabaza.vratMiestoPrihlasenia();
+            Miesto miestoPrihlasenia = this.sqliteDatabaza.vratMiesto();
             if (miestoPrihlasenia != null)
             {
                 return miestoPrihlasenia;
@@ -97,9 +94,9 @@ namespace Udalosti.Udalost.Data
             }
         }
 
-        public async Task zoznamZaujmovAsync(Pouzivatelia pouzivatel)
+        public async Task zoznamZaujmov(Pouzivatelia pouzivatel)
         {
-            Debug.WriteLine("Metoda zoznamZaujmovAsync bola vykonana");
+            Debug.WriteLine("Metoda zoznamZaujmov bola vykonana");
 
             var obsah = new Dictionary<string, string>
             {
@@ -107,7 +104,7 @@ namespace Udalosti.Udalost.Data
                { "token", pouzivatel.token }
             };
 
-            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, "index.php/zaujmy/zoznam");
+            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, Nastavenia.SERVER_ZOZNAM_ZAUJMOV);
             if (odpoved.IsSuccessStatusCode)
             {
                 Obsah data = JsonConvert.DeserializeObject<Obsah>(await odpoved.Content.ReadAsStringAsync());
@@ -130,7 +127,7 @@ namespace Udalosti.Udalost.Data
                { "idUdalost", idUdalost.ToString() }
             };
 
-            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, "index.php/zaujmy");
+            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, Nastavenia.SERVER_ZAUJEM);
             if (odpoved.IsSuccessStatusCode)
             {
                 Dictionary<string, string> udaje = new Dictionary<string, string>();
@@ -165,7 +162,7 @@ namespace Udalosti.Udalost.Data
                { "idUdalost", idUdalost.ToString() }
             };
 
-            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, "index.php/zaujmy/potvrd");
+            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, Nastavenia.SERVER_POTVRD_ZAUJEM);
             if (odpoved.IsSuccessStatusCode)
             {
                 Obsah data = JsonConvert.DeserializeObject<Obsah>(await odpoved.Content.ReadAsStringAsync());
@@ -188,7 +185,7 @@ namespace Udalosti.Udalost.Data
                { "idUdalost", idUdalost.ToString() }
             };
 
-            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, "index.php/zaujmy/odstran");
+            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, Nastavenia.ZAUJEM_ODSTRANENIE);
             if (odpoved.IsSuccessStatusCode)
             {
                 Dictionary<string, string> udaje = new Dictionary<string, string>();
@@ -216,19 +213,19 @@ namespace Udalosti.Udalost.Data
         {
             Debug.WriteLine("Metoda automatickePrihlasenieVypnute bola vykonana");
 
-            this.sqliteDatabaza.odstranPouzivatelskeUdaje(pouzivatel);
+            this.sqliteDatabaza.odstranPouzivatela(pouzivatel);
         }
 
-        public async Task odhlasenieAsync(Pouzivatelia pouzivatel)
+        public async Task odhlasenie(Pouzivatelia pouzivatel)
         {
-            Debug.WriteLine("Metoda odhlasenieAsync bola vykonana");
+            Debug.WriteLine("Metoda odhlasenie bola vykonana");
 
             var obsah = new Dictionary<string, string>
             {
                { "email", pouzivatel.email }
             };
 
-            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, "index.php/prihlasenie/odhlasit");
+            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, Nastavenia.SERVER_ODHLASENIE);
             if (odpoved.IsSuccessStatusCode)
             {
                 Autentifikator autentifikator = JsonConvert.DeserializeObject<Autentifikator>(await odpoved.Content.ReadAsStringAsync());

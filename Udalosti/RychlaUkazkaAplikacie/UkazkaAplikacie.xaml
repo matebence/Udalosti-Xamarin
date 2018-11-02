@@ -189,12 +189,12 @@
                     VerticalOptions="End">
 
                 <Button
-                Clicked="rychlaUkazkaAplikaciePrecitana"
-                HorizontalOptions="End"
-                Text="Dokončiť"
-                TextColor="White"
-                BackgroundColor="Transparent"
-                FontSize="18">
+                    Clicked="rychlaUkazkaAplikaciePrecitana"
+                    HorizontalOptions="End"
+                    Text="Dokončiť"
+                    TextColor="White"
+                    BackgroundColor="Transparent"
+                    FontSize="18">
 
                     <Button.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">

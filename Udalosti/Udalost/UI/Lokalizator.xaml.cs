@@ -58,21 +58,34 @@ namespace Udalosti.Udalost.UI
         {
             Debug.WriteLine("Metoda Lokalizator - OnAppearing bola vykonana");
 
-            if (miesto.pozicia == null)
+            if (this.miesto.pozicia == null)
             {
                 Title = "Pozícia neurčená";
             }
             else
             {
-                Title = "Okolie "+miesto.pozicia;
+                Title = "Okolie "+this.miesto.pozicia;
             }
 
-            spravcaDat.nacitajDataUdalosti("Lokalizator", udalostiUdaje, pouzivatel, miesto, SpravcaDat.getUdalostiPodlaPozicie(), zoznamUdalosti, nacitavanie, ziadneUdalosti, ziadneSpojenie);
+            try
+            {
+                this.spravcaDat.nacitajDataUdalosti("Lokalizator", this.udalostiUdaje, this.pouzivatel, this.miesto, SpravcaDat.getUdalostiPodlaPozicie(), zoznamUdalosti, nacitavanie, ziadneUdalosti, ziadneSpojenie);
+            }
+            catch (Exception ex)
+            {
+                nacitavanie.IsVisible = false;
+
+                Device.BeginInvokeOnMainThread(async () => {
+                    await DisplayAlert("Chyba", "Server je momentalne nedostupný!", "Zatvoriť");
+                });
+
+                Debug.WriteLine("CHYBA: " + ex.Message);
+            }
         }
 
         void podrobnostiUdalosti(object sender, SelectedItemChangedEventArgs e)
         {
-            Debug.WriteLine("Metoda Objavuj - PodrobnostiUdalosti bola vykonana");
+            Debug.WriteLine("Metoda Lokalizator - podrobnostiUdalosti bola vykonana");
 
             if (zoznamUdalosti.SelectedItem != null)
             {
@@ -87,6 +100,8 @@ namespace Udalosti.Udalost.UI
 
         private void aktualizujUdalosti()
         {
+            Debug.WriteLine("Metoda Lokalizator - aktualizujUdalosti bola vykonana");
+
             Device.BeginInvokeOnMainThread(async () =>
             {
                 zoznamUdalosti.IsVisible = false;
@@ -94,19 +109,43 @@ namespace Udalosti.Udalost.UI
                 SpravcaDat.getUdalostiPodlaPozicie().Clear();
                 SpravcaDat.setUdalostiPodlaPozicie(false);
 
-                Dictionary<string, double> poloha = await GeoCoder.zistiPolohuAsync(nacitavanie, this);
+                Dictionary<string, double> poloha = await GeoCoder.zistiPolohu(nacitavanie, this);
                 if (poloha != null)
                 {
-                    await this.autentifikaciaUdaje.miestoPrihlaseniaAsync(pouzivatel, poloha["zemepisnaSirka"], poloha["zemepisnaDlzka"], true);
+                    try
+                    {
+                        await this.autentifikaciaUdaje.miestoPrihlasenia(this.pouzivatel, poloha["zemepisnaSirka"], poloha["zemepisnaDlzka"], true);
+                    }
+                    catch (Exception ex)
+                    {
+                        nacitavanie.IsVisible = false;
+
+                        Device.BeginInvokeOnMainThread(async () => {
+                            await DisplayAlert("Chyba", "Server je momentalne nedostupný!", "Zatvoriť");
+                        });
+
+                        Debug.WriteLine("CHYBA: " + ex.Message);
+                    }
                 }
 
-                await udalostiUdaje.zoznamUdalostiPodlaPozicieAsync(pouzivatel, miesto);
+                try
+                {
+                    await udalostiUdaje.zoznamUdalostiPodlaPozicie(this.pouzivatel, this.miesto);
+                }
+                catch (Exception ex)
+                {
+                    Device.BeginInvokeOnMainThread(async () => {
+                        await DisplayAlert("Chyba", "Server je momentalne nedostupný!", "Zatvoriť");
+                    });
+
+                    Debug.WriteLine("CHYBA: " + ex.Message);
+                }
             });
         }
 
         public void dataZoServera(string odpoved, string od, List<ObsahUdalosti> udaje)
         {
-            Debug.WriteLine("Metoda Objavuj - dataZoServera bola vykonana");
+            Debug.WriteLine("Metoda Lokalizator - dataZoServera bola vykonana");
 
             switch (od)
             {
@@ -117,7 +156,7 @@ namespace Udalosti.Udalost.UI
 
                         if (udaje != null)
                         {
-                            this.spravcaDat.nacitavanieUdalostiAsync(this.udalostiUdaje, udaje, zoznamUdalosti, SpravcaDat.getUdalostiPodlaPozicie());
+                            this.spravcaDat.nacitavanieUdalosti(this.udalostiUdaje, udaje, zoznamUdalosti, SpravcaDat.getUdalostiPodlaPozicie());
                             zoznamUdalosti.ItemsSource = SpravcaDat.getUdalostiPodlaPozicie();
 
                             zoznamUdalosti.IsVisible = true;
@@ -139,23 +178,9 @@ namespace Udalosti.Udalost.UI
             nacitavanie.IsVisible = false;
         }
 
-        public Task dataZoServeraAsync(string odpoved, string od, List<ObsahUdalosti> udaje)
-        {
-            Debug.WriteLine("Metoda Objavuj - dataZoServeraAsync bola vykonana");
-
-            throw new NotImplementedException();
-        }
-
-        public Task odpovedServeraAsync(string odpoved, string od, Dictionary<string, string> udaje)
-        {
-            Debug.WriteLine("Metoda Objavuj - odpovedServeraAsync bola vykonana");
-
-            throw new NotImplementedException();
-        }
-
         public void odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
         {
-            Debug.WriteLine("Metoda Objavuj - odpovedServera bola vykonana");
+            Debug.WriteLine("Metoda Lokalizator - odpovedServera bola vykonana");
 
             switch (od)
             {
@@ -170,6 +195,20 @@ namespace Udalosti.Udalost.UI
                     }
                     break;
             }
+        }
+
+        public Task dataZoServeraAsync(string odpoved, string od, List<ObsahUdalosti> udaje)
+        {
+            Debug.WriteLine("Metoda Lokalizator - dataZoServeraAsync bola vykonana");
+
+            throw new NotImplementedException();
+        }
+
+        public Task odpovedServeraAsync(string odpoved, string od, Dictionary<string, string> udaje)
+        {
+            Debug.WriteLine("Metoda Lokalizator - odpovedServeraAsync bola vykonana");
+
+            throw new NotImplementedException();
         }
     }
 }

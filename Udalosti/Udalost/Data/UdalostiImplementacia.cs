@@ -5,17 +5,17 @@ namespace Udalosti.Udalost.Data
 {
     interface UdalostiImplementacia
     {
-        Task zoznamUdalostiAsync(Pouzivatelia pouzivatel, Miesto miesto);
+        Task zoznamUdalosti(Pouzivatelia pouzivatel, Miesto miesto);
 
-        Task zoznamUdalostiPodlaPozicieAsync(Pouzivatelia pouzivatel, Miesto miesto);
+        Task zoznamUdalostiPodlaPozicie(Pouzivatelia pouzivatel, Miesto miesto);
 
         Miesto miestoPrihlasenia();
 
         void automatickePrihlasenieVypnute(Pouzivatelia pouzivatel);
 
-        Task odhlasenieAsync(Pouzivatelia pouzivatel);
+        Task odhlasenie(Pouzivatelia pouzivatel);
 
-        Task zoznamZaujmovAsync(Pouzivatelia pouzivatel);
+        Task zoznamZaujmov(Pouzivatelia pouzivatel);
 
         Task zaujem(Pouzivatelia pouzivatel, int idUdalost);
 

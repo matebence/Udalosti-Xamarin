@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Udalosti.Udaje.Data.Tabulka;
@@ -52,7 +53,20 @@ namespace Udalosti.Udalost.UI
         {
             Debug.WriteLine("Metoda Zaujmy - OnAppearing bola vykonana");
 
-            spravcaDat.nacitajDataUdalosti("Zaujmy", udalostiUdaje, pouzivatel, miesto, SpravcaDat.getZaujmy(), zoznamZaujmov, nacitavanie, ziadneZaujmy, ziadneSpojenie);
+            try
+            {
+                this.spravcaDat.nacitajDataUdalosti("Zaujmy", this.udalostiUdaje, this.pouzivatel, this.miesto, SpravcaDat.getZaujmy(), zoznamZaujmov, nacitavanie, ziadneZaujmy, ziadneSpojenie);
+            }
+            catch (Exception ex)
+            {
+                nacitavanie.IsVisible = false;
+
+                Device.BeginInvokeOnMainThread(async () => {
+                    await DisplayAlert("Chyba", "Server je momentalne nedostupný!", "Zatvoriť");
+                });
+
+                Debug.WriteLine("CHYBA: " + ex.Message);
+            }
         }
 
         void podrobnostiUdalosti(object sender, SelectedItemChangedEventArgs e)
@@ -70,11 +84,58 @@ namespace Udalosti.Udalost.UI
             }
         }
 
-        public Task odpovedServeraAsync(string odpoved, string od, Dictionary<string, string> udaje)
+        private void odstranitZaujem(object sender, System.EventArgs e)
         {
-            Debug.WriteLine("Metoda Zaujmy - odpovedServeraAsync bola vykonana");
+            Debug.WriteLine("Metoda odstranitZaujem bola vykonana");
 
-            throw new System.NotImplementedException();
+            var prvok = sender as MenuItem;
+            if (prvok != null)
+            {
+                Device.BeginInvokeOnMainThread(async () => {
+                    var udalost = prvok.BindingContext as ObsahUdalosti;
+
+                    var odpoved = await DisplayAlert("Odstránenie záujmov", "Naozaj chcete odstránit záujem " + udalost.nazov + "?", "Áno odstrániť", "Nie");
+                    if (odpoved)
+                    {
+                        try
+                        {
+                            await this.udalostiUdaje.odstranZaujem(this.pouzivatel, udalost.idUdalost);
+                        }
+                        catch (Exception ex)
+                        {
+                            Device.BeginInvokeOnMainThread(async () => {
+                                await DisplayAlert("Chyba", "Server je momentalne nedostupný!", "Zatvoriť");
+                            });
+
+                            Debug.WriteLine("CHYBA: " + ex.Message);
+                        }
+                        SpravcaDat.getZaujmy().Remove(udalost);
+                    }
+                });
+            }
+        }
+
+        public void aktualizujObsahZaujmov()
+        {
+            Debug.WriteLine("Metoda Zaujmy - aktualizujObsahZaujmov bola vykonana");
+
+            SpravcaDat.getZaujmy().Clear();
+            SpravcaDat.setZaujmy(false);
+
+            try
+            {
+                this.spravcaDat.nacitajDataUdalosti("Zaujmy", this.udalostiUdaje, this.pouzivatel, this.miesto, SpravcaDat.getZaujmy(), zoznamZaujmov, nacitavanie, ziadneZaujmy, ziadneSpojenie);
+            }
+            catch (Exception ex)
+            {
+                nacitavanie.IsVisible = false;
+
+                Device.BeginInvokeOnMainThread(async () => {
+                    await DisplayAlert("Chyba", "Server je momentalne nedostupný!", "Zatvoriť");
+                });
+
+                Debug.WriteLine("CHYBA: " + ex.Message);
+            }
         }
 
         public void odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
@@ -109,13 +170,6 @@ namespace Udalosti.Udalost.UI
             }
         }
 
-        public Task dataZoServeraAsync(string odpoved, string od, List<ObsahUdalosti> udaje)
-        {
-            Debug.WriteLine("Metoda Zaujmy - dataZoServeraAsync bola vykonana");
-
-            throw new System.NotImplementedException();
-        }
-
         public void dataZoServera(string odpoved, string od, List<ObsahUdalosti> udaje)
         {
             Debug.WriteLine("Metoda Zaujmy - dataZoServera bola vykonana");
@@ -129,7 +183,7 @@ namespace Udalosti.Udalost.UI
 
                         if (udaje != null)
                         {
-                            this.spravcaDat.nacitavanieUdalostiAsync(this.udalostiUdaje, udaje, zoznamZaujmov, SpravcaDat.getZaujmy());
+                            this.spravcaDat.nacitavanieUdalosti(this.udalostiUdaje, udaje, zoznamZaujmov, SpravcaDat.getZaujmy());
                             zoznamZaujmov.ItemsSource = SpravcaDat.getZaujmy();
 
                             zoznamZaujmov.IsVisible = true;
@@ -151,34 +205,19 @@ namespace Udalosti.Udalost.UI
             nacitavanie.IsVisible = false;
         }
 
-        public void aktualizujObsahZaujmov()
+        public Task odpovedServeraAsync(string odpoved, string od, Dictionary<string, string> udaje)
         {
-            Debug.WriteLine("Metoda Zaujmy - aktualizujObsahZaujmov bola vykonana");
+            Debug.WriteLine("Metoda Zaujmy - odpovedServeraAsync bola vykonana");
 
-            SpravcaDat.getZaujmy().Clear();
-            SpravcaDat.setZaujmy(false);
-
-            spravcaDat.nacitajDataUdalosti("Zaujmy", udalostiUdaje, pouzivatel, miesto, SpravcaDat.getZaujmy(), zoznamZaujmov, nacitavanie, ziadneZaujmy, ziadneSpojenie);
+            throw new System.NotImplementedException();
         }
 
-        private void odstranitZaujem(object sender, System.EventArgs e)
+
+        public Task dataZoServeraAsync(string odpoved, string od, List<ObsahUdalosti> udaje)
         {
-            Debug.WriteLine("Metoda odstranitZaujem bola vykonana");
+            Debug.WriteLine("Metoda Zaujmy - dataZoServeraAsync bola vykonana");
 
-            var prvok = sender as MenuItem;
-            if (prvok != null)
-            {
-                Device.BeginInvokeOnMainThread(async () => {
-                    var udalost = prvok.BindingContext as ObsahUdalosti;
-
-                    var odpoved = await DisplayAlert("Odstránenie záujmov", "Naozaj chcete odstránit záujem "+udalost.nazov+"?", "Áno odstrániť", "Nie");
-                    if (odpoved)
-                    {
-                        await this.udalostiUdaje.odstranZaujem(pouzivatel, udalost.idUdalost);
-                        SpravcaDat.getZaujmy().Remove(udalost);
-                    }
-                });
-            }
+            throw new System.NotImplementedException();
         }
     }
 }

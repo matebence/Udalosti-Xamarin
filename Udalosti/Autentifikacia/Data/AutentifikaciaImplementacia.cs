@@ -6,13 +6,13 @@ namespace Udalosti.Autentifikacia.Data
 {
     interface AutentifikaciaImplementacia
     {
-        Task miestoPrihlaseniaAsync(Pouzivatelia pouzivatel, double zemepisnaSirka, double zemepisnaDlzka, bool aktualizuj);
+        Task miestoPrihlasenia(Pouzivatelia pouzivatel, double zemepisnaSirka, double zemepisnaDlzka, bool aktualizuj);
 
-        Task miestoPrihlaseniaAsync(Pouzivatelia pouzivatel);
+        Task miestoPrihlasenia(Pouzivatelia pouzivatel);
 
-        Task prihlasenieAsync(Pouzivatelia pouzivatel);
+        Task prihlasenie(Pouzivatelia pouzivatel);
 
-        Task registraciaAsync(String meno, String email, String heslo, String potvrd);
+        Task registracia(string meno, string email, string heslo, string potvrd);
 
         Task nastavPrvyStartNaPlatny();
 

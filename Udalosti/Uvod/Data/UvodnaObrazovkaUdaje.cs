@@ -25,7 +25,7 @@ namespace Udalosti.Uvod.Data
 
             if (this.preferencie.preferenciaExistuje("prvyStart"))
             {
-                if (preferencie.nacitajPreferenciu<bool>(Nastavenia.START))
+                if (this.preferencie.nacitajPreferenciu<bool>(Nastavenia.START))
                 {
                     return true;
                 }
@@ -51,14 +51,14 @@ namespace Udalosti.Uvod.Data
         {
             Debug.WriteLine("Metoda zistiCiPouzivatelskoKontoExistuje bola vykonana");
 
-            return this.sqliteDatabaza.pouzivatelskeUdaje();
+            return this.sqliteDatabaza.pouzivatel();
         }
 
         public Pouzivatelia prihlasPouzivatela()
         {
             Debug.WriteLine("Metoda prihlasPouzivatela bola vykonana");
 
-            return this.sqliteDatabaza.vratAktualnehoPouzivatela();
+            return this.sqliteDatabaza.vratPouzivatela();
         }
     }
 }

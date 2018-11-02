@@ -14,9 +14,9 @@ namespace Udalosti.Udalost
     {
         private static ObservableCollection<ObsahUdalosti> udalosti, udalostiPodlaPozicie, zaujmy = null;
 
-        public void nacitavanieUdalostiAsync(UdalostiUdaje udalostiUdaje,List<ObsahUdalosti> data, ListView zoznam, ObservableCollection<ObsahUdalosti> obsah)
+        public void nacitavanieUdalosti(UdalostiUdaje udalostiUdaje, List<ObsahUdalosti> data, ListView zoznam, ObservableCollection<ObsahUdalosti> obsah)
         {
-            Debug.WriteLine("Metoda nacitavanieUdalostiAsync bola vykonana");
+            Debug.WriteLine("Metoda nacitavanieUdalosti bola vykonana");
 
             foreach (ObsahUdalosti __o in data)
             {
@@ -44,61 +44,34 @@ namespace Udalosti.Udalost
             }
         }
 
-        public void nacitajDataUdalosti(String karta, UdalostiUdaje udalostiUdaje, Pouzivatelia pouzivatel, Miesto miesto, ObservableCollection<ObsahUdalosti> obsah, ListView zoznam, ActivityIndicator nacitavanie, Image ziadneData, Image ziadneSpojenie)
+        public void nacitajDataUdalosti(string karta, UdalostiUdaje udalostiUdaje, Pouzivatelia pouzivatel, Miesto miesto, ObservableCollection<ObsahUdalosti> obsah, ListView zoznam, ActivityIndicator nacitavanie, Image ziadneData, Image ziadneSpojenie)
         {
             Debug.WriteLine("Metoda nacitajDataUdalosti bola vykonana");
 
             try
             {
-                Device.BeginInvokeOnMainThread(async () =>
+                if (obsah == null)
                 {
-                    if (obsah == null)
+                   nacitaj(karta, udalostiUdaje, pouzivatel, miesto);
+                }
+                else
+                {
+                    if (!(Spojenie.existuje()))
                     {
-                        if (karta.Equals("Objavuj"))
-                        {
-                            await udalostiUdaje.zoznamUdalostiAsync(pouzivatel, miesto);
-                        }
-                        else if (karta.Equals("Lokalizator"))
-                        {
-                            await udalostiUdaje.zoznamUdalostiPodlaPozicieAsync(pouzivatel, miesto);
-                        }
-                        else if (karta.Equals("Zaujmy"))
-                        {
-                            await udalostiUdaje.zoznamZaujmovAsync(pouzivatel);
-                        }
+                        spojenieNeExistuje(ziadneSpojenie, ziadneData, zoznam, nacitavanie);
                     }
                     else
                     {
-                        if (!(Spojenie.existuje()))
+                        if (obsah.Count < 1)
                         {
-                            ziadneSpojenie.IsVisible = true;
-
-                            zoznam.IsVisible = false;
-                            ziadneData.IsVisible = false;
-                            nacitavanie.IsVisible = false;
+                            zoznamJePrazdny(ziadneSpojenie, ziadneData, zoznam, nacitavanie);
                         }
                         else
                         {
-                            if (obsah.Count < 1)
-                            {
-                                ziadneData.IsVisible = true;
-
-                                ziadneSpojenie.IsVisible = false;
-                                zoznam.IsVisible = false;
-                                nacitavanie.IsVisible = false;
-                            }
-                            else
-                            {
-                                zoznam.ItemsSource = obsah;
-                                zoznam.IsVisible = true;
-
-                                ziadneSpojenie.IsVisible = false;
-                                ziadneData.IsVisible = false;
-                                nacitavanie.IsVisible = false;
-                            }
+                            naplZoznam(ziadneSpojenie, ziadneData, zoznam, obsah, nacitavanie);
                         }
                     }
-                });
+                }
             }
             catch (Exception e)
             {
@@ -106,13 +79,61 @@ namespace Udalosti.Udalost
 
                 if (!(Spojenie.existuje()))
                 {
-                    ziadneSpojenie.IsVisible = true;
-
-                    zoznam.IsVisible = false;
-                    ziadneData.IsVisible = false;
-                    nacitavanie.IsVisible = false;
+                    spojenieNeExistuje(ziadneSpojenie, ziadneData, zoznam, nacitavanie);
                 }
             }
+        }
+
+        private async void nacitaj(string karta, UdalostiUdaje udalostiUdaje, Pouzivatelia pouzivatel, Miesto miesto)
+        {
+            Debug.WriteLine("Metoda nacitaj bola vykonana");
+
+            if (karta.Equals("Objavuj"))
+            {
+                await udalostiUdaje.zoznamUdalosti(pouzivatel, miesto);
+            }
+            else if (karta.Equals("Lokalizator"))
+            {
+                await udalostiUdaje.zoznamUdalostiPodlaPozicie(pouzivatel, miesto);
+            }
+            else if (karta.Equals("Zaujmy"))
+            {
+                await udalostiUdaje.zoznamZaujmov(pouzivatel);
+            }
+        }
+
+        private void naplZoznam(Image ziadneSpojenie, Image ziadneData, ListView zoznam, ObservableCollection<ObsahUdalosti> obsah, ActivityIndicator nacitavanie)
+        {
+            Debug.WriteLine("Metoda naplZoznam bola vykonana");
+
+            zoznam.ItemsSource = obsah;
+            zoznam.IsVisible = true;
+
+            ziadneSpojenie.IsVisible = false;
+            ziadneData.IsVisible = false;
+            nacitavanie.IsVisible = false;
+        }
+
+        private void zoznamJePrazdny(Image ziadneSpojenie, Image ziadneData, ListView zoznam, ActivityIndicator nacitavanie)
+        {
+            Debug.WriteLine("Metoda zoznamJePrazdny bola vykonana");
+
+            ziadneData.IsVisible = true;
+
+            ziadneSpojenie.IsVisible = false;
+            zoznam.IsVisible = false;
+            nacitavanie.IsVisible = false;
+        }
+
+        private void spojenieNeExistuje(Image ziadneSpojenie, Image ziadneData, ListView zoznam, ActivityIndicator nacitavanie)
+        {
+            Debug.WriteLine("Metoda spojenieNeExistuje bola vykonana");
+
+            ziadneSpojenie.IsVisible = true;
+
+            zoznam.IsVisible = false;
+            ziadneData.IsVisible = false;
+            nacitavanie.IsVisible = false;
         }
 
         public static ObservableCollection<ObsahUdalosti> getUdalosti()

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Udalosti.Autentifikacia.Data;
@@ -45,14 +46,36 @@ namespace Udalosti.Uvod.UI
             {
                 Pouzivatelia pouzivatelskeUdaje = this.uvodnaObrazovkaUdaje.prihlasPouzivatela();
 
-                Dictionary<string, double> poloha = await GeoCoder.zistiPolohuAsync(this);
+                Dictionary<string, double> poloha = await GeoCoder.zistiPolohu(this);
                 if (poloha == null)
                 {
-                    await this.autentifkaciaUdaje.miestoPrihlaseniaAsync(pouzivatelskeUdaje);
+                    try
+                    {
+                        await this.autentifkaciaUdaje.miestoPrihlasenia(pouzivatelskeUdaje);
+                    }
+                    catch (Exception ex)
+                    {
+                        Device.BeginInvokeOnMainThread(async () => {
+                            await DisplayAlert("Chyba", "Server je momentalne nedostupný!", "Zatvoriť");
+                        });
+
+                        Debug.WriteLine("CHYBA: " + ex.Message);
+                    }
                 }
                 else
                 {
-                    await this.autentifkaciaUdaje.miestoPrihlaseniaAsync(pouzivatelskeUdaje, poloha["zemepisnaSirka"], poloha["zemepisnaDlzka"], false);
+                    try
+                    {
+                        await this.autentifkaciaUdaje.miestoPrihlasenia(pouzivatelskeUdaje, poloha["zemepisnaSirka"], poloha["zemepisnaDlzka"], false);
+                    }
+                    catch (Exception ex)
+                    {
+                        Device.BeginInvokeOnMainThread(async () => {
+                            await DisplayAlert("Chyba", "Server je momentalne nedostupný!", "Zatvoriť");
+                        });
+
+                        Debug.WriteLine("CHYBA: " + ex.Message);
+                    }
                 }
             }
             else

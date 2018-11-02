@@ -255,19 +255,19 @@
                     </local:Vstup>
 
                     <local:Tlacidlo 
-                    Clicked="registrovatSa"
-                    Grid.Row="6"
-                    farba="#0397d6"
-                    farbaOkraju="Transparent"
-                    uhol="20"  
-                    sirka="4"
-                    HeightRequest="45"
-                    BackgroundColor="#0397d6"
-                    Text="Registrovať"
-                    TextColor="White"  
-                    FontSize="16"
-                    VerticalOptions="Center"
-                    Margin="50,0,50,0">
+                        Clicked="registrovatSa"
+                        Grid.Row="6"
+                        farba="#0397d6"
+                        farbaOkraju="Transparent"
+                        uhol="20"  
+                        sirka="4"
+                        HeightRequest="45"
+                        BackgroundColor="#0397d6"
+                        Text="Registrovať"
+                        TextColor="White"  
+                        FontSize="16"
+                        VerticalOptions="Center"
+                        Margin="50,0,50,0">
 
                         <local:Tlacidlo.FontFamily>
                             <OnPlatform x:TypeArguments="x:String">
@@ -280,11 +280,11 @@
                     </local:Tlacidlo>
 
                     <ActivityIndicator
-                    x:Name="nacitavanie"
-                    Grid.Row="7"
-                    Color="White"
-                    IsVisible="false"
-                    IsRunning="true" />
+                        x:Name="nacitavanie"
+                        Grid.Row="7"
+                        Color="White"
+                        IsVisible="false"
+                        IsRunning="true" />
                 </Grid>
             </RelativeLayout>
         </ScrollView>

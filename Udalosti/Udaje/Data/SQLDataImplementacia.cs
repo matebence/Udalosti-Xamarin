@@ -6,24 +6,24 @@ namespace Udalosti.Udaje.Data
     {
         void Databaza();
 
-        int novePouzivatelskeUdaje(Pouzivatelia pouzivatelia);
+        int novyPouzivatel(Pouzivatelia pouzivatelia);
 
-        int aktualizujPouzivatelskeUdaje(Pouzivatelia pouzivatelia);
+        int aktualizujPouzivatela(Pouzivatelia pouzivatelia);
 
-        int odstranPouzivatelskeUdaje(Pouzivatelia pouzivatelia);
+        int odstranPouzivatela(Pouzivatelia pouzivatelia);
 
-        bool pouzivatelskeUdaje();
+        bool pouzivatel();
 
-        Pouzivatelia vratAktualnehoPouzivatela();
+        Pouzivatelia vratPouzivatela();
 
-        int noveMiestoPrihlasenia(Miesto miesto);
+        int noveMiesto(Miesto miesto);
 
-        int aktualizujMiestoPrihlasenia(Miesto miesto);
+        int aktualizujMiesto(Miesto miesto);
 
-        int odstranMiestoPrihlasenia(Miesto miesto);
+        int odstranMiesto(Miesto miesto);
 
-        bool miestoPrihlasenia();
+        bool miesto();
 
-        Miesto vratMiestoPrihlasenia();
+        Miesto vratMiesto();
     }
 }

@@ -15,9 +15,9 @@ namespace Udalosti.Nastroje
     {
         private static Page page;
 
-        public static async Task<Dictionary<string, double>> zistiPolohuAsync(ActivityIndicator nacitavanie, Page page)
+        public static async Task<Dictionary<string, double>> zistiPolohu(ActivityIndicator nacitavanie, Page page)
         {
-            Debug.WriteLine("Metoda zistiPolohu bola vykonana");
+            Debug.WriteLine("Metoda zistiPolohu(ActivityIndicator nacitavanie, Page page) bola vykonana");
 
             GeoCoder.page = page;
 
@@ -49,14 +49,18 @@ namespace Udalosti.Nastroje
                 else if (pravoPrePoziciu != PermissionStatus.Unknown)
                 {
                     geo = null;
-                    Device.BeginInvokeOnMainThread(async () => { await GeoCoder.page.DisplayAlert("Chyba", "Prístup k pozície bol odmietnutý!", "Zatvoriť"); });
+                    Device.BeginInvokeOnMainThread(async () => {
+                        await GeoCoder.page.DisplayAlert("Chyba", "Prístup k pozície bol odmietnutý!", "Zatvoriť");
+                    });
                 }
             }
             catch (Exception e)
             {
                 geo = null;
                 Debug.WriteLine("Lokalizator.cs CHYBA:" + e.Message);
-                Device.BeginInvokeOnMainThread(async () => { await GeoCoder.page.DisplayAlert("Chyba", "GPS je vypnutý alebo prístup k aktuálnej polohe bol odmietnutý", "Zatvoriť"); });
+                Device.BeginInvokeOnMainThread(async () => {
+                    await GeoCoder.page.DisplayAlert("Chyba", "GPS je vypnutý alebo prístup k aktuálnej polohe bol odmietnutý", "Zatvoriť");
+                });
             }
 
 
@@ -75,9 +79,9 @@ namespace Udalosti.Nastroje
             return poloha;
         }
 
-        public static async Task<Dictionary<string, double>> zistiPolohuAsync(Page page)
+        public static async Task<Dictionary<string, double>> zistiPolohu(Page page)
         {
-            Debug.WriteLine("Metoda zistiPolohu bola vykonana");
+            Debug.WriteLine("Metoda zistiPolohu(Page page) bola vykonana");
 
             GeoCoder.page = page;
 
@@ -104,14 +108,19 @@ namespace Udalosti.Nastroje
                 else if (pravoPrePoziciu != PermissionStatus.Unknown)
                 {
                     geo = null;
-                    Device.BeginInvokeOnMainThread(async () => { await GeoCoder.page.DisplayAlert("Chyba", "Prístup k pozície bol odmietnutý!", "Zatvoriť"); });
+                    Device.BeginInvokeOnMainThread(async () => {
+                        await GeoCoder.page.DisplayAlert("Chyba", "Prístup k pozície bol odmietnutý!", "Zatvoriť");
+                    });
                 }
             }
             catch (Exception e)
             {
                 geo = null;
                 Debug.WriteLine("Lokalizator.cs CHYBA:" + e.Message);
-                Device.BeginInvokeOnMainThread(async () => { await GeoCoder.page.DisplayAlert("Chyba", "GPS je vypnutý alebo prístup k aktuálnej polohe bol odmietnutý", "Zatvoriť"); });
+
+                Device.BeginInvokeOnMainThread(async () => {
+                    await GeoCoder.page.DisplayAlert("Chyba", "GPS je vypnutý alebo prístup k aktuálnej polohe bol odmietnutý", "Zatvoriť");
+                });
             }
 
 

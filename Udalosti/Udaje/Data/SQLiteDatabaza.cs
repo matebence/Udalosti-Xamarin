@@ -10,7 +10,7 @@ namespace Udalosti.Udaje.Data
 
         public void Databaza()
         {
-            Debug.WriteLine("Metoda this.databaza bola vykonana");
+            Debug.WriteLine("Metoda databaza bola vykonana");
 
             this.databaza = new SQLiteConnection(App.databaza);
             this.databaza.CreateTable<Pouzivatelia>();
@@ -27,33 +27,33 @@ namespace Udalosti.Udaje.Data
             }
         }
 
-        public int novePouzivatelskeUdaje(Pouzivatelia pouzivatelia)
+        public int novyPouzivatel(Pouzivatelia pouzivatelia)
         {
-            Debug.WriteLine("Metoda novePouzivatelskeUdaje bola vykonana");
+            Debug.WriteLine("Metoda novyPouzivatel bola vykonana");
 
             init();
             return this.databaza.Insert(pouzivatelia);
         }
 
-        public int aktualizujPouzivatelskeUdaje(Pouzivatelia pouzivatelia)
+        public int aktualizujPouzivatela(Pouzivatelia pouzivatelia)
         {
-            Debug.WriteLine("Metoda aktualizujPouzivatelskeUdaje bola vykonana");
+            Debug.WriteLine("Metoda aktualizujPouzivatela bola vykonana");
 
             init();
             return this.databaza.Execute("UPDATE Pouzivatelia SET heslo = ?, token = ? WHERE email= ?", pouzivatelia.heslo, pouzivatelia.token, pouzivatelia.email);
         }
         
-        public int odstranPouzivatelskeUdaje(Pouzivatelia pouzivatelia)
+        public int odstranPouzivatela(Pouzivatelia pouzivatelia)
         {
-            Debug.WriteLine("Metoda odstranPouzivatelskeUdaje bola vykonana");
+            Debug.WriteLine("Metoda odstranPouzivatela bola vykonana");
 
             init();
             return this.databaza.Delete<Pouzivatelia>(pouzivatelia.idPouzivatel);
         }
 
-        public bool pouzivatelskeUdaje()
+        public bool pouzivatel()
         {
-            Debug.WriteLine("Metoda pouzivatelskeUdaje bola vykonana");
+            Debug.WriteLine("Metoda pouzivatel bola vykonana");
 
             init();
             if (this.databaza.Table<Pouzivatelia>().FirstOrDefault() != null)
@@ -66,17 +66,17 @@ namespace Udalosti.Udaje.Data
             }
         }
 
-        public Pouzivatelia vratAktualnehoPouzivatela()
+        public Pouzivatelia vratPouzivatela()
         {
-            Debug.WriteLine("Metoda vratAktualnehoPouzivatela bola vykonana");
+            Debug.WriteLine("Metoda vratPouzivatela bola vykonana");
 
             init();
             return this.databaza.Table<Pouzivatelia>().FirstOrDefault();
         }
 
-        public int noveMiestoPrihlasenia(Miesto miesto)
+        public int noveMiesto(Miesto miesto)
         {
-            Debug.WriteLine("Metoda noveMiestoPrihlasenia bola vykonana");
+            Debug.WriteLine("Metoda noveMiesto bola vykonana");
 
             init();
             if (miesto.idMiesto != 0)
@@ -89,26 +89,26 @@ namespace Udalosti.Udaje.Data
             }
         }
 
-        public int aktualizujMiestoPrihlasenia(Miesto miesto)
+        public int aktualizujMiesto(Miesto miesto)
         {
-            Debug.WriteLine("Metoda aktualizujMiestoPrihlasenia bola vykonana");
+            Debug.WriteLine("Metoda aktualizujMiesto bola vykonana");
 
             init();
             const int idMiesto = 1;
             return this.databaza.Execute("UPDATE Miesto SET pozicia = ?, okres = ?, kraj = ?, psc = ?, stat = ?, znakStatu = ? WHERE idMiesto= ?", miesto.pozicia, miesto.okres, miesto.kraj, miesto.psc, miesto.stat, miesto.znakStatu, idMiesto);
         }
 
-        public int odstranMiestoPrihlasenia(Miesto miesto)
+        public int odstranMiesto(Miesto miesto)
         {
-            Debug.WriteLine("Metoda odstranMiestoPrihlasenia bola vykonana");
+            Debug.WriteLine("Metoda odstranMiesto bola vykonana");
 
             init();
             return this.databaza.Delete<Miesto>(miesto.idMiesto);
         }
 
-        public bool miestoPrihlasenia()
+        public bool miesto()
         {
-            Debug.WriteLine("Metoda miestoPrihlasenia bola vykonana");
+            Debug.WriteLine("Metoda miesto bola vykonana");
 
             init();
             if (this.databaza.Table<Miesto>().FirstOrDefault() != null)
@@ -121,9 +121,9 @@ namespace Udalosti.Udaje.Data
             }
         }
 
-        public Miesto vratMiestoPrihlasenia()
+        public Miesto vratMiesto()
         {
-            Debug.WriteLine("Metoda vratMiestoPrihlasenia bola vykonana");
+            Debug.WriteLine("Metoda vratMiesto bola vykonana");
 
             init();
             return this.databaza.Table<Miesto>().FirstOrDefault();

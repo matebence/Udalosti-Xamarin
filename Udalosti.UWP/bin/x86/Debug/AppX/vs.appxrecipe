@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-11-01T22:49:34.193</Modified>
+      <Modified>2018-11-02T14:22:23.196</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Udalosti.UWP.exe">
       <PackagePath>entrypoint\Udalosti.UWP.exe</PackagePath>
-      <Modified>2018-11-01T22:49:32.575</Modified>
+      <Modified>2018-11-02T14:22:18.513</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\.nuget\packages\newtonsoft.json\11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -757,7 +757,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti\bin\Debug\netstandard2.0\Udalosti.dll">
       <PackagePath>Udalosti.dll</PackagePath>
-      <Modified>2018-11-01T22:49:23.759</Modified>
+      <Modified>2018-11-02T14:22:03.193</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\Assets\BadgeLogo.scale-100.png">
       <PackagePath>Assets\BadgeLogo.scale-100.png</PackagePath>
@@ -1115,11 +1115,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-11-01T22:49:32.247</Modified>
+      <Modified>2018-11-02T14:22:18.213</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\UdalostiUWP.xbf">
       <PackagePath>UdalostiUWP.xbf</PackagePath>
-      <Modified>2018-11-01T22:49:32.249</Modified>
+      <Modified>2018-11-02T14:22:18.214</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -1132,11 +1132,11 @@
     <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-10-31T14:41:33.765</Modified>
+      <Modified>2018-11-02T14:22:22.063</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ecneb\Downloads\Xamarin\Udalosti\Udalosti\Udalosti.UWP\bin\x86\Debug\Core\Udalosti.UWP.exe">
       <PackagePath>Udalosti.UWP.exe</PackagePath>
-      <Modified>2018-11-01T22:49:34.180</Modified>
+      <Modified>2018-11-02T14:22:23.181</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

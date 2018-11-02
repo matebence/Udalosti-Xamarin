@@ -23,7 +23,6 @@ namespace Udalosti.Udalost.Nav
         private UdalostiUdaje udalostiUdaje;
 
         private List<MasterPageItem> prvkyNavigacie { get; set; }
-
         private Pouzivatelia pouzivatel;
 
         public UdalostiNavigacia()
@@ -45,6 +44,42 @@ namespace Udalosti.Udalost.Nav
             pouzivatel = uvodnaObrazovkaUdaje.prihlasPouzivatela();
 
             nacitajPolozkyNavigacie();
+        }
+
+        private void zvolenyPrvok(object sender, SelectedItemChangedEventArgs e)
+        {
+            Debug.WriteLine("Metoda zvolenyPrvok bola vykonana");
+
+            var prvok = e.SelectedItem as MasterPageItem;
+            if (prvok != null)
+            {
+                if (prvok.Title.Equals("Odlhásiť sa"))
+                {
+                    zoznam.SelectedItem = null;
+                    IsPresented = false;
+
+                    try
+                    {
+                        Device.BeginInvokeOnMainThread(async () => {
+                            await udalostiUdaje.odhlasenie(pouzivatel);
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+                        Device.BeginInvokeOnMainThread(async () => {
+                            await DisplayAlert("Chyba", "Server je momentalne nedostupný!", "Zatvoriť");
+                        });
+
+                        Debug.WriteLine("CHYBA: " + ex.Message);
+                    }
+                }
+                else
+                {
+                    zoznam.SelectedItem = null;
+                    IsPresented = false;
+                    Detail = new NavigationPage((Page)Activator.CreateInstance(prvok.TargetType));
+                }
+            }
         }
 
         private void nacitajPolozkyNavigacie()
@@ -97,28 +132,6 @@ namespace Udalosti.Udalost.Nav
                     IconSource = "Assets/Images/" + obrazok,
                     TargetType = stranka
                 });
-            }
-        }
-
-        private void zvolenyPrvok(object sender, SelectedItemChangedEventArgs e)
-        {
-            var prvok = e.SelectedItem as MasterPageItem;
-            if (prvok != null)
-            {
-                if (prvok.Title.Equals("Odlhásiť sa"))
-                {
-                    zoznam.SelectedItem = null;
-                    IsPresented = false;
-                    Device.BeginInvokeOnMainThread(async () => {
-                        await udalostiUdaje.odhlasenieAsync(pouzivatel);
-                    });
-                }
-                else
-                {
-                    zoznam.SelectedItem = null;
-                    IsPresented = false;
-                    Detail = new NavigationPage((Page)Activator.CreateInstance(prvok.TargetType));
-                }
             }
         }
 

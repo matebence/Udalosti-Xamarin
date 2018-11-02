@@ -76,20 +76,33 @@ namespace Udalosti
         {
             Debug.WriteLine("Metoda OnSleep bola vykonana");
 
-            await this.tokenUdaje.zrusTokenAsync();
+            try
+            {
+                await this.tokenUdaje.zrusToken();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("CHYBA: " + ex.Message);
+            }
         }
 
         protected override async void OnResume()
         {
             Debug.WriteLine("Metoda OnResume bola vykonana");
 
-            await this.tokenUdaje.novyTokenAsync();
+            try
+            {
+                await this.tokenUdaje.novyToken();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("CHYBA: " + ex.Message);
+            }
         }
 
         protected override void OnStart()
         {
             Debug.WriteLine("Metoda OnStart bola vykonana");
-
         }
     }
 }

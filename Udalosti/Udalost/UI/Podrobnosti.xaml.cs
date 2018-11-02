@@ -33,7 +33,7 @@ namespace Udalosti.Udalost.UI
             Debug.WriteLine("Metoda Podrobnosti bola vykonana");
 
             InitializeComponent();
-            this.init(udalost);
+            init(udalost);
         }
 
         private void init(ObsahUdalosti udalost)
@@ -60,14 +60,36 @@ namespace Udalosti.Udalost.UI
 
             if (this.stavTlacidla == 1)
             {
-                this.stavTlacidla = 0;
-                await this.udalostiUdaje.odstranZaujem(this.pouzivatel, this.idUdalost);
+                try
+                {
+                    this.stavTlacidla = 0;
+                    await this.udalostiUdaje.odstranZaujem(this.pouzivatel, this.idUdalost);
+                }
+                catch (Exception ex)
+                {
+                    Device.BeginInvokeOnMainThread(async () => {
+                        await DisplayAlert("Chyba", "Server je momentalne nedostupný!", "Zatvoriť");
+                    });
+
+                    Debug.WriteLine("CHYBA: " + ex.Message);
+                }
 
             }
             else
             {
-                this.stavTlacidla = 1;
-                await this.udalostiUdaje.zaujem(this.pouzivatel, this.idUdalost);
+                try
+                {
+                    this.stavTlacidla = 1;
+                    await this.udalostiUdaje.zaujem(this.pouzivatel, this.idUdalost);
+                }
+                catch (Exception ex)
+                {
+                    Device.BeginInvokeOnMainThread(async () => {
+                        await DisplayAlert("Chyba", "Server je momentalne nedostupný!", "Zatvoriť");
+                    });
+
+                    Debug.WriteLine("CHYBA: " + ex.Message);
+                }
             }
         }
 
@@ -91,17 +113,12 @@ namespace Udalosti.Udalost.UI
                     }
                     else
                     {
-                        Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Chyba", odpoved, "Zatvoriť"); });
+                        Device.BeginInvokeOnMainThread(async () => {
+                            await DisplayAlert("Chyba", odpoved, "Zatvoriť");
+                        });
                     }
                     break;
             }
-        }
-
-        public Task dataZoServeraAsync(string odpoved, string od, List<ObsahUdalosti> udaje)
-        {
-            Debug.WriteLine("Metoda Podrobnosti - dataZoServeraAsync bola vykonana");
-
-            throw new NotImplementedException();
         }
 
         public void odpovedServera(string odpoved, string od, Dictionary<string, string> udaje)
@@ -124,12 +141,16 @@ namespace Udalosti.Udalost.UI
                         }
                         else
                         {
-                            Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Chyba", udaje["chyba"], "Zatvoriť"); });
+                            Device.BeginInvokeOnMainThread(async () => {
+                                await DisplayAlert("Chyba", udaje["chyba"], "Zatvoriť");
+                            });
                         }
                     }
                     else
                     {
-                        Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Chyba", odpoved, "Zatvoriť"); });
+                        Device.BeginInvokeOnMainThread(async () => {
+                            await DisplayAlert("Chyba", odpoved, "Zatvoriť");
+                        });
                     }
                     break;
 
@@ -147,12 +168,16 @@ namespace Udalosti.Udalost.UI
                         }
                         else
                         {
-                            Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Chyba", udaje["chyba"], "Zatvoriť"); });
+                            Device.BeginInvokeOnMainThread(async () => {
+                                await DisplayAlert("Chyba", udaje["chyba"], "Zatvoriť");
+                            });
                         }
                     }
                     else
                     {
-                        Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Chyba", odpoved, "Zatvoriť"); });
+                        Device.BeginInvokeOnMainThread(async () => {
+                            await DisplayAlert("Chyba", odpoved, "Zatvoriť");
+                        });
                     }
                     break;
             }
@@ -161,6 +186,13 @@ namespace Udalosti.Udalost.UI
         public Task odpovedServeraAsync(string odpoved, string od, Dictionary<string, string> udaje)
         {
             Debug.WriteLine("Metoda Podrobnosti - odpovedServeraAsync bola vykonana");
+
+            throw new NotImplementedException();
+        }
+
+        public Task dataZoServeraAsync(string odpoved, string od, List<ObsahUdalosti> udaje)
+        {
+            Debug.WriteLine("Metoda Podrobnosti - dataZoServeraAsync bola vykonana");
 
             throw new NotImplementedException();
         }
@@ -189,7 +221,19 @@ namespace Udalosti.Udalost.UI
 
                 if (Spojenie.existuje())
                 {
-                    await this.udalostiUdaje.potvrdZaujem(this.pouzivatel, udalost.idUdalost);
+                    try
+                    {
+                        await this.udalostiUdaje.potvrdZaujem(this.pouzivatel, udalost.idUdalost);
+                    }
+                    catch (Exception ex)
+                    {
+                        nacitavanie.IsVisible = false;
+                        Device.BeginInvokeOnMainThread(async () => {
+                            await DisplayAlert("Chyba", "Server je momentalne nedostupný!", "Zatvoriť");
+                        });
+
+                        Debug.WriteLine("CHYBA: " + ex.Message);
+                    }
                 }
                 else
                 {
@@ -223,12 +267,12 @@ namespace Udalosti.Udalost.UI
                 miestoZvolenejUdalosti.Text = udalost.mesto + ", " + udalost.ulica;
             }
 
-            nastavTlacdloPodrobnosti(this.stavTlacidla);
+            nastavTlacidloPodrobnosti(this.stavTlacidla);
         }
 
-        private void nastavTlacdloPodrobnosti(int stavTlacidla)
+        private void nastavTlacidloPodrobnosti(int stavTlacidla)
         {
-            Debug.WriteLine("Metoda nastavTlacdloPodrobnosti bola vykonana");
+            Debug.WriteLine("Metoda nastavTlacidloPodrobnosti bola vykonana");
 
             if (stavTlacidla == 1)
             {

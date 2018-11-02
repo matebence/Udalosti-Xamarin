@@ -33,7 +33,7 @@ namespace Udalosti.Token
             this.udalostiUdaje = new UdalostiUdaje(this, this);
         }
 
-        public async Task novyTokenAsync()
+        public async Task novyToken()
         {
             Debug.WriteLine("Metoda novyToken bola vykonana");
 
@@ -42,18 +42,18 @@ namespace Udalosti.Token
                 Pouzivatelia pouzivatel = this.uvodnaObrazovkaUdaje.prihlasPouzivatela();
                 Miesto miesto = this.udalostiUdaje.miestoPrihlasenia();
 
-                await this.autentifikaciaUdaje.prihlasenieAsync(new Pouzivatelia(pouzivatel.email, pouzivatel.heslo, null));
+                await this.autentifikaciaUdaje.prihlasenie(new Pouzivatelia(pouzivatel.email, pouzivatel.heslo, null));
             }
         }
 
-        public async Task zrusTokenAsync()
+        public async Task zrusToken()
         {
             Debug.WriteLine("Metoda zrusToken bola vykonana");
 
             if (this.uvodnaObrazovkaUdaje.zistiCiPouzivatelskoKontoExistuje())
             {
                 Pouzivatelia pouzivatel = this.uvodnaObrazovkaUdaje.prihlasPouzivatela();
-                await this.udalostiUdaje.odhlasenieAsync(pouzivatel);
+                await this.udalostiUdaje.odhlasenie(pouzivatel);
 
                 Nastavenia.TOKEN = true;
             }
@@ -80,6 +80,7 @@ namespace Udalosti.Token
                         Debug.WriteLine("CHYBA PRI GENEROVNI NOVEHO TOKENA. Odpoved SERVERA: " + odpoved);
                     }
                     break;
+
                 case Nastavenia.AUTENTIFIKACIA_ODHLASENIE:
                     if (odpoved.Equals(Nastavenia.VSETKO_V_PORIADKU))
                     {

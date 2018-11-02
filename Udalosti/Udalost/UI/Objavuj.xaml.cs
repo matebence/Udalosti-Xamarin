@@ -55,12 +55,26 @@ namespace Udalosti.Udalost.UI
             Debug.WriteLine("Metoda Objavuj - OnAppearing bola vykonana");
 
             Title = miesto.stat;
-            spravcaDat.nacitajDataUdalosti("Objavuj", udalostiUdaje, pouzivatel, miesto, SpravcaDat.getUdalosti(), zoznamUdalosti, nacitavanie, ziadneUdalosti, ziadneSpojenie);
+
+            try
+            {
+                spravcaDat.nacitajDataUdalosti("Objavuj", udalostiUdaje, pouzivatel, miesto, SpravcaDat.getUdalosti(), zoznamUdalosti, nacitavanie, ziadneUdalosti, ziadneSpojenie);
+            }
+            catch (Exception ex)
+            {
+                nacitavanie.IsVisible = false;
+
+                Device.BeginInvokeOnMainThread(async () => {
+                    await DisplayAlert("Chyba", "Server je momentalne nedostupný!", "Zatvoriť");
+                });
+
+                Debug.WriteLine("CHYBA: " + ex.Message);
+            }
         }
 
         void podrobnostiUdalosti(object sender, SelectedItemChangedEventArgs e)
         {
-            Debug.WriteLine("Metoda Objavuj - PodrobnostiUdalosti bola vykonana");
+            Debug.WriteLine("Metoda Objavuj - podrobnostiUdalosti bola vykonana");
 
             if (zoznamUdalosti.SelectedItem != null) { 
                 zoznamUdalosti.SelectedItem = null;
@@ -74,6 +88,8 @@ namespace Udalosti.Udalost.UI
 
         private void aktualizujUdalosti()
         {
+            Debug.WriteLine("Metoda Objavuj - aktualizujUdalosti bola vykonana");
+
             Device.BeginInvokeOnMainThread(async () =>
             {
                 zoznamUdalosti.IsVisible = false;
@@ -81,7 +97,21 @@ namespace Udalosti.Udalost.UI
 
                 SpravcaDat.getUdalosti().Clear();
                 SpravcaDat.setUdalosti(false);
-                await udalostiUdaje.zoznamUdalostiAsync(pouzivatel, miesto);
+
+                try
+                {
+                    await udalostiUdaje.zoznamUdalosti(pouzivatel, miesto);
+                }
+                catch (Exception ex)
+                {
+                    nacitavanie.IsVisible = false;
+
+                    Device.BeginInvokeOnMainThread(async () => {
+                        await DisplayAlert("Chyba", "Server je momentalne nedostupný!", "Zatvoriť");
+                    });
+
+                    Debug.WriteLine("CHYBA: " + ex.Message);
+                }
             });
         }
 
@@ -98,7 +128,7 @@ namespace Udalosti.Udalost.UI
 
                         if (udaje != null)
                         {
-                            this.spravcaDat.nacitavanieUdalostiAsync(this.udalostiUdaje, udaje, zoznamUdalosti, SpravcaDat.getUdalosti());
+                            this.spravcaDat.nacitavanieUdalosti(this.udalostiUdaje, udaje, zoznamUdalosti, SpravcaDat.getUdalosti());
                             zoznamUdalosti.ItemsSource = SpravcaDat.getUdalosti();
 
                             zoznamUdalosti.IsVisible = true;

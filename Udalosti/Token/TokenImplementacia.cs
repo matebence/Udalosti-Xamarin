@@ -4,8 +4,8 @@ namespace Udalosti.Token
 {
     interface TokenImplementacia
     {
-        Task zrusTokenAsync();
+        Task zrusToken();
 
-        Task novyTokenAsync();
+        Task novyToken();
     }
 }

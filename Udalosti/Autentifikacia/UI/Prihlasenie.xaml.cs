@@ -23,7 +23,7 @@ namespace Udalosti.Autentifikacia.UI
 
         private string odpoved;
 
-        public Prihlasenie (String odpoved)
+        public Prihlasenie (string odpoved)
 		{
             Debug.WriteLine("Metoda Prihlasenie bola vykonana");
 
@@ -36,10 +36,10 @@ namespace Udalosti.Autentifikacia.UI
         {
             Debug.WriteLine("Metoda Prihlasenie - init bola vykonana");
 
-            this.odpoved = odpoved;
-
             this.autentifkaciaUdaje = new AutentifikaciaUdaje(this);
             this.uvodnaObrazovkaUdaje = new UvodnaObrazovkaUdaje();
+
+            this.odpoved = odpoved;
         }
 
         protected override async void OnAppearing()
@@ -63,20 +63,46 @@ namespace Udalosti.Autentifikacia.UI
             if (Spojenie.existuje())
             {
                 Pouzivatelia pouzivatel = new Pouzivatelia(email.Text, heslo.Text, null);
-                Dictionary<string, double> poloha = await GeoCoder.zistiPolohuAsync(nacitavanie, this);
+                Dictionary<string, double> poloha = await GeoCoder.zistiPolohu(nacitavanie, this);
 
                 if (poloha == null)
                 {
-                    await this.autentifkaciaUdaje.miestoPrihlaseniaAsync(pouzivatel);
+                    try
+                    {
+                        await this.autentifkaciaUdaje.miestoPrihlasenia(pouzivatel);
+                    }
+                    catch (Exception ex)
+                    {
+                        nacitavanie.IsVisible = false;
+                        Device.BeginInvokeOnMainThread(async () => {
+                            await DisplayAlert("Chyba", "Server je momentalne nedostupný!", "Zatvoriť");
+                        });
+
+                        Debug.WriteLine("CHYBA: " + ex.Message);
+                    }
                 }
                 else
                 {
-                    await this.autentifkaciaUdaje.miestoPrihlaseniaAsync(pouzivatel, poloha["zemepisnaSirka"], poloha["zemepisnaDlzka"], false);
+                    try
+                    {
+                        await this.autentifkaciaUdaje.miestoPrihlasenia(pouzivatel, poloha["zemepisnaSirka"], poloha["zemepisnaDlzka"], false);
+                    }
+                    catch (Exception ex)
+                    {
+                        nacitavanie.IsVisible = false;
+                        Device.BeginInvokeOnMainThread(async () => {
+                            await DisplayAlert("Chyba", "Server je momentalne nedostupný!", "Zatvoriť");
+                        });
+
+                        Debug.WriteLine("CHYBA: " + ex.Message);
+                    }
                 }
             }
             else
             {
-                Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Chyba", "Žiadné spojenie!", "Zatvoriť"); });
+                Device.BeginInvokeOnMainThread(async () => {
+                    await DisplayAlert("Chyba", "Žiadné spojenie!", "Zatvoriť");
+                });
 
                 email.IsEnabled = true;
                 heslo.IsEnabled = true;
@@ -124,7 +150,9 @@ namespace Udalosti.Autentifikacia.UI
                     }
                     else
                     {
-                        Device.BeginInvokeOnMainThread(async () => { await DisplayAlert("Chyba", odpoved, "Zatvoriť"); });
+                        Device.BeginInvokeOnMainThread(async () => {
+                            await DisplayAlert("Chyba", odpoved, "Zatvoriť");
+                        });
                     }
 
                     email.IsEnabled = true;
@@ -141,18 +169,22 @@ namespace Udalosti.Autentifikacia.UI
             throw new NotImplementedException();
         }
 
-        private void spracovanieChyby(String odopoved)
+        private void spracovanieChyby(string odopoved)
         {
             Debug.WriteLine("Metoda spracovanieChyby bola vykonana");
 
             if (odopoved.Equals(Nastavenia.MOZNA_CHYBA))
             {
                 this.autentifkaciaUdaje.ucetJeNePristupny(this.uvodnaObrazovkaUdaje.prihlasPouzivatela());
-                Device.BeginInvokeOnMainThread(async () => { await Application.Current.MainPage.DisplayAlert("Chyba", "Prosím prihláste sa!", "Zatvoriť"); });
+                Device.BeginInvokeOnMainThread(async () => {
+                    await Application.Current.MainPage.DisplayAlert("Chyba", "Prosím prihláste sa!", "Zatvoriť");
+                });
             }
             else if (odopoved.Equals(Nastavenia.CHYBA))
             {
-                Device.BeginInvokeOnMainThread(async () => { await Application.Current.MainPage.DisplayAlert("Chyba", "Nastala chyba, prosím prihláste sa!", "Zatvoriť"); });
+                Device.BeginInvokeOnMainThread(async () => {
+                    await Application.Current.MainPage.DisplayAlert("Chyba", "Nastala chyba, prosím prihláste sa!", "Zatvoriť");
+                });
             }
         }
     }

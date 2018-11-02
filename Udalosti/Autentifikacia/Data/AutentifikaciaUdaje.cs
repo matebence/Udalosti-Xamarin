@@ -16,9 +16,10 @@ namespace Udalosti.Autentifikacia.Data
 {
     class AutentifikaciaUdaje : AutentifikaciaImplementacia
     {
-        private KommunikaciaOdpoved odpovedeOdServera;
         private SQLiteDatabaza sqliteDataza;
         private Preferencie preferencie;
+
+        private KommunikaciaOdpoved odpovedeOdServera;
 
         public AutentifikaciaUdaje(KommunikaciaOdpoved odpovedeOdServera)
         {
@@ -30,12 +31,12 @@ namespace Udalosti.Autentifikacia.Data
             this.odpovedeOdServera = odpovedeOdServera;
         }
 
-        public async Task miestoPrihlaseniaAsync(Pouzivatelia pouzivatel, double zemepisnaSirka, double zemepisnaDlzka, bool aktualizuj)
+        public async Task miestoPrihlasenia(Pouzivatelia pouzivatel, double zemepisnaSirka, double zemepisnaDlzka, bool aktualizuj)
         {
-            Debug.WriteLine("Metoda miestoPrihlaseniaAsync - GEO bola vykonana");
+            Debug.WriteLine("Metoda miestoPrihlasenia - GEO bola vykonana");
 
             HttpResponseMessage odpoved = await new Request().getRequestLocationServer(zemepisnaSirka, zemepisnaDlzka);
-            String pozicia, okres, kraj, psc, stat, znakStatu;
+            string pozicia, okres, kraj, psc, stat, znakStatu;
             pozicia = okres = kraj = psc = stat = znakStatu = "";
 
             if (odpoved.IsSuccessStatusCode)
@@ -69,13 +70,13 @@ namespace Udalosti.Autentifikacia.Data
                         znakStatu = locationIQ.address.country_code;
                     }
 
-                    if (this.sqliteDataza.miestoPrihlasenia())
+                    if (this.sqliteDataza.miesto())
                     {
-                        this.sqliteDataza.aktualizujMiestoPrihlasenia(new Miesto(pozicia, okres, kraj, psc, stat, znakStatu));
+                        this.sqliteDataza.aktualizujMiesto(new Miesto(pozicia, okres, kraj, psc, stat, znakStatu));
                     }
                     else
                     {
-                        this.sqliteDataza.noveMiestoPrihlasenia(new Miesto(pozicia, okres, kraj, psc, stat, znakStatu));
+                        this.sqliteDataza.noveMiesto(new Miesto(pozicia, okres, kraj, psc, stat, znakStatu));
                     }
                 }
 
@@ -85,7 +86,7 @@ namespace Udalosti.Autentifikacia.Data
                 }
                 else
                 {
-                    await prihlasenieAsync(pouzivatel);
+                    await prihlasenie(pouzivatel);
                 }
             }
             else
@@ -94,12 +95,12 @@ namespace Udalosti.Autentifikacia.Data
             }
         }
 
-        public async Task miestoPrihlaseniaAsync(Pouzivatelia pouzivatel)
+        public async Task miestoPrihlasenia(Pouzivatelia pouzivatel)
         {
-            Debug.WriteLine("Metoda miestoPrihlaseniaAsync - IP bola vykonana");
+            Debug.WriteLine("Metoda miestoPrihlasenia - IP bola vykonana");
 
-            HttpResponseMessage odpoved = await new Request().getRequestGeoServer("json");
-            String stat = "";
+            HttpResponseMessage odpoved = await new Request().getRequestGeoServer(Nastavenia.SERVER_GEO_IP);
+            string stat = "";
 
             if (odpoved.IsSuccessStatusCode)
             {
@@ -112,15 +113,15 @@ namespace Udalosti.Autentifikacia.Data
                     }
                 }
 
-                if (this.sqliteDataza.miestoPrihlasenia())
+                if (this.sqliteDataza.miesto())
                 {
-                    this.sqliteDataza.aktualizujMiestoPrihlasenia(new Miesto(null, null, null, null, stat, null));
+                    this.sqliteDataza.aktualizujMiesto(new Miesto(null, null, null, null, stat, null));
                 }
                 else
                 {
-                    this.sqliteDataza.noveMiestoPrihlasenia(new Miesto(null, null, null, null, stat, null));
+                    this.sqliteDataza.noveMiesto(new Miesto(null, null, null, null, stat, null));
                 }
-                await prihlasenieAsync(pouzivatel);
+                await prihlasenie(pouzivatel);
             }
             else
             {
@@ -128,9 +129,9 @@ namespace Udalosti.Autentifikacia.Data
             }
         }
 
-        public async Task prihlasenieAsync(Pouzivatelia pouzivatel)
+        public async Task prihlasenie(Pouzivatelia pouzivatel)
         {
-            Debug.WriteLine("Metoda prihlasenieAsync bola vykonana");
+            Debug.WriteLine("Metoda prihlasenie bola vykonana");
 
             var obsah = new Dictionary<string, string>
             {
@@ -139,7 +140,7 @@ namespace Udalosti.Autentifikacia.Data
                { "pokus_o_prihlasenie", Guid.NewGuid().ToString() }
             };
 
-            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, "index.php/prihlasenie/prihlasit");
+            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, Nastavenia.SERVER_PRIHLASENIE);
             if (odpoved.IsSuccessStatusCode)
             {
                 Autentifikator autentifikator = JsonConvert.DeserializeObject<Autentifikator>(await odpoved.Content.ReadAsStringAsync());
@@ -176,9 +177,9 @@ namespace Udalosti.Autentifikacia.Data
             }
         }
 
-        public async Task registraciaAsync(string meno, string email, string heslo, string potvrd)
+        public async Task registracia(string meno, string email, string heslo, string potvrd)
         {
-            Debug.WriteLine("Metoda registraciaAsync bola vykonana");
+            Debug.WriteLine("Metoda registracia bola vykonana");
 
             var obsah = new Dictionary<string, string>
             {
@@ -189,7 +190,7 @@ namespace Udalosti.Autentifikacia.Data
                { "nova_registracia", Guid.NewGuid().ToString() }
             };
 
-            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, "index.php/registracia");
+            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, Nastavenia.SERVER_REGISTRACIA);
             if (odpoved.IsSuccessStatusCode)
             {
                 Autentifikator autentifikator = JsonConvert.DeserializeObject<Autentifikator>(await odpoved.Content.ReadAsStringAsync());
@@ -231,13 +232,13 @@ namespace Udalosti.Autentifikacia.Data
         {
             Debug.WriteLine("Metoda ulozPrihlasovacieUdajeDoDatabazy bola vykonana");
 
-            if (this.sqliteDataza.pouzivatelskeUdaje())
+            if (this.sqliteDataza.pouzivatel())
             {
-                this.sqliteDataza.aktualizujPouzivatelskeUdaje(pouzivatel);
+                this.sqliteDataza.aktualizujPouzivatela(pouzivatel);
             }
             else
             {
-                this.sqliteDataza.novePouzivatelskeUdaje(pouzivatel);
+                this.sqliteDataza.novyPouzivatel(pouzivatel);
             }
         }
 
@@ -245,7 +246,7 @@ namespace Udalosti.Autentifikacia.Data
         {
             Debug.WriteLine("Metoda ucetJeNePristupny bola vykonana");
 
-            this.sqliteDataza.odstranPouzivatelskeUdaje(pouzivatelia);
+            this.sqliteDataza.odstranPouzivatela(pouzivatelia);
         }
 
         public async Task nastavPrvyStartNaPlatny()
