@@ -185,7 +185,7 @@ namespace Udalosti.Udalost.Data
                { "idUdalost", idUdalost.ToString() }
             };
 
-            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, Nastavenia.ZAUJEM_ODSTRANENIE);
+            HttpResponseMessage odpoved = await new Request().postRequestUdalostiServer(obsah, Nastavenia.SERVER_ODSTRAN_ZAUJEM);
             if (odpoved.IsSuccessStatusCode)
             {
                 Dictionary<string, string> udaje = new Dictionary<string, string>();
