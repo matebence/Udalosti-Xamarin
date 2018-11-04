@@ -1,4 +1,5 @@
-﻿using Foundation;
+﻿using CoreLocation;
+using Foundation;
 using UIKit;
 
 namespace Udalosti.iOS
@@ -10,6 +11,9 @@ namespace Udalosti.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+
+            var coreLocation = new CLLocationManager();
+            coreLocation.RequestWhenInUseAuthorization();
 
             return base.FinishedLaunching(app, options);
         }

@@ -1328,34 +1328,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ecneb\\.nuget\\packages\\": {}
+    "/Users/ecneb/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ecneb\\Downloads\\Xamarin\\Udalosti\\Udalosti\\Udalosti.iOS\\Udalosti.iOS.csproj",
+      "projectUniqueName": "/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.iOS/Udalosti.iOS.csproj",
       "projectName": "Udalosti.iOS",
-      "projectPath": "C:\\Users\\ecneb\\Downloads\\Xamarin\\Udalosti\\Udalosti\\Udalosti.iOS\\Udalosti.iOS.csproj",
-      "packagesPath": "C:\\Users\\ecneb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ecneb\\Downloads\\Xamarin\\Udalosti\\Udalosti\\Udalosti.iOS\\obj\\",
+      "projectPath": "/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.iOS/Udalosti.iOS.csproj",
+      "packagesPath": "/Users/ecneb/.nuget/packages/",
+      "outputPath": "/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.iOS/obj",
       "projectStyle": "PackageReference",
-      "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\ecneb\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/ecneb/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "xamarinios10"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\ecneb\\Downloads\\Xamarin\\Udalosti\\Udalosti\\Udalosti\\Udalosti.csproj": {
-              "projectPath": "C:\\Users\\ecneb\\Downloads\\Xamarin\\Udalosti\\Udalosti\\Udalosti\\Udalosti.csproj"
+            "/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/Udalosti.csproj": {
+              "projectPath": "/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/Udalosti.csproj"
             }
           }
         }
@@ -1366,19 +1363,19 @@
         "dependencies": {
           "Plugin.Permissions": {
             "target": "Package",
-            "version": "[3.0.0.12, )"
+            "version": "3.0.0.12"
           },
           "Xam.Plugin.Connectivity": {
             "target": "Package",
-            "version": "[3.2.0, )"
+            "version": "3.2.0"
           },
           "Xam.Plugin.Geolocator": {
             "target": "Package",
-            "version": "[4.5.0.6, )"
+            "version": "4.5.0.6"
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[3.3.0.912540, )"
+            "version": "3.3.0.912540"
           }
         }
       }

@@ -1,4 +1,5 @@
-﻿using UIKit;
+﻿using Plugin.Geolocator;
+using UIKit;
 
 namespace Udalosti.iOS
 {

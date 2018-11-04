@@ -13,7 +13,7 @@
 namespace Udalosti.Udalost.UI {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Udalost\\UI\\Lokalizator.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Udalost/UI/Lokalizator.xaml")]
     public partial class Lokalizator : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

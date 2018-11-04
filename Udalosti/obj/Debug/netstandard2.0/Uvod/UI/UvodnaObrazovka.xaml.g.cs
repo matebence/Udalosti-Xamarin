@@ -13,7 +13,7 @@
 namespace Udalosti.Uvod.UI {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Uvod\\UI\\UvodnaObrazovka.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Uvod/UI/UvodnaObrazovka.xaml")]
     public partial class UvodnaObrazovka : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
