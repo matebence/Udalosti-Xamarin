@@ -95,8 +95,11 @@ namespace Udalosti.Udalost.UI
                 zoznamUdalosti.IsVisible = false;
                 nacitavanie.IsVisible = true;
 
-                SpravcaDat.getUdalosti().Clear();
-                SpravcaDat.setUdalosti(false);
+                if (SpravcaDat.getUdalosti() != null)
+                {
+                    SpravcaDat.getUdalosti().Clear();
+                }
+                SpravcaDat.setUdalosti(true);
 
                 try
                 {

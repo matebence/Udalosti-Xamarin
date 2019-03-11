@@ -31,7 +31,7 @@ namespace Udalosti.Autentifikacia.Data
             this.odpovedeOdServera = odpovedeOdServera;
         }
 
-        public async Task miestoPrihlasenia(Pouzivatelia pouzivatel, double zemepisnaSirka, double zemepisnaDlzka, bool aktualizuj)
+         public async Task miestoPrihlasenia(string email, string heslo, double zemepisnaSirka, double zemepisnaDlzka, bool aktualizuj, bool async)
         {
             Debug.WriteLine("Metoda miestoPrihlasenia - GEO bola vykonana");
 
@@ -49,83 +49,98 @@ namespace Udalosti.Autentifikacia.Data
                     {
                         pozicia = locationIQ.address.city_district;
                     }
+                    else
+                    {
+                        pozicia = "pozicia neurcena";
+                    }
                     if (locationIQ.address.city != null)
                     {
                         okres = locationIQ.address.city;
+                    }
+                    else
+                    {
+                        okres = "okres neurcena";
                     }
                     if (locationIQ.address.state != null)
                     {
                         kraj = locationIQ.address.state;
                     }
+                    else
+                    {
+                        kraj = "kraj neurcena";
+                    }
                     if (locationIQ.address.postcode != null)
                     {
                         psc = locationIQ.address.postcode;
+                    }
+                    else
+                    {
+                        psc = "psc neurcena";
                     }
                     if (locationIQ.address.country != null)
                     {
                         stat = locationIQ.address.country;
                     }
+                    else
+                    {
+                        stat = "stat neurcena";
+                    }
                     if (locationIQ.address.country_code != null)
                     {
                         znakStatu = locationIQ.address.country_code;
                     }
-
-                    if (this.sqliteDataza.miesto())
+                    else
                     {
-                        this.sqliteDataza.aktualizujMiesto(new Miesto(pozicia, okres, kraj, psc, stat, znakStatu));
+                        znakStatu = "znakStatu neurcena";
+                    }
+
+                    if (sqliteDataza.miestoPrihlasenia())
+                    {
+                        sqliteDataza.aktualizujMiestoPrihlasenia(new Miesto(pozicia, okres, kraj, psc, stat, znakStatu), 1);
                     }
                     else
                     {
-                        this.sqliteDataza.noveMiesto(new Miesto(pozicia, okres, kraj, psc, stat, znakStatu));
+                        sqliteDataza.noveMiestoPrihlasenia(new Miesto(pozicia, okres, kraj, psc, stat, znakStatu));
                     }
                 }
 
                 if (aktualizuj)
                 {
-                    this.odpovedeOdServera.odpovedServera(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.UDALOSTI_AKTUALIZUJ, null);
+                    await this.odpovedeOdServera.odpovedServeraAsync(Nastavenia.VSETKO_V_PORIADKU, Nastavenia.UDALOSTI_AKTUALIZUJ, null);
                 }
                 else
                 {
-                    await prihlasenie(pouzivatel);
+                    await prihlasenie(email, heslo, async);
                 }
             }
             else
             {
-                this.odpovedeOdServera.odpovedServera("Server je momentalne nedostupný!", Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, null);
+                await this.odpovedeOdServera.odpovedServeraAsync("Server je momentalne nedostupný!", Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, null);
             }
         }
 
-        public async Task miestoPrihlasenia(Pouzivatelia pouzivatel)
+        public async Task miestoPrihlasenia(string email, string heslo, bool async)
         {
             Debug.WriteLine("Metoda miestoPrihlasenia - IP bola vykonana");
 
             HttpResponseMessage odpoved = await new Request().getRequestGeoServer(Nastavenia.SERVER_GEO_IP);
-            string stat = "";
 
             if (odpoved.IsSuccessStatusCode)
             {
                 Pozicia pozicia = JsonConvert.DeserializeObject<Pozicia>(await odpoved.Content.ReadAsStringAsync());
-                if (pozicia.country != null)
+                if (sqliteDataza.miestoPrihlasenia())
                 {
-                    if (pozicia.country.Equals("Slovakia") || pozicia.country.Equals("Slovak Republic"))
-                    {
-                        stat = "Slovensko";
-                    }
-                }
-
-                if (this.sqliteDataza.miesto())
-                {
-                    this.sqliteDataza.aktualizujMiesto(new Miesto(null, null, null, null, stat, null));
+                    sqliteDataza.aktualizujMiestoPrihlasenia(new Miesto(null, null, null, null, pozicia.country, null), 1);
                 }
                 else
                 {
-                    this.sqliteDataza.noveMiesto(new Miesto(null, null, null, null, stat, null));
+                    sqliteDataza.noveMiestoPrihlasenia(new Miesto(null, null, null, null, pozicia.country, null));
                 }
-                await prihlasenie(pouzivatel);
+                await prihlasenie(email, heslo, async);
             }
             else
             {
-                this.odpovedeOdServera.odpovedServera("Server je momentalne nedostupný!", Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, null);
+                await this.odpovedeOdServera.odpovedServeraAsync("Server je momentalne nedostupný!", Nastavenia.AUTENTIFIKACIA_PRIHLASENIE, null);
             }
         }
 

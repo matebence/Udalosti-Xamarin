@@ -106,8 +106,11 @@ namespace Udalosti.Udalost.UI
             {
                 zoznamUdalosti.IsVisible = false;
 
-                SpravcaDat.getUdalostiPodlaPozicie().Clear();
-                SpravcaDat.setUdalostiPodlaPozicie(false);
+                if (SpravcaDat.getUdalostiPodlaPozicie() != null)
+                {
+                    SpravcaDat.getUdalostiPodlaPozicie().Clear();
+                }
+                SpravcaDat.setUdalostiPodlaPozicie(true);
 
                 Dictionary<string, double> poloha = await GeoCoder.zistiPolohu(nacitavanie, this);
                 if (poloha != null)
