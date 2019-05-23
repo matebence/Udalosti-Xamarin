@@ -153,7 +153,7 @@
     "Plugin.Permissions/3.0.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-R8Rlzfci1byoPBGOiJfCMzu0HhhN6Q4Vq4YizlF41W946NEmoL/Mb8U5caP5t5KfSbdPQpzdQ9JfM8fxPG8pfw==",
+      "sha512": "sha512-VrYqI/ufk3bH6gTP1JJlLByjhS0CHu3riKmdozhX9/qXA9hlvLolmcqKJdyAqpzmrVC74m3ZtirUBIrBxvT1Lw==",
       "path": "plugin.permissions/3.0.0.12",
       "hashPath": "plugin.permissions.3.0.0.12.nupkg.sha512"
     },
@@ -188,14 +188,14 @@
     "Xam.Plugin.Geolocator/4.5.0.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rbWNjW7o14EtZa+yjPLujQg+PLVF6M490ooNx9QK/Z6El+uRA2EFut+lT/OAetWFzdPcv9LCs0YGOTvs9e7taQ==",
+      "sha512": "sha512-Ro7peBDxsDXPc7J7yLx0ekAcXIfVTAXj/rXiBKiTgZ4Lm7KZJIU8PXOCcI4JztzT3MQrL8Rmka48il/ix0pwoA==",
       "path": "xam.plugin.geolocator/4.5.0.6",
       "hashPath": "xam.plugin.geolocator.4.5.0.6.nupkg.sha512"
     },
     "Xamarin.Forms/3.3.0.912540": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Vm3JZ2Vd6u77eIw7XYQY6Ok89DghibebbdrUX/I1z6aJ9ZMJFBJjqwsIlYbpN4BNCm08UqaieG8BrqArJpIMnQ==",
+      "sha512": "sha512-3809beGmhcJ1X53i2lUvUL7N2sLiFtIQhCnXn5SOnnZuoKjdm0l25vylHA0qSRjitO+o5eH+hnqACUbwuEMnSg==",
       "path": "xamarin.forms/3.3.0.912540",
       "hashPath": "xamarin.forms.3.3.0.912540.nupkg.sha512"
     }

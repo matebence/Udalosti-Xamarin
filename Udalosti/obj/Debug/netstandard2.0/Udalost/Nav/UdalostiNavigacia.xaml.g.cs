@@ -13,7 +13,7 @@
 namespace Udalosti.Udalost.Nav {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Udalost/Nav/UdalostiNavigacia.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Udalost\\Nav\\UdalostiNavigacia.xaml")]
     public partial class UdalostiNavigacia : global::Xamarin.Forms.MasterDetailPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

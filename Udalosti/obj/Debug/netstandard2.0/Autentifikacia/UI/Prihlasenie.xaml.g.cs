@@ -13,7 +13,7 @@
 namespace Udalosti.Autentifikacia.UI {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Autentifikacia/UI/Prihlasenie.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Autentifikacia\\UI\\Prihlasenie.xaml")]
     public partial class Prihlasenie : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

@@ -31,7 +31,7 @@ namespace Udalosti.Autentifikacia.Data
             this.odpovedeOdServera = odpovedeOdServera;
         }
 
-         public async Task miestoPrihlasenia(string email, string heslo, double zemepisnaSirka, double zemepisnaDlzka, bool aktualizuj, bool async)
+        public async Task miestoPrihlasenia(Pouzivatelia pouzivatel, double zemepisnaSirka, double zemepisnaDlzka, bool aktualizuj)
         {
             Debug.WriteLine("Metoda miestoPrihlasenia - GEO bola vykonana");
 
@@ -94,13 +94,13 @@ namespace Udalosti.Autentifikacia.Data
                         znakStatu = "znakStatu neurcena";
                     }
 
-                    if (sqliteDataza.miestoPrihlasenia())
+                    if (sqliteDataza.miesto())
                     {
-                        sqliteDataza.aktualizujMiestoPrihlasenia(new Miesto(pozicia, okres, kraj, psc, stat, znakStatu), 1);
+                        sqliteDataza.aktualizujMiesto(new Miesto(pozicia, okres, kraj, psc, stat, znakStatu));
                     }
                     else
                     {
-                        sqliteDataza.noveMiestoPrihlasenia(new Miesto(pozicia, okres, kraj, psc, stat, znakStatu));
+                        sqliteDataza.noveMiesto(new Miesto(pozicia, okres, kraj, psc, stat, znakStatu));
                     }
                 }
 
@@ -110,7 +110,7 @@ namespace Udalosti.Autentifikacia.Data
                 }
                 else
                 {
-                    await prihlasenie(email, heslo, async);
+                    await prihlasenie(pouzivatel);
                 }
             }
             else
@@ -119,7 +119,7 @@ namespace Udalosti.Autentifikacia.Data
             }
         }
 
-        public async Task miestoPrihlasenia(string email, string heslo, bool async)
+        public async Task miestoPrihlasenia(Pouzivatelia pouzivatel)
         {
             Debug.WriteLine("Metoda miestoPrihlasenia - IP bola vykonana");
 
@@ -128,15 +128,15 @@ namespace Udalosti.Autentifikacia.Data
             if (odpoved.IsSuccessStatusCode)
             {
                 Pozicia pozicia = JsonConvert.DeserializeObject<Pozicia>(await odpoved.Content.ReadAsStringAsync());
-                if (sqliteDataza.miestoPrihlasenia())
+                if (sqliteDataza.miesto())
                 {
-                    sqliteDataza.aktualizujMiestoPrihlasenia(new Miesto(null, null, null, null, pozicia.country, null), 1);
+                    sqliteDataza.aktualizujMiesto(new Miesto(null, null, null, null, pozicia.country, null));
                 }
                 else
                 {
-                    sqliteDataza.noveMiestoPrihlasenia(new Miesto(null, null, null, null, pozicia.country, null));
+                    sqliteDataza.noveMiesto(new Miesto(null, null, null, null, pozicia.country, null));
                 }
-                await prihlasenie(email, heslo, async);
+                await prihlasenie(pouzivatel);
             }
             else
             {

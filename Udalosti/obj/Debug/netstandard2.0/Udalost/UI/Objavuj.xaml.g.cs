@@ -13,7 +13,7 @@
 namespace Udalosti.Udalost.UI {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Udalost/UI/Objavuj.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Udalost\\UI\\Objavuj.xaml")]
     public partial class Objavuj : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

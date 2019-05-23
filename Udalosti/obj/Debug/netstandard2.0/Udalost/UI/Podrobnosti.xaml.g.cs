@@ -13,7 +13,7 @@
 namespace Udalosti.Udalost.UI {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Udalost/UI/Podrobnosti.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Udalost\\UI\\Podrobnosti.xaml")]
     public partial class Podrobnosti : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

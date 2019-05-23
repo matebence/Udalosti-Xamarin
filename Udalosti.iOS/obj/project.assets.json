@@ -960,10 +960,11 @@
       ]
     },
     "Plugin.Permissions/3.0.0.12": {
-      "sha512": "R8Rlzfci1byoPBGOiJfCMzu0HhhN6Q4Vq4YizlF41W946NEmoL/Mb8U5caP5t5KfSbdPQpzdQ9JfM8fxPG8pfw==",
+      "sha512": "VrYqI/ufk3bH6gTP1JJlLByjhS0CHu3riKmdozhX9/qXA9hlvLolmcqKJdyAqpzmrVC74m3ZtirUBIrBxvT1Lw==",
       "type": "package",
       "path": "plugin.permissions/3.0.0.12",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "lib/monoandroid71/Plugin.Permissions.dll",
         "lib/monoandroid71/Plugin.Permissions.xml",
@@ -1142,10 +1143,11 @@
       ]
     },
     "Xam.Plugin.Geolocator/4.5.0.6": {
-      "sha512": "rbWNjW7o14EtZa+yjPLujQg+PLVF6M490ooNx9QK/Z6El+uRA2EFut+lT/OAetWFzdPcv9LCs0YGOTvs9e7taQ==",
+      "sha512": "Ro7peBDxsDXPc7J7yLx0ekAcXIfVTAXj/rXiBKiTgZ4Lm7KZJIU8PXOCcI4JztzT3MQrL8Rmka48il/ix0pwoA==",
       "type": "package",
       "path": "xam.plugin.geolocator/4.5.0.6",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "lib/monoandroid71/Plugin.Geolocator.dll",
         "lib/monoandroid71/Plugin.Geolocator.xml",
@@ -1168,10 +1170,11 @@
       ]
     },
     "Xamarin.Forms/3.3.0.912540": {
-      "sha512": "Vm3JZ2Vd6u77eIw7XYQY6Ok89DghibebbdrUX/I1z6aJ9ZMJFBJjqwsIlYbpN4BNCm08UqaieG8BrqArJpIMnQ==",
+      "sha512": "3809beGmhcJ1X53i2lUvUL7N2sLiFtIQhCnXn5SOnnZuoKjdm0l25vylHA0qSRjitO+o5eH+hnqACUbwuEMnSg==",
       "type": "package",
       "path": "xamarin.forms/3.3.0.912540",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "build/Xamarin.Forms.DefaultItems.props",
         "build/Xamarin.Forms.DefaultItems.targets",
@@ -1328,31 +1331,34 @@
     ]
   },
   "packageFolders": {
-    "/Users/ecneb/.nuget/packages/": {}
+    "C:\\Users\\ecneb\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.iOS/Udalosti.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\ecneb\\Downloads\\Xamarin\\Udalosti\\Udalosti\\Udalosti.iOS\\Udalosti.iOS.csproj",
       "projectName": "Udalosti.iOS",
-      "projectPath": "/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.iOS/Udalosti.iOS.csproj",
-      "packagesPath": "/Users/ecneb/.nuget/packages/",
-      "outputPath": "/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti.iOS/obj",
+      "projectPath": "C:\\Users\\ecneb\\Downloads\\Xamarin\\Udalosti\\Udalosti\\Udalosti.iOS\\Udalosti.iOS.csproj",
+      "packagesPath": "C:\\Users\\ecneb\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ecneb\\Downloads\\Xamarin\\Udalosti\\Udalosti\\Udalosti.iOS\\obj\\",
       "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
       "configFilePaths": [
-        "/Users/ecneb/.config/NuGet/NuGet.Config"
+        "C:\\Users\\ecneb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "xamarinios10"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/Udalosti.csproj": {
-              "projectPath": "/Users/ecneb/Documents/Xamarin/Udalosti/Udalosti/Udalosti/Udalosti.csproj"
+            "C:\\Users\\ecneb\\Downloads\\Xamarin\\Udalosti\\Udalosti\\Udalosti\\Udalosti.csproj": {
+              "projectPath": "C:\\Users\\ecneb\\Downloads\\Xamarin\\Udalosti\\Udalosti\\Udalosti\\Udalosti.csproj"
             }
           }
         }
@@ -1363,19 +1369,19 @@
         "dependencies": {
           "Plugin.Permissions": {
             "target": "Package",
-            "version": "3.0.0.12"
+            "version": "[3.0.0.12, )"
           },
           "Xam.Plugin.Connectivity": {
             "target": "Package",
-            "version": "3.2.0"
+            "version": "[3.2.0, )"
           },
           "Xam.Plugin.Geolocator": {
             "target": "Package",
-            "version": "4.5.0.6"
+            "version": "[4.5.0.6, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "3.3.0.912540"
+            "version": "[3.3.0.912540, )"
           }
         }
       }
