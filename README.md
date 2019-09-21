@@ -1,8 +1,8 @@
-# Aplikácia Udalosti Xamarin - Cross-platform 
+# Udalosti - Cross-platform 
 
 
 
-# Štruktúra aplikácie
+# Application structure
 
 __Udalosti.Android<br />
 __Udalosti.UWP<br />
@@ -12,7 +12,7 @@ __Udalosti<br />
 
 
 
-## Použité technológie
+## Technologies
 
 _C# <br />
 _Xamarin.Forms <br />
@@ -28,7 +28,7 @@ _NuGet <br />
 
 
 
-## Screenshooty aplikácie
+## Screenshots
 
 # Android
 <p float="left">
