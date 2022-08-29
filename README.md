@@ -32,70 +32,70 @@ _NuGet <br />
 
 # Android
 <p float="left">
-<img src="https://i.imgur.com/tBbzA74.png" alt="Screenshoot Udalosti 1" width="200"/>
-<img src="https://i.imgur.com/yERmm7m.png" alt="Screenshoot Udalosti 2" width="200"/>
-<img src="https://i.imgur.com/BZ9rvMA.png" alt="Screenshoot Udalosti 3" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/1.png" alt="Screenshoot Udalosti 1" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/2.png" alt="Screenshoot Udalosti 2" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/3.png" alt="Screenshoot Udalosti 3" width="200"/>
 </p>
 <br />
 <p float="left">
-<img src="https://i.imgur.com/884OkPi.png" alt="Screenshoot Udalosti 4" width="200"/>
-<img src="https://i.imgur.com/TSGNnnv.png" alt="Screenshoot Udalosti 5" width="200"/>
-<img src="https://i.imgur.com/2WRkW2v.png" alt="Screenshoot Udalosti 6" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/4.png" alt="Screenshoot Udalosti 4" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/5.png" alt="Screenshoot Udalosti 5" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/6.png" alt="Screenshoot Udalosti 6" width="200"/>
 </p>
 <br />
 <p float="left">
-<img src="https://i.imgur.com/1PXTRMs.png" alt="Screenshoot Udalosti 7" width="200"/>
-<img src="https://i.imgur.com/Zcgz488.png" alt="Screenshoot Udalosti 8" width="200"/>
-<img src="https://i.imgur.com/ixBmirb.png" alt="Screenshoot Udalosti 9" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/7.jpg" alt="Screenshoot Udalosti 7" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/8.jpg" alt="Screenshoot Udalosti 8" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/9.png" alt="Screenshoot Udalosti 9" width="200"/>
 </p>
 <br />
 <p float="left">
-<img src="https://i.imgur.com/lWrBxf2.png" alt="Screenshoot Udalosti 10" width="200"/>
-<img src="https://i.imgur.com/JPdiZPF.png" alt="Screenshoot Udalosti 11" width="200"/>
-<img src="https://i.imgur.com/1b7Vort.png" alt="Screenshoot Udalosti 12" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/10.png" alt="Screenshoot Udalosti 10" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/11.png" alt="Screenshoot Udalosti 11" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/12.png" alt="Screenshoot Udalosti 12" width="200"/>
 </p>
 
 # iOS
 <p float="left">
-<img src="https://i.imgur.com/ce1Brss.png" alt="Screenshoot Udalosti 13" width="200"/>
-<img src="https://i.imgur.com/ftXJiMp.png" alt="Screenshoot Udalosti 14" width="200"/>
-<img src="https://i.imgur.com/lPy5nBo.png" alt="Screenshoot Udalosti 15" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/13.png" alt="Screenshoot Udalosti 13" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/14.png" alt="Screenshoot Udalosti 14" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/15.png" alt="Screenshoot Udalosti 15" width="200"/>
 </p>
 <br />
 <p float="left">
-<img src="https://i.imgur.com/DMaKYUe.png" alt="Screenshoot Udalosti 16" width="200"/>
-<img src="https://i.imgur.com/fXb68dg.png" alt="Screenshoot Udalosti 17" width="200"/>
-<img src="https://i.imgur.com/C9IlMiY.png" alt="Screenshoot Udalosti 18" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/16.png" alt="Screenshoot Udalosti 16" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/17.png" alt="Screenshoot Udalosti 17" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/18.png" alt="Screenshoot Udalosti 18" width="200"/>
 </p>
 <br />
 <p float="left">
-<img src="https://i.imgur.com/KEYx3A6.png" alt="Screenshoot Udalosti 19" width="200"/>
-<img src="https://i.imgur.com/xoVoTOU.png" alt="Screenshoot Udalosti 20" width="200"/>
-<img src="https://i.imgur.com/RYKevq4.png" alt="Screenshoot Udalosti 21" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/19.png" alt="Screenshoot Udalosti 19" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/20.png" alt="Screenshoot Udalosti 20" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/21.png" alt="Screenshoot Udalosti 21" width="200"/>
 </p>
 <br />
 <p float="left">
-<img src="https://i.imgur.com/uGDvfZB.png" alt="Screenshoot Udalosti 22" width="200"/>
-<img src="https://i.imgur.com/Mty1ajW.png" alt="Screenshoot Udalosti 23" width="200"/>
-<img src="https://i.imgur.com/27Ih8mO.png" alt="Screenshoot Udalosti 24" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/22.png" alt="Screenshoot Udalosti 22" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/23.png" alt="Screenshoot Udalosti 23" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/24.png" alt="Screenshoot Udalosti 24" width="200"/>
 </p>
 
 # Windows
 <p float="left">
-<img src="https://i.imgur.com/S9tekin.png" alt="Screenshoot Udalosti 25" width="200"/>
-<img src="https://i.imgur.com/QsYqYP3.png" alt="Screenshoot Udalosti 26" width="200"/>
-<img src="https://i.imgur.com/XhrdLJK.png" alt="Screenshoot Udalosti 27" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/25.png" alt="Screenshoot Udalosti 25" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/26.png" alt="Screenshoot Udalosti 26" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/27.png" alt="Screenshoot Udalosti 27" width="200"/>
 </p>
 <br />
 <p float="left">
-<img src="https://i.imgur.com/Vz98Cae.png" alt="Screenshoot Udalosti 28" width="200"/>
-<img src="https://i.imgur.com/3IG7qQC.png" alt="Screenshoot Udalosti 29" width="200"/>
-<img src="https://i.imgur.com/CSCAwPg.png" alt="Screenshoot Udalosti 30" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/28.png" alt="Screenshoot Udalosti 28" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/29.png" alt="Screenshoot Udalosti 29" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/30.png" alt="Screenshoot Udalosti 30" width="200"/>
 </p>
 <br />
 <p float="left">
-<img src="https://i.imgur.com/MOgWgCh.png" alt="Screenshoot Udalosti 31" width="200"/>
-<img src="https://i.imgur.com/GIw3ZFZ.png" alt="Screenshoot Udalosti 32" width="200"/>
-<img src="https://i.imgur.com/yFppGTQ.png" alt="Screenshoot Udalosti 33" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/31.png" alt="Screenshoot Udalosti 31" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/32.png" alt="Screenshoot Udalosti 32" width="200"/>
+<img src="https://raw.githubusercontent.com/matebence/Udalosti-Xamarin/master/docs/33.png" alt="Screenshoot Udalosti 33" width="200"/>
 </p>
 <br />
